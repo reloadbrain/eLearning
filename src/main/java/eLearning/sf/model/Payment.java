@@ -16,7 +16,7 @@ import lombok.Data;
 public class Payment {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long payment_id;
 	
 	private String description;

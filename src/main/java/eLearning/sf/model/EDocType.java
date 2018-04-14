@@ -18,7 +18,7 @@ import lombok.Data;
 public class EDocType {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long typeId;
 	
 	private String name;

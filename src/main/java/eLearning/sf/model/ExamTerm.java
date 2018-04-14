@@ -17,7 +17,7 @@ import lombok.Data;
 public class ExamTerm {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long examTermId;
 	
 	@Column(nullable=false, columnDefinition="tinyint(1) default 1")

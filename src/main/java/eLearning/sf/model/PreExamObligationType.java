@@ -18,7 +18,7 @@ import lombok.Data;
 public class PreExamObligationType {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long preExamOTypeId;
 	
 	@Column(nullable=false, columnDefinition="tinyint(1) default 1")

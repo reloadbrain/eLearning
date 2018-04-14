@@ -22,7 +22,7 @@ import lombok.Data;
 public class Exam {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long examId;
 	
 	@Column(nullable=false, columnDefinition="tinyint(1) default 1")

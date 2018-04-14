@@ -21,7 +21,7 @@ import lombok.Data;
 public class Professor {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long professorId;
 	
 	@ManyToOne

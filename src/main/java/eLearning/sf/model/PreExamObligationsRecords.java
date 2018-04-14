@@ -16,7 +16,7 @@ import lombok.Data;
 public class PreExamObligationsRecords {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long preExamORecordsId;
 	
 	@OneToOne

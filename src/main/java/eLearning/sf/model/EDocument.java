@@ -16,7 +16,7 @@ import lombok.Data;
 public class EDocument {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long docId;
 	
 	private String name;

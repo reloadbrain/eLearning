@@ -17,7 +17,7 @@ import lombok.Data;
 public class ProfessorType {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long typeId;
 	
 	private String name;

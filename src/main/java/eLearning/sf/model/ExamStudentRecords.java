@@ -16,7 +16,7 @@ import lombok.Data;
 public class ExamStudentRecords {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long examTermId;
 	
 	@OneToOne
