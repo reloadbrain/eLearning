@@ -6,4 +6,6 @@ import eLearning.sf.model.User;
 
 public interface UserJpaRepo extends JpaRepository<User, Long> {
 
+	User findByUsername(String username);
+	
 }
