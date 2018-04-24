@@ -10,3 +10,6 @@ INSERT INTO user_roles (user_id, role_id) values (1, 1)
 INSERT INTO user_roles (user_id, role_id) values (2, 2)
 INSERT INTO user_roles (user_id, role_id) values (3, 3)
 
+--INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUES (12345, 1, 1, 1); --nema departmana jos
+--INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUES (11345, 1, 2, 1);
+--INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUES (22345, 2, 3, 1);

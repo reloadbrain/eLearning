@@ -23,24 +23,19 @@ public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long professorId;
-	
+
 	@ManyToOne
-	@JoinColumn(name="type_id", nullable=false)
+	@JoinColumn(name = "type_id", nullable = false)
 	private ProfessorType type;
-	
-	@Column(nullable=false, columnDefinition="tinyint(1) default 1")
+
+	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-	
+
 	@ManyToMany
-	@JoinTable(
-	        name = "professor_course", 
-	        joinColumns = { @JoinColumn(name = "professorId") }, 
-	        inverseJoinColumns = { @JoinColumn(name = "courseId") })
+	@JoinTable(name = "professor_course", joinColumns = { @JoinColumn(name = "professorId") }, inverseJoinColumns = {
+			@JoinColumn(name = "courseId") })
 	private Set<Course> courses = new HashSet<>();
-	
+
 	@OneToOne
 	private User user;
-	
-	
-	
 }

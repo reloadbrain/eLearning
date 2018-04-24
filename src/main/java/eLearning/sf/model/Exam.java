@@ -24,25 +24,22 @@ public class Exam {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long examId;
-	
-	@Column(nullable=false, columnDefinition="tinyint(1) default 1")
+
+	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-	
+
 	private Date date;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "courseId", nullable = false)
 	private Course course;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "examTermId", nullable = false)
 	private ExamTerm examTerm;
-	
+
 	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "exam_student",
-			joinColumns = {@JoinColumn(name = "examId")},
-			inverseJoinColumns = {@JoinColumn(name = "studentId")})
+	@JoinTable(name = "exam_student", joinColumns = { @JoinColumn(name = "examId") }, inverseJoinColumns = {
+			@JoinColumn(name = "studentId") })
 	private Set<Student> students = new HashSet<>();
-	
-	
 }

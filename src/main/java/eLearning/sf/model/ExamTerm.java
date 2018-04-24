@@ -19,14 +19,12 @@ public class ExamTerm {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long examTermId;
-	
-	@Column(nullable=false, columnDefinition="tinyint(1) default 1")
+
+	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-	
+
 	private String name;
-	
+
 	@OneToMany(mappedBy = "examTerm")
 	private Set<Exam> exams = new HashSet<>();
-	
-	
 }

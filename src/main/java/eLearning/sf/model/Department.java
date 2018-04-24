@@ -19,16 +19,15 @@ public class Department {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long departmentId;
-	
+
 	private String name;
-	
-	@Column(nullable=false, columnDefinition="tinyint(1) default 1")
+
+	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-	
+
 	@OneToMany(mappedBy = "department")
 	private Set<Student> students = new HashSet<>();
-	
+
 	@OneToMany(mappedBy = "department")
 	private Set<Course> courses = new HashSet<>();
-	
 }

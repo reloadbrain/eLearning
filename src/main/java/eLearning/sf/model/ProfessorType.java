@@ -19,14 +19,12 @@ public class ProfessorType {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long typeId;
-	
+
 	private String name;
-	
-	@Column(nullable=false, columnDefinition="tinyint(1) default 1")
+
+	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-	
+
 	@OneToMany(mappedBy = "type")
 	private Set<Professor> professors = new HashSet<>();
-	
-	
 }
