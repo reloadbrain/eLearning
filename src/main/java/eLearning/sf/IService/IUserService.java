@@ -1,9 +1,13 @@
-package eLearning.sf.IService;
+package eLearning.sf.iService;
+
+import java.util.List;
+import java.util.Optional;
 
 import eLearning.sf.model.User;
 
 public interface IUserService {
 
-	User findByUsername(String username); 
+	Optional<User> findByUsername(String username); 
 	User save(User user);
+	List<User> getAllUsers();
 }
