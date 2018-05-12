@@ -6,7 +6,6 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -47,21 +46,12 @@ public class User {
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-<<<<<<< HEAD
 
 	@ManyToMany
 	@JoinTable(name = "user_roles", joinColumns = { @JoinColumn(name = "userId") }, inverseJoinColumns = {
 			@JoinColumn(name = "roleId") })
 	private Set<Role> roles = new HashSet<>();
-=======
 	
-	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(
-			name = "user_roles",
-			joinColumns = {@JoinColumn(name = "userId")},
-			inverseJoinColumns = {@JoinColumn(name="roleId")})
-	private Set<Role> roles = new HashSet<>();
-
 	public User() {}
 	
 	public User(User user) {
@@ -79,8 +69,4 @@ public class User {
 		this.roles = user.getRoles();
 	}
 	
-	
-	
-	
->>>>>>> develop
 }

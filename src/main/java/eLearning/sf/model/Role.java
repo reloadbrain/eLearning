@@ -28,13 +28,9 @@ public class Role {
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-<<<<<<< HEAD
-
-=======
 	
 	@Transient
 	@JsonIgnore
->>>>>>> develop
 	@ManyToMany(mappedBy = "roles")
 	private Set<User> users = new HashSet<>();
 }
