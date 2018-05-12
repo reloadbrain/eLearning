@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.Data;
 
@@ -25,7 +28,13 @@ public class Role {
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
+<<<<<<< HEAD
 
+=======
+	
+	@Transient
+	@JsonIgnore
+>>>>>>> develop
 	@ManyToMany(mappedBy = "roles")
 	private Set<User> users = new HashSet<>();
 }
