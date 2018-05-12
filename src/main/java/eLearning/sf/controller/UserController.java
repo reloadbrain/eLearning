@@ -12,7 +12,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import eLearning.sf.model.User;
+import eLearning.sf.converter.UserDtoToUser;
+import eLearning.sf.converter.UserToUserDto;
+import eLearning.sf.dto.UserDto;
 import eLearning.sf.serviceInterface.IUserService;
 
 @Controller
@@ -25,17 +27,23 @@ public class UserController {
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
+	@Autowired
+	private UserDtoToUser userDtoToUser;
+	
+	@Autowired
+	private UserToUserDto userToUserDto;
+	
 	@PostMapping(value = "/sign-up")
-	public ResponseEntity<String> signUp(@RequestBody User user) {
-		user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-		iUserService.save(user);
+	public ResponseEntity<String> signUp(@RequestBody UserDto userDto) {
+		userDto.setPassword(bCryptPasswordEncoder.encode(userDto.getPassword()));
+		iUserService.save(userDtoToUser.convert(userDto));
 		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 	
 	@GetMapping
 	//@PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga
-	public ResponseEntity<List<User>> getAllUsers() {
-		return new ResponseEntity<List<User>> (iUserService.getAllUsers(), HttpStatus.OK);
+	public ResponseEntity<List<UserDto>> getAllUsers() {
+		return new ResponseEntity<List<UserDto>> (userToUserDto.convert(iUserService.getAllUsers()), HttpStatus.OK);
 	}
 	
 }

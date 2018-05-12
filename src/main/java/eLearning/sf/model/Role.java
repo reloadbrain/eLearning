@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Transient;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Data;
 
 @Entity
@@ -23,14 +21,13 @@ public class Role {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long roleId;
 
-	@Column(nullable = false, length = 10)
+	@Column(nullable = false, columnDefinition="VARCHAR(10)")
 	private String name;
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 	
 	@Transient
-	@JsonIgnore
 	@ManyToMany(mappedBy = "roles")
 	private Set<User> users = new HashSet<>();
 }

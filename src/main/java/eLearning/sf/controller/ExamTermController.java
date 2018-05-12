@@ -12,11 +12,13 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import eLearning.sf.model.ExamTerm;
 import eLearning.sf.serviceInterface.ExamTermServiceInterface;
 
-@Controller(value = "api/exams")
+@Controller
+@RequestMapping(value = "/api/exams-term")
 public class ExamTermController {
 
 	@Autowired

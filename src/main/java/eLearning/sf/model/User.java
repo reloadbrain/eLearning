@@ -6,6 +6,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,31 +24,34 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
 
-	@Column(nullable = false, unique = true)
+	@Column(nullable = false, unique = true, columnDefinition="VARCHAR(20)")
 	private String username;
 
 	@Column(nullable = false)
 	private String password;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition="VARCHAR(20)")
 	private String firstName;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition="VARCHAR(20)")
 	private String lastName;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition="DATE")
 	private Date dateOfBirth;
 
+	@Column(columnDefinition="VARCHAR(30)")
 	private String address;
 
+	@Column(nullable = false, columnDefinition="VARCHAR(25)")
 	private String imagePath;
 
+	@Column(nullable = false, columnDefinition="VARCHAR(20)")
 	private String phoneNumber;
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "user_roles", joinColumns = { @JoinColumn(name = "userId") }, inverseJoinColumns = {
 			@JoinColumn(name = "roleId") })
 	private Set<Role> roles = new HashSet<>();
@@ -55,7 +59,6 @@ public class User {
 	public User() {}
 	
 	public User(User user) {
-		super();
 		this.userId = user.getUserId();
 		this.username = user.getUsername();
 		this.password = user.getPassword();
