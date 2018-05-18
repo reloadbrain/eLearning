@@ -1,5 +1,6 @@
 package eLearning.sf.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -19,13 +20,19 @@ public class PreExamObligationsRecords {
 	private Long preExamORecordsId;
 
 	@OneToOne
+	@Column(nullable = false)
 	private Exam exam;
 
 	@ManyToOne
 	@JoinColumn(name = "studentId", nullable = false)
 	private Student student;
 
+	@Column(nullable = true)
 	private Integer points;
 
+	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private boolean passed;
+	
+	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	private boolean active;
 }

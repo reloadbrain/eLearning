@@ -24,6 +24,9 @@ public class PreExamObligation {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long preExamOId;
 
+	@Column(nullable = false, columnDefinition="VARCHAR(30)")
+	private String name;
+	
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 

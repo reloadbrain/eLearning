@@ -19,6 +19,7 @@ public class EDocument {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long docId;
 
+	@Column(nullable = false, columnDefinition = "VARCHAR(30)")
 	private String name;
 
 	@ManyToOne
