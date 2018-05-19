@@ -20,7 +20,6 @@ public class PreExamObligationsRecords {
 	private Long preExamORecordsId;
 
 	@OneToOne
-	@Column(nullable = false)
 	private Exam exam;
 
 	@ManyToOne
