@@ -38,7 +38,5 @@ public class UserToUserDto implements Converter<User, UserDto> {
 		}
 
 		return retVal;
-
 	}
-
 }

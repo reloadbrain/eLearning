@@ -15,7 +15,12 @@ public class UserServiceImpl implements IUserService {
 
 	@Autowired
 	private UserJpaRepo userJpaRepo;
-	
+
+	@Override
+	public User getOne(Long id) {
+		return userJpaRepo.getOne(id);
+	}
+
 	@Override
 	public Optional<User> findByUsername(String username) {
 		return userJpaRepo.findByUsername(username);
@@ -23,12 +28,11 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public User save(User user) {
-		return userJpaRepo.save(user); 
+		return userJpaRepo.save(user);
 	}
 
 	@Override
 	public List<User> getAllUsers() {
 		return userJpaRepo.findAll();
 	}
-	
 }
