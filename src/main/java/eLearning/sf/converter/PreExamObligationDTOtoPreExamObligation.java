@@ -8,7 +8,6 @@ import org.springframework.core.convert.converter.Converter;
 
 import eLearning.sf.dto.PreExamObligationDTO;
 import eLearning.sf.model.PreExamObligation;
-import eLearning.sf.model.PreExamObligationsRecords;
 import eLearning.sf.service.PreExamObligationTypeService;
 import eLearning.sf.service.PreExamObligationsRecordsService;
 

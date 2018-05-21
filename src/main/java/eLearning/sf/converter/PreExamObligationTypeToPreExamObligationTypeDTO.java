@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.springframework.core.convert.converter.Converter;
 
-import eLearning.sf.dto.PreExamObligationDTO;
 import eLearning.sf.dto.PreExamObligationTypeDTO;
-import eLearning.sf.model.PreExamObligation;
 import eLearning.sf.model.PreExamObligationType;
 
 public class PreExamObligationTypeToPreExamObligationTypeDTO implements Converter<PreExamObligationType, PreExamObligationTypeDTO> {

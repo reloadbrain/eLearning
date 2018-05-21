@@ -6,9 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 
-import eLearning.sf.dto.PreExamObligationDTO;
 import eLearning.sf.dto.PreExamObligationTypeDTO;
-import eLearning.sf.model.PreExamObligation;
 import eLearning.sf.model.PreExamObligationType;
 import eLearning.sf.service.PreExamObligationService;
 
