@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.ExamTermDto;
 import eLearning.sf.model.ExamTerm;
 
+@Component
 public class ExamTermToExamTermDto implements Converter<ExamTerm, ExamTermDto> {
 
 	@Override

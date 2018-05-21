@@ -14,39 +14,50 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import eLearning.sf.converter.ExamDtoToExam;
+import eLearning.sf.converter.ExamToExamDto;
+import eLearning.sf.dto.ExamDto;
 import eLearning.sf.model.Exam;
 import eLearning.sf.serviceInterface.ExamServiceInterface;
 
-@Controller(value = "/api/exams")
+@Controller
 @RequestMapping(value = "/api/exams")
 public class ExamController {
 
 	@Autowired
-	ExamServiceInterface examService;
+	private ExamServiceInterface examService;
+
+	@Autowired
+	private ExamDtoToExam examDtoToExamConverter;
+
+	@Autowired
+	private ExamToExamDto examToExamDtoConverter;
 
 	@GetMapping
-	public ResponseEntity<List<Exam>> getExams() {
-		return new ResponseEntity<>(examService.findAll(), HttpStatus.OK);
+	public ResponseEntity<List<ExamDto>> getExams() {
+		return new ResponseEntity<>(examToExamDtoConverter.convert(examService.findAll()), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<Exam> getExam(@PathVariable long id) {
-		return new ResponseEntity<>(examService.getOne(id), HttpStatus.OK);
+	public ResponseEntity<ExamDto> getExam(@PathVariable long id) {
+		return new ResponseEntity<ExamDto>(examToExamDtoConverter.convert(examService.getOne(id)), HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<?> saveExam(@RequestBody Exam exam) {
-		return new ResponseEntity<>(examService.save(exam), HttpStatus.OK);
+	public ResponseEntity<ExamDto> saveExam(@RequestBody ExamDto examDto) {
+		Exam exam = examDtoToExamConverter.convert(examDto);
+		return new ResponseEntity<>(examToExamDtoConverter.convert(examService.save(exam)), HttpStatus.OK);
 	}
 
 	@PutMapping
-	public ResponseEntity<Exam> editExam(@RequestBody Exam exam) {
-		return new ResponseEntity<Exam>(examService.save(exam), HttpStatus.OK);
+	public ResponseEntity<ExamDto> editExam(@RequestBody ExamDto examDto) {
+		Exam exam = examDtoToExamConverter.convert(examDto);
+		return new ResponseEntity<ExamDto>(examToExamDtoConverter.convert(examService.save(exam)), HttpStatus.OK);
 	};
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<Exam> deleteExam(@PathVariable long id) {
+	public ResponseEntity<ExamDto> deleteExam(@PathVariable long id) {
 		examService.delete(id);
-		return new ResponseEntity<Exam>(examService.getOne(id), HttpStatus.OK);
+		return new ResponseEntity<ExamDto>(examToExamDtoConverter.convert(examService.getOne(id)), HttpStatus.OK);
 	}
 }

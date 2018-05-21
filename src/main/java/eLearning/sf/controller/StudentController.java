@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import eLearning.sf.converter.StudentDtoToStudent;
+import eLearning.sf.converter.StudentToStudentDto;
+import eLearning.sf.dto.StudentDto;
 import eLearning.sf.model.Student;
 import eLearning.sf.serviceInterface.StudentServiceInterface;
 
@@ -22,33 +25,42 @@ import eLearning.sf.serviceInterface.StudentServiceInterface;
 public class StudentController {
 
 	@Autowired
-	StudentServiceInterface studentService;
+	private StudentServiceInterface studentService;
+
+	@Autowired
+	private StudentDtoToStudent studentDtoToStudentConverter;
+
+	@Autowired
+	private StudentToStudentDto studentToStudentDtoConverter;
 
 	@GetMapping
-	public ResponseEntity<List<Student>> getStudents() {
-		return new ResponseEntity<>(studentService.findAll(), HttpStatus.OK);
+	public ResponseEntity<List<StudentDto>> getStudents() {
+		return new ResponseEntity<>(studentToStudentDtoConverter.convert(studentService.findAll()), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<Student> getStudent(@PathVariable long id) {
-		return new ResponseEntity<>(studentService.getOne(id), HttpStatus.OK);
+	public ResponseEntity<StudentDto> getStudent(@PathVariable long id) {
+		return new ResponseEntity<>(studentToStudentDtoConverter.convert(studentService.getOne(id)), HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<?> saveStudent(@RequestBody Student student) {
-		return new ResponseEntity<>(studentService.save(student), HttpStatus.OK);
+	public ResponseEntity<StudentDto> saveStudent(@RequestBody StudentDto studentDto) {
+		Student student = studentDtoToStudentConverter.convert(studentDto);
+		return new ResponseEntity<StudentDto>(studentToStudentDtoConverter.convert(studentService.save(student)),
+				HttpStatus.OK);
 	}
 
 	@PutMapping
-	public ResponseEntity<Student> editStudent(@RequestBody Student student) {
-		studentService.save(student);
-
-		return new ResponseEntity<Student>(student, HttpStatus.OK);
+	public ResponseEntity<StudentDto> editStudent(@RequestBody StudentDto studentDto) {
+		Student student = studentDtoToStudentConverter.convert(studentDto);
+		return new ResponseEntity<StudentDto>(studentToStudentDtoConverter.convert(studentService.save(student)),
+				HttpStatus.OK);
 	};
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<Student> deleteStudent(@PathVariable long id) {
+	public ResponseEntity<StudentDto> deleteStudent(@PathVariable long id) {
 		studentService.delete(id);
-		return new ResponseEntity<Student>(studentService.getOne(id), HttpStatus.OK);
+		return new ResponseEntity<StudentDto>(studentToStudentDtoConverter.convert(studentService.getOne(id)),
+				HttpStatus.OK);
 	}
 }

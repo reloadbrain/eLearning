@@ -2,12 +2,14 @@ package eLearning.sf.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.ExamStudentRecordsDto;
 import eLearning.sf.model.ExamStudentRecords;
 import eLearning.sf.serviceInterface.ExamServiceInterface;
 import eLearning.sf.serviceInterface.StudentServiceInterface;
 
+@Component
 public class StudentRecordsDtoToStudentRecords implements Converter<ExamStudentRecordsDto, ExamStudentRecords> {
 
 	@Autowired

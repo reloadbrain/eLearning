@@ -1,10 +1,12 @@
 package eLearning.sf.converter;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.ExamTermDto;
 import eLearning.sf.model.ExamTerm;
 
+@Component
 public class ExamTermDtoToExamTerm implements Converter<ExamTermDto, ExamTerm> {
 
 	@Override

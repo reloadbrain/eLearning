@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.StudentDto;
 import eLearning.sf.model.Student;
 
+@Component
 public class StudentToStudentDto implements Converter<Student, StudentDto> {
 
 	@Override
