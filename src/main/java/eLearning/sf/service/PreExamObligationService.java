@@ -1,6 +1,7 @@
 package eLearning.sf.service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,6 +36,11 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		jpaPreExamObligationRepository.deleteById(id);
+	}
+
+	@Override
+	public Set<PreExamObligation> findByTypeId(Long id) {
+		return jpaPreExamObligationRepository.findByPreexamotypeid(id);
 	}
 
 	

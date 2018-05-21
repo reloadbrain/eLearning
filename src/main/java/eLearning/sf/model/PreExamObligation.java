@@ -13,6 +13,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -33,12 +34,10 @@ public class PreExamObligation {
 	@ManyToOne
 	@JoinColumn(name = "preExamOTypeId", nullable = false)
 	private PreExamObligationType type;
-
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "preexamobligation_student", joinColumns = {
-			@JoinColumn(name = "preExamOId") }, inverseJoinColumns = { @JoinColumn(name = "studentId") })
-	private Set<Student> students = new HashSet<>();
-
+	
+	@OneToMany(mappedBy = "preExamObligation")
+	private Set<PreExamObligationsRecords> preExamObligationsRecords;
+	
 	@ManyToOne
 	@JoinColumn(name = "courseId", nullable = false)
 	private Course course;

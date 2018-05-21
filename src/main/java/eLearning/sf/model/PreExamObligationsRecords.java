@@ -1,5 +1,7 @@
 package eLearning.sf.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,8 +21,12 @@ public class PreExamObligationsRecords {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long preExamORecordsId;
 
-	@OneToOne
-	private Exam exam;
+	@Column(nullable = false)
+	private Date date;
+	
+	@ManyToOne
+	@JoinColumn(name = "preexamobligationid", nullable = false)
+	private PreExamObligation preExamObligation;
 
 	@ManyToOne
 	@JoinColumn(name = "studentId", nullable = false)

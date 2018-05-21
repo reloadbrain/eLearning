@@ -1,6 +1,7 @@
 package eLearning.sf.service;
 
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -36,6 +37,13 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 		// TODO Auto-generated method stub
 		jpa.deleteById(id);
 	}
+
+	@Override
+	public Set<PreExamObligationsRecords> findByPreExamObligationId(Long id) {
+		return jpa.findByPreexamobligationid(id);
+	}
+
+
 
 	
 	
