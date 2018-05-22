@@ -3,11 +3,13 @@ package eLearning.sf.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.EDocType;
 import eLearning.sf.repository.EDocTypeRepository;
 import eLearning.sf.serviceInterface.EDocTypeServiceInterface;
 
+@Service
 public class EDocTypeService implements EDocTypeServiceInterface {
 
 	@Autowired

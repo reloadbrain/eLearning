@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.PreExamObligation;
 import eLearning.sf.repository.PreExamObligationRepository;
 import eLearning.sf.serviceInterface.PreExamObligationServiceInterface;
 
+@Service
 public class PreExamObligationService implements PreExamObligationServiceInterface {
 
 	@Autowired
@@ -40,7 +42,7 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 
 	@Override
 	public Set<PreExamObligation> findByTypeId(Long id) {
-		return jpaPreExamObligationRepository.findByPreexamotypeid(id);
+		return jpaPreExamObligationRepository.findAllByType(id);
 	}
 
 	

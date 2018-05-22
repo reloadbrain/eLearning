@@ -3,11 +3,13 @@ package eLearning.sf.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.PreExamObligationType;
 import eLearning.sf.repository.PreExamObligationTypeRepository;
 import eLearning.sf.serviceInterface.PreExamObligationTypeServiceInterface;
 
+@Service
 public class PreExamObligationTypeService implements PreExamObligationTypeServiceInterface{
 
 	@Autowired

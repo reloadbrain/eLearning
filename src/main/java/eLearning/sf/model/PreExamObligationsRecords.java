@@ -24,7 +24,7 @@ public class PreExamObligationsRecords {
 	private Date date;
 	
 	@ManyToOne
-	@JoinColumn(name = "preexamobligationid", nullable = false)
+	@JoinColumn(name = "preExamObligationId", nullable = false)
 	private PreExamObligation preExamObligation;
 
 	@ManyToOne

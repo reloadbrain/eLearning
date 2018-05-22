@@ -5,11 +5,13 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.PreExamObligationTypeDTO;
 import eLearning.sf.model.PreExamObligationType;
 import eLearning.sf.service.PreExamObligationService;
 
+@Component
 public class PreExamObligationTypeDTOtoPreExamObligation implements Converter <PreExamObligationTypeDTO, PreExamObligationType> {
 
 	@Autowired

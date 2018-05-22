@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.PreExamObligationsRecords;
 import eLearning.sf.repository.PreExamObligationsRecordsRepository;
 import eLearning.sf.serviceInterface.PreExamObligationsRecordsServiceInterface;
 
+@Service
 public class PreExamObligationsRecordsService implements PreExamObligationsRecordsServiceInterface{
 
 	@Autowired
@@ -40,7 +42,7 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 
 	@Override
 	public Set<PreExamObligationsRecords> findByPreExamObligationId(Long id) {
-		return jpa.findByPreexamobligationid(id);
+		return jpa.findAllByPreExamObligation(id);
 	}
 
 

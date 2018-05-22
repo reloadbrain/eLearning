@@ -4,10 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.PreExamObligationTypeDTO;
 import eLearning.sf.model.PreExamObligationType;
 
+@Component
 public class PreExamObligationTypeToPreExamObligationTypeDTO implements Converter<PreExamObligationType, PreExamObligationTypeDTO> {
 
 	@Override

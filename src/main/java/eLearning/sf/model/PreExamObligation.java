@@ -29,7 +29,7 @@ public class PreExamObligation {
 	private Boolean active;
 
 	@ManyToOne
-	@JoinColumn(name = "preExamOTypeId", nullable = false)
+	@JoinColumn(name = "typeId", nullable = false)
 	private PreExamObligationType type;
 	
 	@OneToMany(mappedBy = "preExamObligation")
