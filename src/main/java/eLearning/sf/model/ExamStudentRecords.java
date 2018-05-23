@@ -21,16 +21,13 @@ public class ExamStudentRecords {
 	private Long examRecordsId;
 
 	@ManyToOne
+	@JoinColumn(name = "examId", nullable = false)
 	private Exam exam;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "studentId", nullable = false)
 	private Student student;
 	
-	@ManyToOne
-	@JoinColumn(name = "examTermId", nullable = false)
-	private ExamTerm examTerm;
-
 	private String grade;
 
 	private Integer totalPoints;
