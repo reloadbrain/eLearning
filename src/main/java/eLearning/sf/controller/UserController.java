@@ -41,7 +41,7 @@ public class UserController {
 	}
 	
 	@GetMapping
-	//@PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga
+	//@PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga 
 	public ResponseEntity<List<UserDto>> getAllUsers() {
 		return new ResponseEntity<List<UserDto>> (userToUserDto.convert(iUserService.getAllUsers()), HttpStatus.OK);
 	}
