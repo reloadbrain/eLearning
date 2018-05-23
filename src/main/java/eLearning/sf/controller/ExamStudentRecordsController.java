@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import eLearning.sf.converter.StudentRecordsDtoToStudentRecords;
+import eLearning.sf.converter.StudentRecordsToStudentRecordsDto;
+import eLearning.sf.dto.ExamStudentRecordsDto;
 import eLearning.sf.model.ExamStudentRecords;
 import eLearning.sf.serviceInterface.ExamStudentRecordsServiceInterface;
 
@@ -22,35 +25,46 @@ import eLearning.sf.serviceInterface.ExamStudentRecordsServiceInterface;
 public class ExamStudentRecordsController {
 
 	@Autowired
-	ExamStudentRecordsServiceInterface examStudentRecordsService;
+	private ExamStudentRecordsServiceInterface examStudentRecordsService;
+
+	@Autowired
+	private StudentRecordsToStudentRecordsDto recordsToRecordsDtoConverter;
+
+	@Autowired
+	private StudentRecordsDtoToStudentRecords recordsDtoToRecordsConverter;
 
 	@GetMapping
-	public ResponseEntity<List<ExamStudentRecords>> getExamStudentRecords() {
-		return new ResponseEntity<>(examStudentRecordsService.findAll(), HttpStatus.OK);
+	public ResponseEntity<List<ExamStudentRecordsDto>> getExamStudentRecords() {
+		return new ResponseEntity<>(recordsToRecordsDtoConverter.convert(examStudentRecordsService.findAll()),
+				HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
-	public ResponseEntity<ExamStudentRecords> getExamStudentRecords(@PathVariable long id) {
-		return new ResponseEntity<ExamStudentRecords>(examStudentRecordsService.getOne(id), HttpStatus.OK);
+	public ResponseEntity<ExamStudentRecordsDto> getExamStudentRecords(@PathVariable long id) {
+		return new ResponseEntity<ExamStudentRecordsDto>(
+				recordsToRecordsDtoConverter.convert(examStudentRecordsService.getOne(id)), HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<ExamStudentRecords> saveExamStudentRecords(
-			@RequestBody ExamStudentRecords examStudentRecords) {
-		return new ResponseEntity<ExamStudentRecords>(examStudentRecordsService.save(examStudentRecords),
-				HttpStatus.OK);
+	public ResponseEntity<ExamStudentRecordsDto> saveExamStudentRecords(
+			@RequestBody ExamStudentRecordsDto examStudentRecordsDto) {
+		ExamStudentRecords records = recordsDtoToRecordsConverter.convert(examStudentRecordsDto);
+		return new ResponseEntity<ExamStudentRecordsDto>(
+				recordsToRecordsDtoConverter.convert(examStudentRecordsService.save(records)), HttpStatus.OK);
 	}
 
 	@PutMapping
-	public ResponseEntity<ExamStudentRecords> editExamStudentRecords(
-			@RequestBody ExamStudentRecords examStudentRecords) {
-		return new ResponseEntity<ExamStudentRecords>(examStudentRecordsService.save(examStudentRecords),
-				HttpStatus.OK);
+	public ResponseEntity<ExamStudentRecordsDto> editExamStudentRecords(
+			@RequestBody ExamStudentRecordsDto examStudentRecordsDto) {
+		ExamStudentRecords records = recordsDtoToRecordsConverter.convert(examStudentRecordsDto);
+		return new ResponseEntity<ExamStudentRecordsDto>(
+				recordsToRecordsDtoConverter.convert(examStudentRecordsService.save(records)), HttpStatus.OK);
 	};
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<ExamStudentRecords> deleteExamStudentRecords(@PathVariable long id) {
+	public ResponseEntity<ExamStudentRecordsDto> deleteExamStudentRecords(@PathVariable long id) {
 		examStudentRecordsService.delete(id);
-		return new ResponseEntity<ExamStudentRecords>(examStudentRecordsService.getOne(id), HttpStatus.OK);
+		return new ResponseEntity<ExamStudentRecordsDto>(
+				recordsToRecordsDtoConverter.convert(examStudentRecordsService.getOne(id)), HttpStatus.OK);
 	}
 }

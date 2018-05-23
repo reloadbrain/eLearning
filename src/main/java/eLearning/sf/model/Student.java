@@ -45,9 +45,6 @@ public class Student {
 	@ManyToMany(mappedBy = "students")
 	private Set<Exam> exams = new HashSet<>();
 
-	@ManyToMany(mappedBy = "students")
-	private Set<PreExamObligation> preExamObligations = new HashSet<>();
-
 	@OneToMany(mappedBy = "student")
 	private Set<Payment> payments = new HashSet<>();
 

@@ -7,7 +7,11 @@ import eLearning.sf.model.User;
 
 public interface IUserService {
 
-	Optional<User> findByUsername(String username); 
+	User getOne(Long id);
+
+	Optional<User> findByUsername(String username);
+
 	User save(User user);
+
 	List<User> getAllUsers();
 }

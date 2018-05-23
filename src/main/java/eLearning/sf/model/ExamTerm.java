@@ -23,6 +23,7 @@ public class ExamTerm {
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
+	@Column(nullable = false)
 	private String name;
 
 	@OneToMany(mappedBy = "examTerm")

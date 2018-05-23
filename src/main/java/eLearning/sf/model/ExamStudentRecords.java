@@ -16,7 +16,7 @@ public class ExamStudentRecords {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long examTermId;
+	private Long examRecordsId;
 
 	@OneToOne
 	private Exam exam;
