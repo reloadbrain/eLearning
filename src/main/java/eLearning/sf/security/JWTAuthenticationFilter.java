@@ -62,7 +62,6 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 		UserDetails userDetails = (UserDetails) authResult.getPrincipal();
 		String r =  userDetails.getAuthorities().toString();
 		String roles =  r.substring(1, r.length() - 1);
-		
 		String token = Jwts.builder()
 				.setSubject(((org.springframework.security.core.userdetails.User) authResult.getPrincipal()).getUsername())
 				.claim("roles", roles)

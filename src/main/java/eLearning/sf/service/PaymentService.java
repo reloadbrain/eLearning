@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package eLearning.sf.service;
 
 import java.util.List;
@@ -41,3 +42,46 @@ public class PaymentService implements PaymentServiceInterface{
 	}
 
 }
+=======
+package eLearning.sf.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import eLearning.sf.model.Payment;
+import eLearning.sf.repository.PaymentRepository;
+import eLearning.sf.serviceInterface.PaymentServiceInterface;
+
+public class PaymentService implements PaymentServiceInterface{
+
+	@Autowired
+	PaymentRepository paymentRepository;
+	
+	
+	@Override
+	public Payment getOne(Long id) {
+		// TODO Auto-generated method stub
+		return paymentRepository.getOne(id);
+	}
+
+	@Override
+	public List<Payment> findAll() {
+		// TODO Auto-generated method stub
+		return paymentRepository.findAll();
+	}
+
+	@Override
+	public Payment save(Payment payment) {
+		// TODO Auto-generated method stub
+		return paymentRepository.save(payment);
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		paymentRepository.deleteById(id);
+	}
+
+}
+>>>>>>> f2c7db3e20fe1ab85f20d8f184b015bbf0156f40
