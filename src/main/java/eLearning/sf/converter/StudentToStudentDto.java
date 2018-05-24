@@ -20,6 +20,7 @@ public class StudentToStudentDto implements Converter<Student, StudentDto> {
 		studentDto.setTranscriptNumber(student.getTranscriptNumber());
 		studentDto.setUserId(student.getUser().getUserId());
 		studentDto.setYear(student.getYear());
+		studentDto.setDepartmentId(student.getDepartment().getDepartmentId());
 
 		return studentDto;
 	}

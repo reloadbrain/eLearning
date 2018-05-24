@@ -17,10 +17,8 @@ import eLearning.sf.service.PaymentService;
 @RequestMapping(value = "/api/payments")
 public class PaymentController {
 
-	
 	@Autowired
 	private PaymentService paymentService;
-	
 
 	@Autowired
 	private PaymentToPaymentDTO paymentToPaymentDTO;

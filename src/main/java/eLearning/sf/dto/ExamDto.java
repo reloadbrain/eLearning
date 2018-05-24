@@ -26,14 +26,14 @@ public class ExamDto {
 	@NotNull(message = "Exam term id can not be null")
 	private Long examTermId;
 
+	public ExamDto() {
+	}
+
 	public ExamDto(Long examId, Boolean active, Date date, Long courseId, Long examTermId) {
 		this.examId = examId;
 		this.active = active;
 		this.date = date;
 		this.courseId = courseId;
 		this.examTermId = examTermId;
-	}
-
-	public ExamDto() {
 	}
 }

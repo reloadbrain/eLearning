@@ -3,7 +3,6 @@ package eLearning.sf.dto;
 import javax.persistence.Column;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
 
 import lombok.Data;
 

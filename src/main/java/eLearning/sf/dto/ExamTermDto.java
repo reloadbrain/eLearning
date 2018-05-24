@@ -1,9 +1,6 @@
 package eLearning.sf.dto;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -16,16 +13,24 @@ public class ExamTermDto {
 
 	private Long examTermId;
 
-	@NotNull(message = "Field 'active' cannot be null!")
-	private Boolean active;
-
 	@NotBlank(message = "Exam term name cannot be empty!")
 	@Length(max = 50, message = "Exam term name can not contain more than 50 characters")
 	private String name;
 
-	public ExamTermDto(Long examTermId, Boolean active, String name) {
+	@Max(12)
+	@NotBlank(message = "Month cannot be empty!")
+	private Integer month;
+
+	@NotNull(message = "Field 'active' cannot be null!")
+	private Boolean active;
+
+	public ExamTermDto() {
+	}
+
+	public ExamTermDto(Long examTermId, String name, Integer month, Boolean active) {
 		this.examTermId = examTermId;
-		this.active = active;
 		this.name = name;
+		this.month = month;
+		this.active = active;
 	}
 }

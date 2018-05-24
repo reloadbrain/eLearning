@@ -19,7 +19,6 @@ import eLearning.sf.converter.ProfessorToProfessorDTO;
 import eLearning.sf.dto.ProfessorDTO;
 import eLearning.sf.model.Professor;
 import eLearning.sf.service.ProfessorService;
-import eLearning.sf.serviceInterface.ProfessorServiceInterface;
 
 @Controller
 @RequestMapping(value = "/api/professors")

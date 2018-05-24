@@ -8,9 +8,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.CourseDTO;
-import eLearning.sf.dto.PaymentDTO;
 import eLearning.sf.model.Course;
-import eLearning.sf.model.Payment;
 
 @Component
 public class CourseToCorseDTO implements Converter<Course , CourseDTO> {

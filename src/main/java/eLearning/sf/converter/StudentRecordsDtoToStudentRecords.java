@@ -21,10 +21,12 @@ public class StudentRecordsDtoToStudentRecords implements Converter<ExamStudentR
 	@Override
 	public ExamStudentRecords convert(ExamStudentRecordsDto studentRecordsDto) {
 		ExamStudentRecords studentRecords = new ExamStudentRecords();
-		studentRecords.setExamRecordsId(studentRecords.getExamRecordsId());
-		studentRecords.setGrade(studentRecords.getGrade());
-		studentRecords.setPassed(studentRecords.isPassed());
-		studentRecords.setTotalPoints(studentRecords.getTotalPoints());
+		studentRecords.setExamRecordsId(studentRecordsDto.getExamRecordsId());
+		studentRecords.setGrade(studentRecordsDto.getGrade());
+		studentRecords.setPassed(studentRecordsDto.isPassed());
+		studentRecords.setTotalPoints(studentRecordsDto.getTotalPoints());
+		studentRecords.setActive(studentRecordsDto.getActive());
+		studentRecords.setExamDate(studentRecordsDto.getExamDate());
 		studentRecords.setStudent(studentService.getOne(studentRecordsDto.getStudentId()));
 		studentRecords.setExam(examService.getOne(studentRecordsDto.getExamId()));
 

@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Max;
 
 import lombok.Data;
 
@@ -25,6 +26,10 @@ public class ExamTerm {
 
 	@Column(nullable = false)
 	private String name;
+	
+	@Column(nullable = false)
+	@Max(12)
+	private Integer month;
 
 	@OneToMany(mappedBy = "examTerm")
 	private Set<Exam> exams = new HashSet<>();

@@ -14,7 +14,8 @@ public class ExamTermToExamTermDto implements Converter<ExamTerm, ExamTermDto> {
 
 	@Override
 	public ExamTermDto convert(ExamTerm examTerm) {
-		ExamTermDto examTermDto = new ExamTermDto(examTerm.getExamTermId(), examTerm.getActive(), examTerm.getName());
+		ExamTermDto examTermDto = new ExamTermDto(examTerm.getExamTermId(), examTerm.getName(), examTerm.getMonth(),
+				examTerm.getActive());
 		return examTermDto;
 	}
 
