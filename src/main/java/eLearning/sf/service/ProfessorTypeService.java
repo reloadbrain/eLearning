@@ -3,11 +3,13 @@ package eLearning.sf.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.ProfessorType;
 import eLearning.sf.repository.ProfessorTypeRepository;
 import eLearning.sf.serviceInterface.ProfessorTypeServiceInterface;
 
+@Service
 public class ProfessorTypeService implements ProfessorTypeServiceInterface {
 
 	@Autowired

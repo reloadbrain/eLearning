@@ -5,9 +5,12 @@ package eLearning.sf.converter;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
+
 import eLearning.sf.dto.PaymentDTO;
 import eLearning.sf.model.Payment;
 
+@Component
 public class PaymentToPaymentDTO implements Converter<Payment , PaymentDTO> {
 
 	@Override

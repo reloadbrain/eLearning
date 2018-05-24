@@ -3,11 +3,13 @@ package eLearning.sf.converter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.PaymentDTO;
 import eLearning.sf.model.Payment;
 import eLearning.sf.service.StudentService;
 
+@Component
 public class PaymentDTOtoPayment implements Converter<PaymentDTO , Payment>{
 
 	@Autowired

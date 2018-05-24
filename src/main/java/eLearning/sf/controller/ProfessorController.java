@@ -41,4 +41,31 @@ public class ProfessorController {
 		return new ResponseEntity<>(professorToProfessorDTO.convert(professorService.findAll()), HttpStatus.OK);
 	}
 
+	@GetMapping(path = "/{id}")
+	public ResponseEntity<ProfessorDTO> getProfessorsById(@PathVariable long id) {
+		return new ResponseEntity<ProfessorDTO>(professorToProfessorDTO.convert(professorService.getOne(id)),
+				HttpStatus.OK);
+	}
+
+	@PostMapping(consumes = "application/json")
+	public ResponseEntity<ProfessorDTO> saveProfessors(@RequestBody ProfessorDTO professorDTO) {
+		Professor professor = professorDTOtoProfessor.convert(professorDTO);
+		return new ResponseEntity<ProfessorDTO>(professorToProfessorDTO.convert(professorService.save(professor)),
+				HttpStatus.OK);
+	}
+
+	@PutMapping
+	public ResponseEntity<ProfessorDTO> editProfessors(@RequestBody ProfessorDTO professorDTO) {
+		Professor professor = professorDTOtoProfessor.convert(professorDTO);
+		return new ResponseEntity<ProfessorDTO>(professorToProfessorDTO.convert(professorService.save(professor)),
+				HttpStatus.OK);
+	};
+
+	@DeleteMapping(path = "/{id}")
+	public ResponseEntity<ProfessorDTO> deleteProfessors(@PathVariable long id) {
+		professorService.delete(id);
+		return new ResponseEntity<ProfessorDTO>(professorToProfessorDTO.convert(professorService.getOne(id)),
+				HttpStatus.OK);
+	}
+
 }
