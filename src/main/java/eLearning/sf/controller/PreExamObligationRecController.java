@@ -2,6 +2,8 @@ package eLearning.sf.controller;
 
 import java.util.List;
 
+import javax.websocket.server.PathParam;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -45,7 +47,19 @@ public class PreExamObligationRecController {
 	public ResponseEntity<PreExamObligationsRecordsDTO> getPreExamObligationRecord(@PathVariable long id) {
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.getOne(id)), HttpStatus.OK);
 	}
-
+	
+	
+	@GetMapping(path="student{studentId}/course{curseId}")
+	public ResponseEntity<List<PreExamObligationsRecordsDTO>>getPreExamObligationRecordsByStudentIdAndCurseId(@PathVariable long studentId, @PathVariable long curseId){
+		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(toDTO.convert(peors.findByStudentIdAndCurseId(studentId, curseId)),HttpStatus.OK);
+	}
+	
+	@GetMapping(path="preexamobligation{preExamObligationId}")
+	public ResponseEntity<List<PreExamObligationsRecordsDTO>>getPreExamObligationRecordsByProfessorId(@PathVariable long preExamObligationId){
+		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(toDTO.convert(peors.findByPreExamObligationId(preExamObligationId)),HttpStatus.OK);
+	}
+	
+	
 	@PostMapping(consumes = "application/json")
 	public ResponseEntity<?> savePreExamObligationsRecord(@Validated @RequestBody PreExamObligationsRecordsDTO preExamObligationsRecordsDTO , Errors errors) {
 		if(errors.hasErrors()) {

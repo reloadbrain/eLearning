@@ -3,11 +3,13 @@ package eLearning.sf.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.Professor;
 import eLearning.sf.repository.ProfessorRepository;
 import eLearning.sf.serviceInterface.ProfessorServiceInterface;
 
+@Service
 public class ProfessorService implements ProfessorServiceInterface {
 	
 	@Autowired
@@ -35,5 +37,4 @@ public class ProfessorService implements ProfessorServiceInterface {
 		professorRepository.deleteById(id);
 		
 	}
-
 }

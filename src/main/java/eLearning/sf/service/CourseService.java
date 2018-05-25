@@ -3,11 +3,13 @@ package eLearning.sf.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.Course;
 import eLearning.sf.repository.CourseRepository;
 import eLearning.sf.serviceInterface.CourseServiceInterface;
 
+@Service
 public class CourseService implements CourseServiceInterface{
 
 	
@@ -38,5 +40,5 @@ public class CourseService implements CourseServiceInterface{
 		// TODO Auto-generated method stub
 		courseRepository.deleteById(id);
 	}
-
+	
 }

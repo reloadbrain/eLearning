@@ -28,6 +28,9 @@ public class PreExamObligation {
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
+	@Column(nullable = false)
+	private Integer maxPoints;
+	
 	@ManyToOne
 	@JoinColumn(name = "typeId", nullable = false)
 	private PreExamObligationType type;

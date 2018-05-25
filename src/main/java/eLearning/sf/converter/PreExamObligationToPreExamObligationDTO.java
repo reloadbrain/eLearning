@@ -20,6 +20,7 @@ public class PreExamObligationToPreExamObligationDTO implements  Converter<PreEx
 		pDTO.setPreExamOId(arg0.getPreExamOId());
 		pDTO.setName(arg0.getName());
 		pDTO.setPreExamOTypeId(arg0.getType().getPreExamOTypeId());
+		pDTO.setMaxPoints(arg0.getMaxPoints());
 		return pDTO;
 	}
 	

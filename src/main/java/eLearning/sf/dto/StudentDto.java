@@ -26,14 +26,19 @@ public class StudentDto {
 	@NotBlank(message = "User id cannot be empty!")
 	private Long userId;
 
-	public StudentDto(Long studentId, String transcriptNumber, Boolean active, Integer year, Long userId) {
+	@NotBlank(message = "Department id cannot be empty!")
+	private Long departmentId;
+
+	public StudentDto() {
+	}
+
+	public StudentDto(Long studentId, String transcriptNumber, Boolean active, Integer year, Long userId,
+			Long departmentId) {
 		this.studentId = studentId;
 		this.transcriptNumber = transcriptNumber;
 		this.active = active;
 		this.year = year;
 		this.userId = userId;
-	}
-
-	public StudentDto() {
+		this.departmentId = departmentId;
 	}
 }

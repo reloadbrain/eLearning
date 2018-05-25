@@ -6,14 +6,12 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import lombok.Data;
 
@@ -28,6 +26,7 @@ public class Exam {
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
+	@Column(nullable = false)
 	private Date date;
 
 	@ManyToOne
@@ -38,8 +37,6 @@ public class Exam {
 	@JoinColumn(name = "examTermId", nullable = false)
 	private ExamTerm examTerm;
 
-	@ManyToMany(fetch = FetchType.LAZY)
-	@JoinTable(name = "exam_student", joinColumns = { @JoinColumn(name = "examId") }, inverseJoinColumns = {
-			@JoinColumn(name = "studentId") })
-	private Set<Student> students = new HashSet<>();
+	@OneToMany(mappedBy = "exam")
+	private Set<ExamStudentRecords> examRecords = new HashSet<>();;
 }

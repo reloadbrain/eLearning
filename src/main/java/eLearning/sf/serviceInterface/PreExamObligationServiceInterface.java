@@ -15,6 +15,8 @@ public interface PreExamObligationServiceInterface {
 
 	public void delete(Long id);
 	
-	public Set<PreExamObligation> findByTypeId(Long id);
+	public List<PreExamObligation> findByTypeId(Long id);
+	
+	public List<PreExamObligation> findByCourseId(Long id);
 
 }

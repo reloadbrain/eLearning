@@ -1,7 +1,10 @@
 package eLearning.sf.converter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
@@ -9,6 +12,8 @@ import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.PreExamObligationDTO;
 import eLearning.sf.model.PreExamObligation;
+import eLearning.sf.model.PreExamObligationsRecords;
+import eLearning.sf.service.CourseService;
 import eLearning.sf.service.PreExamObligationTypeService;
 import eLearning.sf.service.PreExamObligationsRecordsService;
 
@@ -21,6 +26,9 @@ public class PreExamObligationDTOtoPreExamObligation implements Converter<PreExa
 	@Autowired
 	PreExamObligationsRecordsService peors;
 	
+	@Autowired
+	CourseService cs;
+	
 	@Override
 	public PreExamObligation convert(PreExamObligationDTO arg0) {
 		PreExamObligation preExamObligation = new PreExamObligation();
@@ -28,10 +36,12 @@ public class PreExamObligationDTOtoPreExamObligation implements Converter<PreExa
 			preExamObligation.setPreExamOId(arg0.getPreExamOId());
 		}
 		preExamObligation.setActive(arg0.getActive());
-		//preExamObligation.setCourse(arg0.getCourseId());
+		preExamObligation.setCourse(cs.getOne(arg0.getCourseId()));
 		preExamObligation.setName(arg0.getName());
 		preExamObligation.setType(peots.getOne(arg0.getPreExamOTypeId()));
-		preExamObligation.setPreExamObligationsRecords(peors.findByPreExamObligationId(arg0.getPreExamOId()));
+		Set<PreExamObligationsRecords> rec = peors.findByPreExamObligationId(arg0.getPreExamOId()).stream().collect(Collectors.toSet());
+		preExamObligation.setPreExamObligationsRecords(rec);
+		preExamObligation.setMaxPoints(arg0.getMaxPoints());
 		return preExamObligation;
 	}
 	

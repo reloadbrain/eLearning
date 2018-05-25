@@ -13,6 +13,10 @@ public class StudentDtoToStudent implements Converter<StudentDto, Student> {
 
 	@Autowired
 	IUserService userService;
+	
+//	@Autowired
+//	DepartemenetSerice
+//	Filip da uradi
 
 	@Override
 	public Student convert(StudentDto studentDto) {
@@ -21,7 +25,8 @@ public class StudentDtoToStudent implements Converter<StudentDto, Student> {
 		student.setUser(userService.getOne(studentDto.getUserId()));
 		student.setTranscriptNumber(studentDto.getTranscriptNumber());
 		student.setYear(studentDto.getYear());
-
+//		student.setDepartment(department);
+		
 		return student;
 	}
 }

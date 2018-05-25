@@ -15,8 +15,8 @@ public class ExamTermDtoToExamTerm implements Converter<ExamTermDto, ExamTerm> {
 		examTerm.setActive(examTermDto.getActive());
 		examTerm.setName(examTermDto.getName());
 		examTerm.setExamTermId(examTermDto.getExamTermId());
-		
+		//examTerm.setMonth(examTermDto.getMonth());
+
 		return examTerm;
 	}
-
 }

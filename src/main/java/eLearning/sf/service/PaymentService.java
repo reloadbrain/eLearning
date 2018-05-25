@@ -3,11 +3,13 @@ package eLearning.sf.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.Payment;
 import eLearning.sf.repository.PaymentRepository;
 import eLearning.sf.serviceInterface.PaymentServiceInterface;
 
+@Service
 public class PaymentService implements PaymentServiceInterface{
 
 	@Autowired

@@ -6,7 +6,10 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import eLearning.sf.model.Course;
+import eLearning.sf.model.PreExamObligation;
 import eLearning.sf.model.PreExamObligationsRecords;
+import eLearning.sf.model.Student;
 import eLearning.sf.repository.PreExamObligationsRecordsRepository;
 import eLearning.sf.serviceInterface.PreExamObligationsRecordsServiceInterface;
 
@@ -15,6 +18,15 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 
 	@Autowired
 	PreExamObligationsRecordsRepository jpa;
+	
+	@Autowired
+	PreExamObligationService peos;
+	
+	@Autowired
+	CourseService cs;
+	
+	@Autowired
+	StudentService ss;
 	
 	@Override
 	public PreExamObligationsRecords getOne(Long id) {
@@ -41,12 +53,15 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 	}
 
 	@Override
-	public Set<PreExamObligationsRecords> findByPreExamObligationId(Long id) {
-		return jpa.findAllByPreExamObligation(id);
+	public List<PreExamObligationsRecords> findByPreExamObligationId(Long id) {
+		return jpa.findAllByPreExamObligationPreExamOId(id);
+	}
+
+	@Override
+	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(Long sId, Long cId) {
+		return jpa.findAllByStudentStudentIdAndPreExamObligationCourseCourseId(sId, cId);
 	}
 
 
-
-	
 	
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.PreExamObligation;
+import eLearning.sf.model.PreExamObligationType;
 import eLearning.sf.repository.PreExamObligationRepository;
 import eLearning.sf.serviceInterface.PreExamObligationServiceInterface;
 
@@ -15,6 +16,9 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 
 	@Autowired
 	PreExamObligationRepository jpaPreExamObligationRepository;
+	
+	@Autowired
+	PreExamObligationTypeService peots;
 	
 	@Override
 	public PreExamObligation getOne(Long Id) {
@@ -41,8 +45,13 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 	}
 
 	@Override
-	public Set<PreExamObligation> findByTypeId(Long id) {
-		return jpaPreExamObligationRepository.findAllByType(id);
+	public List<PreExamObligation> findByTypeId(Long id) {
+		return jpaPreExamObligationRepository.findAllByTypePreExamOTypeId(id);
+	}
+
+	@Override
+	public List<PreExamObligation> findByCourseId(Long id) {
+		return jpaPreExamObligationRepository.findAllByCourseCourseId(id);
 	}
 
 	
