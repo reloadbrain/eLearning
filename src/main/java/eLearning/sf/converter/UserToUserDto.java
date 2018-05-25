@@ -7,6 +7,7 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.UserDto;
+import eLearning.sf.model.Role;
 import eLearning.sf.model.User;
 
 @Component
@@ -22,10 +23,17 @@ public class UserToUserDto implements Converter<User, UserDto> {
 		userDto.setImagePath(user.getImagePath());
 		userDto.setLastName(user.getLastName());
 		userDto.setPhoneNumber(user.getPhoneNumber());
-		userDto.setPassword(user.getPassword());
 		userDto.setUserId(user.getUserId());
 		userDto.setUsername(user.getUsername());
 
+		if (!user.getRoles().isEmpty()) {
+			
+			for (Role r: user.getRoles()) {
+				userDto.getRoleId().add(r.getRoleId());
+				userDto.getRoleName().add(r.getName());
+			}
+		}
+		
 		return userDto;
 	}
 

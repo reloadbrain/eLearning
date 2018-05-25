@@ -1,6 +1,8 @@
 package eLearning.sf.dto;
 
 import java.sql.Date;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -18,9 +20,6 @@ public class UserDto {
 	@NotBlank(message="Username cannot be empty!")
 	@Length(max=20, message="Password can not contain more than 20 characters")
 	private String username;
-
-	@NotBlank(message="Password cannot be empty!")
-	private String password;
 
 	@NotBlank(message="First name cannot be empty!")
 	@Length(max=20, message="First name can not contain more than 20 characters")
@@ -43,16 +42,25 @@ public class UserDto {
 	@Length(max=20, message="Phone number can not contain more than 20 characters")
 	private String phoneNumber;
 	
-	@Length(max=1, message="Max length is 1")
 	private Boolean active;
 	
-	public UserDto() {};
+	private Set<Long> roleId = new HashSet<>();
+	
+	private Set<String> roleName = new HashSet<>();
+	
+	public UserDto() {}
 
-	public UserDto(Long userId, String username, String password, String firstName, String lastName, Date dateOfBirth,
-			String address, String imagePath, String phoneNumber, Boolean active) {
+	public UserDto(Long userId,
+			@NotBlank(message = "Username cannot be empty!") @Length(max = 20, message = "Password can not contain more than 20 characters") String username,
+			@NotBlank(message = "First name cannot be empty!") @Length(max = 20, message = "First name can not contain more than 20 characters") String firstName,
+			@NotBlank(message = "Last name cannot be empty!") @Length(max = 20, message = "Last name can not contain more than 20 characters") String lastName,
+			@NotNull(message = "Birth date cannot be null") Date dateOfBirth,
+			@Length(max = 30, message = "Address can not contain more than 30 characters") String address,
+			@Length(max = 25, message = "Image path can not contain more than 25 characters") String imagePath,
+			@Length(max = 20, message = "Phone number can not contain more than 20 characters") String phoneNumber,
+			Boolean active, Set<Long> roleId, Set<String> roleName) {
 		this.userId = userId;
 		this.username = username;
-		this.password = password;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.dateOfBirth = dateOfBirth;
@@ -60,7 +68,11 @@ public class UserDto {
 		this.imagePath = imagePath;
 		this.phoneNumber = phoneNumber;
 		this.active = active;
-	}	
+		this.roleId = roleId;
+		this.roleName = roleName;
+	};
+
+	
 	
 	
 	

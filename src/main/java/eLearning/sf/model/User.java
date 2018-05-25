@@ -42,13 +42,13 @@ public class User {
 	@Column(columnDefinition="VARCHAR(30)")
 	private String address;
 
-	@Column(nullable = false, columnDefinition="VARCHAR(25)")
+	@Column(columnDefinition="VARCHAR(25)")
 	private String imagePath;
 
-	@Column(nullable = false, columnDefinition="VARCHAR(20)")
+	@Column(columnDefinition="VARCHAR(20)")
 	private String phoneNumber;
 
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
 	@ManyToMany(fetch = FetchType.EAGER)

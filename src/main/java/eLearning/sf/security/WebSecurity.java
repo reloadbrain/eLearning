@@ -44,6 +44,12 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 		auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder);
 	}
 
+	
+	@Override
+    public void configure(org.springframework.security.config.annotation.web.builders.WebSecurity web) throws Exception {
+        web.ignoring().antMatchers("/assets/**", "/profile-images/**");
+    }
+	
 	/*@Bean
 	CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();

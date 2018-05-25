@@ -4,10 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import eLearning.sf.model.Professor;
 import eLearning.sf.model.ProfessorType;
 import eLearning.sf.repository.ProfessorTypeRepository;
-import eLearning.sf.serviceInterface.ProfessorServiceInterface;
 import eLearning.sf.serviceInterface.ProfessorTypeServiceInterface;
 
 public class ProfessorTypeService implements ProfessorTypeServiceInterface {
