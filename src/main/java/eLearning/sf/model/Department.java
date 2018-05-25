@@ -20,7 +20,7 @@ public class Department {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long departmentId;
 
-	@Column(nullable = false, columnDefinition="VARCHAR(20)")
+	@Column(nullable = false, columnDefinition="VARCHAR(75)")
 	private String name;
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")

@@ -24,7 +24,7 @@ public class ExamTerm {
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
-	@Column(nullable = false)
+	@Column(nullable = false, columnDefinition="VARCHAR(30)")
 	private String name;
 	
 	@Column(nullable = false)

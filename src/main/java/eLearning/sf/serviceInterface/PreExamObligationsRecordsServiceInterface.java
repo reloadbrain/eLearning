@@ -15,6 +15,8 @@ public interface PreExamObligationsRecordsServiceInterface {
 
 	public void delete(Long id);
 	
-	public Set<PreExamObligationsRecords> findByPreExamObligationId (Long id);
+	public List<PreExamObligationsRecords> findByPreExamObligationId (Long id);
+	
+	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(Long sId, Long cId );
 	
 }

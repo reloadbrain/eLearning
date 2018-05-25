@@ -20,6 +20,7 @@ public class ProfessorType {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long typeId;
 
+	@Column(nullable = false, columnDefinition="VARCHAR(30)")
 	private String name;
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")

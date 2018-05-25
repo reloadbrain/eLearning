@@ -21,7 +21,7 @@ public class Role {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long roleId;
 
-	@Column(nullable = false, columnDefinition="VARCHAR(10)")
+	@Column(nullable = false, columnDefinition="VARCHAR(20)")
 	private String name;
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")

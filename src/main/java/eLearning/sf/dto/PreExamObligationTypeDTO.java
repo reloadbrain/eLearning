@@ -15,7 +15,7 @@ public class PreExamObligationTypeDTO {
 	@Length(max=20, message="Name can not contain more than 20 characters")
 	private String name;
 
-	@Length(max=1, message="Max length is 1")
+	//@Length(max=1, message="Max length is 1")
 	private Boolean active;
 
 	public PreExamObligationTypeDTO(

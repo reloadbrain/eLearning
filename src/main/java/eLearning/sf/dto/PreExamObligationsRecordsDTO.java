@@ -3,6 +3,7 @@ package eLearning.sf.dto;
 import java.sql.Date;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -19,16 +20,17 @@ public class PreExamObligationsRecordsDTO {
 	@NotBlank(message="preExamObligationId cannot be empty!")
 	private Long preExamObligationId;
 	
-	@NotBlank(message="Date cannot be empty!")
+	//@NotBlank(message="Date cannot be empty!")
 	private  Date date;
 	
+	@NotNull(message = "Points cannot be null" )
 	private Integer points;
 	
-	@Length(max=1, message="Max length is 1")
+	//@Length(max=1, message="Max length is 1")
 	private boolean passed;
 	
-	@NotBlank(message="active cannot be empty!")
-	@Length(max=1, message="Max length is 1")
+	//@NotBlank(message="active cannot be empty!")
+	//@Length(max=1, message="Max length is 1")
 	private boolean active;
 
 	public PreExamObligationsRecordsDTO() {

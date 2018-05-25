@@ -24,6 +24,7 @@ public class Course {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long courseId;
 
+	@Column(nullable = false, columnDefinition="VARCHAR(75)")
 	private String name;
 
 	@ManyToMany(mappedBy = "courses")

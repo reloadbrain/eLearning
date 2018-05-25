@@ -24,16 +24,16 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
 
-	@Column(nullable = false, unique = true, columnDefinition="VARCHAR(20)")
+	@Column(nullable = false, unique = true, columnDefinition="VARCHAR(30)")
 	private String username;
 
 	@Column(nullable = false)
 	private String password;
 
-	@Column(nullable = false, columnDefinition="VARCHAR(20)")
+	@Column(nullable = false, columnDefinition="VARCHAR(30)")
 	private String firstName;
 
-	@Column(nullable = false, columnDefinition="VARCHAR(20)")
+	@Column(nullable = false, columnDefinition="VARCHAR(30)")
 	private String lastName;
 
 	@Column(nullable = false, columnDefinition="DATE")
@@ -42,7 +42,7 @@ public class User {
 	@Column(columnDefinition="VARCHAR(30)")
 	private String address;
 
-	@Column(nullable = false, columnDefinition="VARCHAR(25)")
+	@Column(nullable = false, columnDefinition="VARCHAR(30)")
 	private String imagePath;
 
 	@Column(nullable = false, columnDefinition="VARCHAR(20)")
