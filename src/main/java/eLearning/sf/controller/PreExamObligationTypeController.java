@@ -37,7 +37,7 @@ public class PreExamObligationTypeController {
 	
 	@GetMapping
 	public ResponseEntity<List<PreExamObligationTypeDTO>> getPreExamObligationTypes() {
-		return new ResponseEntity<>(toDTO.convert(peots.findAll()), HttpStatus.OK);
+		return new ResponseEntity<>(toDTO.convert(peots.findeActive()), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
@@ -52,7 +52,7 @@ public class PreExamObligationTypeController {
 		}
 		PreExamObligationType p = new PreExamObligationType();
 		p = toPEOT.convert(preExamObligationTypeDTO);
-		return new ResponseEntity<PreExamObligationType>(peots.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationTypeDTO>(toDTO.convert(peots.save(p)), HttpStatus.OK);
 	}
 
 	@PutMapping
@@ -62,7 +62,7 @@ public class PreExamObligationTypeController {
 		}
 		PreExamObligationType p = new PreExamObligationType();
 		p = toPEOT.convert(preExamObligationTypeDTO);
-		return new ResponseEntity<PreExamObligationType>(peots.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationTypeDTO>(toDTO.convert(peots.save(p)), HttpStatus.OK);
 	};
 
 	@DeleteMapping(path = "/{id}")

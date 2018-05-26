@@ -39,6 +39,12 @@ public class PreExamObligationTypeService implements PreExamObligationTypeServic
 		jpa.deleteById(id);
 	}
 
+	@Override
+	public List<PreExamObligationType> findeActive() {
+		// TODO Auto-generated method stub
+		return jpa.findAllByActiveTrue();
+	}
+
 	
 	
 }

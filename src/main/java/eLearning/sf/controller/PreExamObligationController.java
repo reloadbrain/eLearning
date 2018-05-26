@@ -53,7 +53,7 @@ public class PreExamObligationController {
 		}
 		PreExamObligation p = new PreExamObligation();
 		p = toPEO.convert(preExamObligationDTO);
-		return new ResponseEntity<PreExamObligation>(peos.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationDTO>(toDTO.convert(peos.save(p)), HttpStatus.OK);
 	}
 
 	@PutMapping
@@ -63,7 +63,7 @@ public class PreExamObligationController {
 		}
 		PreExamObligation p = new PreExamObligation();
 		p = toPEO.convert(preExamObligationDTO);
-		return new ResponseEntity<PreExamObligation>(peos.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationDTO>(toDTO.convert(peos.save(p)), HttpStatus.OK);
 	};
 
 	@DeleteMapping(path = "/{id}")

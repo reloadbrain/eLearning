@@ -14,5 +14,7 @@ public interface PreExamObligationTypeServiceInterface {
 	public PreExamObligationType save(PreExamObligationType preExamObligationType);
 
 	public void delete(Long id);
+	
+	public List<PreExamObligationType> findeActive();
 
 }
