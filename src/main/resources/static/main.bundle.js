@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 webpackJsonp(["main"],{
 
 /***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
@@ -39,29 +38,29 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n    <a href=\"#\" class=\"navbar-brand\">ELearning App</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"/users\" routerLinkActive=\"active\">Users</a>\n            </li>\n        </ul>\n        <ul class=\"navbar-nav mr-auto\">\n                <li class=\"nav-item\">\n                    <a class=\"nav-link\" routerLink=\"/profile\" routerLinkActive=\"active\">Profile</a>\n                </li>\n            </ul>\n        <ul class=\"navbar-nav\">\n            <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\">Login</a>\n        </ul>\n    </div>\n</nav>\n<div class=\"container\">\n    <router-outlet></router-outlet>\n</div>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n    <a href=\"#\" class=\"navbar-brand\">ELearning App</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/users\" routerLinkActive=\"active\">Users</a>\r\n            </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav mr-auto\">\r\n                <li class=\"nav-item\">\r\n                    <a class=\"nav-link\" routerLink=\"/profile\" routerLinkActive=\"active\">Profile</a>\r\n                </li>\r\n            </ul>\r\n        <ul class=\"navbar-nav\">\r\n            <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\">Login</a>\r\n        </ul>\r\n    </div>\r\n</nav>\r\n<div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'app';
     }
     AppComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
@@ -69,43 +68,68 @@ var AppComponent = /** @class */ (function () {
     ], AppComponent);
     return AppComponent;
 }());
-exports.AppComponent = AppComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user_user_component__ = __webpack_require__("../../../../../src/app/user/user.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__user_user_service__ = __webpack_require__("../../../../../src/app/user/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__department_department_component__ = __webpack_require__("../../../../../src/app/department/department.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__department_department_service__ = __webpack_require__("../../../../../src/app/department/department.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__authorization_authorization_component__ = __webpack_require__("../../../../../src/app/authorization/authorization.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__authorization_authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__authorization_token_interceptor_service__ = __webpack_require__("../../../../../src/app/authorization/token-interceptor.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__student_pre_exam_obligation_student_pre_exam_obligation_component__ = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__professor_pre_exam_obligation_professor_pre_exam_obligation_component__ = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__professor_pre_exam_obligation_records_professor_pre_exam_obligation_records_component__ = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__user_profile_user_profile_component__ = __webpack_require__("../../../../../src/app/user-profile/user-profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__authorization_jwt_interceptor_service__ = __webpack_require__("../../../../../src/app/authorization/jwt-interceptor.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pagination_pagination_component__ = __webpack_require__("../../../../../src/app/pagination/pagination.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__dialog_dialog_component__ = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__shared_role_service__ = __webpack_require__("../../../../../src/app/shared/role.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_1 = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-var animations_1 = __webpack_require__("../../../platform-browser/esm5/animations.js");
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
-var user_component_1 = __webpack_require__("../../../../../src/app/user/user.component.ts");
-var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
-var department_component_1 = __webpack_require__("../../../../../src/app/department/department.component.ts");
-var department_service_1 = __webpack_require__("../../../../../src/app/department/department.service.ts");
-var authorization_component_1 = __webpack_require__("../../../../../src/app/authorization/authorization.component.ts");
-var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-var token_interceptor_service_1 = __webpack_require__("../../../../../src/app/authorization/token-interceptor.service.ts");
-var user_profile_component_1 = __webpack_require__("../../../../../src/app/user-profile/user-profile.component.ts");
-var jwt_interceptor_service_1 = __webpack_require__("../../../../../src/app/authorization/jwt-interceptor.service.ts");
-var pagination_component_1 = __webpack_require__("../../../../../src/app/pagination/pagination.component.ts");
-var ng_bootstrap_1 = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-var dialog_component_1 = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
-var role_service_1 = __webpack_require__("../../../../../src/app/shared/role.service.ts");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var routes = [
     /* {
       path: '',
@@ -114,55 +138,58 @@ var routes = [
     }, */
     {
         path: 'login',
-        component: authorization_component_1.AuthorizationComponent
+        component: __WEBPACK_IMPORTED_MODULE_11__authorization_authorization_component__["a" /* AuthorizationComponent */]
     },
     {
         path: 'users',
-        component: user_component_1.UserComponent
+        component: __WEBPACK_IMPORTED_MODULE_5__user_user_component__["a" /* UserComponent */]
     },
     {
         path: 'profile',
-        component: user_profile_component_1.UserProfileComponent
+        component: __WEBPACK_IMPORTED_MODULE_17__user_profile_user_profile_component__["a" /* UserProfileComponent */]
     }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        core_1.NgModule({
+        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
             declarations: [
-                app_component_1.AppComponent,
-                user_component_1.UserComponent,
-                authorization_component_1.AuthorizationComponent,
-                department_component_1.DepartmentComponent,
-                user_profile_component_1.UserProfileComponent,
-                pagination_component_1.PaginationComponent,
-                dialog_component_1.DialogComponent
+                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
+                __WEBPACK_IMPORTED_MODULE_5__user_user_component__["a" /* UserComponent */],
+                __WEBPACK_IMPORTED_MODULE_11__authorization_authorization_component__["a" /* AuthorizationComponent */],
+                __WEBPACK_IMPORTED_MODULE_9__department_department_component__["a" /* DepartmentComponent */],
+                __WEBPACK_IMPORTED_MODULE_14__student_pre_exam_obligation_student_pre_exam_obligation_component__["a" /* StudentPreExamObligationComponent */],
+                __WEBPACK_IMPORTED_MODULE_15__professor_pre_exam_obligation_professor_pre_exam_obligation_component__["a" /* ProfessorPreExamObligationComponent */],
+                __WEBPACK_IMPORTED_MODULE_16__professor_pre_exam_obligation_records_professor_pre_exam_obligation_records_component__["a" /* ProfessorPreExamObligationRecordsComponent */],
+                __WEBPACK_IMPORTED_MODULE_17__user_profile_user_profile_component__["a" /* UserProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_19__pagination_pagination_component__["a" /* PaginationComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__dialog_dialog_component__["a" /* DialogComponent */]
             ],
             imports: [
-                platform_browser_1.BrowserModule,
-                http_1.HttpClientModule,
-                forms_1.FormsModule,
-                animations_1.BrowserAnimationsModule,
-                router_1.RouterModule.forRoot(routes), ng_bootstrap_1.NgbModule.forRoot()
+                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
+                __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["c" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_8__angular_forms__["a" /* FormsModule */],
+                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
+                __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot(routes), __WEBPACK_IMPORTED_MODULE_20__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
             ],
-            providers: [user_service_1.UserService, department_service_1.DepartmentService, authorization_service_1.AuthorizationService, token_interceptor_service_1.TokenInterceptorService, jwt_interceptor_service_1.JwtInterceptorService, {
-                    provide: http_1.HTTP_INTERCEPTORS,
-                    useClass: token_interceptor_service_1.TokenInterceptorService,
+            providers: [__WEBPACK_IMPORTED_MODULE_6__user_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_10__department_department_service__["a" /* DepartmentService */], __WEBPACK_IMPORTED_MODULE_12__authorization_authorization_service__["a" /* AuthorizationService */], __WEBPACK_IMPORTED_MODULE_13__authorization_token_interceptor_service__["a" /* TokenInterceptorService */], __WEBPACK_IMPORTED_MODULE_18__authorization_jwt_interceptor_service__["a" /* JwtInterceptorService */], {
+                    provide: __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
+                    useClass: __WEBPACK_IMPORTED_MODULE_13__authorization_token_interceptor_service__["a" /* TokenInterceptorService */],
                     multi: true
                 },
                 {
-                    provide: http_1.HTTP_INTERCEPTORS,
-                    useClass: jwt_interceptor_service_1.JwtInterceptorService,
+                    provide: __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
+                    useClass: __WEBPACK_IMPORTED_MODULE_18__authorization_jwt_interceptor_service__["a" /* JwtInterceptorService */],
                     multi: true
-                }, role_service_1.RoleService
+                }, __WEBPACK_IMPORTED_MODULE_22__shared_role_service__["a" /* RoleService */]
             ],
-            bootstrap: [app_component_1.AppComponent]
+            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
 }());
-exports.AppModule = AppModule;
+
 
 
 /***/ }),
@@ -188,15 +215,19 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/authorization/authorization.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row pt-5\">\n    <div class=\"col-md-6 mx-auto\">\n        <div class=\"alert alert-danger alert-dismissible fade show\" *ngIf=\"wrongUsernameOrPass\">\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" (click)=\"wrongUsernameOrPass = false;\">&times;</button>\n            <strong>Login failed!</strong> Incorrect username and/or password.\n        </div>\n        <div class=\"card rounded-0\">\n            <div class=\"card-header\">\n                <h3 class=\"mb-0\">Login</h3>\n            </div>\n            <div class=\"card-body\">\n                <form class=\"form\" (ngSubmit)=\"login()\" #f=\"ngForm\">\n                    <div class=\"form-group\">\n                        <label for=\"\">Username</label>\n                        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"loginData.userName\" id=\"username\" name=\"username\" #username=\"ngModel\"\n                            name=\"username\" required>\n                        <span class=\"help-block\" *ngIf=\"username.touched && !username.valid\">\n                            <i>Username is required</i>\n                        </span>\n                    </div>\n                    <div class=\"form-group\">\n                        <label for=\"\">Password</label>\n                        <input type=\"password\" class=\"form-control\" [(ngModel)]=\"loginData.userPassword\" #password=\"ngModel\" id=\"password\" name=\"password\"\n                            name=\"password\" required>\n                        <span class=\"help-block\" *ngIf=\"password.touched && !password.valid\">\n                            <i>Password is required</i>\n                        </span>\n                    </div>\n                    <button class=\"btn btn-primary float-right\" type=\"submit\" [disabled]=\"!f.valid\">Login</button>\n                </form>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"row pt-5\">\r\n    <div class=\"col-md-6 mx-auto\">\r\n        <div class=\"alert alert-danger alert-dismissible fade show\" *ngIf=\"wrongUsernameOrPass\">\r\n            <button type=\"button\" class=\"close\" data-dismiss=\"alert\" (click)=\"wrongUsernameOrPass = false;\">&times;</button>\r\n            <strong>Login failed!</strong> Incorrect username and/or password.\r\n        </div>\r\n        <div class=\"card rounded-0\">\r\n            <div class=\"card-header\">\r\n                <h3 class=\"mb-0\">Login</h3>\r\n            </div>\r\n            <div class=\"card-body\">\r\n                <form class=\"form\" (ngSubmit)=\"login()\" #f=\"ngForm\">\r\n                    <div class=\"form-group\">\r\n                        <label for=\"\">Username</label>\r\n                        <input class=\"form-control\" type=\"text\" [(ngModel)]=\"loginData.userName\" id=\"username\" name=\"username\" #username=\"ngModel\"\r\n                            name=\"username\" required>\r\n                        <span class=\"help-block\" *ngIf=\"username.touched && !username.valid\">\r\n                            <i>Username is required</i>\r\n                        </span>\r\n                    </div>\r\n                    <div class=\"form-group\">\r\n                        <label for=\"\">Password</label>\r\n                        <input type=\"password\" class=\"form-control\" [(ngModel)]=\"loginData.userPassword\" #password=\"ngModel\" id=\"password\" name=\"password\"\r\n                            name=\"password\" required>\r\n                        <span class=\"help-block\" *ngIf=\"password.touched && !password.valid\">\r\n                            <i>Password is required</i>\r\n                        </span>\r\n                    </div>\r\n                    <button class=\"btn btn-primary float-right\" type=\"submit\" [disabled]=\"!f.valid\">Login</button>\r\n                </form>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/authorization.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthorizationComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -206,11 +237,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var Observable_1 = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+
+
+
+
 var AuthorizationComponent = /** @class */ (function () {
     function AuthorizationComponent(authService, router) {
         this.authService = authService;
@@ -234,31 +264,39 @@ var AuthorizationComponent = /** @class */ (function () {
                 console.log(error);
             }
             else {
-                Observable_1.Observable.throw(error);
+                __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].throw(error);
             }
         });
     };
     AuthorizationComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-authorization',
             template: __webpack_require__("../../../../../src/app/authorization/authorization.component.html"),
             styles: [__webpack_require__("../../../../../src/app/authorization/authorization.component.css")]
         }),
-        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService,
-            router_1.Router])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__authorization_service__["a" /* AuthorizationService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */]])
     ], AuthorizationComponent);
     return AuthorizationComponent;
 }());
-exports.AuthorizationComponent = AuthorizationComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/authorization.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthorizationService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/throw.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_jwt__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -268,19 +306,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var Observable_1 = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-__webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-__webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
-__webpack_require__("../../../../rxjs/_esm5/add/observable/throw.js");
-var angular2_jwt_1 = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
+
+
+
+
+
+
+
 var AuthorizationService = /** @class */ (function () {
     function AuthorizationService(http) {
         this.http = http;
         this.authUrl = "/login";
-        this.headers = new http_1.HttpHeaders();
+        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["e" /* HttpHeaders */]();
     }
     AuthorizationService.prototype.login = function (userName, userPassword) {
         return this.http.post(this.authUrl, JSON.stringify({ username: userName, password: userPassword }), { observe: 'response' })
@@ -297,10 +334,10 @@ var AuthorizationService = /** @class */ (function () {
             }
         }).catch(function (error) {
             if (error.status === 401) {
-                return Observable_1.Observable.throw('Ilegal login');
+                return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw('Ilegal login');
             }
             else {
-                return Observable_1.Observable.throw(error.json().error || 'Server error');
+                return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error');
             }
         });
     };
@@ -320,28 +357,33 @@ var AuthorizationService = /** @class */ (function () {
     };
     AuthorizationService.prototype.isAuthenticated = function () {
         var token = this.getToken();
-        return angular2_jwt_1.tokenNotExpired(null, token);
+        return Object(__WEBPACK_IMPORTED_MODULE_6_angular2_jwt__["tokenNotExpired"])(null, token);
     };
     AuthorizationService.prototype.isLoggedIn = function () {
         var token = this.getToken();
         return token && token.length > 0;
     };
     AuthorizationService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.HttpClient])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
     ], AuthorizationService);
     return AuthorizationService;
 }());
-exports.AuthorizationService = AuthorizationService;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/jwt-interceptor.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JwtInterceptorService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/do.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -351,12 +393,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-__webpack_require__("../../../../rxjs/_esm5/add/operator/do.js");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
+
+
+
+
+
 var JwtInterceptorService = /** @class */ (function () {
     function JwtInterceptorService(auth, router) {
         this.auth = auth;
@@ -365,11 +406,11 @@ var JwtInterceptorService = /** @class */ (function () {
     JwtInterceptorService.prototype.intercept = function (request, next) {
         var _this = this;
         return next.handle(request).do(function (event) {
-            if (event instanceof http_1.HttpResponse) {
+            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["f" /* HttpResponse */]) {
                 // do stuff with response if you want
             }
         }, function (err) {
-            if (err instanceof http_1.HttpErrorResponse) {
+            if (err instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpErrorResponse */]) {
                 if (err.status === 401) {
                     _this.router.navigate(['/login']);
                 }
@@ -380,22 +421,24 @@ var JwtInterceptorService = /** @class */ (function () {
         });
     };
     JwtInterceptorService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService,
-            router_1.Router])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__authorization_service__["a" /* AuthorizationService */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* Router */]])
     ], JwtInterceptorService);
     return JwtInterceptorService;
 }());
-exports.JwtInterceptorService = JwtInterceptorService;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/token-interceptor.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TokenInterceptorService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -405,9 +448,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+
+
 var TokenInterceptorService = /** @class */ (function () {
     function TokenInterceptorService(auth) {
         this.auth = auth;
@@ -421,12 +463,12 @@ var TokenInterceptorService = /** @class */ (function () {
         return next.handle(req);
     };
     TokenInterceptorService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__authorization_service__["a" /* AuthorizationService */]])
     ], TokenInterceptorService);
     return TokenInterceptorService;
 }());
-exports.TokenInterceptorService = TokenInterceptorService;
+
 
 
 /***/ }),
@@ -452,15 +494,16 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/department/department.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  department works!\n</p>\n"
+module.exports = "<p>\r\n  department works!\r\n</p>\r\n"
 
 /***/ }),
 
 /***/ "../../../../../src/app/department/department.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DepartmentComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -470,15 +513,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var DepartmentComponent = /** @class */ (function () {
     function DepartmentComponent() {
     }
     DepartmentComponent.prototype.ngOnInit = function () {
     };
     DepartmentComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-department',
             template: __webpack_require__("../../../../../src/app/department/department.component.html"),
             styles: [__webpack_require__("../../../../../src/app/department/department.component.css")]
@@ -487,33 +529,33 @@ var DepartmentComponent = /** @class */ (function () {
     ], DepartmentComponent);
     return DepartmentComponent;
 }());
-exports.DepartmentComponent = DepartmentComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/department/department.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DepartmentService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var DepartmentService = /** @class */ (function () {
     function DepartmentService() {
     }
     DepartmentService = __decorate([
-        core_1.Injectable()
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])()
     ], DepartmentService);
     return DepartmentService;
 }());
-exports.DepartmentService = DepartmentService;
+
 
 
 /***/ }),
@@ -539,15 +581,17 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/dialog/dialog.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div [@dialog] *ngIf=\"visible\" class=\"dialog\">\n    <ng-content></ng-content>\n    <button *ngIf=\"closable\" (click)=\"close()\" aria-label=\"Close\" class=\"dialog__close-btn\">X</button>\n  </div>\n  <div *ngIf=\"visible\" class=\"overlay\" (click)=\"close()\"></div>"
+module.exports = "<div [@dialog] *ngIf=\"visible\" class=\"dialog\">\r\n    <ng-content></ng-content>\r\n    <button *ngIf=\"closable\" (click)=\"close()\" aria-label=\"Close\" class=\"dialog__close-btn\">X</button>\r\n  </div>\r\n  <div *ngIf=\"visible\" class=\"overlay\" (click)=\"close()\"></div>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/dialog/dialog.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("../../../animations/esm5/animations.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -557,13 +601,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var animations_1 = __webpack_require__("../../../animations/esm5/animations.js");
+
+
 var DialogComponent = /** @class */ (function () {
     function DialogComponent() {
         this.closable = true;
-        this.visibleChange = new core_1.EventEmitter();
+        this.visibleChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     DialogComponent.prototype.ngOnInit = function () { };
     DialogComponent.prototype.close = function () {
@@ -571,30 +614,30 @@ var DialogComponent = /** @class */ (function () {
         this.visibleChange.emit(this.visible);
     };
     __decorate([
-        core_1.Input(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Object)
     ], DialogComponent.prototype, "closable", void 0);
     __decorate([
-        core_1.Input(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Boolean)
     ], DialogComponent.prototype, "visible", void 0);
     __decorate([
-        core_1.Output(),
-        __metadata("design:type", core_1.EventEmitter)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"])
     ], DialogComponent.prototype, "visibleChange", void 0);
     DialogComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-dialog',
             template: __webpack_require__("../../../../../src/app/dialog/dialog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/dialog/dialog.component.css")],
             animations: [
-                animations_1.trigger('dialog', [
-                    animations_1.transition('void => *', [
-                        animations_1.style({ transform: 'scale3d(.3, .3, .3)' }),
-                        animations_1.animate(100)
+                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* trigger */])('dialog', [
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* transition */])('void => *', [
+                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* style */])({ transform: 'scale3d(.3, .3, .3)' }),
+                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])(100)
                     ]),
-                    animations_1.transition('* => void', [
-                        animations_1.animate(100, animations_1.style({ transform: 'scale3d(.0, .0, .0)' }))
+                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* transition */])('* => void', [
+                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])(100, Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* style */])({ transform: 'scale3d(.0, .0, .0)' }))
                     ])
                 ])
             ]
@@ -603,7 +646,7 @@ var DialogComponent = /** @class */ (function () {
     ], DialogComponent);
     return DialogComponent;
 }());
-exports.DialogComponent = DialogComponent;
+
 
 
 /***/ }),
@@ -629,15 +672,16 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pagination/pagination.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<ngb-pagination  (pageChange)=\"onSelect($event)\"\n    [(collectionSize)]=\"totalPages\" \n    [(page)]=\"page\" \n    [maxSize]=\"5\" \n    [rotate]=\"true\" \n    [ellipses]=\"false\" \n    [boundaryLinks]=\"true\">\n</ngb-pagination>"
+module.exports = "<ngb-pagination  (pageChange)=\"onSelect($event)\"\r\n    [(collectionSize)]=\"totalPages\" \r\n    [(page)]=\"page\" \r\n    [maxSize]=\"5\" \r\n    [rotate]=\"true\" \r\n    [ellipses]=\"false\" \r\n    [boundaryLinks]=\"true\">\r\n</ngb-pagination>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/pagination/pagination.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaginationComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -647,13 +691,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var PaginationComponent = /** @class */ (function () {
     function PaginationComponent() {
         this.page = 1;
         this.collectionSize = 0;
-        this.emitPageNum = new core_1.EventEmitter();
+        this.emitPageNum = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
     }
     PaginationComponent.prototype.onSelect = function (event) {
         this.page = event - 1;
@@ -667,15 +710,15 @@ var PaginationComponent = /** @class */ (function () {
     PaginationComponent.prototype.ngOnDestroy = function () {
     };
     __decorate([
-        core_1.Input(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
         __metadata("design:type", Number)
     ], PaginationComponent.prototype, "totalPages", void 0);
     __decorate([
-        core_1.Output(),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
         __metadata("design:type", Object)
     ], PaginationComponent.prototype, "emitPageNum", void 0);
     PaginationComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-pagination',
             template: __webpack_require__("../../../../../src/app/pagination/pagination.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pagination/pagination.component.css")]
@@ -684,16 +727,42 @@ var PaginationComponent = /** @class */ (function () {
     ], PaginationComponent);
     return PaginationComponent;
 }());
-exports.PaginationComponent = PaginationComponent;
+
 
 
 /***/ }),
 
-/***/ "../../../../../src/app/shared/role.service.ts":
+/***/ "../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
 
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  professor-pre-exam-obligation-records works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorPreExamObligationRecordsComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -703,9 +772,106 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
+
+var ProfessorPreExamObligationRecordsComponent = /** @class */ (function () {
+    function ProfessorPreExamObligationRecordsComponent() {
+    }
+    ProfessorPreExamObligationRecordsComponent.prototype.ngOnInit = function () {
+    };
+    ProfessorPreExamObligationRecordsComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-professor-pre-exam-obligation-records',
+            template: __webpack_require__("../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ProfessorPreExamObligationRecordsComponent);
+    return ProfessorPreExamObligationRecordsComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  professor-pre-exam-obligation works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorPreExamObligationComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ProfessorPreExamObligationComponent = /** @class */ (function () {
+    function ProfessorPreExamObligationComponent() {
+    }
+    ProfessorPreExamObligationComponent.prototype.ngOnInit = function () {
+    };
+    ProfessorPreExamObligationComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-professor-pre-exam-obligation',
+            template: __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ProfessorPreExamObligationComponent);
+    return ProfessorPreExamObligationComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/role.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoleService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 var RoleService = /** @class */ (function () {
     function RoleService(http) {
         this.http = http;
@@ -715,12 +881,73 @@ var RoleService = /** @class */ (function () {
         return this.http.get(this.path);
     };
     RoleService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.HttpClient])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
     ], RoleService);
     return RoleService;
 }());
-exports.RoleService = RoleService;
+
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\r\n  student-pre-exam-obligation works!\r\n</p>\r\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentPreExamObligationComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var StudentPreExamObligationComponent = /** @class */ (function () {
+    function StudentPreExamObligationComponent() {
+    }
+    StudentPreExamObligationComponent.prototype.ngOnInit = function () {
+    };
+    StudentPreExamObligationComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-student-pre-exam-obligation',
+            template: __webpack_require__("../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], StudentPreExamObligationComponent);
+    return StudentPreExamObligationComponent;
+}());
+
 
 
 /***/ }),
@@ -746,15 +973,16 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pt-5\">\n  <div class=\"row my-2\">\n      <div class=\"col-lg-8 order-lg-2\">\n          <ul class=\"nav nav-tabs\">\n              <li class=\"nav-item\">\n                  <a href=\"\" data-target=\"#profile\" data-toggle=\"tab\" class=\"nav-link active\">Profile</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a href=\"\" data-target=\"#edit\" data-toggle=\"tab\" class=\"nav-link\">Edit</a>\n              </li>\n          </ul>\n          <div class=\"tab-content py-4\">\n              <div class=\"tab-pane active\" id=\"profile\">\n                  <h5 class=\"mb-3\">User Profile</h5>\n                  <div class=\"row\">\n                      <div class=\"col-md-6\">\n                          <h6>First name</h6>\n                          <p>\n                              name\n                          </p>\n                          <h6>Last name</h6>\n                          <p>\n                              ln\n                          </p>\n                          <h6>Username</h6>\n                          <p>\n                              uname\n                          </p>\n                          <h6>Date of birth</h6>\n                          <p>\n                              date\n                          </p>\n                          <h6>Phone number</h6>\n                          <p>\n                              ph\n                          </p>\n                      </div>\n                     \n                  </div>\n                  <!--/row-->\n              </div>\n              <div class=\"tab-pane\" id=\"edit\">\n                  <form role=\"form\">\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">First name</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"Jane\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Last name</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"Bishop\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Username</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"email@gmail.com\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Phone number</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Address</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"\" placeholder=\"Street\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Role</label>\n                          <div class=\"col-lg-9\">\n                              <select id=\"user_time_zone\" class=\"form-control\" size=\"0\">\n                                  <option value=\"Hawaii\">(GMT-10:00) Hawaii</option>\n                                  <option value=\"Alaska\">(GMT-09:00) Alaska</option>\n                                  <option value=\"Pacific Time (US &amp; Canada)\">(GMT-08:00) Pacific Time (US &amp; Canada)</option>\n                                  <option value=\"Arizona\">(GMT-07:00) Arizona</option>\n                                  <option value=\"Mountain Time (US &amp; Canada)\">(GMT-07:00) Mountain Time (US &amp; Canada)</option>\n                                  <option value=\"Central Time (US &amp; Canada)\" selected=\"selected\">(GMT-06:00) Central Time (US &amp; Canada)</option>\n                                  <option value=\"Eastern Time (US &amp; Canada)\">(GMT-05:00) Eastern Time (US &amp; Canada)</option>\n                                  <option value=\"Indiana (East)\">(GMT-05:00) Indiana (East)</option>\n                              </select>\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\"></label>\n                          <div class=\"col-lg-9\">\n                              <input type=\"reset\" class=\"btn btn-secondary\" value=\"Cancel\">\n                              <input type=\"button\" class=\"btn btn-primary\" value=\"Save Changes\">\n                          </div>\n                      </div>\n                  </form>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-lg-4 order-lg-1 text-center\">\n          <img src=\"//placehold.it/150\" class=\"mx-auto img-fluid img-circle d-block\" alt=\"avatar\">\n          <h6 class=\"mt-2\">Upload a different photo</h6>\n          <label class=\"custom-file\">\n              <input type=\"file\" id=\"file\" class=\"custom-file-input\">\n              <span class=\"custom-file-control\">Choose file</span>\n          </label>\n      </div>\n  </div>\n</div>"
+module.exports = "<div class=\"container pt-5\">\r\n  <div class=\"row my-2\">\r\n      <div class=\"col-lg-8 order-lg-2\">\r\n          <ul class=\"nav nav-tabs\">\r\n              <li class=\"nav-item\">\r\n                  <a href=\"\" data-target=\"#profile\" data-toggle=\"tab\" class=\"nav-link active\">Profile</a>\r\n              </li>\r\n              <li class=\"nav-item\">\r\n                  <a href=\"\" data-target=\"#edit\" data-toggle=\"tab\" class=\"nav-link\">Edit</a>\r\n              </li>\r\n          </ul>\r\n          <div class=\"tab-content py-4\">\r\n              <div class=\"tab-pane active\" id=\"profile\">\r\n                  <h5 class=\"mb-3\">User Profile</h5>\r\n                  <div class=\"row\">\r\n                      <div class=\"col-md-6\">\r\n                          <h6>First name</h6>\r\n                          <p>\r\n                              name\r\n                          </p>\r\n                          <h6>Last name</h6>\r\n                          <p>\r\n                              ln\r\n                          </p>\r\n                          <h6>Username</h6>\r\n                          <p>\r\n                              uname\r\n                          </p>\r\n                          <h6>Date of birth</h6>\r\n                          <p>\r\n                              date\r\n                          </p>\r\n                          <h6>Phone number</h6>\r\n                          <p>\r\n                              ph\r\n                          </p>\r\n                      </div>\r\n                     \r\n                  </div>\r\n                  <!--/row-->\r\n              </div>\r\n              <div class=\"tab-pane\" id=\"edit\">\r\n                  <form role=\"form\">\r\n                      <div class=\"form-group row\">\r\n                          <label class=\"col-lg-3 col-form-label form-control-label\">First name</label>\r\n                          <div class=\"col-lg-9\">\r\n                              <input class=\"form-control\" type=\"text\" value=\"Jane\">\r\n                          </div>\r\n                      </div>\r\n                      <div class=\"form-group row\">\r\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Last name</label>\r\n                          <div class=\"col-lg-9\">\r\n                              <input class=\"form-control\" type=\"text\" value=\"Bishop\">\r\n                          </div>\r\n                      </div>\r\n                      <div class=\"form-group row\">\r\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Username</label>\r\n                          <div class=\"col-lg-9\">\r\n                              <input class=\"form-control\" type=\"text\" value=\"email@gmail.com\">\r\n                          </div>\r\n                      </div>\r\n                      <div class=\"form-group row\">\r\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Phone number</label>\r\n                          <div class=\"col-lg-9\">\r\n                              <input class=\"form-control\" type=\"text\" value=\"\">\r\n                          </div>\r\n                      </div>\r\n                      <div class=\"form-group row\">\r\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Address</label>\r\n                          <div class=\"col-lg-9\">\r\n                              <input class=\"form-control\" type=\"text\" value=\"\" placeholder=\"Street\">\r\n                          </div>\r\n                      </div>\r\n                      <div class=\"form-group row\">\r\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Role</label>\r\n                          <div class=\"col-lg-9\">\r\n                              <select id=\"user_time_zone\" class=\"form-control\" size=\"0\">\r\n                                  <option value=\"Hawaii\">(GMT-10:00) Hawaii</option>\r\n                                  <option value=\"Alaska\">(GMT-09:00) Alaska</option>\r\n                                  <option value=\"Pacific Time (US &amp; Canada)\">(GMT-08:00) Pacific Time (US &amp; Canada)</option>\r\n                                  <option value=\"Arizona\">(GMT-07:00) Arizona</option>\r\n                                  <option value=\"Mountain Time (US &amp; Canada)\">(GMT-07:00) Mountain Time (US &amp; Canada)</option>\r\n                                  <option value=\"Central Time (US &amp; Canada)\" selected=\"selected\">(GMT-06:00) Central Time (US &amp; Canada)</option>\r\n                                  <option value=\"Eastern Time (US &amp; Canada)\">(GMT-05:00) Eastern Time (US &amp; Canada)</option>\r\n                                  <option value=\"Indiana (East)\">(GMT-05:00) Indiana (East)</option>\r\n                              </select>\r\n                          </div>\r\n                      </div>\r\n                      <div class=\"form-group row\">\r\n                          <label class=\"col-lg-3 col-form-label form-control-label\"></label>\r\n                          <div class=\"col-lg-9\">\r\n                              <input type=\"reset\" class=\"btn btn-secondary\" value=\"Cancel\">\r\n                              <input type=\"button\" class=\"btn btn-primary\" value=\"Save Changes\">\r\n                          </div>\r\n                      </div>\r\n                  </form>\r\n              </div>\r\n          </div>\r\n      </div>\r\n      <div class=\"col-lg-4 order-lg-1 text-center\">\r\n          <img src=\"//placehold.it/150\" class=\"mx-auto img-fluid img-circle d-block\" alt=\"avatar\">\r\n          <h6 class=\"mt-2\">Upload a different photo</h6>\r\n          <label class=\"custom-file\">\r\n              <input type=\"file\" id=\"file\" class=\"custom-file-input\">\r\n              <span class=\"custom-file-control\">Choose file</span>\r\n          </label>\r\n      </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/user-profile/user-profile.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfileComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -764,15 +992,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
+
 var UserProfileComponent = /** @class */ (function () {
     function UserProfileComponent() {
     }
     UserProfileComponent.prototype.ngOnInit = function () {
     };
     UserProfileComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-user-profile',
             template: __webpack_require__("../../../../../src/app/user-profile/user-profile.component.html"),
             styles: [__webpack_require__("../../../../../src/app/user-profile/user-profile.component.css")]
@@ -781,7 +1008,7 @@ var UserProfileComponent = /** @class */ (function () {
     ], UserProfileComponent);
     return UserProfileComponent;
 }());
-exports.UserProfileComponent = UserProfileComponent;
+
 
 
 /***/ }),
@@ -807,15 +1034,19 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user/user.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid pt-5\">\n  <table class=\"table table-hover\">\n    <thead class=\"thead-light\">\n      <tr>\n        <th></th>\n        <th></th>\n        <th>No.</th>\n        <th>First name\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('firstName')\"></i>\n        </th>\n        <th>Last name\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('lastName')\"></i>\n        </th>\n        <th>Username\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('username')\"></i>\n        </th>\n        <th>Date of birth\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('dateOfBirth')\"></i>\n        </th>\n        <th>Address\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('address')\"></i>\n        </th>\n        <th>Phone number\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('phoneNumber')\"></i>\n        </th>\n        <th></th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr [ngClass]=\"{'table-danger': !u.active}\" *ngFor=\"let u of users; let i = index\">\n        <td>\n            <button type=\"button\" *ngIf=\"u.active\" (click)=\"changeUserStatus(u.userId)\" title=\"Deactivate account\" class=\"btn btn-sm btn-outline-danger\">Deactivate</button>\n            <button type=\"button\" *ngIf=\"!u.active\" (click)=\"changeUserStatus(u.userId)\" title=\"Activate account\" class=\"btn btn-sm btn-outline-success\">Activate</button>\n        </td>\n        <td>\n          <img src='profile-images/{{u.imagePath}}' height=\"100\" width=\"100\">\n        </td>\n        <td>{{i + 1}}</td>\n        <td>{{u.firstName}}</td>\n        <td>{{u.lastName}}</td>\n        <td>{{u.username}}</td>\n        <td>{{u.dateOfBirth}}</td>\n        <td>{{u.address}}</td>\n        <td>{{u.phoneNumber}}</td>\n        <td style=\"display: block;\">\n          <div *ngFor=\"let r of u.roleName\">\n            <span class=\"badge badge-primary\">\n              <small>{{r}}</small>\n            </span>\n            <br>\n          </div>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <div style=\"text-align: center;\">\n    <app-pagination [(totalPages)]=\"totalPages\" (emitPageNum)=\"selectPageNum($event)\"></app-pagination>\n    <button class=\"btn btn-primary hand\" (click)=\"showDialog = !showDialog;resetAddForm();getRoles();\">New user</button>\n    <div>\n      Show:\n      <select class=\"form-control\" [(ngModel)]=\"userStatus\" (change)=\"onSelectUserStatus()\">\n        <option value=\"all\" selected=\"selected\">All users</option>\n        <option value=\"active\">Active only</option>\n        <option value=\"notactive\">Not active</option>\n      </select>\n    </div>\n    <br>\n    <div class=\"input-group\">\n        <input type=\"text\" (keyup)=\"onSelectUserStatus()\" class=\"form-control\" [(ngModel)]=\"searchTerm\" placeholder=\"Search\" aria-describedby=\"basic-addon1\">\n      </div>\n  </div>\n</div>\n\n\n\n<app-dialog [(visible)]=\"showDialog\">\n  <h4>Add user</h4>\n  <hr>\n  <form (ngSubmit)=\"postNewUser()\" class=\"form-horizontal\" #f=\"ngForm\">\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"username\">Username</label>\n      <input id=\"username\" name=\"username\" [ngClass]=\"{'not-unique':!isUnique}\" type=\"text\" placeholder=\"Username...\" (keyup)=\"isUsernameUnique()\" class=\"form-control input-md\" [(ngModel)]=\"newUser.username\" required\n        #username=\"ngModel\" maxlength=\"20\">\n      <span class=\"help-block\" *ngIf=\"username.touched && !username.valid\">\n        <i>Username is required.</i>\n      </span>\n      <span class=\"help-block\" *ngIf=\"username.touched && !isUnique\">\n        <i>This username is taken.</i>\n      </span>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"firstName\">First name</label>\n      <input id=\"firstName\" name=\"firstName\" type=\"text\" placeholder=\"First name...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.firstName\" required\n        #firstName=\"ngModel\" maxlength=\"20\">\n      <span class=\"help-block\" *ngIf=\"firstName.touched && !firstName.valid\">\n        <i>First name is required.</i>\n      </span>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"lastName\">Last name</label>\n      <input id=\"lastName\" name=\"lastName\" type=\"text\" placeholder=\"Last name...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.lastName\" required\n        #lastName=\"ngModel\" maxlength=\"20\">\n      <span class=\"help-block\" *ngIf=\"lastName.touched && !lastName.valid\">\n        <i>Last name is required.</i>\n      </span>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"address\">Address</label>\n      <input id=\"address\" name=\"address\" type=\"text\" placeholder=\"Address...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.address\" #address=\"ngModel\"\n        maxlength=\"30\">\n      <span class=\"help-block\" *ngIf=\"address.touched && !address.valid\">\n        <i>Can't contain more than 30 characters.</i>\n      </span>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"phoneNumber\">Phone number</label>\n      <input id=\"phoneNumber\" name=\"phoneNumber\" type=\"text\" placeholder=\"Phone number...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.phoneNumber\"\n        #phoneNumber=\"ngModel\" maxlength=\"20\">\n      <span class=\"help-block\" *ngIf=\"phoneNumber.touched && !phoneNumber.valid\">\n        <i>Can't contain more than 20 characters.</i>\n      </span>\n    </div>\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"dp\">Date of birth</label>\n      <div class=\"input-group\">\n        <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"dp\" [(ngModel)]=\"model\" ngbDatepicker #d=\"ngbDatepicker\">\n        <div class=\"input-group-append\">\n          <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\n            <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\n          </button>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"rolesSelect\" class=\"control-label\">Select roles</label>\n      <select name=\"rolesSelect\" [(ngModel)]=\"newUser.roleId\" multiple class=\"form-control\" id=\"rolesSelect\" required>\n        <option *ngFor=\"let r of roles\" value=\"{{r.roleId}}\">{{r.name}}</option>\n      </select>\n    </div>\n\n    <hr>\n    <div style=\"text-align: center\">\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid || !isUnique\">Add</button>\n      <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\n    </div>\n  </form>\n\n</app-dialog>"
+module.exports = "<div class=\"container-fluid pt-5\">\r\n  <table class=\"table table-hover\">\r\n    <thead class=\"thead-light\">\r\n      <tr>\r\n        <th></th>\r\n        <th></th>\r\n        <th>No.</th>\r\n        <th>First name\r\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('firstName')\"></i>\r\n        </th>\r\n        <th>Last name\r\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('lastName')\"></i>\r\n        </th>\r\n        <th>Username\r\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('username')\"></i>\r\n        </th>\r\n        <th>Date of birth\r\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('dateOfBirth')\"></i>\r\n        </th>\r\n        <th>Address\r\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('address')\"></i>\r\n        </th>\r\n        <th>Phone number\r\n          <i class=\"fa fa-fw fa-sort hand\" (click)=\"onSort('phoneNumber')\"></i>\r\n        </th>\r\n        <th></th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr [ngClass]=\"{'table-danger': !u.active}\" *ngFor=\"let u of users; let i = index\">\r\n        <td>\r\n            <button type=\"button\" *ngIf=\"u.active\" (click)=\"changeUserStatus(u.userId)\" title=\"Deactivate account\" class=\"btn btn-sm btn-outline-danger\">Deactivate</button>\r\n            <button type=\"button\" *ngIf=\"!u.active\" (click)=\"changeUserStatus(u.userId)\" title=\"Activate account\" class=\"btn btn-sm btn-outline-success\">Activate</button>\r\n        </td>\r\n        <td>\r\n          <img src='profile-images/{{u.imagePath}}' height=\"100\" width=\"100\">\r\n        </td>\r\n        <td>{{i + 1}}</td>\r\n        <td>{{u.firstName}}</td>\r\n        <td>{{u.lastName}}</td>\r\n        <td>{{u.username}}</td>\r\n        <td>{{u.dateOfBirth}}</td>\r\n        <td>{{u.address}}</td>\r\n        <td>{{u.phoneNumber}}</td>\r\n        <td style=\"display: block;\">\r\n          <div *ngFor=\"let r of u.roleName\">\r\n            <span class=\"badge badge-primary\">\r\n              <small>{{r}}</small>\r\n            </span>\r\n            <br>\r\n          </div>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n  <div style=\"text-align: center;\">\r\n    <app-pagination [(totalPages)]=\"totalPages\" (emitPageNum)=\"selectPageNum($event)\"></app-pagination>\r\n    <button class=\"btn btn-primary hand\" (click)=\"showDialog = !showDialog;resetAddForm();getRoles();\">New user</button>\r\n    <div>\r\n      Show:\r\n      <select class=\"form-control\" [(ngModel)]=\"userStatus\" (change)=\"onSelectUserStatus()\">\r\n        <option value=\"all\" selected=\"selected\">All users</option>\r\n        <option value=\"active\">Active only</option>\r\n        <option value=\"notactive\">Not active</option>\r\n      </select>\r\n    </div>\r\n    <br>\r\n    <div class=\"input-group\">\r\n        <input type=\"text\" (keyup)=\"onSelectUserStatus()\" class=\"form-control\" [(ngModel)]=\"searchTerm\" placeholder=\"Search\" aria-describedby=\"basic-addon1\">\r\n      </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n\r\n<app-dialog [(visible)]=\"showDialog\">\r\n  <h4>Add user</h4>\r\n  <hr>\r\n  <form (ngSubmit)=\"postNewUser()\" class=\"form-horizontal\" #f=\"ngForm\">\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"username\">Username</label>\r\n      <input id=\"username\" name=\"username\" [ngClass]=\"{'not-unique':!isUnique}\" type=\"text\" placeholder=\"Username...\" (keyup)=\"isUsernameUnique()\" class=\"form-control input-md\" [(ngModel)]=\"newUser.username\" required\r\n        #username=\"ngModel\" maxlength=\"20\">\r\n      <span class=\"help-block\" *ngIf=\"username.touched && !username.valid\">\r\n        <i>Username is required.</i>\r\n      </span>\r\n      <span class=\"help-block\" *ngIf=\"username.touched && !isUnique\">\r\n        <i>This username is taken.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"firstName\">First name</label>\r\n      <input id=\"firstName\" name=\"firstName\" type=\"text\" placeholder=\"First name...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.firstName\" required\r\n        #firstName=\"ngModel\" maxlength=\"20\">\r\n      <span class=\"help-block\" *ngIf=\"firstName.touched && !firstName.valid\">\r\n        <i>First name is required.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"lastName\">Last name</label>\r\n      <input id=\"lastName\" name=\"lastName\" type=\"text\" placeholder=\"Last name...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.lastName\" required\r\n        #lastName=\"ngModel\" maxlength=\"20\">\r\n      <span class=\"help-block\" *ngIf=\"lastName.touched && !lastName.valid\">\r\n        <i>Last name is required.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"address\">Address</label>\r\n      <input id=\"address\" name=\"address\" type=\"text\" placeholder=\"Address...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.address\" #address=\"ngModel\"\r\n        maxlength=\"30\">\r\n      <span class=\"help-block\" *ngIf=\"address.touched && !address.valid\">\r\n        <i>Can't contain more than 30 characters.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"phoneNumber\">Phone number</label>\r\n      <input id=\"phoneNumber\" name=\"phoneNumber\" type=\"text\" placeholder=\"Phone number...\" class=\"form-control input-md\" [(ngModel)]=\"newUser.phoneNumber\"\r\n        #phoneNumber=\"ngModel\" maxlength=\"20\">\r\n      <span class=\"help-block\" *ngIf=\"phoneNumber.touched && !phoneNumber.valid\">\r\n        <i>Can't contain more than 20 characters.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"dp\">Date of birth</label>\r\n      <div class=\"input-group\">\r\n        <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"dp\" [(ngModel)]=\"model\" ngbDatepicker #d=\"ngbDatepicker\">\r\n        <div class=\"input-group-append\">\r\n          <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\r\n            <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n      <label for=\"rolesSelect\" class=\"control-label\">Select roles</label>\r\n      <select name=\"rolesSelect\" [(ngModel)]=\"newUser.roleId\" multiple class=\"form-control\" id=\"rolesSelect\" required>\r\n        <option *ngFor=\"let r of roles\" value=\"{{r.roleId}}\">{{r.name}}</option>\r\n      </select>\r\n    </div>\r\n\r\n    <hr>\r\n    <div style=\"text-align: center\">\r\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid || !isUnique\">Add</button>\r\n      <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\r\n    </div>\r\n  </form>\r\n\r\n</app-dialog>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/user/user.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_service__ = __webpack_require__("../../../../../src/app/user/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_role_service__ = __webpack_require__("../../../../../src/app/shared/role.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -825,11 +1056,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
-var role_service_1 = __webpack_require__("../../../../../src/app/shared/role.service.ts");
+
+
+
+
 var UserComponent = /** @class */ (function () {
     function UserComponent(userService, roleService) {
         this.userService = userService;
@@ -919,30 +1149,32 @@ var UserComponent = /** @class */ (function () {
         this.roleService.getAllRoles().subscribe(function (response) { return _this.roles = response; }, function (error) { return console.log(error); });
     };
     __decorate([
-        core_1.ViewChild('f'),
-        __metadata("design:type", forms_1.NgForm)
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
     ], UserComponent.prototype, "addUserForm", void 0);
     UserComponent = __decorate([
-        core_1.Component({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-user',
             template: __webpack_require__("../../../../../src/app/user/user.component.html"),
             styles: [__webpack_require__("../../../../../src/app/user/user.component.css")]
         }),
-        __metadata("design:paramtypes", [user_service_1.UserService,
-            role_service_1.RoleService])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_3__shared_role_service__["a" /* RoleService */]])
     ], UserComponent);
     return UserComponent;
 }());
-exports.UserComponent = UserComponent;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/user/user.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -952,9 +1184,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
+
+
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
@@ -979,27 +1210,26 @@ var UserService = /** @class */ (function () {
         return this.http.put(this.path + "/" + id, null, { responseType: 'text' });
     };
     UserService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.HttpClient])
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
     ], UserService);
     return UserService;
 }());
-exports.UserService = UserService;
+
 
 
 /***/ }),
 
 /***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.environment = {
+var environment = {
     production: false
 };
 
@@ -1007,19 +1237,22 @@ exports.environment = {
 /***/ }),
 
 /***/ "../../../../../src/main.ts":
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-var app_module_1 = __webpack_require__("../../../../../src/app/app.module.ts");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
-if (environment_1.environment.production) {
-    core_1.enableProdMode();
+
+
+
+if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
+Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
 
 
@@ -1034,663 +1267,4 @@ module.exports = __webpack_require__("../../../../../src/main.ts");
 /***/ })
 
 },[0]);
-=======
-webpackJsonp(["main"],{
-
-/***/ "../../../../../src/$$_lazy_route_resource lazy recursive":
-/***/ (function(module, exports) {
-
-function webpackEmptyAsyncContext(req) {
-	// Here Promise.resolve().then() is used instead of new Promise() to prevent
-	// uncatched exception popping up in devtools
-	return Promise.resolve().then(function() {
-		throw new Error("Cannot find module '" + req + "'.");
-	});
-}
-webpackEmptyAsyncContext.keys = function() { return []; };
-webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
-module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = "../../../../../src/$$_lazy_route_resource lazy recursive";
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\n    <a href=\"#\" class=\"navbar-brand\">ELearning App</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\">\n        <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\n        <ul class=\"navbar-nav mr-auto\">\n            <li class=\"nav-item\">\n                <a class=\"nav-link\" routerLink=\"/users\" routerLinkActive=\"active\">Users</a>\n            </li>\n        </ul>\n        <ul class=\"navbar-nav\">\n            <a class=\"nav-link\" routerLink=\"/login\" routerLinkActive=\"active\">Login</a>\n        </ul>\n    </div>\n</nav>\n<div class=\"container\">\n    <router-outlet></router-outlet>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var AppComponent = /** @class */ (function () {
-    function AppComponent() {
-        this.title = 'app';
-    }
-    AppComponent = __decorate([
-        core_1.Component({
-            selector: 'app-root',
-            template: __webpack_require__("../../../../../src/app/app.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/app.component.css")]
-        })
-    ], AppComponent);
-    return AppComponent;
-}());
-exports.AppComponent = AppComponent;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_1 = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
-var user_component_1 = __webpack_require__("../../../../../src/app/user/user.component.ts");
-var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
-var department_component_1 = __webpack_require__("../../../../../src/app/department/department.component.ts");
-var department_service_1 = __webpack_require__("../../../../../src/app/department/department.service.ts");
-var authorization_component_1 = __webpack_require__("../../../../../src/app/authorization/authorization.component.ts");
-var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-var token_interceptor_service_1 = __webpack_require__("../../../../../src/app/authorization/token-interceptor.service.ts");
-var user_profile_component_1 = __webpack_require__("../../../../../src/app/user-profile/user-profile.component.ts");
-var routes = [
-    /* {
-      path: '',
-      redirectTo: '/user-login',
-      pathMatch: 'full'
-    }, */
-    {
-        path: 'login',
-        component: authorization_component_1.AuthorizationComponent
-    },
-    {
-        path: 'users',
-        component: user_component_1.UserComponent
-    }
-];
-var AppModule = /** @class */ (function () {
-    function AppModule() {
-    }
-    AppModule = __decorate([
-        core_1.NgModule({
-            declarations: [
-                app_component_1.AppComponent,
-                user_component_1.UserComponent,
-                authorization_component_1.AuthorizationComponent,
-                department_component_1.DepartmentComponent,
-                user_profile_component_1.UserProfileComponent
-            ],
-            imports: [
-                platform_browser_1.BrowserModule,
-                http_1.HttpClientModule,
-                forms_1.FormsModule,
-                router_1.RouterModule.forRoot(routes)
-            ],
-            providers: [user_service_1.UserService, department_service_1.DepartmentService, authorization_service_1.AuthorizationService, token_interceptor_service_1.TokenInterceptorService, {
-                    provide: http_1.HTTP_INTERCEPTORS,
-                    useClass: token_interceptor_service_1.TokenInterceptorService,
-                    multi: true
-                }],
-            bootstrap: [app_component_1.AppComponent]
-        })
-    ], AppModule);
-    return AppModule;
-}());
-exports.AppModule = AppModule;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/authorization/authorization.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "input.ng-invalid.ng-touched {\r\n    border: 1px solid red;\r\n  }\r\n  ", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/authorization/authorization.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"row pt-5\">\n  <div class=\"col-md-6 mx-auto\">\n      <div class=\"card rounded-0\">\n          <div class=\"card-header\">\n              <h3 class=\"mb-0\">Login</h3>\n          </div>\n          <div class=\"card-body\">\n              <form class=\"form\" (ngSubmit)=\"login()\" #f=\"ngForm\">\n                  <div class=\"form-group\">\n                      <label for=\"\">Username</label>\n                      <input class=\"form-control\"\n                         type=\"text\" \n                         [(ngModel)]=\"loginData.userName\" \n                         id=\"username\"\n                         name=\"username\"\n                         #username=\"ngModel\"\n                         name=\"username\" required>\n                         <span class=\"help-block\" *ngIf=\"username.touched && !username.valid\"><i>Username is required</i></span>\n                  </div>\n                  <div class=\"form-group\">\n                      <label for=\"\">Password</label>\n                      <input type=\"password\" \n                          class=\"form-control\" \n                          [(ngModel)]=\"loginData.userPassword\" \n                          #password=\"ngModel\"\n                          id=\"password\" name=\"password\"\n                          name=\"password\" required>\n                          <span class=\"help-block\" *ngIf=\"password.touched && !password.valid\"><i>Password is required</i></span>\n                  </div>\n                  <button class=\"btn btn-primary float-right\" type=\"submit\" [disabled]=\"!f.valid\">Login</button>\n              </form>\n          </div>\n      </div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/authorization/authorization.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-var router_1 = __webpack_require__("../../../router/esm5/router.js");
-var Observable_1 = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-var AuthorizationComponent = /** @class */ (function () {
-    function AuthorizationComponent(authService, router) {
-        this.authService = authService;
-        this.router = router;
-        this.loginData = {};
-        this.wrongUsernameOrPass = false;
-    }
-    AuthorizationComponent.prototype.ngOnInit = function () {
-    };
-    AuthorizationComponent.prototype.login = function () {
-        var _this = this;
-        this.authService.login(this.loginData.userName, this.loginData.userPassword)
-            .subscribe(function (result) {
-            if (result) {
-                //login successful
-                _this.router.navigate(['/users']);
-            }
-        }, function (error) {
-            if (error.toString() === 'Ilegal login') {
-                _this.wrongUsernameOrPass = true;
-                console.log(error);
-                console.log("aaa");
-            }
-            else {
-                Observable_1.Observable.throw(error);
-            }
-        });
-    };
-    AuthorizationComponent = __decorate([
-        core_1.Component({
-            selector: 'app-authorization',
-            template: __webpack_require__("../../../../../src/app/authorization/authorization.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/authorization/authorization.component.css")]
-        }),
-        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService,
-            router_1.Router])
-    ], AuthorizationComponent);
-    return AuthorizationComponent;
-}());
-exports.AuthorizationComponent = AuthorizationComponent;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/authorization/authorization.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var Observable_1 = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-__webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-__webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
-__webpack_require__("../../../../rxjs/_esm5/add/observable/throw.js");
-var angular2_jwt_1 = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
-var AuthorizationService = /** @class */ (function () {
-    function AuthorizationService(http) {
-        this.http = http;
-        this.authUrl = "/login";
-        this.headers = new http_1.HttpHeaders();
-    }
-    AuthorizationService.prototype.login = function (userName, userPassword) {
-        return this.http.post(this.authUrl, JSON.stringify({ username: userName, password: userPassword }), { observe: 'response' })
-            .map(function (response) {
-            console.log(response);
-            var token = response.headers.has("Authorization");
-            console.log("token: " + token);
-            if (token) {
-                localStorage.setItem('currentUser', JSON.stringify({ userName: userName, token: response.headers.get('Authorization') }));
-                return true;
-            }
-            else {
-                return false;
-            }
-        }).catch(function (error) {
-            if (error.status === 401) {
-                return Observable_1.Observable.throw('Ilegal login');
-            }
-            else {
-                return Observable_1.Observable.throw(error.json().error || 'Server error');
-            }
-        });
-    };
-    AuthorizationService.prototype.getToken = function () {
-        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        var token = currentUser && currentUser.token;
-        return token ? token : "";
-    };
-    AuthorizationService.prototype.getUser = function () {
-        var currentUser = JSON.parse(localStorage.getItem('currentUser'));
-        var user = currentUser && currentUser.userName;
-        return user ? currentUser.userName : "";
-    };
-    AuthorizationService.prototype.logout = function () {
-        // clear token remove user from local storage to log user out
-        localStorage.removeItem('currentUser');
-    };
-    AuthorizationService.prototype.isAuthenticated = function () {
-        var token = this.getToken();
-        return angular2_jwt_1.tokenNotExpired(null, token);
-    };
-    AuthorizationService.prototype.isLoggedIn = function () {
-        var token = this.getToken();
-        return token && token.length > 0;
-    };
-    AuthorizationService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.HttpClient])
-    ], AuthorizationService);
-    return AuthorizationService;
-}());
-exports.AuthorizationService = AuthorizationService;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/authorization/token-interceptor.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-var TokenInterceptorService = /** @class */ (function () {
-    function TokenInterceptorService(auth) {
-        this.auth = auth;
-    }
-    TokenInterceptorService.prototype.intercept = function (req, next) {
-        req = req.clone({
-            setHeaders: {
-                Authorization: this.auth.getToken()
-            }
-        });
-        return next.handle(req);
-    };
-    TokenInterceptorService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService])
-    ], TokenInterceptorService);
-    return TokenInterceptorService;
-}());
-exports.TokenInterceptorService = TokenInterceptorService;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/department/department.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/department/department.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  department works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/department/department.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var DepartmentComponent = /** @class */ (function () {
-    function DepartmentComponent() {
-    }
-    DepartmentComponent.prototype.ngOnInit = function () {
-    };
-    DepartmentComponent = __decorate([
-        core_1.Component({
-            selector: 'app-department',
-            template: __webpack_require__("../../../../../src/app/department/department.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/department/department.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], DepartmentComponent);
-    return DepartmentComponent;
-}());
-exports.DepartmentComponent = DepartmentComponent;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/department/department.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var DepartmentService = /** @class */ (function () {
-    function DepartmentService() {
-    }
-    DepartmentService = __decorate([
-        core_1.Injectable()
-    ], DepartmentService);
-    return DepartmentService;
-}());
-exports.DepartmentService = DepartmentService;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/user-profile/user-profile.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/user-profile/user-profile.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"container pt-5\">\n  <div class=\"row my-2\">\n      <div class=\"col-lg-8 order-lg-2\">\n          <ul class=\"nav nav-tabs\">\n              <li class=\"nav-item\">\n                  <a href=\"\" data-target=\"#profile\" data-toggle=\"tab\" class=\"nav-link active\">Profile</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a href=\"\" data-target=\"#messages\" data-toggle=\"tab\" class=\"nav-link\">Messages</a>\n              </li>\n              <li class=\"nav-item\">\n                  <a href=\"\" data-target=\"#edit\" data-toggle=\"tab\" class=\"nav-link\">Edit</a>\n              </li>\n          </ul>\n          <div class=\"tab-content py-4\">\n              <div class=\"tab-pane active\" id=\"profile\">\n                  <h5 class=\"mb-3\">User Profile</h5>\n                  <div class=\"row\">\n                      <div class=\"col-md-6\">\n                          <h6>About</h6>\n                          <p>\n                              Web Designer, UI/UX Engineer\n                          </p>\n                          <h6>Hobbies</h6>\n                          <p>\n                              Indie music, skiing and hiking. I love the great outdoors.\n                          </p>\n                      </div>\n                      <div class=\"col-md-6\">\n                          <h6>Recent badges</h6>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">html5</a>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">react</a>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">codeply</a>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">angularjs</a>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">css3</a>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">jquery</a>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">bootstrap</a>\n                          <a href=\"#\" class=\"badge badge-dark badge-pill\">responsive-design</a>\n                          <hr>\n                          <span class=\"badge badge-primary\"><i class=\"fa fa-user\"></i> 900 Followers</span>\n                          <span class=\"badge badge-success\"><i class=\"fa fa-cog\"></i> 43 Forks</span>\n                          <span class=\"badge badge-danger\"><i class=\"fa fa-eye\"></i> 245 Views</span>\n                      </div>\n                      <div class=\"col-md-12\">\n                          <h5 class=\"mt-2\"><span class=\"fa fa-clock-o ion-clock float-right\"></span> Recent Activity</h5>\n                          <table class=\"table table-sm table-hover table-striped\">\n                              <tbody>                                    \n                                  <tr>\n                                      <td>\n                                          <strong>Abby</strong> joined ACME Project Team in <strong>`Collaboration`</strong>\n                                      </td>\n                                  </tr>\n                                  <tr>\n                                      <td>\n                                          <strong>Gary</strong> deleted My Board1 in <strong>`Discussions`</strong>\n                                      </td>\n                                  </tr>\n                                  <tr>\n                                      <td>\n                                          <strong>Kensington</strong> deleted MyBoard3 in <strong>`Discussions`</strong>\n                                      </td>\n                                  </tr>\n                                  <tr>\n                                      <td>\n                                          <strong>John</strong> deleted My Board1 in <strong>`Discussions`</strong>\n                                      </td>\n                                  </tr>\n                                  <tr>\n                                      <td>\n                                          <strong>Skell</strong> deleted his post Look at Why this is.. in <strong>`Discussions`</strong>\n                                      </td>\n                                  </tr>\n                              </tbody>\n                          </table>\n                      </div>\n                  </div>\n                  <!--/row-->\n              </div>\n              <div class=\"tab-pane\" id=\"messages\">\n                  <div class=\"alert alert-info alert-dismissable\">\n                      <a class=\"panel-close close\" data-dismiss=\"alert\">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.\n                  </div>\n                  <table class=\"table table-hover table-striped\">\n                      <tbody>                                    \n                          <tr>\n                              <td>\n                                 <span class=\"float-right font-weight-bold\">3 hrs ago</span> Here is your a link to the latest summary report from the..\n                              </td>\n                          </tr>\n                          <tr>\n                              <td>\n                                 <span class=\"float-right font-weight-bold\">Yesterday</span> There has been a request on your account since that was..\n                              </td>\n                          </tr>\n                          <tr>\n                              <td>\n                                 <span class=\"float-right font-weight-bold\">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. \n                              </td>\n                          </tr>\n                          <tr>\n                              <td>\n                                 <span class=\"float-right font-weight-bold\">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. \n                              </td>\n                          </tr>\n                          <tr>\n                              <td>\n                                 <span class=\"float-right font-weight-bold\">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. \n                              </td>\n                          </tr>\n                      </tbody> \n                  </table>\n              </div>\n              <div class=\"tab-pane\" id=\"edit\">\n                  <form role=\"form\">\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">First name</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"Jane\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Last name</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"Bishop\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Email</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"email\" value=\"email@gmail.com\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Company</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Website</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"url\" value=\"\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Address</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"\" placeholder=\"Street\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\"></label>\n                          <div class=\"col-lg-6\">\n                              <input class=\"form-control\" type=\"text\" value=\"\" placeholder=\"City\">\n                          </div>\n                          <div class=\"col-lg-3\">\n                              <input class=\"form-control\" type=\"text\" value=\"\" placeholder=\"State\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Time Zone</label>\n                          <div class=\"col-lg-9\">\n                              <select id=\"user_time_zone\" class=\"form-control\" size=\"0\">\n                                  <option value=\"Hawaii\">(GMT-10:00) Hawaii</option>\n                                  <option value=\"Alaska\">(GMT-09:00) Alaska</option>\n                                  <option value=\"Pacific Time (US &amp; Canada)\">(GMT-08:00) Pacific Time (US &amp; Canada)</option>\n                                  <option value=\"Arizona\">(GMT-07:00) Arizona</option>\n                                  <option value=\"Mountain Time (US &amp; Canada)\">(GMT-07:00) Mountain Time (US &amp; Canada)</option>\n                                  <option value=\"Central Time (US &amp; Canada)\" selected=\"selected\">(GMT-06:00) Central Time (US &amp; Canada)</option>\n                                  <option value=\"Eastern Time (US &amp; Canada)\">(GMT-05:00) Eastern Time (US &amp; Canada)</option>\n                                  <option value=\"Indiana (East)\">(GMT-05:00) Indiana (East)</option>\n                              </select>\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Username</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"text\" value=\"janeuser\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Password</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"password\" value=\"11111122333\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\">Confirm password</label>\n                          <div class=\"col-lg-9\">\n                              <input class=\"form-control\" type=\"password\" value=\"11111122333\">\n                          </div>\n                      </div>\n                      <div class=\"form-group row\">\n                          <label class=\"col-lg-3 col-form-label form-control-label\"></label>\n                          <div class=\"col-lg-9\">\n                              <input type=\"reset\" class=\"btn btn-secondary\" value=\"Cancel\">\n                              <input type=\"button\" class=\"btn btn-primary\" value=\"Save Changes\">\n                          </div>\n                      </div>\n                  </form>\n              </div>\n          </div>\n      </div>\n      <div class=\"col-lg-4 order-lg-1 text-center\">\n          <img src=\"//placehold.it/150\" class=\"mx-auto img-fluid img-circle d-block\" alt=\"avatar\">\n          <h6 class=\"mt-2\">Upload a different photo</h6>\n          <label class=\"custom-file\">\n              <input type=\"file\" id=\"file\" class=\"custom-file-input\">\n              <span class=\"custom-file-control\">Choose file</span>\n          </label>\n      </div>\n  </div>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/user-profile/user-profile.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var UserProfileComponent = /** @class */ (function () {
-    function UserProfileComponent() {
-    }
-    UserProfileComponent.prototype.ngOnInit = function () {
-    };
-    UserProfileComponent = __decorate([
-        core_1.Component({
-            selector: 'app-user-profile',
-            template: __webpack_require__("../../../../../src/app/user-profile/user-profile.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/user-profile/user-profile.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], UserProfileComponent);
-    return UserProfileComponent;
-}());
-exports.UserProfileComponent = UserProfileComponent;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/user/user.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/user/user.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  user works!\n</p>\n\n<button (click)=\"getAllUsers()\"></button>\n<div class=\"container\">\n  <li *ngFor=\"let u of users\"> {{u.firstName}}</li>\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/user/user.component.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
-var UserComponent = /** @class */ (function () {
-    function UserComponent(userService) {
-        this.userService = userService;
-        this.users = [];
-    }
-    UserComponent.prototype.ngOnInit = function () {
-    };
-    UserComponent.prototype.getAllUsers = function () {
-        var _this = this;
-        this.userService.getAll().subscribe(function (response) { return _this.users = response; }, function (error) { return console.log(error); });
-    };
-    UserComponent = __decorate([
-        core_1.Component({
-            selector: 'app-user',
-            template: __webpack_require__("../../../../../src/app/user/user.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/user/user.component.css")]
-        }),
-        __metadata("design:paramtypes", [user_service_1.UserService])
-    ], UserComponent);
-    return UserComponent;
-}());
-exports.UserComponent = UserComponent;
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/user/user.service.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var http_1 = __webpack_require__("../../../common/esm5/http.js");
-var UserService = /** @class */ (function () {
-    function UserService(http) {
-        this.http = http;
-        this.path = "/api/users";
-    }
-    UserService.prototype.getAll = function () {
-        return this.http.get(this.path);
-    };
-    UserService = __decorate([
-        core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.HttpClient])
-    ], UserService);
-    return UserService;
-}());
-exports.UserService = UserService;
-
-
-/***/ }),
-
-/***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-// The file contents for the current environment will overwrite these during build.
-// The build system defaults to the dev environment which uses `environment.ts`, but if you do
-// `ng build --env=prod` then `environment.prod.ts` will be used instead.
-// The list of which env maps to which file can be found in `.angular-cli.json`.
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.environment = {
-    production: false
-};
-
-
-/***/ }),
-
-/***/ "../../../../../src/main.ts":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = __webpack_require__("../../../core/esm5/core.js");
-var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-var app_module_1 = __webpack_require__("../../../../../src/app/app.module.ts");
-var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
-if (environment_1.environment.production) {
-    core_1.enableProdMode();
-}
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
-    .catch(function (err) { return console.log(err); });
-
-
-/***/ }),
-
-/***/ 0:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__("../../../../../src/main.ts");
-
-
-/***/ })
-
-},[0]);
->>>>>>> 8fb5259d971a6b6582ed3047dad93f7d129f0544
 //# sourceMappingURL=main.bundle.js.map
