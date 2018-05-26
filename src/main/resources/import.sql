@@ -37,6 +37,7 @@ INSERT INTO professor (type_id , active, user_user_id ) values (1 , 1 , 3)
 
 INSERT INTO pre_exam_obligation_type (pre_examotype_id, name , active) values(1,"Kolokvijum",1)
 INSERT INTO pre_exam_obligation_type (pre_examotype_id, name , active) values(2,"Domaci",1)
+INSERT INTO pre_exam_obligation_type (pre_examotype_id, name , active) values(3,"Projekat",1)
 
 INSERT INTO course (course_id, name , active,department_id) values (1, "Osnove programiranja",1,1)
 INSERT INTO course (course_id, name , active,department_id) values (2, "Matematika", 1,1)

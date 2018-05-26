@@ -39,8 +39,8 @@ public class PreExamObligationDTOtoPreExamObligation implements Converter<PreExa
 		preExamObligation.setCourse(cs.getOne(arg0.getCourseId()));
 		preExamObligation.setName(arg0.getName());
 		preExamObligation.setType(peots.getOne(arg0.getPreExamOTypeId()));
-		Set<PreExamObligationsRecords> rec = peors.findByPreExamObligationId(arg0.getPreExamOId()).stream().collect(Collectors.toSet());
-		preExamObligation.setPreExamObligationsRecords(rec);
+		//Set<PreExamObligationsRecords> rec = peors.findByPreExamObligationId(arg0.getPreExamOId()).stream().collect(Collectors.toSet());
+		//preExamObligation.setPreExamObligationsRecords(rec);
 		preExamObligation.setMaxPoints(arg0.getMaxPoints());
 		return preExamObligation;
 	}
