@@ -51,7 +51,7 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 
 	@Override
 	public List<PreExamObligation> findByCourseId(Long id) {
-		return jpaPreExamObligationRepository.findAllByCourseCourseId(id);
+		return jpaPreExamObligationRepository.findAllByCourseCourseIdAndActiveTrue(id);
 	}
 
 	

@@ -21,6 +21,10 @@ public class PreExamObligationsRecordsDTO {
 	@NotNull(message="preExamObligationId cannot be empty!")
 	private Long preExamObligationId;
 	
+	private String preExamOName;
+	
+	private int maxPoints;
+	
 	@NotNull(message="date cannot be null")
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private  Date date;
