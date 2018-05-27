@@ -20,6 +20,7 @@ import eLearning.sf.converter.PreExamObligationTypeDTOtoPreExamObligation;
 import eLearning.sf.converter.PreExamObligationTypeToPreExamObligationTypeDTO;
 import eLearning.sf.dto.PreExamObligationTypeDTO;
 import eLearning.sf.model.PreExamObligationType;
+import eLearning.sf.model.User;
 import eLearning.sf.service.PreExamObligationTypeService;
 
 @Controller
@@ -37,7 +38,7 @@ public class PreExamObligationTypeController {
 	
 	@GetMapping
 	public ResponseEntity<List<PreExamObligationTypeDTO>> getPreExamObligationTypes() {
-		return new ResponseEntity<>(toDTO.convert(peots.findAll()), HttpStatus.OK);
+		return new ResponseEntity<>(toDTO.convert(peots.findeActive()), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
@@ -52,7 +53,7 @@ public class PreExamObligationTypeController {
 		}
 		PreExamObligationType p = new PreExamObligationType();
 		p = toPEOT.convert(preExamObligationTypeDTO);
-		return new ResponseEntity<PreExamObligationType>(peots.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationTypeDTO>(toDTO.convert(peots.save(p)), HttpStatus.OK);
 	}
 
 	@PutMapping
@@ -62,9 +63,21 @@ public class PreExamObligationTypeController {
 		}
 		PreExamObligationType p = new PreExamObligationType();
 		p = toPEOT.convert(preExamObligationTypeDTO);
-		return new ResponseEntity<PreExamObligationType>(peots.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationTypeDTO>(toDTO.convert(peots.save(p)), HttpStatus.OK);
 	};
-
+	
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<String> changeActive(@PathVariable("id") Long id) {
+		PreExamObligationType p = peots.getOne(id);
+		if (p == null) {
+			return new ResponseEntity<String> ("There is no PreExamOType with id: " + id, HttpStatus.BAD_REQUEST);
+		}
+		p.setActive(!p.getActive());
+		peots.save(p);
+		return new ResponseEntity<String> ("Status changed", HttpStatus.OK);
+	}
+	
+	
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<?> deleteExamTerm(@PathVariable long id) {
 		peots.delete(id);

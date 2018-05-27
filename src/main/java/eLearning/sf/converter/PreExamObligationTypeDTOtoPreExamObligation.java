@@ -29,8 +29,8 @@ public class PreExamObligationTypeDTOtoPreExamObligation implements Converter <P
 		}
 		p.setName(arg0.getName());
 		p.setActive(arg0.getActive());
-		Set<PreExamObligation> peo =  peos.findByTypeId(arg0.getPreExamObligationTypeId()).stream().collect(Collectors.toSet());
-		p.setPreExamObligations(peo); 
+		//Set<PreExamObligation> peo =  peos.findByTypeId(arg0.getPreExamObligationTypeId()).stream().collect(Collectors.toSet());
+		//p.setPreExamObligations(peo); 
 		return p;
 	}
 	

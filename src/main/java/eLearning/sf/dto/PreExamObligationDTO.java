@@ -22,6 +22,8 @@ public class PreExamObligationDTO {
 	@NotNull(message="PreExamOTypeId cannot be empty!")
 	private Long preExamOTypeId;
 	
+	private String preExamOTypeName;
+	
 	@NotNull(message="maxPoints cannot be empty!")
 	private Integer maxPoints;
 	

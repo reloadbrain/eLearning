@@ -4,6 +4,9 @@ import java.util.List;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -16,11 +19,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import eLearning.sf.converter.PreExamObligationRecordsDTOtoPreExamObligationRecords;
 import eLearning.sf.converter.PreExamObligationRecordsToPreExamObligationRecordsDTO;
 import eLearning.sf.dto.PreExamObligationsRecordsDTO;
+import eLearning.sf.dto.UserDto;
 import eLearning.sf.model.PreExamObligationsRecords;
+import eLearning.sf.model.User;
 import eLearning.sf.service.PreExamObligationsRecordsService;
 
 @Controller
@@ -36,10 +42,20 @@ public class PreExamObligationRecController {
 	@Autowired
 	PreExamObligationRecordsDTOtoPreExamObligationRecords toPEOR;
 	
-	
+	/*
 	@GetMapping
 	public ResponseEntity<List<PreExamObligationsRecordsDTO>> getPreExamObligationRecords() {
 		return new ResponseEntity<>(toDTO.convert(peors.findAll()), HttpStatus.OK);
+	}
+	*/
+	
+	@GetMapping()
+	//@PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga 
+	public ResponseEntity<?> getAllPreExamObligationRecords(@RequestParam("term") String term, Pageable pageable) {
+		Page<PreExamObligationsRecords> peor = peors.listAllByPage(term, pageable);
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("total-pages", Integer.toString(peor.getTotalPages()));
+		return new ResponseEntity<List<PreExamObligationsRecordsDTO>> (toDTO.convert(peor.getContent()), headers,HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
@@ -66,7 +82,7 @@ public class PreExamObligationRecController {
 		}
 		PreExamObligationsRecords p = new PreExamObligationsRecords();
 		p = toPEOR.convert(preExamObligationsRecordsDTO);
-		return new ResponseEntity<PreExamObligationsRecords>(peors.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.save(p)), HttpStatus.OK);
 	}
 
 	@PutMapping
@@ -76,7 +92,7 @@ public class PreExamObligationRecController {
 		}
 		PreExamObligationsRecords p = new PreExamObligationsRecords();
 		p = toPEOR.convert(preExamObligationsRecordsDTO);
-		return new ResponseEntity<PreExamObligationsRecords>(peors.save(p), HttpStatus.OK);
+		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.save(p)), HttpStatus.OK);
 	};
 
 	@DeleteMapping(path = "/{id}")
