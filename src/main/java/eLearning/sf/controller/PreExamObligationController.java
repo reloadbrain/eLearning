@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import eLearning.sf.converter.PreExamObligationDTOtoPreExamObligation;
 import eLearning.sf.converter.PreExamObligationToPreExamObligationDTO;
 import eLearning.sf.dto.PreExamObligationDTO;
-import eLearning.sf.dto.PreExamObligationsRecordsDTO;
 import eLearning.sf.model.PreExamObligation;
 import eLearning.sf.service.PreExamObligationService;
 
@@ -72,7 +71,7 @@ public class PreExamObligationController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	@GetMapping(path="course{courseId}")
+	@GetMapping(path="course/{courseId}")
 	public ResponseEntity<List<PreExamObligationDTO>>getPreExamObligationsByCourseId(@PathVariable long courseId){
 		return new ResponseEntity<List<PreExamObligationDTO>>(toDTO.convert(peos.findByCourseId(courseId)),HttpStatus.OK);
 	}
