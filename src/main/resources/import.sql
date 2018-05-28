@@ -22,8 +22,6 @@ INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUE
 INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUES ('11345', 1, 2, 1);
 INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUES ('22345', 2, 3, 1);
 
-
-
 INSERT INTO professor_type (name , active) values ('type 1' , 1 )
 INSERT INTO professor_type (name , active) values ('type 2' , 1 )
 
@@ -60,7 +58,34 @@ INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obl
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(6,'2018-02-17',2,3,10,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(7,'2018-02-17',2,3,7,1,1)
 
+INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
+INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
+INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
+
+INSERT INTO exam_term(month, name, active) values (1,"Januarski rok", 1)
+INSERT INTO exam_term(month, name, active) values (2,"Februarski rok", 1)
+INSERT INTO exam_term(month, name, active) values (3,"Martovski rok", 1)
+INSERT INTO exam_term(month, name, active) values (4,"Aprilski rok", 1)
+INSERT INTO exam_term(month, name, active) values (5,"Majski rok", 1)
+INSERT INTO exam_term(month, name, active) values (6,"Junski rok", 1)
+INSERT INTO exam_term(month, name, active) values (7,"Julski rok", 1)
+INSERT INTO exam_term(month, name, active) values (8,"Avgustovski rok", 1)
+INSERT INTO exam_term(month, name, active) values (9,"Septembarski rok", 1)
+INSERT INTO exam_term(month, name, active) values (10,"Oktobarski rok", 1)
+INSERT INTO exam_term(month, name, active) values (11,"Novembarski rok", 1)
+INSERT INTO exam_term(month, name, active) values (12,"Decembarski rok", 1)
+
+INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-01', 1, 1);
+INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 1, 2);
+INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 1, 3);
+INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-01', 2, 1);
+INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 2, 2);
+INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 2, 3);
+
+INSERT INTO professor_course (professor_id, course_id) VALUES (1, 1);
+INSERT INTO professor_course (professor_id, course_id) VALUES (1, 2);
+INSERT INTO professor_course (professor_id, course_id) VALUES (2, 1);
+
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
->>>>>>> 12c3132f032c4a5e3a9c008e07b86518ff7e48bf

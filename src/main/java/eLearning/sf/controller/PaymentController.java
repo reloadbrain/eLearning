@@ -60,9 +60,9 @@ public class PaymentController {
 	};
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<PaymentDTO> deletePayments(@PathVariable long id) {
+	public ResponseEntity<String> deletePayments(@PathVariable long id) {
 		paymentService.delete(id);
-		return new ResponseEntity<PaymentDTO>(paymentToPaymentDTO.convert(paymentService.getOne(id)),
+		return new ResponseEntity<String>("Success",
 				HttpStatus.OK);
 	}
 

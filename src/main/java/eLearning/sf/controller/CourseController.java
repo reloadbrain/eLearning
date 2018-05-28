@@ -1,5 +1,8 @@
 package eLearning.sf.controller;
 
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+
+import java.io.Console;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import eLearning.sf.converter.CourseDTOtoCourse;
 import eLearning.sf.converter.CourseToCorseDTO;
 import eLearning.sf.dto.CourseDTO;
+import eLearning.sf.dto.ProfessorDTO;
 import eLearning.sf.model.Course;
+import eLearning.sf.model.Professor;
 import eLearning.sf.service.CourseService;
 
 
@@ -47,11 +52,12 @@ public class CourseController {
 	}
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<CourseDTO> savePayments(@RequestBody CourseDTO courseDTO) {
+	public ResponseEntity<CourseDTO> saveProfessors(@RequestBody CourseDTO courseDTO) {
 		Course course = courseDTOtoCourse.convert(courseDTO);
 		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.save(course)),
 				HttpStatus.OK);
 	}
+
 
 	@PutMapping
 	public ResponseEntity<CourseDTO> editPayments(@RequestBody CourseDTO courseDTO) {
@@ -61,10 +67,9 @@ public class CourseController {
 	};
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<CourseDTO> deletePayments(@PathVariable long id) {
+	public ResponseEntity<String> deletePayments(@PathVariable long id) {
 		courseService.delete(id);
-		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.getOne(id)),
-				HttpStatus.OK);
+		return new ResponseEntity<String>("Success",HttpStatus.OK);
 	}
 
 }

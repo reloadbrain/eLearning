@@ -110,6 +110,4 @@ public class UserServiceImpl implements IUserService {
 		}
 		return false;
 	}
-
-	
 }

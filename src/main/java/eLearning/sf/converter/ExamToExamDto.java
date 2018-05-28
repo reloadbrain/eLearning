@@ -19,7 +19,6 @@ public class ExamToExamDto implements Converter<Exam, ExamDto> {
 		examDto.setCourseId(exam.getCourse().getCourseId());
 		examDto.setDate(exam.getDate());
 		examDto.setExamId(exam.getExamId());
-		examDto.setExamTermId(exam.getExamTerm().getExamTermId());
 
 		return examDto;
 	}

@@ -6,4 +6,7 @@ import eLearning.sf.model.ExamStudentRecords;
 
 public interface ExamStudentRecordsRepository extends JpaRepository<ExamStudentRecords, Long> {
 
+//	nadji sve za jednog studenta
+//	nadji za odredjeni exam
+	
 }
