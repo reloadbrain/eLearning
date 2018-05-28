@@ -14,14 +14,13 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 
 	@Autowired
 	PreExamObligationRepository jpaPreExamObligationRepository;
-	
+
 	@Autowired
 	PreExamObligationTypeService peots;
-	
+
 	@Override
-	public PreExamObligation getOne(Long Id) {
-		// TODO Auto-generated method stub
-		return jpaPreExamObligationRepository.getOne(Id);
+	public PreExamObligation getOne(Long id) {
+		return jpaPreExamObligationRepository.findByPreExamOId(id);
 	}
 
 	@Override
@@ -52,5 +51,4 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 		return jpaPreExamObligationRepository.findAllByCourseCourseIdAndActiveTrue(id);
 	}
 
-	
 }

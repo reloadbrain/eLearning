@@ -1,7 +1,6 @@
 package eLearning.sf.controller;
 
 import java.sql.Date;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,72 +24,67 @@ import org.springframework.web.bind.annotation.RequestParam;
 import eLearning.sf.converter.PreExamObligationRecordsDTOtoPreExamObligationRecords;
 import eLearning.sf.converter.PreExamObligationRecordsToPreExamObligationRecordsDTO;
 import eLearning.sf.dto.PreExamObligationsRecordsDTO;
-
-import eLearning.sf.dto.UserDto;
 import eLearning.sf.model.PreExamObligation;
-
 import eLearning.sf.model.PreExamObligationsRecords;
-
 import eLearning.sf.model.Student;
-import eLearning.sf.model.User;
-import eLearning.sf.service.CourseService;
 import eLearning.sf.service.PreExamObligationService;
-
 import eLearning.sf.service.PreExamObligationsRecordsService;
 
 @Controller
 @RequestMapping(value = "/api/pre-exam-obligation-records")
 public class PreExamObligationRecController {
-	
+
 	@Autowired
 	PreExamObligationsRecordsService peors;
-	
+
 	@Autowired
 	PreExamObligationService ps;
-	
+
 	@Autowired
 	PreExamObligationRecordsToPreExamObligationRecordsDTO toDTO;
-	
+
 	@Autowired
 	PreExamObligationRecordsDTOtoPreExamObligationRecords toPEOR;
-	
-	
-	
+
 	/*
-	@GetMapping
-	public ResponseEntity<List<PreExamObligationsRecordsDTO>> getPreExamObligationRecords() {
-		return new ResponseEntity<>(toDTO.convert(peors.findAll()), HttpStatus.OK);
-	}
-	*/
-	
+	 * @GetMapping public ResponseEntity<List<PreExamObligationsRecordsDTO>>
+	 * getPreExamObligationRecords() { return new
+	 * ResponseEntity<>(toDTO.convert(peors.findAll()), HttpStatus.OK); }
+	 */
+
 	@GetMapping()
-	//@PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga 
+	// @PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga
 	public ResponseEntity<?> getAllPreExamObligationRecords(@RequestParam("term") String term, Pageable pageable) {
 		Page<PreExamObligationsRecords> peor = peors.listAllByPage(term, pageable);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("total-pages", Integer.toString(peor.getTotalPages()));
-		return new ResponseEntity<List<PreExamObligationsRecordsDTO>> (toDTO.convert(peor.getContent()), headers,HttpStatus.OK);
+		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(toDTO.convert(peor.getContent()), headers,
+				HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<PreExamObligationsRecordsDTO> getPreExamObligationRecord(@PathVariable long id) {
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.getOne(id)), HttpStatus.OK);
 	}
-	
-	
-	@GetMapping(path="student/{studentId}/course/{curseId}")
-	public ResponseEntity<List<PreExamObligationsRecordsDTO>>getPreExamObligationRecordsByStudentIdAndCurseId(@PathVariable long studentId, @PathVariable long curseId){		
-		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(toDTO.convert(peors.findByStudentIdAndCurseId(studentId, curseId)),HttpStatus.OK);
+
+	@GetMapping(path = "student/{studentId}/course/{curseId}")
+	public ResponseEntity<List<PreExamObligationsRecordsDTO>> getPreExamObligationRecordsByStudentIdAndCurseId(
+			@PathVariable long studentId, @PathVariable long curseId) {
+		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(
+				toDTO.convert(peors.findByStudentIdAndCurseId(studentId, curseId)), HttpStatus.OK);
 	}
-	
-	@GetMapping(path="preexamobligation/{preExamObligationId}")
-	public ResponseEntity<List<PreExamObligationsRecordsDTO>>getPreExamObligationRecordsByProfessorId(@PathVariable long preExamObligationId){
-		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(toDTO.convert(peors.findByPreExamObligationId(preExamObligationId)),HttpStatus.OK);
+
+	@GetMapping(path = "preexamobligation/{preExamObligationId}")
+	public ResponseEntity<List<PreExamObligationsRecordsDTO>> getPreExamObligationRecordsByProfessorId(
+			@PathVariable long preExamObligationId) {
+		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(
+				toDTO.convert(peors.findByPreExamObligationId(preExamObligationId)), HttpStatus.OK);
 	}
-	
+
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<?> savePreExamObligationsRecord(@Validated @RequestBody PreExamObligationsRecordsDTO preExamObligationsRecordsDTO , Errors errors) {
-		if(errors.hasErrors()) {
+	public ResponseEntity<?> savePreExamObligationsRecord(
+			@Validated @RequestBody PreExamObligationsRecordsDTO preExamObligationsRecordsDTO, Errors errors) {
+		if (errors.hasErrors()) {
 			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
 		}
 		PreExamObligationsRecords p = new PreExamObligationsRecords();
@@ -98,25 +92,29 @@ public class PreExamObligationRecController {
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.save(p)), HttpStatus.OK);
 	}
 
-	@PostMapping(path="create-records/{id}/{year}/{month}/{day}", consumes = "application/json")
-	public ResponseEntity<?> createPreExamObligationsRecord(@PathVariable Long id, @PathVariable int year,  @PathVariable int month, @PathVariable int day) {
-		
+	@PostMapping(path = "create-records/{id}/{year}/{month}/{day}", consumes = "application/json")
+	public ResponseEntity<?> createPreExamObligationsRecord(@PathVariable Long id, @PathVariable int year,
+			@PathVariable int month, @PathVariable int day) {
+
 		Date date = new Date(year, month, day);
-		PreExamObligation peo = ps.getOne(id); 
-		for (Student s : peo.getCourse().getStudents()) {
+		PreExamObligation peo = new PreExamObligation();
+		peo = ps.getOne(id);
+		for (Student student : peo.getCourse().getStudents()) {
 			PreExamObligationsRecords per = new PreExamObligationsRecords();
 			per.setActive(false);
 			per.setDate(date);
 			per.setPreExamObligation(peo);
-			per.setStudent(s);	
+			per.setStudent(student);
 			peors.save(per);
+			System.out.println(per.toString());
 		}
 		return new ResponseEntity<String>("Created PreExamORecords", HttpStatus.OK);
 	}
-	
+
 	@PutMapping
-	public ResponseEntity<?> editPreExamObligationsRecord(@Validated @RequestBody PreExamObligationsRecordsDTO preExamObligationsRecordsDTO , Errors errors) {
-		if(errors.hasErrors()) {
+	public ResponseEntity<?> editPreExamObligationsRecord(
+			@Validated @RequestBody PreExamObligationsRecordsDTO preExamObligationsRecordsDTO, Errors errors) {
+		if (errors.hasErrors()) {
 			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
 		}
 		PreExamObligationsRecords p = new PreExamObligationsRecords();
@@ -129,5 +127,4 @@ public class PreExamObligationRecController {
 		peors.delete(id);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
-
 }

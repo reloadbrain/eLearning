@@ -10,5 +10,5 @@ import eLearning.sf.model.PreExamObligation;
 public interface PreExamObligationRepository extends JpaRepository<PreExamObligation, Long> {
 	List<PreExamObligation> findAllByTypePreExamOTypeId(Long id);
 	List<PreExamObligation> findAllByCourseCourseIdAndActiveTrue(Long id);
-
+	PreExamObligation findByPreExamOId(Long Id);
 }

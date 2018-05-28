@@ -13,20 +13,20 @@ import eLearning.sf.repository.PreExamObligationsRecordsRepository;
 import eLearning.sf.serviceInterface.PreExamObligationsRecordsServiceInterface;
 
 @Service
-public class PreExamObligationsRecordsService implements PreExamObligationsRecordsServiceInterface{
+public class PreExamObligationsRecordsService implements PreExamObligationsRecordsServiceInterface {
 
 	@Autowired
 	PreExamObligationsRecordsRepository jpa;
-	
+
 	@Autowired
 	PreExamObligationService peos;
-	
+
 	@Autowired
 	CourseService cs;
-	
+
 	@Autowired
 	StudentService ss;
-	
+
 	@Override
 	public PreExamObligationsRecords getOne(Long id) {
 		// TODO Auto-generated method stub
@@ -61,7 +61,6 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 		return jpa.findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrue(sId, cId);
 	}
 
-	
 	@Override
 	public Page<PreExamObligationsRecords> listAllByPage(String searchTerm, Pageable pageable) {
 		return jpa.findAllPageAndSearch(searchTerm, pageable);
@@ -73,17 +72,19 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 	}
 
 	public void SetTrue(PreExamObligationsRecords p) {
-		if (findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()) != null) {
+		if (findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(),
+				p.getStudent().getStudentId()) != null) {
 			p.setActive(true);
-		}
-		else if (p.getPoints() > findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()).getPoints()) {
-			findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()).setActive(false);
+		} else if (p.getPoints() > findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(),
+				p.getStudent().getStudentId()).getPoints()) {
+			findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId())
+					.setActive(false);
 			p.setActive(true);
-		}else {
+		} else {
 			p.setActive(false);
 		}
 		save(p);
 		save(findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()));
 	}
-	
+
 }

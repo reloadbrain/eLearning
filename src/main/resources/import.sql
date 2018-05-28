@@ -76,3 +76,8 @@ INSERT INTO professor_course (professor_id, course_id) VALUES (2, 1);
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
+
+INSERT INTO students_courses (student_id, course_id) VALUES (1, 1);
+INSERT INTO students_courses (student_id, course_id) VALUES (2, 1);
+INSERT INTO students_courses (student_id, course_id) VALUES (3, 1);
+INSERT INTO students_courses (student_id, course_id) VALUES (2, 2);
