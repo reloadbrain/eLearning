@@ -61,12 +61,12 @@ public class PreExamObligationRecController {
 	}
 	
 	
-	@GetMapping(path="student{studentId}/course{curseId}")
+	@GetMapping(path="student/{studentId}/course/{curseId}")
 	public ResponseEntity<List<PreExamObligationsRecordsDTO>>getPreExamObligationRecordsByStudentIdAndCurseId(@PathVariable long studentId, @PathVariable long curseId){
 		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(toDTO.convert(peors.findByStudentIdAndCurseId(studentId, curseId)),HttpStatus.OK);
 	}
 	
-	@GetMapping(path="preexamobligation{preExamObligationId}")
+	@GetMapping(path="preexamobligation/{preExamObligationId}")
 	public ResponseEntity<List<PreExamObligationsRecordsDTO>>getPreExamObligationRecordsByProfessorId(@PathVariable long preExamObligationId){
 		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(toDTO.convert(peors.findByPreExamObligationId(preExamObligationId)),HttpStatus.OK);
 	}
