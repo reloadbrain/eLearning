@@ -25,4 +25,6 @@ public interface PreExamObligationsRecordsServiceInterface {
 	
 	Page<PreExamObligationsRecords> listAllByPage(String searchTerm, Pageable pageable);
 	
+	public PreExamObligationsRecords findByObligationIdAndStudentId(Long oId, Long sId);
+	
 }

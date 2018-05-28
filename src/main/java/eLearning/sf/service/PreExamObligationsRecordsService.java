@@ -1,5 +1,6 @@
 package eLearning.sf.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,7 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 
 	@Override
 	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(Long sId, Long cId) {
-		return jpa.findAllByStudentStudentIdAndPreExamObligationCourseCourseId(sId, cId);
+		return jpa.findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrue(sId, cId);
 	}
 
 	
@@ -66,5 +67,23 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 		return jpa.findAllPageAndSearch(searchTerm, pageable);
 	}
 
+	@Override
+	public PreExamObligationsRecords findByObligationIdAndStudentId(Long sId, Long uId) {
+		return jpa.findByPreExamObligationPreExamOIdAndStudentStudentIdAndActiveTrue(sId, uId);
+	}
+
+	public void SetTrue(PreExamObligationsRecords p) {
+		if (findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()) != null) {
+			p.setActive(true);
+		}
+		else if (p.getPoints() > findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()).getPoints()) {
+			findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()).setActive(false);
+			p.setActive(true);
+		}else {
+			p.setActive(false);
+		}
+		save(p);
+		save(findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()));
+	}
 	
 }
