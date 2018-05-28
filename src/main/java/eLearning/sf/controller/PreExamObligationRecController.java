@@ -29,6 +29,7 @@ import eLearning.sf.model.PreExamObligationsRecords;
 import eLearning.sf.model.Student;
 import eLearning.sf.service.PreExamObligationService;
 import eLearning.sf.service.PreExamObligationsRecordsService;
+import eLearning.sf.service.StudentService;
 
 @Controller
 @RequestMapping(value = "/api/pre-exam-obligation-records")
@@ -39,6 +40,9 @@ public class PreExamObligationRecController {
 
 	@Autowired
 	PreExamObligationService ps;
+
+	@Autowired
+	StudentService studentService;
 
 	@Autowired
 	PreExamObligationRecordsToPreExamObligationRecordsDTO toDTO;
@@ -96,17 +100,18 @@ public class PreExamObligationRecController {
 	public ResponseEntity<?> createPreExamObligationsRecord(@PathVariable Long id, @PathVariable int year,
 			@PathVariable int month, @PathVariable int day) {
 
-		Date date = new Date(year, month, day);
+		Date date = new Date(year - 1900, month - 1, day);
 		PreExamObligation peo = new PreExamObligation();
 		peo = ps.getOne(id);
-		for (Student student : peo.getCourse().getStudents()) {
+		List<Student> students = studentService.findByCourse(peo.getCourse().getCourseId());
+		for (Student student : students) {
 			PreExamObligationsRecords per = new PreExamObligationsRecords();
 			per.setActive(false);
 			per.setDate(date);
 			per.setPreExamObligation(peo);
 			per.setStudent(student);
+			per.setPoints(0);
 			peors.save(per);
-			System.out.println(per.toString());
 		}
 		return new ResponseEntity<String>("Created PreExamORecords", HttpStatus.OK);
 	}

@@ -34,4 +34,9 @@ public class StudentService implements StudentServiceInterface {
 	public void delete(Long id) {
 		studentRepository.deleteById(id);
 	}
+
+	@Override
+	public List<Student> findByCourse(Long courseId) {
+		return studentRepository.findAllByCoursesCourseId(courseId);
+	}
 }

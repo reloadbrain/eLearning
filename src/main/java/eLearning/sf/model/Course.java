@@ -27,10 +27,10 @@ public class Course {
 	@Column(nullable = false, columnDefinition="VARCHAR(75)")
 	private String name;
 
-	@ManyToMany(mappedBy = "courses")
+	@ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
 	private Set<Professor> professors = new HashSet<>();
 
-	@ManyToMany(mappedBy = "courses")
+	@ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
 	private Set<Student> students = new HashSet<>();
 
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")

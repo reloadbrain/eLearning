@@ -8,6 +8,8 @@ public interface StudentServiceInterface {
 
 	public Student getOne(Long id);
 
+	public List<Student> findByCourse(Long courseId);
+
 	public List<Student> findAll();
 
 	public Student save(Student student);
