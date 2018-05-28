@@ -33,10 +33,6 @@ public class Exam {
 	@JoinColumn(name = "courseId", nullable = false)
 	private Course course;
 
-	@ManyToOne
-	@JoinColumn(name = "examTermId", nullable = false)
-	private ExamTerm examTerm;
-
 	@OneToMany(mappedBy = "exam")
 	private Set<ExamStudentRecords> examRecords = new HashSet<>();;
 }

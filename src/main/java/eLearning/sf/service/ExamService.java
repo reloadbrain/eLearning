@@ -71,7 +71,7 @@ public class ExamService implements ExamServiceInterface {
 
 	@Override
 	public List<Exam> findAllByProfessor(String professorUsername) {
-		return examRepository.findAllByProfessor(professorUsername);
+		return examRepository.findAllByCourseProfessorsUserUsernameContaining(professorUsername);
 	}
 
 	@Override

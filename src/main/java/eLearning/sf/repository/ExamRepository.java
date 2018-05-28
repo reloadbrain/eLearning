@@ -31,8 +31,6 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
 	Page<Exam> findAllByTermMonthAndProfessorPageAndSearch(@Param("professorUsername") String professorUsername,
 			@Param("termMonth") int termMonth, @Param("searchTerm") String searchTerm, Pageable pageable);
 
-	@Query(value = "SELECT e.exam_id, e.active, e.date, e.course_id, e.exam_term_id FROM Exam e, professor p, professor_course pc, Course c, "
-			+ "User u WHERE e.course_id = c.course_id AND p.professor_id =  pc.professor_id AND c.course_id = pc.course_id AND "
-			+ "u.username = :professorUsername AND u.user_id = p.user_user_id", nativeQuery = true)
-	List<Exam> findAllByProfessor(@Param("professorUsername") String professorUsername);
+	List<Exam> findAllByCourseProfessorsUserUsernameContaining(@Param("professorUsername") String professorUsername);
+	
 }
