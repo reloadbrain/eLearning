@@ -19,10 +19,5 @@ public interface ExamServiceInterface {
 
 	Page<Exam> listAllByPage(String searchTerm, Pageable pageable);
 
-	public Page<Exam> findAllByTermMonthPageAndSearch(int termMonth, String searchTerm, Pageable pageable);
-
-	public Page<Exam> findAllByTermMonthAndProfessorPageAndSearch(String professorUsername, int termMonth,
-			String searchTerm, Pageable pageable);
-
-	public List<Exam> findAllByProfessor(String professorUsername);
+	public List<Exam> findAllByProfessorAndCourse(String professorUsername, Long courseId);
 }

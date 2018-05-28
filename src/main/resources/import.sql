@@ -59,19 +59,6 @@ INSERT INTO payment (active, description, value , student_id ) values (1 , "paym
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
 
-INSERT INTO exam_term(month, name, active) values (1,"Januarski rok", 1)
-INSERT INTO exam_term(month, name, active) values (2,"Februarski rok", 1)
-INSERT INTO exam_term(month, name, active) values (3,"Martovski rok", 1)
-INSERT INTO exam_term(month, name, active) values (4,"Aprilski rok", 1)
-INSERT INTO exam_term(month, name, active) values (5,"Majski rok", 1)
-INSERT INTO exam_term(month, name, active) values (6,"Junski rok", 1)
-INSERT INTO exam_term(month, name, active) values (7,"Julski rok", 1)
-INSERT INTO exam_term(month, name, active) values (8,"Avgustovski rok", 1)
-INSERT INTO exam_term(month, name, active) values (9,"Septembarski rok", 1)
-INSERT INTO exam_term(month, name, active) values (10,"Oktobarski rok", 1)
-INSERT INTO exam_term(month, name, active) values (11,"Novembarski rok", 1)
-INSERT INTO exam_term(month, name, active) values (12,"Decembarski rok", 1)
-
 INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-01', 1, 1);
 INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 1, 2);
 INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 1, 3);

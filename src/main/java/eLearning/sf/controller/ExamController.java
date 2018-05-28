@@ -53,31 +53,10 @@ public class ExamController {
 				HttpStatus.OK);
 	}
 
-	@GetMapping(path = "/by-month")
-	public ResponseEntity<List<ExamDto>> getAllByTerm(@RequestParam("termMonth") int termMonth,
-			@RequestParam("term") String searchTerm, Pageable pageable) {
-		Page<Exam> exams = examService.findAllByTermMonthPageAndSearch(termMonth, searchTerm, pageable);
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("total-pages", Integer.toString(exams.getTotalPages()));
-		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams.getContent()), headers,
-				HttpStatus.OK);
-	}
-
-	@GetMapping(path = "/by-professor-term")
-	public ResponseEntity<List<ExamDto>> getAllByProfessor(@RequestParam("professorUsername") String professorUsername,
-			@RequestParam("termMonth") int termMonth, @RequestParam("term") String searchTerm, Pageable pageable) {
-		Page<Exam> exams = examService.findAllByTermMonthAndProfessorPageAndSearch(professorUsername, termMonth,
-				searchTerm, pageable);
-		HttpHeaders headers = new HttpHeaders();
-		headers.add("total-pages", Integer.toString(exams.getTotalPages()));
-		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams.getContent()), headers,
-				HttpStatus.OK);
-	}
-
-	@GetMapping(path = "/by-professor")
-	public ResponseEntity<List<ExamDto>> getAllByProfessor(
-			@RequestParam("professorUsername") String professorUsername) {
-		List<Exam> exams = examService.findAllByProfessor(professorUsername);
+	@GetMapping(path = "/by-professor-course")
+	public ResponseEntity<List<ExamDto>> getAllByProfessorAndCourse(
+			@RequestParam("professorUsername") String professorUsername, @RequestParam("courseId") Long courseId) {
+		List<Exam> exams = examService.findAllByProfessorAndCourse(professorUsername, courseId);
 		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams), HttpStatus.OK);
 	}
 
