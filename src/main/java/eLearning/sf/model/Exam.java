@@ -23,11 +23,11 @@ public class Exam {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long examId;
 
+	@Column(nullable = true)
+	private Date date;
+	
 	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
-
-	@Column(nullable = false)
-	private Date date;
 
 	@ManyToOne
 	@JoinColumn(name = "courseId", nullable = false)

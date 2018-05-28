@@ -1,7 +1,6 @@
 package eLearning.sf.repository;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,11 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import eLearning.sf.model.Course;
-import eLearning.sf.model.PreExamObligation;
 import eLearning.sf.model.PreExamObligationsRecords;
-import eLearning.sf.model.Student;
-import eLearning.sf.model.User;
 
 public interface PreExamObligationsRecordsRepository  extends JpaRepository<PreExamObligationsRecords, Long>{
 	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOId(Long id);

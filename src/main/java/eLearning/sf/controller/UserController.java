@@ -35,20 +35,20 @@ public class UserController {
 
 	@Autowired
 	private IUserService iUserService;
-	
+
 	@Autowired
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
-	
+
 	@Autowired
 	private UserDtoToUser userDtoToUser;
-	
+
 	@Autowired
 	private UserToUserDto userToUserDto;
-	
+
 	@PostMapping(value = "/sign-up")
 	public ResponseEntity<?> signUp(@Validated @RequestBody UserDto userDto, Errors errors) {
-		
-		if(errors.hasErrors()) {
+
+		if (errors.hasErrors()) {
 			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
 		}
 		User u = userDtoToUser.convert(userDto);
@@ -60,68 +60,68 @@ public class UserController {
 		log.info("New user created, default password is: {}", defaultPass);
 		return new ResponseEntity<UserDto>(userToUserDto.convert(u), HttpStatus.OK);
 	}
-	
+
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<?> getUserById(@PathVariable("id") Long id) {
 		User u = iUserService.getOne(id);
-		if(u == null){
-			return new ResponseEntity<String> ("There is no user with id: " + id, HttpStatus.BAD_REQUEST);
+		if (u == null) {
+			return new ResponseEntity<String>("There is no user with id: " + id, HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<UserDto> (userToUserDto.convert(u), HttpStatus.OK);
+		return new ResponseEntity<UserDto>(userToUserDto.convert(u), HttpStatus.OK);
 	}
-	
+
 	@GetMapping(value = "get-by-username/{username}")
 	public ResponseEntity<?> getUserByUsername(@PathVariable("username") String username) {
 		Optional<User> u = iUserService.findByUsername(username);
-		if(!u.isPresent()){
-			return new ResponseEntity<String> ("There is no user with username: " + username, HttpStatus.BAD_REQUEST);
+		if (!u.isPresent()) {
+			return new ResponseEntity<String>("There is no user with username: " + username, HttpStatus.BAD_REQUEST);
 		}
-		return new ResponseEntity<UserDto> (userToUserDto.convert(u.get()), HttpStatus.OK);
+		return new ResponseEntity<UserDto>(userToUserDto.convert(u.get()), HttpStatus.OK);
 	}
-	
+
 	@GetMapping()
-	//@PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga 
+	// @PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga
 	public ResponseEntity<?> getAllUsers(@RequestParam("term") String term, Pageable pageable) {
 		Page<User> users = iUserService.listAllByPage(term, pageable);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("total-pages", Integer.toString(users.getTotalPages()));
-		return new ResponseEntity<List<UserDto>> (userToUserDto.convert(users.getContent()), headers,HttpStatus.OK);
+		return new ResponseEntity<List<UserDto>>(userToUserDto.convert(users.getContent()), headers, HttpStatus.OK);
 	}
-	
-	@GetMapping(value="/active")
+
+	@GetMapping(value = "/active")
 	public ResponseEntity<?> getAllActiveUsers(@RequestParam("term") String term, Pageable pageable) {
 		Page<User> users = iUserService.listAllByPageActive(term, pageable);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("total-pages", Integer.toString(users.getTotalPages()));
-		return new ResponseEntity<List<UserDto>> (userToUserDto.convert(users.getContent()), headers,HttpStatus.OK);
+		return new ResponseEntity<List<UserDto>>(userToUserDto.convert(users.getContent()), headers, HttpStatus.OK);
 	}
-	
-	@GetMapping(value="/not-active")
+
+	@GetMapping(value = "/not-active")
 	public ResponseEntity<?> getAllNotActiveUsers(@RequestParam("term") String term, Pageable pageable) {
 		Page<User> users = iUserService.listAllByPageNotActive(term, pageable);
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("total-pages", Integer.toString(users.getTotalPages()));
-		return new ResponseEntity<List<UserDto>> (userToUserDto.convert(users.getContent()), headers,HttpStatus.OK);
+		return new ResponseEntity<List<UserDto>>(userToUserDto.convert(users.getContent()), headers, HttpStatus.OK);
 	}
-	
-	@PostMapping(value="username-unique/{username}")
+
+	@PostMapping(value = "username-unique/{username}")
 	public ResponseEntity<Boolean> isUsernameUnique(@PathVariable("username") String username) {
 		Optional<User> u = iUserService.findByUsername(username);
-		if(u.isPresent()) {
+		if (u.isPresent()) {
 			return new ResponseEntity<Boolean>(false, HttpStatus.OK);
 		}
 		return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 	}
-	
+
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<String> changeUserStatus(@PathVariable("id") Long id) {
 		User u = iUserService.getOne(id);
 		if (u == null) {
-			return new ResponseEntity<String> ("There is no user with id: " + id, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<String>("There is no user with id: " + id, HttpStatus.BAD_REQUEST);
 		}
 		u.setActive(!u.getActive());
 		iUserService.save(u);
-		return new ResponseEntity<String> ("Status changed", HttpStatus.OK);
+		return new ResponseEntity<String>("Status changed", HttpStatus.OK);
 	}
-	
+
 }

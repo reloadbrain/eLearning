@@ -50,6 +50,4 @@ public class UserServiceImpl implements IUserService {
 	public Page<User> listAllByPage(String searchTerm, Pageable pageable) {
 		return userJpaRepo.findAllPageAndSearch(searchTerm, pageable);
 	}
-
-	
 }
