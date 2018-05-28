@@ -17,8 +17,8 @@ import eLearning.sf.model.User;
 
 public interface PreExamObligationsRecordsRepository  extends JpaRepository<PreExamObligationsRecords, Long>{
 	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOId(Long id);
-	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseId(Long sId, Long cId);
-	
+	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrue(Long sId, Long cId);
+	PreExamObligationsRecords findByPreExamObligationPreExamOIdAndStudentStudentIdAndActiveTrue(Long oId, Long uId);
 	@Query("select p from PreExamObligationsRecords p where"
 			+ " p.date like (CONCAT( '%', LOWER(:searchTerm), '%')) or"
 			+ " p.preExamObligation.name like (CONCAT( '%', LOWER(:searchTerm), '%')) or"

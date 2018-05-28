@@ -49,7 +49,10 @@ INSERT INTO pre_exam_obligation(pre_examoid, name, active ,course_id,max_points,
 INSERT INTO pre_exam_obligation(pre_examoid, name, active ,course_id,max_points,type_id)values(7,"Domaci 1",1,2,15,2)
 INSERT INTO pre_exam_obligation(pre_examoid, name, active ,course_id,max_points,type_id)values(8,"Kolokvijum 1",1,3,15,1)
 
-INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(1,'2018-02-17',1,1,30,1,1)
+INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(1,'2018-02-17',1,1,30,1,0)
+INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(8,'2018-02-17',1,1,7,1,0)
+INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(9,'2018-02-17',1,1,50,1,1)
+INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(10,'2018-02-17',1,1,32,1,0)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(2,'2018-02-17',1,2,22,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(3,'2018-02-17',1,3,20,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(4,'2018-02-17',2,1,15,1,1)
