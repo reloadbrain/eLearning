@@ -60,10 +60,10 @@ public class ProfessorTypeController {
 				HttpStatus.OK);
 	};
 
+	
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<ProfessorTypeDTO> deleteProfessorTypes(@PathVariable long id) {
+	public ResponseEntity<String> deleteProfessorTypes(@PathVariable long id) {
 		professorTypeService.delete(id);
-		return new ResponseEntity<ProfessorTypeDTO>(professorTypeToProfessorTypeDTO.convert(professorTypeService.getOne(id)),
-				HttpStatus.OK);
+		return new ResponseEntity<String>("Success",HttpStatus.OK);
 	}
 }
