@@ -15,6 +15,10 @@ public class PreExamObligationsRecordsDTO {
 	
 	@NotNull(message="StudentId cannot be empty!")
 	private Long studentId;
+	
+	private String studentName;
+	private String studentLastName;
+	private String trNumber;
 
 	@NotNull(message="preExamObligationId cannot be empty!")
 	private Long preExamObligationId;

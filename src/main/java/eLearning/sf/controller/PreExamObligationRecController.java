@@ -96,7 +96,7 @@ public class PreExamObligationRecController {
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.save(p)), HttpStatus.OK);
 	}
 
-	@PostMapping(path = "create-records/{id}/{year}/{month}/{day}", consumes = "application/json")
+	@PostMapping(path = "create-records/{id}/{year}/{month}/{day}")
 	public ResponseEntity<?> createPreExamObligationsRecord(@PathVariable Long id, @PathVariable int year,
 			@PathVariable int month, @PathVariable int day) {
 

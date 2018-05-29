@@ -22,6 +22,9 @@ public class PreExamObligationRecordsToPreExamObligationRecordsDTO implements Co
 		p.setPreExamOName(arg0.getPreExamObligation().getName());
 		p.setMaxPoints(arg0.getPreExamObligation().getMaxPoints());
 		p.setStudentId(arg0.getStudent().getStudentId());
+		p.setTrNumber(arg0.getStudent().getTranscriptNumber());
+		p.setStudentName(arg0.getStudent().getUser().getFirstName());
+		p.setStudentLastName(arg0.getStudent().getUser().getLastName());
 		p.setDate(arg0.getDate());
 		p.setPassed(arg0.isPassed());
 		p.setPreExamObligationId(arg0.getPreExamObligation().getPreExamOId());
