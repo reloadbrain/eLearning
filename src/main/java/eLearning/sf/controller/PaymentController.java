@@ -1,5 +1,6 @@
 package eLearning.sf.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,9 @@ import eLearning.sf.converter.PaymentDTOtoPayment;
 import eLearning.sf.converter.PaymentToPaymentDTO;
 import eLearning.sf.dto.PaymentDTO;
 import eLearning.sf.model.Payment;
+import eLearning.sf.model.Student;
 import eLearning.sf.service.PaymentService;
+import eLearning.sf.service.StudentService;
 
 @Controller
 @RequestMapping(value = "/api/payments")
@@ -26,6 +29,10 @@ public class PaymentController {
 
 	@Autowired
 	private PaymentService paymentService;
+	
+
+	@Autowired
+	private StudentService studentService;
 
 	@Autowired
 	private PaymentToPaymentDTO paymentToPaymentDTO;
@@ -38,11 +45,30 @@ public class PaymentController {
 	public ResponseEntity<List<PaymentDTO>> getPayments() {
 		return new ResponseEntity<>(paymentToPaymentDTO.convert(paymentService.findAll()), HttpStatus.OK);
 	}
+	
+//	@GetMapping(path = "/payments_for_student/{id}")
+//	public ResponseEntity<List<PaymentDTO>> getPaymentsForStudent(@PathVariable long id) {
+//		return new ResponseEntity<>(paymentToPaymentDTO.convert(paymentService.findByStudentId(id)), HttpStatus.OK);
+//	}
 
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<PaymentDTO> getPaymentsById(@PathVariable long id) {
 		return new ResponseEntity<PaymentDTO>(paymentToPaymentDTO.convert(paymentService.getOne(id)),
 				HttpStatus.OK);
+	}
+	
+	
+	@GetMapping(path = "/payments_for_student/{id}")
+	public ResponseEntity<List<PaymentDTO>> getPaymentsForStudent(@PathVariable long id) {
+		List<PaymentDTO> studentPayments = new ArrayList<>();
+		List<PaymentDTO> allPayments = paymentToPaymentDTO.convert(paymentService.findAll());
+		
+		for(PaymentDTO dto : allPayments) {
+			if(dto.getStudentId() == id)
+				studentPayments.add(dto);
+		}
+		
+		return new ResponseEntity<List<PaymentDTO>>(studentPayments, HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")

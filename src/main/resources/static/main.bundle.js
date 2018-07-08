@@ -38,7 +38,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n    <a href=\"#\" class=\"navbar-brand\">ELearning App</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/users\" routerLinkActive=\"active\">Users</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/preExamOTypes\" routerLinkActive=\"active\">PreExamOTypes</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/documents\" routerLinkActive=\"active\">Documents</a>\r\n            </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav\">\r\n            <a class=\"nav-link\" *ngIf=\"!isLoggedIn\" routerLink=\"/login\" routerLinkActive=\"active\">Login</a>\r\n        </ul>\r\n        <ul class=\"navbar-nav\" *ngIf=\"isLoggedIn\">\r\n            <a class=\"nav-link hand\" (click)=\"logOut()\">LogOut</a>\r\n        </ul>\r\n    </div>\r\n</nav>\r\n<div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n</div>"
+module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\n    <a href=\"#\" class=\"navbar-brand\">ELearning App</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarSupportedContent\">\r\n        <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n    <div class=\"collapse navbar-collapse\" id=\"navbarSupportedContent\">\r\n        <ul class=\"navbar-nav mr-auto\">\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/users\" routerLinkActive=\"active\">Users</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/preExamOTypes\" routerLinkActive=\"active\">PreExamOTypes</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/courses\" routerLinkActive=\"active\">Courses</a>\r\n            </li>\r\n            <li class=\"nav-item\">\r\n                <a class=\"nav-link\" routerLink=\"/documents\" routerLinkActive=\"active\">Documents</a>\r\n            </li>\r\n            <li>\r\n                <a class=\"nav-link\" routerLink=\"/professorCourses\" routerLinkActive=\"active\">Professor Courses</a>\r\n            </li>\r\n            <li>\r\n                <a class=\"nav-link\" routerLink=\"/professor_types\" routerLinkActive=\"active\">Professor Type</a>\r\n            </li>\r\n            <li>\r\n                <a class=\"nav-link\" routerLink=\"/payments\" routerLinkActive=\"active\">Payments</a>\r\n            </li>\r\n        </ul>\r\n        <ul class=\"navbar-nav\">\r\n            <a class=\"nav-link\" *ngIf=\"!isLoggedIn\" routerLink=\"/login\" routerLinkActive=\"active\">Login</a>\r\n        </ul>\r\n        <ul class=\"navbar-nav\" *ngIf=\"isLoggedIn\">\r\n            <a class=\"nav-link hand\" (click)=\"logOut()\">LogOut</a>\r\n        </ul>\r\n    </div>\r\n</nav>\r\n<div class=\"container\">\r\n    <router-outlet></router-outlet>\r\n</div>"
 
 /***/ }),
 
@@ -137,6 +137,15 @@ var edocuments_component_1 = __webpack_require__("../../../../../src/app/edocume
 var edocument_service_1 = __webpack_require__("../../../../../src/app/edocuments/edocument.service.ts");
 var student_course_component_1 = __webpack_require__("../../../../../src/app/student-course/student-course.component.ts");
 var professor_course_component_1 = __webpack_require__("../../../../../src/app/professor-course/professor-course.component.ts");
+var exam_service_1 = __webpack_require__("../../../../../src/app/shared/exam.service.ts");
+var professor_type_component_1 = __webpack_require__("../../../../../src/app/professor-type/professor-type.component.ts");
+var professor_type_service_1 = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
+var payments_component_1 = __webpack_require__("../../../../../src/app/payments/payments.component.ts");
+var payments_service_1 = __webpack_require__("../../../../../src/app/payments/payments.service.ts");
+var student_payments_component_1 = __webpack_require__("../../../../../src/app/student-payments/student-payments.component.ts");
+var student_payments_service_1 = __webpack_require__("../../../../../src/app/student-payments/student_payments.service.ts");
+var course_component_1 = __webpack_require__("../../../../../src/app/course/course.component.ts");
+var course_service_1 = __webpack_require__("../../../../../src/app/course/course.service.ts");
 var routes = [
     /* {
       path: '',
@@ -165,6 +174,26 @@ var routes = [
     {
         path: 'preExamOTypes',
         component: pre_exam_o_type_component_1.PreExamOTypeComponent
+    },
+    {
+        path: "professorCourses",
+        component: professor_course_component_1.ProfessorCourseComponent
+    },
+    {
+        path: "professor_types",
+        component: professor_type_component_1.ProfessorTypeComponent
+    },
+    {
+        path: "payments",
+        component: payments_component_1.PaymentsComponent
+    },
+    {
+        path: "student_payments",
+        component: payments_component_1.PaymentsComponent
+    },
+    {
+        path: "courses",
+        component: course_component_1.CourseComponent
     }
 ];
 var AppModule = /** @class */ (function () {
@@ -187,6 +216,10 @@ var AppModule = /** @class */ (function () {
                 edocuments_component_1.EdocumentsComponent,
                 student_course_component_1.StudentCourseComponent,
                 professor_course_component_1.ProfessorCourseComponent,
+                professor_type_component_1.ProfessorTypeComponent,
+                payments_component_1.PaymentsComponent,
+                student_payments_component_1.StudentPaymentsComponent,
+                course_component_1.CourseComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -195,7 +228,9 @@ var AppModule = /** @class */ (function () {
                 animations_1.BrowserAnimationsModule,
                 router_1.RouterModule.forRoot(routes), ng_bootstrap_1.NgbModule.forRoot()
             ],
-            providers: [user_service_1.UserService, department_service_1.DepartmentService, authorization_service_1.AuthorizationService, token_interceptor_service_1.TokenInterceptorService, jwt_interceptor_service_1.JwtInterceptorService, pre_exam_obligation_records_service_1.PreExamObligationRecordsService, pre_exam_o_type_service_1.PreExamOTypeService, pre_exam_obligation_service_1.PreExamObligationervice, {
+            providers: [user_service_1.UserService, department_service_1.DepartmentService, authorization_service_1.AuthorizationService, token_interceptor_service_1.TokenInterceptorService,
+                jwt_interceptor_service_1.JwtInterceptorService, pre_exam_obligation_records_service_1.PreExamObligationRecordsService, pre_exam_o_type_service_1.PreExamOTypeService, pre_exam_obligation_service_1.PreExamObligationervice, course_service_1.CourseService,
+                exam_service_1.ExamService, professor_type_service_1.ProfessorTypeService, payments_service_1.PaymentsService, student_payments_service_1.StudentPaymentsService, {
                     provide: http_1.HTTP_INTERCEPTORS,
                     useClass: token_interceptor_service_1.TokenInterceptorService,
                     multi: true
@@ -521,6 +556,165 @@ exports.TokenInterceptorService = TokenInterceptorService;
 
 /***/ }),
 
+/***/ "../../../../../src/app/course/course.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/course/course.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid pt-5\">\r\n  <table class=\"table table-hover\">\r\n    <thead class=\"thead-light\">\r\n      <tr>\r\n        <th>No.</th>\r\n        <th>Name\r\n          <i class=\"fa fa-fw fa-sort hand\"></i>\r\n        </th>\r\n        <th>Active\r\n          <i class=\"fa fa-fw fa-sort hand\"></i>\r\n        </th>\r\n        <th>Actions</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let c of courses; let i = index\">\r\n        <td>{{i + 1}}</td>\r\n        <td>{{c.name}}</td>\r\n        <td>{{c.active}}</td>\r\n        <td>\r\n          <button class=\"btn btn-success hand\" (click)=\"onEditCourse(c.courseId)\">\r\n            <i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i>\r\n          </button> ⧸\r\n          <button class=\"btn btn-danger hand\" (click)=\"onRemove(c.courseId)\">\r\n            <i class=\"fa fa-times\" aria-hidden=\"true\"></i>\r\n          </button>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n  <button class=\"btn btn-primary hand pull-right\" (click)=\"showDialog = !showDialog;resetAddForm();\">New course</button>\r\n  <!-- <button class=\"btn btn-primary hand pull-right\" (click)=\"showDialog = !showDialog;resetAddForm();getRoles();\">New user</button> -->\r\n  <app-pagination class=\"\"></app-pagination>\r\n  <div>\r\n\r\n    <app-dialog [(visible)]=\"showDialog\">\r\n      <h4>Add Course</h4>\r\n      <hr>\r\n      <form (ngSubmit)=\"postNewCourse()\" class=\"form-horizontal\" #f=\"ngForm\">\r\n\r\n        <div class=\"form-group\">\r\n          <label class=\"control-label\" for=\"name\">Name</label>\r\n          <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"Name\" class=\"form-control input-md\" [(ngModel)]=\"newCourse.name\" required\r\n            #name=\"ngModel\" maxlength=\"20\">\r\n          <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\r\n            <i>Name is required.</i>\r\n          </span>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label class=\"control-label\" for=\"name\">Active</label>\r\n          <input id=\"active\" name=\"active\" type=\"checkbox\" class=\"form-control input-md-1\" [(ngModel)]=\"newCourse.active\" required\r\n            #name=\"ngModel\" checked>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"departmentSelect\" class=\"control-label\">Select department</label>\r\n          <select name=\"departmentSelect\" [(ngModel)]=\"newCourse.departmentId\" multiple class=\"form-control\" id=\"departmentSelect\" required>\r\n            <option *ngFor=\"let d of departments\" value=\"{{d.departmentId}}\">\r\n              {{d.name}}\r\n             </option>\r\n\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <label for=\"studentSelect\" class=\"control-label\">Select students</label>\r\n          <select name=\"studentSelect\" [(ngModel)]=\"newCourse.studentIds\" multiple class=\"form-control\" id=\"studentSelect\" required>\r\n            <option *ngFor=\"let s of students\" value=\"{{s.studentId}}\">\r\n              {{s.firstName}} {{s.lastName}}\r\n             </option>\r\n\r\n          </select>\r\n        </div>\r\n\r\n\r\n        <!-- <div class=\"form-group\">\r\n          <label class=\"control-label\" for=\"value\">Value</label>\r\n          <input id=\"value\" name=\"value\" type=\"text\" placeholder=\"Value...\" class=\"form-control input-md\" [(ngModel)]=\"newCourse.value\"\r\n            required #value=\"ngModel\" maxlength=\"20\">\r\n          <span class=\"help-block\" *ngIf=\"value.touched && !value.valid\">\r\n            <i>Value name is required.</i>\r\n          </span>\r\n        </div> -->\r\n\r\n\r\n        \r\n\r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n          <button class=\"btn btn-primary\" type=\"submit\">Add</button>\r\n          <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n      </form>\r\n\r\n    </app-dialog>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/course/course.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var course_service_1 = __webpack_require__("../../../../../src/app/course/course.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
+var department_service_1 = __webpack_require__("../../../../../src/app/department/department.service.ts");
+var CourseComponent = /** @class */ (function () {
+    function CourseComponent(courseService, userService, departmentService) {
+        this.courseService = courseService;
+        this.userService = userService;
+        this.departmentService = departmentService;
+        this.courses = [];
+        this.students = [];
+        this.departments = [{
+                departmentId: 1,
+                name: "Softverske i informacione tehnologije"
+            }];
+        this.newCourse = {
+            courseId: 0,
+            departmentId: 0,
+            name: "",
+            active: false
+        };
+    }
+    CourseComponent.prototype.ngOnInit = function () {
+        this.getAllCourses();
+        this.getAllDepartments();
+        this.getAllStudents();
+    };
+    CourseComponent.prototype.getAllCourses = function () {
+        var _this = this;
+        this.courseService.getAll().subscribe(function (response) { return (_this.courses = response.body); }, function (error) { return console.log(error); });
+    };
+    CourseComponent.prototype.getAllStudents = function () {
+        var _this = this;
+        this.userService.getAll(0, 99, "userId,asc", "", "").subscribe(function (response) { return (_this.students = response.body); }, function (error) { return console.log(error); });
+    };
+    CourseComponent.prototype.getAllDepartments = function () {
+        var _this = this;
+        this.departmentService.getAll().subscribe(function (response) { return (_this.departments = response.body); }, function (error) { return console.log(error); });
+    };
+    CourseComponent.prototype.onEditCourse = function (id) {
+    };
+    CourseComponent.prototype.onRemove = function (id) {
+        var _this = this;
+        this.courseService.delete(id).subscribe(function (response) { return (_this.getAllCourses()); }, function (error) { return console.log(error); });
+    };
+    CourseComponent.prototype.resetAddForm = function () {
+        this.addUserForm.resetForm();
+    };
+    CourseComponent.prototype.postNewCourse = function () {
+        var _this = this;
+        this.newCourse.departmentId = this.newCourse.departmentId[0];
+        console.log(this.newCourse);
+        this.courseService.postNewCourse(this.newCourse).subscribe(function (response) { return [_this.courses.push(response), _this.resetAddForm()]; }, function (error) { return console.log(error); });
+    };
+    __decorate([
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
+    ], CourseComponent.prototype, "addUserForm", void 0);
+    CourseComponent = __decorate([
+        core_1.Component({
+            selector: 'app-courses',
+            template: __webpack_require__("../../../../../src/app/course/course.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/course/course.component.css")]
+        }),
+        __metadata("design:paramtypes", [course_service_1.CourseService, user_service_1.UserService, department_service_1.DepartmentService])
+    ], CourseComponent);
+    return CourseComponent;
+}());
+exports.CourseComponent = CourseComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/course/course.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var CourseService = /** @class */ (function () {
+    function CourseService(http) {
+        this.http = http;
+        this.path = "/api/courses";
+    }
+    CourseService.prototype.getAll = function () {
+        return this.http.get(this.path, { observe: 'response' });
+    };
+    CourseService.prototype.getOne = function (id) {
+        return this.http.get(this.path + "/" + id, { observe: 'response' });
+    };
+    CourseService.prototype.delete = function (id) {
+        return this.http.delete(this.path + "/" + id, { observe: 'response' });
+    };
+    CourseService.prototype.postNewCourse = function (newCourse) {
+        return this.http.post(this.path, newCourse);
+    };
+    CourseService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
+    ], CourseService);
+    return CourseService;
+}());
+exports.CourseService = CourseService;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/department/department.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -593,13 +787,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var DepartmentService = /** @class */ (function () {
-    function DepartmentService() {
+    function DepartmentService(http) {
+        this.http = http;
+        this.path = "/api/departments";
     }
+    DepartmentService.prototype.getAll = function () {
+        return this.http.get(this.path, { observe: 'response' });
+    };
     DepartmentService = __decorate([
-        core_1.Injectable()
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], DepartmentService);
     return DepartmentService;
 }());
@@ -616,7 +820,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, ".overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n    z-index: 999;\r\n  }\r\n  \r\n  .dialog {\r\n    z-index: 1000;\r\n    position: fixed;\r\n    right: 0;\r\n    left: 0;\r\n    top: 20px;\r\n    margin-right: auto;\r\n    margin-left: auto;\r\n    min-height: 200px;\r\n    width: 90%;\r\n    max-width: 620px;\r\n    max-height: 90%;\r\n    overflow-y: auto;\r\n    background-color: #fff;\r\n    padding: 12px;\r\n    -webkit-box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);\r\n            box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .dialog {\r\n      top: 40px;\r\n    }\r\n  }\r\n  \r\n  .dialog__close-btn {\r\n    border: 0;\r\n    background: none;\r\n    color: #2d2d2d;\r\n    position: absolute;\r\n    top: 8px;\r\n    right: 8px;\r\n    font-size: 1.2em;\r\n  }", ""]);
+exports.push([module.i, ".overlay {\r\n    position: fixed;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background-color: rgba(0, 0, 0, 0.5);\r\n    z-index: 999;\r\n  }\r\n  \r\n  .dialog {\r\n    z-index: 1000;\r\n    position: fixed;\r\n    right: 0;\r\n    left: 0;\r\n    top: 20px;\r\n    margin-right: auto;\r\n    margin-left: auto;\r\n    min-height: 200px;\r\n    width: 90%;\r\n    max-width: 620px;\r\n    max-height: 90%;\r\n    overflow-y: auto;\r\n    background-color: #fff;\r\n    padding: 12px;\r\n    -webkit-box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);\r\n            box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 13px 19px 2px rgba(0, 0, 0, 0.14), 0 5px 24px 4px rgba(0, 0, 0, 0.12);\r\n  }\r\n  \r\n  @media (min-width: 768px) {\r\n    .dialog {\r\n      top: 40px;\r\n    }\r\n  }\r\n  \r\n  .dialog__close-btn {\r\n    border: 0;\r\n    background: none;\r\n    color: #2d2d2d;\r\n    position: absolute;\r\n    top: 8px;\r\n    right: 8px;\r\n    font-size: 1.2em;\r\n  }\r\n  \r\n  .grades{\r\n    width: 1200px;\r\n  }", ""]);
 
 // exports
 
@@ -870,6 +1074,202 @@ exports.PaginationComponent = PaginationComponent;
 
 /***/ }),
 
+/***/ "../../../../../src/app/payments/payments.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/payments/payments.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid pt-5\">\n  <table class=\"table table-hover\">\n    <thead class=\"thead-light\">\n      <tr>\n        <th>No.</th>\n        <th>Description\n          <i class=\"fa fa-fw fa-sort hand\"></i>\n        </th>\n        <th>Value\n          <i class=\"fa fa-fw fa-sort hand\"></i>\n        </th>\n        <th>Student\n          <i class=\"fa fa-fw fa-sort hand\"></i>\n        </th>\n        <th></th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let p of payments; let i = index\">\n        <!-- <tr [ngClass]=\"{'table-danger': !u.active}\" *ngFor=\"let p of payments; let i = index\" > -->\n        <td>{{i + 1}}</td>\n        <td>{{p.description}}</td>\n        <td>{{p.value}}</td>\n        <!-- <td><a class=\"hand\" [routerLink]=\"['/profile', u.userId]\" title=\"Go to user profile.\">{{u.username}}</a></td> -->\n        <td>{{p.studentFirstName}} {{p.studentLastName}}</td>\n        <td>\n            <button class=\"btn btn-success hand\" (click)=\"onEditPayment(p.paymentId)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></button> ⧸ \n            <button class=\"btn btn-danger hand\"  (click)=\"onRemovePayment(p.paymentId)\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i>\n            </button>\n          </td>\n      </tr>\n    </tbody>\n  </table>\n  <div>\n\n    <button class=\"btn btn-primary hand pull-right\" (click)=\"showDialog = !showDialog;resetAddForm();getStudents();\">New payment</button>\n    <!-- <button class=\"btn btn-primary hand pull-right\" (click)=\"showDialog = !showDialog;resetAddForm();getRoles();\">New user</button> -->\n    <app-pagination class=\"\"></app-pagination>\n\n  </div>\n\n\n\n\n  <app-dialog [(visible)]=\"showDialog\">\n    <h4>Add Payment</h4>\n    <hr>\n    <form (ngSubmit)=\"postNewPayment()\" class=\"form-horizontal\" #f=\"ngForm\">\n\n      <div class=\"form-group\">\n        <label class=\"control-label\" for=\"description\">Description</label>\n        <input id=\"description\" name=\"description\" type=\"text\" placeholder=\"Description\" class=\"form-control input-md\" [(ngModel)]=\"newPayment.description\"\n          required #description=\"ngModel\" maxlength=\"20\">\n        <span class=\"help-block\" *ngIf=\"description.touched && !description.valid\">\n          <i>Description is required.</i>\n        </span>\n      </div>\n\n      <div class=\"form-group\">\n        <label class=\"control-label\" for=\"value\">Value</label>\n        <input id=\"value\" name=\"value\" type=\"text\" placeholder=\"Value...\" class=\"form-control input-md\" [(ngModel)]=\"newPayment.value\"\n          required #value=\"ngModel\" maxlength=\"20\">\n        <span class=\"help-block\" *ngIf=\"value.touched && !value.valid\">\n          <i>Value name is required.</i>\n        </span>\n      </div>\n\n\n      <div class=\"form-group\">\n        <label for=\"studentSelect\" class=\"control-label\">Select student</label>\n        <select name=\"studentSelect\" [(ngModel)]=\"newPayment.studentId\" class=\"form-control\" id=\"studentSelect\" required>\n          <option *ngFor=\"let s of students\" value=\"{{s.userId}}\">{{s.firstName}}\n            <p>{{s.userId}}</p> {{s.lastName}}</option>\n\n        </select>\n      </div>\n\n      <hr>\n      <div style=\"text-align: center\">\n        <button class=\"btn btn-primary\" type=\"submit\">Add</button>\n        <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\n      </div>\n    </form>\n\n  </app-dialog>\n\n  <app-dialog [(visible)]=\"showEditDialog\">\n      <h4>Edit payment</h4>\n      <hr>\n      <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\n    \n        <div class=\"form-group\">\n          <label class=\"control-label\" for=\"name\">Description</label>\n          <input id=\"editDescription\" name=\"editDescription\" type=\"text\" [(value)]=\"newPayment.description\" placeholder=\"description\" class=\"form-control input-md\" [(ngModel)]=\"newPayment.description\"  required\n            #editDescription=\"ngModel\" maxlength=\"20\" >\n          <span class=\"help-block\" *ngIf=\"editDescription.touched && !editDescription.valid\">\n            <i>name is required.</i>\n          </span>\n        </div>\n\n        <div class=\"form-group\">\n            <label class=\"control-label\" for=\"name\">Value</label>\n            <input id=\"editValue\" name=\"editValue\" type=\"text\" [(value)]=\"newPayment.value\" placeholder=\"value\" class=\"form-control input-md\" [(ngModel)]=\"newPayment.value\"  required\n              #editValue=\"ngModel\" maxlength=\"20\" >\n            <span class=\"help-block\" *ngIf=\"editValue.touched && !editValue.valid\">\n              <i>Value is required.</i>\n            </span>\n          </div>\n\n\n          <div class=\"form-group invisible\">\n              <label class=\"control-label\" for=\"studentId\">Student</label>\n              <input id=\"editStudent\" name=\"editStudent\" type=\"text\" [(value)]=\"newPayment.studentId\" placeholder=\"value\" class=\"form-control input-md\" [(ngModel)]=\"newPayment.studentId\"  required\n                #editStudent=\"ngModel\" maxlength=\"20\" >\n              <span class=\"help-block\" *ngIf=\"editStudent.touched && !editStudent.valid\">\n                <i>Value is required.</i>\n              </span>\n            </div>\n    \n        <hr>\n        <div style=\"text-align: center\">\n          <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!f.valid\">Edit</button>\n          <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\n        </div>\n      </form>\n    \n    </app-dialog>\n    \n    <app-dialog [(visible)]=\"showRemoveDialog\">\n        <h4>Remove payment</h4>\n        <hr>\n            <label class=\"control-label\" for=\"name\">Are you sure u want to remove this payment</label>\n          <hr>\n          <div style=\"text-align: center\">\n            <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\n            <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\n          </div>\n       \n      \n      </app-dialog>"
+
+/***/ }),
+
+/***/ "../../../../../src/app/payments/payments.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var payments_service_1 = __webpack_require__("../../../../../src/app/payments/payments.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
+var PaymentsComponent = /** @class */ (function () {
+    function PaymentsComponent(paymentsService, userService) {
+        this.paymentsService = paymentsService;
+        this.userService = userService;
+        this.payments = [];
+        this.students = [];
+        this.newPayment = {
+            paymentId: 0,
+            description: "",
+            active: true,
+            value: 0,
+            studentId: 0,
+        };
+        this.showDialog = false;
+        this.showEditDialog = false;
+        this.showRemoveDialog = false;
+        this.actionForModal = "";
+    }
+    PaymentsComponent.prototype.ngOnInit = function () {
+        this.getAllPayments();
+    };
+    PaymentsComponent.prototype.getAllPayments = function () {
+        var _this = this;
+        this.paymentsService.getAll().subscribe(function (response) { return (_this.payments = response.body); }, function (error) { return console.log(error); });
+    };
+    PaymentsComponent.prototype.postNewPayment = function () {
+        var _this = this;
+        console.log(this.newPayment.studentId);
+        this.newPayment.studentId = this.newPayment.studentId[0];
+        this.paymentsService.postNewType(this.newPayment).subscribe(function (response) { return [_this.payments.push(response), _this.resetAddForm()]; }, function (error) { return console.log(error); });
+        this.showDialog = !this.showDialog;
+    };
+    PaymentsComponent.prototype.resetAddForm = function () {
+        this.addUserForm.resetForm();
+    };
+    PaymentsComponent.prototype.getStudents = function () {
+        var _this = this;
+        this.userService.getAllForPayments().subscribe(function (response) { return _this.students = response; }, function (error) { return console.log(error); });
+    };
+    PaymentsComponent.prototype.onPopulateJsonType = function (description, value, studentId) {
+        this.newPayment.description = description;
+        this.newPayment.value = value;
+        this.newPayment.studentId = studentId;
+    };
+    PaymentsComponent.prototype.onGetById = function (id) {
+        var _this = this;
+        this.paymentsService.getOne(id)
+            .subscribe(function (response) { return (_this.onPopulateJsonType(response.body.description, response.body.value, response.body.studentId)); }, function (error) { return console.log(error); });
+    };
+    PaymentsComponent.prototype.onEditPayment = function (id) {
+        this.resetEditForm();
+        this.newPayment.paymentId = id;
+        console.log(id);
+        this.actionForModal = "edit";
+        this.onGetById(this.newPayment.paymentId);
+        this.showEditDialog = !this.showEditDialog;
+    };
+    PaymentsComponent.prototype.onPutType = function () {
+        var _this = this;
+        console.log(this.newPayment);
+        this.paymentsService.editType(this.newPayment).subscribe(function (response) { return [_this.getAllPayments(), _this.resetEditForm()]; }, function (error) { return console.log(error); });
+    };
+    PaymentsComponent.prototype.onRemovePayment = function (id) {
+        this.showRemoveDialog = !this.showRemoveDialog;
+        this.newPayment.paymentId = id;
+    };
+    PaymentsComponent.prototype.onRemoveConfirmed = function () {
+        var _this = this;
+        this.paymentsService.changeActive(this.newPayment.paymentId).subscribe(function (response) { return [_this.getAllPayments()]; }, function (error) { return console.log(error); });
+        this.showRemoveDialog = !this.showRemoveDialog;
+    };
+    PaymentsComponent.prototype.resetEditForm = function () {
+        this.editPaymentForm.resetForm();
+    };
+    PaymentsComponent.prototype.onSubmit = function () {
+        if (this.actionForModal === 'edit') {
+            this.onPutType();
+            this.resetEditForm();
+            this.showEditDialog = !this.showEditDialog;
+        }
+    };
+    __decorate([
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
+    ], PaymentsComponent.prototype, "addUserForm", void 0);
+    __decorate([
+        core_1.ViewChild('fe'),
+        __metadata("design:type", forms_1.NgForm)
+    ], PaymentsComponent.prototype, "editPaymentForm", void 0);
+    PaymentsComponent = __decorate([
+        core_1.Component({
+            selector: 'app-payments',
+            template: __webpack_require__("../../../../../src/app/payments/payments.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/payments/payments.component.css")]
+        }),
+        __metadata("design:paramtypes", [payments_service_1.PaymentsService, user_service_1.UserService])
+    ], PaymentsComponent);
+    return PaymentsComponent;
+}());
+exports.PaymentsComponent = PaymentsComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/payments/payments.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var PaymentsService = /** @class */ (function () {
+    function PaymentsService(http) {
+        this.http = http;
+        this.path = "/api/payments";
+    }
+    PaymentsService.prototype.getAll = function () {
+        return this.http.get(this.path, { observe: 'response' });
+    };
+    PaymentsService.prototype.postNewType = function (newPayment) {
+        return this.http.post(this.path, newPayment);
+    };
+    PaymentsService.prototype.getOne = function (id) {
+        return this.http.get(this.path + "/" + id, { observe: 'response' });
+    };
+    PaymentsService.prototype.editType = function (type) {
+        return this.http.put(this.path, type);
+    };
+    PaymentsService.prototype.changeActive = function (id) {
+        return this.http.delete(this.path + "/" + id, { responseType: 'text' });
+    };
+    PaymentsService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
+    ], PaymentsService);
+    return PaymentsService;
+}());
+exports.PaymentsService = PaymentsService;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/pre-exam-o-type/pre-exam-o-type.component.css":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -891,7 +1291,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/pre-exam-o-type/pre-exam-o-type.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid pt-5\">\n    <table class=\"table table-hover\">\n      <thead class=\"thead-light\">\n        <tr>\n          <th>Name</th>\n          <th>Edit/Remove</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let t of preExamOTypes\">\n          <td>{{t.name}}</td>\n          <td>\n            <button class=\"btn btn-success hand\" (click)=\"onEditType(t.preExamObligationTypeId)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></button> ⧸ \n            <button class=\"btn btn-danger hand\" (click)=\"onRemove(t.preExamObligationTypeId)\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i>\n            </button>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n    <button class=\"btn btn-primary hand\" (click)=\"onAddType()\">New Type</button>\n  </div>\n<app-dialog [(visible)]=\"showDialog\">\n    <h4>Add type</h4>\n    <hr>\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #f=\"ngForm\">\n  \n      <div class=\"form-group\">\n        <label class=\"control-label\" for=\"name\">Name</label>\n        <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newType.name\" required\n          #name=\"ngModel\" maxlength=\"20\">\n        <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\n          <i>name is required.</i>\n        </span>\n      </div>\n\n      <hr>\n      <div style=\"text-align: center\">\n        <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Add</button>\n        <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\n      </div>\n    </form>\n  \n</app-dialog>\n\n<app-dialog [(visible)]=\"showEditDialog\">\n  <h4>Edit type</h4>\n  <hr>\n  <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"name\">Name</label>\n      <input id=\"editName\" name=\"editName\" type=\"text\" [(value)]=\"newType.name\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newType.name\"  required\n        #editName=\"ngModel\" maxlength=\"20\" >\n      <span class=\"help-block\" *ngIf=\"editName.touched && !editName.valid\">\n        <i>name is required.</i>\n      </span>\n    </div>\n\n    <hr>\n    <div style=\"text-align: center\">\n      <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!f.valid\">Edit</button>\n      <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\n    </div>\n  </form>\n\n</app-dialog>\n\n<app-dialog [(visible)]=\"showRemoveDialog\">\n    <h4>Remove type</h4>\n    <hr>\n        <label class=\"control-label\" for=\"name\">Are u sure u want to remove this type</label>\n      <hr>\n      <div style=\"text-align: center\">\n        <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\n        <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\n      </div>\n   \n  \n  </app-dialog>"
+module.exports = "<div class=\"container-fluid pt-5\">\r\n    <table class=\"table table-hover\">\r\n      <thead class=\"thead-light\">\r\n        <tr>\r\n          <th>Name</th>\r\n          <th>Edit/Remove</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let t of preExamOTypes\">\r\n          <td>{{t.name}}</td>\r\n          <td>\r\n            <button class=\"btn btn-success hand\" (click)=\"onEditType(t.preExamObligationTypeId)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></button> ⧸ \r\n            <button class=\"btn btn-danger hand\" (click)=\"onRemove(t.preExamObligationTypeId)\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i>\r\n            </button>\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n    <button class=\"btn btn-primary hand\" (click)=\"onAddType()\">New Type</button>\r\n  </div>\r\n<app-dialog [(visible)]=\"showDialog\">\r\n    <h4>Add type</h4>\r\n    <hr>\r\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #f=\"ngForm\">\r\n  \r\n      <div class=\"form-group\">\r\n        <label class=\"control-label\" for=\"name\">Name</label>\r\n        <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newType.name\" required\r\n          #name=\"ngModel\" maxlength=\"20\">\r\n        <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\r\n          <i>name is required.</i>\r\n        </span>\r\n      </div>\r\n\r\n      <hr>\r\n      <div style=\"text-align: center\">\r\n        <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Add</button>\r\n        <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\r\n      </div>\r\n    </form>\r\n  \r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showEditDialog\">\r\n  <h4>Edit type</h4>\r\n  <hr>\r\n  <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"name\">Name</label>\r\n      <input id=\"editName\" name=\"editName\" type=\"text\" [(value)]=\"newType.name\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newType.name\"  required\r\n        #editName=\"ngModel\" maxlength=\"20\" >\r\n      <span class=\"help-block\" *ngIf=\"editName.touched && !editName.valid\">\r\n        <i>name is required.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <hr>\r\n    <div style=\"text-align: center\">\r\n      <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!f.valid\">Edit</button>\r\n      <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\r\n    </div>\r\n  </form>\r\n\r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showRemoveDialog\">\r\n    <h4>Remove type</h4>\r\n    <hr>\r\n        <label class=\"control-label\" for=\"name\">Are you sure u want to remove this type</label>\r\n      <hr>\r\n      <div style=\"text-align: center\">\r\n        <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\r\n        <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\r\n      </div>\r\n   \r\n  \r\n  </app-dialog>"
 
 /***/ }),
 
@@ -1083,7 +1483,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/professor-course/professor-course.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<app-professor-pre-exam-obligation [(userId)]=\"userId\" [(courseId)]=\"courseId\"></app-professor-pre-exam-obligation>\r\n"
+module.exports = "<h2>{{course}} - Exams</h2>\r\n<div class=\"container-fluid pt-5\">\r\n    <table class=\"table table-hover\">\r\n        <thead class=\"thead-light\">\r\n            <tr>\r\n                <th>Num</th>\r\n                <th>Date</th>\r\n                <th>Edit date</th>\r\n                <th>Delete</th>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr *ngFor=\"let e of exams; let i = index\">\r\n                <td>{{i + 1}}</td>\r\n                <td>{{e.date}}</td>\r\n                <td>\r\n                     &nbsp;<button class=\"btn btn-info hand\" (click)=\"onEditExam(e.examId)\">\r\n                       <i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>\r\n                    </button>\r\n                </td>\r\n                <td>\r\n                     &nbsp;<button class=\"btn btn-danger hand\" (click)=\"onRemoveExam(e.examId)\">\r\n                        <i class=\"fa fa-times\" aria-hidden=\"true\"></i>\r\n                    </button>\r\n                </td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n\r\n    <button class=\"btn btn-primary hand\" (click)=\"onAddExam()\">New Exam</button>\r\n</div>\r\n\r\n<app-dialog [(visible)]=\"showDialog\">\r\n    <h4>Add Exam</h4>\r\n    <hr>\r\n    <form (ngSubmit)=\"setNewDate(newDate.value);onSubmit()\" class=\"form-horizontal\" #addForm=\"ngForm\">\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\" for=\"examDate\">Exam date</label>\r\n            <div class=\"input-group\">\r\n                <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"newDate\" ngbDatepicker\r\n                    required #dp=\"ngbDatepicker\" #newDate>\r\n                <div class=\"input-group-append\">\r\n                    <button class=\"btn btn-outline-secondary\" (click)=\"dp.toggle()\" type=\"button\">\r\n                        <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n            <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!addForm.valid\">Add</button>\r\n            <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n    </form>\r\n\r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showEditDialog\">\r\n    <h4>Set exam date</h4>\r\n    <hr>\r\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #editForm=\"ngForm\">\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\" for=\"examDate\">Set date</label>\r\n            <div class=\"input-group\">\r\n                <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"examDate\" [(ngModel)]=\"model\" ngbDatepicker required #d=\"ngbDatepicker\">\r\n                <div class=\"input-group-append\">\r\n                    <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\r\n                        <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n            <button class=\"btn btn-info\" type=\"submit\" [disabled]=\"!editForm.valid\">Set date</button>\r\n            <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n    </form>\r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showRemoveDialog\">\r\n    <h4>Remove Exam</h4>\r\n    <hr>\r\n    <label class=\"control-label\" for=\"name\">Are you sure?</label>\r\n    <hr>\r\n    <div style=\"text-align: center\">\r\n        <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\r\n        <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\r\n    </div>\r\n</app-dialog>\r\n\r\n\r\n\r\n<!--\r\n\r\n\r\n<app-dialog [(visible)]=\"showDialog\">\r\n    <h4>Add Exam</h4>\r\n    <hr>\r\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #addForm=\"ngForm\">\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\" for=\"name\">Name</label>\r\n            <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.name\"\r\n                required #name=\"ngModel\" maxlength=\"20\">\r\n            <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\r\n                <i>name is required.</i>\r\n            </span>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\" for=\"maxPoints\">Max points</label>\r\n            <input id=\"maxPoints\" name=\"maxPoints\" type=\"number\" [(value)]=\"newPreExamObligation.maxPoints\" placeholder=\"maxPoints...\"\r\n                class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.maxPoints\" required #maxPoints=\"ngModel\">\r\n            <span class=\"help-block\" *ngIf=\"maxPoints.touched && !maxPoints.valid\">\r\n                <i>maxPoints is required and must be a number.</i>\r\n            </span>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"typesSelect\" class=\"control-label\">Select type</label>\r\n            <select name=\"typesSelect\" [(ngModel)]=\"newPreExamObligation.preExamOTypeId\" id=\"typesSelect\" required class=\"form-control input-md\">\r\n                <option *ngFor=\"let t of types\" value=\"{{t.preExamObligationTypeId}}\">{{t.name}}</option>\r\n            </select>\r\n        </div>\r\n\r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n            <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Add</button>\r\n            <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n    </form>\r\n\r\n</app-dialog>\r\n\r\n\r\n<app-dialog [(visible)]=\"showEditDialog\">\r\n    <h4>Edit Pre exam obligation</h4>\r\n    <hr>\r\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\r\n\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\" for=\"name\">Name</label>\r\n            <input id=\"editName\" name=\"editName\" type=\"text\" [(value)]=\"newPreExamObligation.name\" placeholder=\"name...\" class=\"form-control input-md\"\r\n                [(ngModel)]=\"newPreExamObligation.name\" required #editName=\"ngModel\" maxlength=\"20\">\r\n            <span class=\"help-block\" *ngIf=\"editName.touched && !editName.valid\">\r\n                <i>name is required.</i>\r\n            </span>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\" for=\"maxPoints\">Max points</label>\r\n            <input id=\"editMaxPoints\" name=\"editMaxPoints\" type=\"number\" [(value)]=\"newPreExamObligation.maxPoints\" placeholder=\"maxPoints...\"\r\n                class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.maxPoints\" required #editMaxPoints=\"ngModel\">\r\n            <span class=\"help-block\" *ngIf=\"editMaxPoints.touched && !editMaxPoints.valid\">\r\n                <i>maxPoints is required and must be a number.</i>\r\n            </span>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <label for=\"typesSelect\" class=\"control-label\">Select type</label>\r\n            <select name=\"editTypesSelect\" [(ngModel)]=\"newPreExamObligation.preExamOTypeId\" id=\"editTypesSelect\" required class=\"form-control input-md\">\r\n                <option *ngFor=\"let t of types\" value=\"{{t.preExamObligationTypeId}}\">{{t.name}}</option>\r\n            </select>\r\n        </div>\r\n\r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n            <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!fe.valid\">Edit</button>\r\n            <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n    </form>\r\n\r\n</app-dialog>\r\n\r\n\r\n<app-dialog [(visible)]=\"showSetDateDialog\">\r\n    <h4>Set Pre exam obligation date</h4>\r\n    <hr>\r\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fs=\"ngForm\">\r\n\r\n        <div class=\"form-group\">\r\n            <label class=\"control-label\" for=\"obligationDate\">Set date</label>\r\n            <div class=\"input-group\">\r\n                <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"obligationDate\" [(ngModel)]=\"model\" ngbDatepicker required #d=\"ngbDatepicker\">\r\n                <div class=\"input-group-append\">\r\n                    <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\r\n                        <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\r\n                    </button>\r\n                </div>\r\n            </div>\r\n        </div>\r\n\r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n            <button class=\"btn btn-info\" type=\"submit\" [disabled]=\"!fs.valid\">Set date</button>\r\n            <button type=\"button\" (click)=\"showSetDateDialog = !showSetDateDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n    </form>\r\n\r\n</app-dialog> -->"
 
 /***/ }),
 
@@ -1103,26 +1503,130 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var exam_service_1 = __webpack_require__("../../../../../src/app/shared/exam.service.ts");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
 var ProfessorCourseComponent = /** @class */ (function () {
-    function ProfessorCourseComponent() {
+    function ProfessorCourseComponent(_examService, _authService) {
+        this._examService = _examService;
+        this._authService = _authService;
+        this.exams = [];
+        this.course = {};
+        this.professorUsername = "";
+        this.newExam = {
+            examId: 0,
+            date: "",
+            active: true,
+            courseId: 0
+        };
+        this.showDialog = false;
+        this.showEditDialog = false;
+        this.showRemoveDialog = false;
+        this.actionForModal = "";
+        // @Input() courseId: number;
+        this.courseId = 1;
     }
     ProfessorCourseComponent.prototype.ngOnInit = function () {
+        this.newExam.courseId = this.courseId;
+        this.professorUsername = this._authService.getUser();
+        this.getExamsByProfessorAndCourse(this.professorUsername, this.courseId);
+        // console.log(this.courseId);
+        // console.log(this.professorUsername);
+    };
+    ProfessorCourseComponent.prototype.getExamsByProfessorAndCourse = function (professorUsername, courseId) {
+        var _this = this;
+        this._examService.getByProfessorAndCourse(this.professorUsername, this.courseId).subscribe(function (response) { return _this.exams = response.body; }, function (error) { return console.log(error); });
+    };
+    ProfessorCourseComponent.prototype.onEditExam = function (id) {
+        this.resetEditForm();
+        this.newExam.examId = id;
+        this.actionForModal = "edit";
+        this.onGetById(this.newExam.examId);
+        // this.model = this.newExam.date;
+        // console.log(this.model);
+        this.showEditDialog = !this.showEditDialog;
+    };
+    ProfessorCourseComponent.prototype.onAddExam = function () {
+        this.resetAddForm();
+        this.getExamsByProfessorAndCourse(this.professorUsername, this.courseId);
+        this.newExam.examId = null;
+        this.newExam.active = true;
+        this.actionForModal = "add";
+        this.showDialog = !this.showDialog;
+    };
+    ProfessorCourseComponent.prototype.onPutExam = function () {
+        var _this = this;
+        if (this.model.month <= 9) {
+            this.model.month = "0" + this.model.month;
+        }
+        if (this.model.day <= 9) {
+            this.model.day = "0" + this.model.day;
+        }
+        this.newExam.date = this.model.year + "-" + this.model.month + "-" + this.model.day;
+        this._examService.updateExam(this.newExam).subscribe(function (response) { return [_this.getExamsByProfessorAndCourse(_this.professorUsername, _this.courseId), _this.resetEditForm()]; }, function (error) { return console.log(error); });
+    };
+    ProfessorCourseComponent.prototype.onPostExam = function () {
+        var _this = this;
+        this.newExam.date = this.newDate;
+        this._examService.createNewExam(this.newExam).subscribe(function (response) { return [_this.exams.push(response), _this.resetAddForm()]; }, function (error) { return console.log(error); });
+    };
+    ProfessorCourseComponent.prototype.onRemoveExam = function (id) {
+        this.showRemoveDialog = !this.showRemoveDialog;
+        this.newExam.examId = id;
+    };
+    ProfessorCourseComponent.prototype.onRemoveConfirmed = function () {
+        var _this = this;
+        this._examService.deleteExam(this.newExam.examId).subscribe(function (response) { return [_this.getExamsByProfessorAndCourse(_this.professorUsername, _this.courseId)]; }, function (error) { return console.log(error); });
+        this.showRemoveDialog = !this.showRemoveDialog;
+    };
+    ProfessorCourseComponent.prototype.resetAddForm = function () {
+        this.addForm.resetForm();
+    };
+    ProfessorCourseComponent.prototype.resetEditForm = function () {
+        this.editForm.resetForm();
+    };
+    ProfessorCourseComponent.prototype.onSubmit = function () {
+        if (this.actionForModal === 'edit') {
+            console.log(this.newExam);
+            this.onPutExam();
+            this.resetEditForm();
+            this.showEditDialog = !this.showEditDialog;
+        }
+        if (this.actionForModal === 'add') {
+            this.onPostExam();
+            this.resetAddForm();
+            this.showDialog = !this.showDialog;
+        }
+    };
+    ProfessorCourseComponent.prototype.onGetById = function (id) {
+        var _this = this;
+        this._examService.getOne(id)
+            .subscribe(function (response) { return _this.onPopulate(response.body.date, response.body.active); }, function (error) { return console.log(error); });
+    };
+    ProfessorCourseComponent.prototype.onPopulate = function (date, active) {
+        this.newExam.date = date;
+        this.newExam.active = true;
+        this.newExam.courseId = this.courseId;
+    };
+    ProfessorCourseComponent.prototype.setNewDate = function (date) {
+        console.log(date);
+        this.newDate = date;
     };
     __decorate([
-        core_1.Input(),
-        __metadata("design:type", Number)
-    ], ProfessorCourseComponent.prototype, "userId", void 0);
+        core_1.ViewChild('addForm'),
+        __metadata("design:type", forms_1.NgForm)
+    ], ProfessorCourseComponent.prototype, "addForm", void 0);
     __decorate([
-        core_1.Input(),
-        __metadata("design:type", Number)
-    ], ProfessorCourseComponent.prototype, "courseId", void 0);
+        core_1.ViewChild('editForm'),
+        __metadata("design:type", forms_1.NgForm)
+    ], ProfessorCourseComponent.prototype, "editForm", void 0);
     ProfessorCourseComponent = __decorate([
         core_1.Component({
             selector: 'app-professor-course',
             template: __webpack_require__("../../../../../src/app/professor-course/professor-course.component.html"),
             styles: [__webpack_require__("../../../../../src/app/professor-course/professor-course.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [exam_service_1.ExamService, authorization_service_1.AuthorizationService])
     ], ProfessorCourseComponent);
     return ProfessorCourseComponent;
 }());
@@ -1152,7 +1656,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  professor-pre-exam-obligation-records works!\n</p>\n"
+module.exports = "<p>\r\n  professor-pre-exam-obligation-records works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1264,7 +1768,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid pt-5\">\n    <table class=\"table table-hover\">\n      <thead class=\"thead-light\">\n        <tr>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Max points</th>\n          <th>Set date/Grade</th>\n          <th>Edit/Remove</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let p of preExamObligations\">\n          <td>{{p.name}}</td>\n          <td>{{p.preExamOTypeName}}</td>\n          <td>{{p.maxPoints}}</td>\n          <td>\n            <button class=\"btn btn-info hand\" (click)=\"onSetDate(p.preExamOId)\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></button> ⧸ \n            <button class=\"btn btn-warning hand\" (click)=\"onGrade(p.preExamOId)\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>\n          </td>\n          <td>\n            <button class=\"btn btn-success hand\" (click)=\"onEditPEO(p.preExamOId)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></button> ⧸ \n            <button class=\"btn btn-danger hand\" (click)=\"onRemove(p.preExamOId)\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>\n          </td>\n        </tr>\n      </tbody>\n    </table>\n\n    <button class=\"btn btn-primary hand\" (click)=\"onAddObligation()\">New Pre exam obligation</button>\n   \n  </div>\n\n \n<app-dialog [(visible)]=\"showDialog\">\n    <h4>Add Pre exam obligation</h4>\n    <hr>\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #f=\"ngForm\">\n  \n      <div class=\"form-group\">\n        <label class=\"control-label\" for=\"name\">Name</label>\n        <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.name\" required\n          #name=\"ngModel\" maxlength=\"20\">\n        <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\n          <i>name is required.</i>\n        </span>\n      </div>\n      <div class=\"form-group\">\n          <label class=\"control-label\" for=\"maxPoints\">Max points</label>\n          <input id=\"maxPoints\" name=\"maxPoints\" type=\"number\" [(value)]=\"newPreExamObligation.maxPoints\" placeholder=\"maxPoints...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.maxPoints\"  required\n            #maxPoints=\"ngModel\" >\n          <span class=\"help-block\" *ngIf=\"maxPoints.touched && !maxPoints.valid\">\n            <i>maxPoints is required and must be a number.</i>\n          </span>\n      </div>\n\n      <div class=\"form-group\">\n          <label for=\"typesSelect\" class=\"control-label\">Select type</label>\n          <select name=\"typesSelect\" [(ngModel)]=\"newPreExamObligation.preExamOTypeId\" id=\"typesSelect\" required class=\"form-control input-md\">\n            <option *ngFor=\"let t of types\" value=\"{{t.preExamObligationTypeId}}\">{{t.name}}</option>\n          </select>\n      </div>\n\n      <hr>\n      <div style=\"text-align: center\">\n        <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Add</button>\n        <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\n      </div>\n    </form>\n  \n</app-dialog>\n\n<app-dialog [(visible)]=\"showEditDialog\">\n  <h4>Edit Pre exam obligation</h4>\n  <hr>\n  <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"name\">Name</label>\n      <input id=\"editName\" name=\"editName\" type=\"text\" [(value)]=\"newPreExamObligation.name\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.name\"  required\n        #editName=\"ngModel\" maxlength=\"20\" >\n      <span class=\"help-block\" *ngIf=\"editName.touched && !editName.valid\">\n        <i>name is required.</i>\n      </span>\n    </div>\n\n    <div class=\"form-group\">\n        <label class=\"control-label\" for=\"maxPoints\">Max points</label>\n        <input id=\"editMaxPoints\" name=\"editMaxPoints\" type=\"number\" [(value)]=\"newPreExamObligation.maxPoints\" placeholder=\"maxPoints...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.maxPoints\"  required\n          #editMaxPoints=\"ngModel\" >\n        <span class=\"help-block\" *ngIf=\"editMaxPoints.touched && !editMaxPoints.valid\">\n          <i>maxPoints is required and must be a number.</i>\n        </span>\n      </div>\n\n      <div class=\"form-group\">\n          <label for=\"typesSelect\" class=\"control-label\">Select type</label>\n          <select name=\"editTypesSelect\" [(ngModel)]=\"newPreExamObligation.preExamOTypeId\" id=\"editTypesSelect\" required class=\"form-control input-md\">\n            <option *ngFor=\"let t of types\" value=\"{{t.preExamObligationTypeId}}\">{{t.name}}</option>\n          </select>\n      </div>\n\n    <hr>\n    <div style=\"text-align: center\">\n      <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!fe.valid\">Edit</button>\n      <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\n    </div>\n  </form>\n\n</app-dialog>\n\n<app-dialog [(visible)]=\"showRemoveDialog\">\n    <h4>Remove Pre exam obligation</h4>\n    <hr>\n        <label class=\"control-label\" for=\"name\">Are u sure u want to remove this type</label>\n      <hr>\n      <div style=\"text-align: center\">\n        <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\n        <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\n      </div>\n   \n  \n  </app-dialog>\n\n  <app-dialog [(visible)]=\"showSetDateDialog\">\n      <h4>Set Pre exam obligation date</h4>\n      <hr>\n      <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fs=\"ngForm\">\n  \n        <div class=\"form-group\">\n              <label class=\"control-label\" for=\"obligationDate\">Set date</label>\n          <div class=\"input-group\">\n              <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"obligationDate\" [(ngModel)]=\"model\" ngbDatepicker required #d=\"ngbDatepicker\">\n            <div class=\"input-group-append\">\n              <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\n                <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\n              </button>\n            </div>\n          </div>\n        </div>\n    \n        <hr>\n        <div style=\"text-align: center\">\n          <button class=\"btn btn-info\" type=\"submit\" [disabled]=\"!fs.valid\">Set date</button>\n          <button type=\"button\" (click)=\"showSetDateDialog = !showSetDateDialog\" class=\"btn\">Close</button>\n        </div>\n      </form>\n    \n    </app-dialog>\n\n    <app-dialog [(visible)]=\"showGradeDialog\" class=\"\">\n      <h4>Grade pre exam obligations</h4>\n      <hr>\n      <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fg=\"ngForm\">\n    \n        <table class=\"table table-hover\"  style=\"width: 700px;\">\n          <thead class=\"thead-light\">\n            <tr>\n              <th>Student name</th>\n              <th>Tr number</th>\n              <th>Date</th>\n              <th>Points</th>\n              <th>Passed</th>\n            </tr>\n          </thead>\n          <tbody>\n            <tr *ngFor=\"let r of preExamObligationsRecords\">\n              <td>{{r.studentName}} {{r.studentLastName}}</td>\n              <td>{{r.trNumber}}</td>\n              <td>{{r.date}}</td>\n              <td>\n                <input id=\"gradePoints\" name=\"gradePoints\" type=\"number\" [(value)]=\"r.points\" placeholder=\"Points\" class=\"form-control input-md\" [(ngModel)]=\"preExamObligationsRecords.points\" \n                  #gradePoints=\"ngModel\" style=\"width: 100px;\" >\n              </td>\n              <td>\n                <input id=\"gradePoints\" name=\"gradePoints\" type=\"checkbox\" [(value)]=\"r.passed\" class=\"form-control input-md\" [(ngModel)]=\"preExamObligationsRecords.passed\" \n                  #gradePoints=\"ngModel\" style=\"width: 20px;\" >\n              </td>\n              <!-- <td>{{r.points}}</td> \n              <td>{{r.passed}}</td> -->\n            </tr>\n          </tbody>\n        </table>\n\n        <hr>\n        <div style=\"text-align: center\">\n          <button class=\"btn btn-warning\" type=\"submit\">Grade</button>\n          <button type=\"button\" (click)=\"showGradeDialog = !showGradeDialog\" class=\"btn\">Close</button>\n        </div>\n      </form>\n    \n    </app-dialog>\n"
+module.exports = "<div class=\"container-fluid pt-5\">\r\n    <table class=\"table table-hover\">\r\n      <thead class=\"thead-light\">\r\n        <tr>\r\n          <th>Name</th>\r\n          <th>Type</th>\r\n          <th>Max points</th>\r\n          <th>Set date/Grade</th>\r\n          <th>Edit/Remove</th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let p of preExamObligations\">\r\n          <td>{{p.name}}</td>\r\n          <td>{{p.preExamOTypeName}}</td>\r\n          <td>{{p.maxPoints}}</td>\r\n          <td>\r\n            <button class=\"btn btn-info hand\" (click)=\"onSetDate(p.preExamOId)\"><i class=\"fa fa-calendar\" aria-hidden=\"true\"></i></button> ⧸ \r\n            <button class=\"btn btn-warning hand\" (click)=\"onGrade(p.preExamOId)\"><i class=\"fa fa-pencil\" aria-hidden=\"true\"></i></button>\r\n          </td>\r\n          <td>\r\n            <button class=\"btn btn-success hand\" (click)=\"onEditPEO(p.preExamOId)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></button> ⧸ \r\n            <button class=\"btn btn-danger hand\" (click)=\"onRemove(p.preExamOId)\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i></button>\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n\r\n    <button class=\"btn btn-primary hand\" (click)=\"onAddObligation()\">New Pre exam obligation</button>\r\n   \r\n  </div>\r\n\r\n \r\n<app-dialog [(visible)]=\"showDialog\">\r\n    <h4>Add Pre exam obligation</h4>\r\n    <hr>\r\n    <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #f=\"ngForm\">\r\n  \r\n      <div class=\"form-group\">\r\n        <label class=\"control-label\" for=\"name\">Name</label>\r\n        <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.name\" required\r\n          #name=\"ngModel\" maxlength=\"20\">\r\n        <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\r\n          <i>name is required.</i>\r\n        </span>\r\n      </div>\r\n      <div class=\"form-group\">\r\n          <label class=\"control-label\" for=\"maxPoints\">Max points</label>\r\n          <input id=\"maxPoints\" name=\"maxPoints\" type=\"number\" [(value)]=\"newPreExamObligation.maxPoints\" placeholder=\"maxPoints...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.maxPoints\"  required\r\n            #maxPoints=\"ngModel\" >\r\n          <span class=\"help-block\" *ngIf=\"maxPoints.touched && !maxPoints.valid\">\r\n            <i>maxPoints is required and must be a number.</i>\r\n          </span>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n          <label for=\"typesSelect\" class=\"control-label\">Select type</label>\r\n          <select name=\"typesSelect\" [(ngModel)]=\"newPreExamObligation.preExamOTypeId\" id=\"typesSelect\" required class=\"form-control input-md\">\r\n            <option *ngFor=\"let t of types\" value=\"{{t.preExamObligationTypeId}}\">{{t.name}}</option>\r\n          </select>\r\n      </div>\r\n\r\n      <hr>\r\n      <div style=\"text-align: center\">\r\n        <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Add</button>\r\n        <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\r\n      </div>\r\n    </form>\r\n  \r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showEditDialog\">\r\n  <h4>Edit Pre exam obligation</h4>\r\n  <hr>\r\n  <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"name\">Name</label>\r\n      <input id=\"editName\" name=\"editName\" type=\"text\" [(value)]=\"newPreExamObligation.name\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.name\"  required\r\n        #editName=\"ngModel\" maxlength=\"20\" >\r\n      <span class=\"help-block\" *ngIf=\"editName.touched && !editName.valid\">\r\n        <i>name is required.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <div class=\"form-group\">\r\n        <label class=\"control-label\" for=\"maxPoints\">Max points</label>\r\n        <input id=\"editMaxPoints\" name=\"editMaxPoints\" type=\"number\" [(value)]=\"newPreExamObligation.maxPoints\" placeholder=\"maxPoints...\" class=\"form-control input-md\" [(ngModel)]=\"newPreExamObligation.maxPoints\"  required\r\n          #editMaxPoints=\"ngModel\" >\r\n        <span class=\"help-block\" *ngIf=\"editMaxPoints.touched && !editMaxPoints.valid\">\r\n          <i>maxPoints is required and must be a number.</i>\r\n        </span>\r\n      </div>\r\n\r\n      <div class=\"form-group\">\r\n          <label for=\"typesSelect\" class=\"control-label\">Select type</label>\r\n          <select name=\"editTypesSelect\" [(ngModel)]=\"newPreExamObligation.preExamOTypeId\" id=\"editTypesSelect\" required class=\"form-control input-md\">\r\n            <option *ngFor=\"let t of types\" value=\"{{t.preExamObligationTypeId}}\">{{t.name}}</option>\r\n          </select>\r\n      </div>\r\n\r\n    <hr>\r\n    <div style=\"text-align: center\">\r\n      <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!fe.valid\">Edit</button>\r\n      <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\r\n    </div>\r\n  </form>\r\n\r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showRemoveDialog\">\r\n    <h4>Remove Pre exam obligation</h4>\r\n    <hr>\r\n        <label class=\"control-label\" for=\"name\">Are you sure u want to remove this obligation</label>\r\n      <hr>\r\n      <div style=\"text-align: center\">\r\n        <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\r\n        <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\r\n      </div>\r\n   \r\n  \r\n  </app-dialog>\r\n\r\n  <app-dialog [(visible)]=\"showSetDateDialog\">\r\n      <h4>Set Pre exam obligation date</h4>\r\n      <hr>\r\n      <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fs=\"ngForm\">\r\n  \r\n        <div class=\"form-group\">\r\n              <label class=\"control-label\" for=\"obligationDate\">Set date</label>\r\n          <div class=\"input-group\">\r\n              <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"obligationDate\" [(ngModel)]=\"model\" ngbDatepicker required #d=\"ngbDatepicker\">\r\n            <div class=\"input-group-append\">\r\n              <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\r\n                <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\r\n              </button>\r\n            </div>\r\n          </div>\r\n        </div>\r\n    \r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n          <button class=\"btn btn-info\" type=\"submit\" [disabled]=\"!fs.valid\">Set date</button>\r\n          <button type=\"button\" (click)=\"showSetDateDialog = !showSetDateDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n      </form>\r\n    \r\n    </app-dialog>\r\n\r\n    <app-dialog [(visible)]=\"showGradeDialog\" class=\"grades\">\r\n      <h4>Grade pre exam obligations</h4>\r\n      <hr>\r\n      <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fg=\"ngForm\">\r\n    \r\n        <table class=\"table table-hover\"  style=\"width: 700px;\">\r\n          <thead class=\"thead-light\">\r\n            <tr>\r\n              <th>Student name</th>\r\n              <th>Tr number</th>\r\n              <th>Date</th>\r\n              <th>Points</th>\r\n              <th>Passed</th>\r\n            </tr>\r\n          </thead>\r\n          <tbody>\r\n            <tr *ngFor=\"let r of preExamObligationsRecords\">\r\n              <td>{{r.studentName}} {{r.studentLastName}}</td>\r\n              <td>{{r.trNumber}}</td>\r\n              <td>{{r.date}}</td>\r\n              <td>\r\n                <input  type=\"number\" [(value)]=\"r.points\" placeholder=\"Points\" class=\"form-control input-md\" [(ngModel)]=\"r.points\" \r\n                  #gradePoints=\"ngModel\" style=\"width: 100px;\" >\r\n              </td>\r\n              \r\n              <td>\r\n                <input type=\"checkbox\" [(value)]=\"r.passed\" class=\"form-control input-md\" [(ngModel)]=\"r.passed\" \r\n                  #gradePassed=\"ngModel\" style=\"width: 20px;\" >\r\n              </td>\r\n              <!-- <td>{{r.points}}</td> \r\n              <td>{{r.passed}}</td> -->\r\n            </tr>\r\n          </tbody>\r\n        </table>\r\n\r\n        <hr>\r\n        <div style=\"text-align: center\">\r\n          <button class=\"btn btn-warning\" type=\"submit\">Grade</button>\r\n          <button type=\"button\" (click)=\"showGradeDialog = !showGradeDialog\" class=\"btn\">Close</button>\r\n        </div>\r\n      </form>\r\n    \r\n    </app-dialog>\r\n"
 
 /***/ }),
 
@@ -1370,7 +1874,7 @@ var ProfessorPreExamObligationComponent = /** @class */ (function () {
         this.showGradeDialog = !this.showGradeDialog;
     };
     ProfessorPreExamObligationComponent.prototype.onPostGrade = function () {
-        //this.preExamObligations.
+        // this.preExamObligations.
     };
     ProfessorPreExamObligationComponent.prototype.onSetDate = function (id) {
         this.resetSetObligationDateForm();
@@ -1462,6 +1966,253 @@ var ProfessorPreExamObligationComponent = /** @class */ (function () {
     return ProfessorPreExamObligationComponent;
 }());
 exports.ProfessorPreExamObligationComponent = ProfessorPreExamObligationComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-type/professor-type.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-type/professor-type.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  professor-type works!\n</p>\n<div class=\"container-fluid pt-5\">\n  <table class=\"table table-hover\">\n    <thead class=\"thead-light\">\n      <tr>\n        <th>Name</th>\n        <th>Edit/Remove</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let t of professorTypes\">\n        <td>{{t.name}}</td>\n        <td>\n          <button class=\"btn btn-success hand\" (click)=\"onEditType(t.professorTypeId)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></button> ⧸ \n          <button class=\"btn btn-danger hand\"  (click)=\"onRemove(t.professorTypeId)\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i>\n          </button>\n        </td>\n      </tr>\n    </tbody>\n  </table>\n  <button class=\"btn btn-primary hand\" (click)=\"onAddType()\">New Type</button>\n</div>\n<app-dialog [(visible)]=\"showDialog\">\n  <h4>Add type</h4>\n  <hr>\n  <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #f=\"ngForm\">\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"name\">Name</label>\n      <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newProfessorType.name\" required\n        #name=\"ngModel\" maxlength=\"20\">\n      <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\n        <i>name is required.</i>\n      </span>\n    </div>\n\n    <hr>\n    <div style=\"text-align: center\">\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Add</button>\n      <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\n    </div>\n  </form>\n\n</app-dialog>\n\n<app-dialog [(visible)]=\"showEditDialog\">\n  <h4>Edit type</h4>\n  <hr>\n  <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\n\n    <div class=\"form-group\">\n      <label class=\"control-label\" for=\"name\">Name</label>\n      <input id=\"editName\" name=\"editName\" type=\"text\" [(value)]=\"newProfessorType.name\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newProfessorType.name\"  required\n        #editName=\"ngModel\" maxlength=\"20\" >\n      <span class=\"help-block\" *ngIf=\"editName.touched && !editName.valid\">\n        <i>name is required.</i>\n      </span>\n    </div>\n\n    <hr>\n    <div style=\"text-align: center\">\n      <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!f.valid\">Edit</button>\n      <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\n    </div>\n  </form>\n\n</app-dialog>\n\n<app-dialog [(visible)]=\"showRemoveDialog\">\n    <h4>Remove type</h4>\n    <hr>\n        <label class=\"control-label\" for=\"name\">Are you sure u want to remove this rofessor type</label>\n      <hr>\n      <div style=\"text-align: center\">\n        <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\n        <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\n      </div>\n   \n  \n  </app-dialog>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-type/professor-type.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var professor_type_service_1 = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var ProfessorTypeComponent = /** @class */ (function () {
+    function ProfessorTypeComponent(professorTypeService) {
+        this.professorTypeService = professorTypeService;
+        this.professorTypes = [];
+        this.newProfessorType = {
+            professorTypeId: 0,
+            name: "",
+            active: true
+        };
+        this.showDialog = false;
+        this.showEditDialog = false;
+        this.showRemoveDialog = false;
+        this.actionForModal = "";
+    }
+    ProfessorTypeComponent.prototype.ngOnInit = function () {
+        this.getProfessorTypes();
+    };
+    ProfessorTypeComponent.prototype.onPopulateJsonType = function (name) {
+        this.newProfessorType.name = name;
+    };
+    ProfessorTypeComponent.prototype.onGetById = function (id) {
+        var _this = this;
+        this.professorTypeService.getOne(id)
+            .subscribe(function (response) { return (_this.onPopulateJsonType(response.body.name)); }, function (error) { return console.log(error); });
+    };
+    ProfessorTypeComponent.prototype.getProfessorTypes = function () {
+        var _this = this;
+        this.professorTypeService.getAll().subscribe(function (response) { return (_this.professorTypes = response.body); }, function (error) { return console.log(error); });
+    };
+    ProfessorTypeComponent.prototype.createProfessorType = function () {
+        var _this = this;
+        this.professorTypeService.postNewType(this.newProfessorType)
+            .subscribe(function (response) { return [_this.professorTypes.push(response), _this.resetAddForm()]; }, function (error) { return console.log(error); });
+    };
+    ProfessorTypeComponent.prototype.onEditType = function (id) {
+        this.resetEditForm();
+        this.newProfessorType.professorTypeId = id;
+        this.actionForModal = "edit";
+        this.onGetById(this.newProfessorType.professorTypeId);
+        this.showEditDialog = !this.showEditDialog;
+    };
+    ProfessorTypeComponent.prototype.onAddType = function () {
+        this.resetAddForm();
+        this.newProfessorType.active = true;
+        this.showDialog = !this.showDialog;
+        this.actionForModal = "add";
+    };
+    ProfessorTypeComponent.prototype.resetAddForm = function () {
+        this.addTypeForm.resetForm();
+    };
+    ProfessorTypeComponent.prototype.resetEditForm = function () {
+        this.editTypeForm.resetForm();
+    };
+    ProfessorTypeComponent.prototype.onPutType = function () {
+        var _this = this;
+        this.professorTypeService.editType(this.newProfessorType).subscribe(function (response) { return [_this.getProfessorTypes(), _this.resetEditForm()]; }, function (error) { return console.log(error); });
+    };
+    ProfessorTypeComponent.prototype.onRemove = function (id) {
+        this.showRemoveDialog = !this.showRemoveDialog;
+        this.newProfessorType.professorTypeId = id;
+    };
+    ProfessorTypeComponent.prototype.onRemoveConfirmed = function () {
+        var _this = this;
+        this.professorTypeService.changeActive(this.newProfessorType.professorTypeId).subscribe(function (response) { return [_this.getProfessorTypes()]; }, function (error) { return console.log(error); });
+        this.showRemoveDialog = !this.showRemoveDialog;
+    };
+    ProfessorTypeComponent.prototype.onSubmit = function () {
+        if (this.actionForModal === 'edit') {
+            this.onPutType();
+            this.resetEditForm();
+            this.showEditDialog = !this.showEditDialog;
+        }
+        if (this.actionForModal === 'add') {
+            this.createProfessorType();
+            this.resetAddForm();
+            this.showDialog = !this.showDialog;
+        }
+    };
+    __decorate([
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
+    ], ProfessorTypeComponent.prototype, "addTypeForm", void 0);
+    __decorate([
+        core_1.ViewChild('fe'),
+        __metadata("design:type", forms_1.NgForm)
+    ], ProfessorTypeComponent.prototype, "editTypeForm", void 0);
+    ProfessorTypeComponent = __decorate([
+        core_1.Component({
+            selector: 'app-professor-type',
+            template: __webpack_require__("../../../../../src/app/professor-type/professor-type.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/professor-type/professor-type.component.css")]
+        }),
+        __metadata("design:paramtypes", [professor_type_service_1.ProfessorTypeService])
+    ], ProfessorTypeComponent);
+    return ProfessorTypeComponent;
+}());
+exports.ProfessorTypeComponent = ProfessorTypeComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/professor-type/professor_type.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var ProfessorTypeService = /** @class */ (function () {
+    function ProfessorTypeService(http) {
+        this.http = http;
+        this.path = "/api/professor_types";
+    }
+    ProfessorTypeService.prototype.getAll = function () {
+        return this.http.get(this.path, { observe: 'response' });
+    };
+    ProfessorTypeService.prototype.postNewType = function (newType) {
+        return this.http.post(this.path, newType);
+    };
+    ProfessorTypeService.prototype.getOne = function (id) {
+        return this.http.get(this.path + "/" + id, { observe: 'response' });
+    };
+    ProfessorTypeService.prototype.editType = function (type) {
+        return this.http.put(this.path, type);
+    };
+    ProfessorTypeService.prototype.changeActive = function (id) {
+        return this.http.delete(this.path + "/" + id, { responseType: 'text' });
+    };
+    ProfessorTypeService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
+    ], ProfessorTypeService);
+    return ProfessorTypeService;
+}());
+exports.ProfessorTypeService = ProfessorTypeService;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/shared/exam.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var ExamService = /** @class */ (function () {
+    function ExamService(http) {
+        this.http = http;
+        this.path = "api/exams";
+    }
+    ExamService.prototype.getAll = function (page, size, sortParam, sortDirection, term) {
+        return this.http.get(this.path + "?searchTerm=" + term + "&page=" + page + "&size="
+            + size + "&sort=" + sortParam + "," + sortDirection, { observe: 'response' });
+    };
+    ExamService.prototype.getOne = function (id) {
+        return this.http.get(this.path + "/" + id, { observe: 'response' });
+    };
+    ExamService.prototype.getByProfessorAndCourse = function (professorUsername, courseId) {
+        return this.http.get(this.path + "/by-professor-course?professorUsername=" + professorUsername + "&courseId=" + courseId, { observe: 'response' });
+    };
+    ExamService.prototype.createNewExam = function (exam) {
+        return this.http.post(this.path, exam);
+    };
+    ExamService.prototype.updateExam = function (exam) {
+        return this.http.put(this.path, exam);
+    };
+    ExamService.prototype.deleteExam = function (examId) {
+        return this.http.delete(this.path + "/" + examId);
+    };
+    ExamService.prototype.setExamDate = function (id, year, month, day) {
+        return this.http.post(this.path + "/exam-date" + "/" + id + "/" + year + "/" + month + "/" + day, null);
+    };
+    ExamService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
+    ], ExamService);
+    return ExamService;
+}());
+exports.ExamService = ExamService;
 
 
 /***/ }),
@@ -1571,6 +2322,131 @@ exports.StudentCourseComponent = StudentCourseComponent;
 
 /***/ }),
 
+/***/ "../../../../../src/app/student-payments/student-payments.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../src/app/student-payments/student-payments.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "\n<div class=\"container-fluid pt-5\">\n    <table class=\"table table-hover\">\n      <thead class=\"thead-light\">\n          <tr>\n              <th>Payments</th>\n              <th>Description</th>\n              <th>Value</th>\n          </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let p of payments; let i = index\">\n            <td>{{i+1}}</td>\n            <td>{{p.description}}</td>\n            <td>{{p.value}}</td>\n        </tr>\n      </tbody>\n    </table>\n</div>\n"
+
+/***/ }),
+
+/***/ "../../../../../src/app/student-payments/student-payments.component.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var student_payments_service_1 = __webpack_require__("../../../../../src/app/student-payments/student_payments.service.ts");
+var StudentPaymentsComponent = /** @class */ (function () {
+    function StudentPaymentsComponent(studentPaymentsService) {
+        this.studentPaymentsService = studentPaymentsService;
+        this.payments = [];
+    }
+    StudentPaymentsComponent.prototype.ngOnInit = function () {
+        this.getPaymentsForStudent(this.userId);
+    };
+    StudentPaymentsComponent.prototype.getPaymentsForStudent = function (userId) {
+        var _this = this;
+        this.studentPaymentsService.getPaymentsForStudent(this.userId).subscribe(function (response) { return (_this.payments = response.body); }),
+            function (error) { return console.log(error); };
+    };
+    __decorate([
+        core_1.Input(),
+        __metadata("design:type", Number)
+    ], StudentPaymentsComponent.prototype, "userId", void 0);
+    StudentPaymentsComponent = __decorate([
+        core_1.Component({
+            selector: 'app-student-payments',
+            template: __webpack_require__("../../../../../src/app/student-payments/student-payments.component.html"),
+            styles: [__webpack_require__("../../../../../src/app/student-payments/student-payments.component.css")]
+        }),
+        __metadata("design:paramtypes", [student_payments_service_1.StudentPaymentsService])
+    ], StudentPaymentsComponent);
+    return StudentPaymentsComponent;
+}());
+exports.StudentPaymentsComponent = StudentPaymentsComponent;
+
+
+/***/ }),
+
+/***/ "../../../../../src/app/student-payments/student_payments.service.ts":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var StudentPaymentsService = /** @class */ (function () {
+    function StudentPaymentsService(http) {
+        this.http = http;
+        this.path = "/api/payments";
+    }
+    StudentPaymentsService.prototype.getAll = function () {
+        return this.http.get(this.path, { observe: 'response' });
+    };
+    StudentPaymentsService.prototype.getPaymentsForStudent = function (userId) {
+        return this.http.get(this.path + "/payments_for_student/" + userId, { observe: 'response' });
+    };
+    StudentPaymentsService.prototype.postNewType = function (newType) {
+        return this.http.post(this.path, newType);
+    };
+    StudentPaymentsService.prototype.getOne = function (id) {
+        return this.http.get(this.path + "/" + id, { observe: 'response' });
+    };
+    StudentPaymentsService.prototype.editType = function (type) {
+        return this.http.put(this.path, type);
+    };
+    StudentPaymentsService.prototype.changeActive = function (id) {
+        return this.http.delete(this.path + "/" + id, { responseType: 'text' });
+    };
+    StudentPaymentsService = __decorate([
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
+    ], StudentPaymentsService);
+    return StudentPaymentsService;
+}());
+exports.StudentPaymentsService = StudentPaymentsService;
+
+
+/***/ }),
+
 /***/ "../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1637,7 +2513,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid pt-5\">\n    <table class=\"table table-hover\">\n      <thead class=\"thead-light\">\n          <tr>\n              <th>Pre exam obligation name</th>\n              <th>Date</th>\n              <th>Points</th>\n              <th>Passed</th>\n          </tr>\n      </thead>\n      <tbody>\n        <tr *ngFor=\"let p of preExamORecs\">\n            <td>{{p.preExamOName}}</td>\n            <td>{{p.date}}</td>\n            <td>{{p.points}} / {{p.maxPoints}}</td>\n            <td>{{p.passed == true ? \"✔\" : \"❌\"}}</td>\n        </tr>\n        <tr>\n            <td></td>\n            <td></td>\n            <th>Total: {{total}} / {{totalMax}} </th>  \n            <td></td> \n        </tr>\n      </tbody>\n    </table>\n</div>\n"
+module.exports = "<div class=\"container-fluid pt-5\">\r\n    <table class=\"table table-hover\">\r\n      <thead class=\"thead-light\">\r\n          <tr>\r\n              <th>Pre exam obligation name</th>\r\n              <th>Date</th>\r\n              <th>Points</th>\r\n              <th>Passed</th>\r\n          </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let p of preExamORecs\">\r\n            <td>{{p.preExamOName}}</td>\r\n            <td>{{p.date}}</td>\r\n            <td>{{p.points}} / {{p.maxPoints}}</td>\r\n            <td>{{p.passed == true ? \"✔\" : \"❌\"}}</td>\r\n        </tr>\r\n        <tr>\r\n            <td></td>\r\n            <td></td>\r\n            <th>Total: {{total}} / {{totalMax}} </th>  \r\n            <td></td> \r\n        </tr>\r\n      </tbody>\r\n    </table>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1723,7 +2599,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/user-profile/user-profile.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container pt-5\">\r\n    <div class=\"row my-2\">\r\n        <div class=\"col-lg-8 order-lg-2\">\r\n            <ul class=\"nav nav-tabs\">\r\n                <li class=\"nav-item\">\r\n                    <a href=\"\" data-target=\"#profile\" data-toggle=\"tab\" class=\"nav-link active\">Profile</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a href=\"\" data-target=\"#edit\" data-toggle=\"tab\" class=\"nav-link\">Edit</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a href=\"\" data-target=\"#psw\" data-toggle=\"tab\" class=\"nav-link\">Change password</a>\r\n                </li>\r\n            </ul>\r\n            <div class=\"tab-content py-4\">\r\n                <div class=\"tab-pane active\" id=\"profile\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-8\">\r\n                            <h5>\r\n                                Name: {{user.firstName}} {{user.lastName}} \r\n                            </h5>\r\n                            <h5>\r\n                                Username: {{user.username}}\r\n                            </h5>                        \r\n                            <p>\r\n                                Date of birth: {{dateOfBirth}} Phone number: {{user.phoneNumber}}\r\n                            </p>\r\n                            <p>\r\n                                Roles: {{user.roleName}}\r\n                            </p>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!--/row-->\r\n                </div>\r\n                <div class=\"tab-pane\" id=\"psw\">\r\n                    <div class=\"alert alert-info alert-dismissible fade show\" *ngIf=\"showMessage\">\r\n                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" (click)=\"showMessage = false;\">&times;</button>\r\n                        {{ messagge }}\r\n                    </div>\r\n                    <form role=\"form\" #fPsw=\"ngForm\" (ngSubmit)=\"changePassword()\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Old password</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"password\" id=\"oldPassword\" name=\"oldPassword\" required #oldPassword=\"ngModel\" [(ngModel)]=\"oldPass\">\r\n                                <span class=\"help-block\" *ngIf=\"oldPassword.touched && !oldPassword.valid\">\r\n                                    <i>This field is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">New password</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" (keyup)=\"checkPasswords()\" type=\"password\" id=\"newPassword\" name=\"newPassword\" required #newPassword=\"ngModel\"\r\n                                    [(ngModel)]=\"newPass\">\r\n                                <span class=\"help-block\" *ngIf=\"newPassword.touched && !newPassword.valid\">\r\n                                    <i>This field is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Repeat password</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"password\" required #repeatedPassword=\"ngModel\" id=\"repeatedPassword\" name=\"repeatedPassword\"\r\n                                    [(ngModel)]=\"repeatedPass\" (keyup)=\"checkPasswords()\">\r\n                                <span class=\"help-block\" *ngIf=\"repeatedPassword.touched && !repeatedPassword.valid\">\r\n                                    <i>This field is required.</i>\r\n                                </span>\r\n                                <span class=\"help-block\" *ngIf=\"!matchingPasswords\">\r\n                                    <i>Passwords are not the same.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\"></label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"reset\" class=\"btn btn-secondary\" value=\"Cancel\">\r\n                                <input type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!fPsw.valid || !matchingPasswords\" value=\"Save Changes\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n                <div class=\"tab-pane\" id=\"edit\">\r\n                    <form role=\"form\" #f=\"ngForm\" (ngSubmit)=\"userEdit()\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">First name</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"text\" [(value)]=\"user.firstName\" id=\"firstName\" name=\"firstName\" required #firstName=\"ngModel\"\r\n                                    maxlength=\"20\" [(ngModel)]=\"user.firstName\">\r\n                                <span class=\"help-block\" *ngIf=\"firstName.touched && !firstName.valid\">\r\n                                    <i>First name is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Last name</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"text\" [(value)]=\"user.lastName\" id=\"lastName\" name=\"lastName\" required #lastName=\"ngModel\"\r\n                                    maxlength=\"20\" [(ngModel)]=\"user.lastName\">\r\n                                <span class=\"help-block\" *ngIf=\"lastName.touched && !lastName.valid\">\r\n                                    <i>Last name is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Username</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"text\" [(value)]=\"user.username\" required #username=\"ngModel\" id=\"username\" name=\"username\"\r\n                                    [(ngModel)]=\"user.username\" maxlength=\"20\" (keyup)=\"isUsernameUnique()\" [ngClass]=\"{'not-unique':!isUnique}\">\r\n                                <span class=\"help-block\" *ngIf=\"username.touched && !username.valid\">\r\n                                    <i>Username is required.</i>\r\n                                </span>\r\n                                <span class=\"help-block\" *ngIf=\"username.touched && !isUnique\">\r\n                                    <i>This username is taken.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Phone number</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input id=\"phoneNumber\" name=\"phoneNumber\" #phoneNumber=\"ngModel\" [(ngModel)]=\"user.phoneNumber\" maxlength=\"20\" class=\"form-control\"\r\n                                    type=\"text\" [(value)]=\"user.phoneNumber\">\r\n                                <span class=\"help-block\" *ngIf=\"phoneNumber.touched && !phoneNumber.valid\">\r\n                                    <i>Can't contain more than 20 characters.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Address</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input id=\"address\" name=\"address\" class=\"form-control\" type=\"text\" [(value)]=\"user.address\" maxlength=\"30\" [(ngModel)]=\"user.address\"\r\n                                    #address=\"ngModel\">\r\n                                <span class=\"help-block\" *ngIf=\"address.touched && !address.valid\">\r\n                                    <i>Can't contain more than 30 characters.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Date od birth</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <div class=\"input-group\">\r\n                                    <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"dp\" [(ngModel)]=\"model\" ngbDatepicker #d=\"ngbDatepicker\">\r\n                                    <div class=\"input-group-append\">\r\n                                        <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\r\n                                            <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\r\n                                        </button>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Roles\r\n                                <br>\r\n                                <small>\r\n                                    <i>({{user.roleName}})</i>\r\n                                </small>\r\n                            </label>\r\n                            <div class=\"col-lg-9\">\r\n                                <select name=\"rolesSelect\" [(ngModel)]=\"user.roleId\" multiple class=\"form-control\" id=\"rolesSelect\" required>\r\n                                    <option class=\"selected\" *ngFor=\"let r of roles\" value=\"{{r.roleId}}\">{{r.name}}</option>\r\n                                </select>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\"></label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"reset\" class=\"btn btn-secondary\" value=\"Cancel\">\r\n                                <input type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!f.valid || !isUnique\" value=\"Save Changes\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-lg-4 order-lg-1 text-center\">\r\n            <img src=\"assets/img/{{user.imagePath}}\" class=\"mx-auto img-fluid img-circle d-block\" alt=\"avatar\">\r\n            <h6 class=\"mt-2\">Upload a different photo</h6>\r\n            <label class=\"btn btn-success cursor-pointer\" style=\"width:75px;\">\r\n                Browse <input type=\"file\" id=\"file\" class=\"custom-file-input cursor-pointer\" (change)=\"fileChange($event)\">\r\n            </label>\r\n        </div>\r\n    </div>\r\n    <app-student-pre-exam-obligation [(userId)]=\"userId\" [(courseId)]=\"courseId\"></app-student-pre-exam-obligation>\r\n    <app-professor-pre-exam-obligation [(userId)]=\"userId\" [(courseId)]=\"courseId\"></app-professor-pre-exam-obligation>\r\n</div>"
+module.exports = "<div class=\"container pt-5\">\r\n    <div class=\"row my-2\">\r\n        <div class=\"col-lg-8 order-lg-2\">\r\n            <ul class=\"nav nav-tabs\">\r\n                <li class=\"nav-item\">\r\n                    <a href=\"\" data-target=\"#profile\" data-toggle=\"tab\" class=\"nav-link active\">Profile</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a href=\"\" data-target=\"#edit\" data-toggle=\"tab\" class=\"nav-link\">Edit</a>\r\n                </li>\r\n                <li class=\"nav-item\">\r\n                    <a href=\"\" data-target=\"#psw\" data-toggle=\"tab\" class=\"nav-link\">Change password</a>\r\n                </li>\r\n            </ul>\r\n            <div class=\"tab-content py-4\">\r\n                <div class=\"tab-pane active\" id=\"profile\">\r\n                    <div class=\"row\">\r\n                        <div class=\"col-md-8\">\r\n                            <table class=\"table\">\r\n                                <tr>\r\n                                    <td> Name: </td>\r\n                                    <td> {{user.firstName}} {{user.lastName}} </td>\r\n                                </tr>\r\n                                <tr>\r\n                                    <td> Username: </td>\r\n                                    <td> {{user.username}} </td>\r\n                                </tr>\r\n                                <tr>\r\n                                    <td> Date of birth: </td>\r\n                                    <td> {{dateOfBirth}} </td>\r\n                                </tr>\r\n                                <tr>\r\n                                    <td> Phone number: </td>\r\n                                    <td> {{user.phoneNumber}} </td>\r\n                                </tr>\r\n                                <tr>\r\n                                    <td> Address: </td>\r\n                                    <td> {{user.address}} </td>\r\n                                </tr>\r\n                                <tr>\r\n                                    <td> Roles: </td>\r\n                                    <td> {{user.roleName}} </td>\r\n                                </tr>\r\n                            </table>\r\n                        </div>\r\n\r\n                    </div>\r\n                    <!--/row-->\r\n                </div>\r\n                <div class=\"tab-pane\" id=\"psw\">\r\n                    <div class=\"alert alert-info alert-dismissible fade show\" *ngIf=\"showMessage\">\r\n                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\" (click)=\"showMessage = false;\">&times;</button>\r\n                        {{ messagge }}\r\n                    </div>\r\n                    <form role=\"form\" #fPsw=\"ngForm\" (ngSubmit)=\"changePassword()\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Old password</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"password\" id=\"oldPassword\" name=\"oldPassword\" required #oldPassword=\"ngModel\" [(ngModel)]=\"oldPass\">\r\n                                <span class=\"help-block\" *ngIf=\"oldPassword.touched && !oldPassword.valid\">\r\n                                    <i>This field is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">New password</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" (keyup)=\"checkPasswords()\" type=\"password\" id=\"newPassword\" name=\"newPassword\" required #newPassword=\"ngModel\"\r\n                                    [(ngModel)]=\"newPass\">\r\n                                <span class=\"help-block\" *ngIf=\"newPassword.touched && !newPassword.valid\">\r\n                                    <i>This field is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Repeat password</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"password\" required #repeatedPassword=\"ngModel\" id=\"repeatedPassword\" name=\"repeatedPassword\"\r\n                                    [(ngModel)]=\"repeatedPass\" (keyup)=\"checkPasswords()\">\r\n                                <span class=\"help-block\" *ngIf=\"repeatedPassword.touched && !repeatedPassword.valid\">\r\n                                    <i>This field is required.</i>\r\n                                </span>\r\n                                <span class=\"help-block\" *ngIf=\"!matchingPasswords\">\r\n                                    <i>Passwords are not the same.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\"></label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"reset\" class=\"btn btn-secondary\" value=\"Cancel\">\r\n                                <input type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!fPsw.valid || !matchingPasswords\" value=\"Save Changes\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n                <div class=\"tab-pane\" id=\"edit\">\r\n                    <form role=\"form\" #f=\"ngForm\" (ngSubmit)=\"userEdit()\">\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">First name</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"text\" [(value)]=\"user.firstName\" id=\"firstName\" name=\"firstName\" required #firstName=\"ngModel\"\r\n                                    maxlength=\"20\" [(ngModel)]=\"user.firstName\">\r\n                                <span class=\"help-block\" *ngIf=\"firstName.touched && !firstName.valid\">\r\n                                    <i>First name is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Last name</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"text\" [(value)]=\"user.lastName\" id=\"lastName\" name=\"lastName\" required #lastName=\"ngModel\"\r\n                                    maxlength=\"20\" [(ngModel)]=\"user.lastName\">\r\n                                <span class=\"help-block\" *ngIf=\"lastName.touched && !lastName.valid\">\r\n                                    <i>Last name is required.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Username</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input class=\"form-control\" type=\"text\" [(value)]=\"user.username\" required #username=\"ngModel\" id=\"username\" name=\"username\"\r\n                                    [(ngModel)]=\"user.username\" maxlength=\"20\" (keyup)=\"isUsernameUnique()\" [ngClass]=\"{'not-unique':!isUnique}\">\r\n                                <span class=\"help-block\" *ngIf=\"username.touched && !username.valid\">\r\n                                    <i>Username is required.</i>\r\n                                </span>\r\n                                <span class=\"help-block\" *ngIf=\"username.touched && !isUnique\">\r\n                                    <i>This username is taken.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Phone number</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input id=\"phoneNumber\" name=\"phoneNumber\" #phoneNumber=\"ngModel\" [(ngModel)]=\"user.phoneNumber\" maxlength=\"20\" class=\"form-control\"\r\n                                    type=\"text\" [(value)]=\"user.phoneNumber\">\r\n                                <span class=\"help-block\" *ngIf=\"phoneNumber.touched && !phoneNumber.valid\">\r\n                                    <i>Can't contain more than 20 characters.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Address</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input id=\"address\" name=\"address\" class=\"form-control\" type=\"text\" [(value)]=\"user.address\" maxlength=\"30\" [(ngModel)]=\"user.address\"\r\n                                    #address=\"ngModel\">\r\n                                <span class=\"help-block\" *ngIf=\"address.touched && !address.valid\">\r\n                                    <i>Can't contain more than 30 characters.</i>\r\n                                </span>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Date od birth</label>\r\n                            <div class=\"col-lg-9\">\r\n                                <div class=\"input-group\">\r\n                                    <input class=\"form-control\" placeholder=\"yyyy-mm-dd\" name=\"dp\" [(ngModel)]=\"model\" ngbDatepicker #d=\"ngbDatepicker\">\r\n                                    <div class=\"input-group-append\">\r\n                                        <button class=\"btn btn-outline-secondary\" (click)=\"d.toggle()\" type=\"button\">\r\n                                            <img src=\"assets/img/calendar-icon.png\" style=\"width: 1.2rem; height: 1rem; cursor: pointer;\" />\r\n                                        </button>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\">Roles\r\n                                <br>\r\n                                <small>\r\n                                    <i>({{user.roleName}})</i>\r\n                                </small>\r\n                            </label>\r\n                            <div class=\"col-lg-9\">\r\n                                <select name=\"rolesSelect\" [(ngModel)]=\"user.roleId\" multiple class=\"form-control\" id=\"rolesSelect\" required>\r\n                                    <option class=\"selected\" *ngFor=\"let r of roles\" value=\"{{r.roleId}}\">{{r.name}}</option>\r\n                                </select>\r\n                            </div>\r\n                        </div>\r\n                        <div class=\"form-group row\">\r\n                            <label class=\"col-lg-3 col-form-label form-control-label\"></label>\r\n                            <div class=\"col-lg-9\">\r\n                                <input type=\"reset\" class=\"btn btn-secondary\" value=\"Cancel\">\r\n                                <input type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!f.valid || !isUnique\" value=\"Save Changes\">\r\n                            </div>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <div class=\"col-lg-4 order-lg-1 text-center\">\r\n            <img src=\"assets/img/{{user.imagePath}}\" class=\"mx-auto img-fluid img-circle d-block\" alt=\"avatar\">\r\n            <h6 class=\"mt-2\">Upload a different photo</h6>\r\n            <label class=\"btn btn-success cursor-pointer\" style=\"width:75px;\">\r\n                Browse\r\n                <input type=\"file\" id=\"file\" class=\"custom-file-input cursor-pointer\" (change)=\"fileChange($event)\">\r\n            </label>\r\n        </div>\r\n    </div>\r\n    <app-student-pre-exam-obligation [(userId)]=\"userId\" [(courseId)]=\"courseId\"></app-student-pre-exam-obligation>\r\n    <app-professor-pre-exam-obligation [(userId)]=\"userId\" [(courseId)]=\"courseId\"></app-professor-pre-exam-obligation>\r\n    <app-student-payments [(userId)]=\"userId\"></app-student-payments>\r\n</div>"
 
 /***/ }),
 
@@ -2081,6 +2957,9 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.getAll = function (page, size, sortParam, sortDirection, term) {
         return this.http.get(this.path + "?term=" + term + "&page=" + page + "&size=" + size + "&sort=" + sortParam + "," + sortDirection, { observe: 'response' });
+    };
+    UserService.prototype.getAllForPayments = function () {
+        return this.http.get(this.path + "/users_payments");
     };
     UserService.prototype.getActiveUsers = function (page, size, sortParam, sortDirection, term) {
         return this.http.get(this.path + "/active?term=" + term + "&page=" + page + "&size=" + size + "&sort=" + sortParam + "," + sortDirection, { observe: 'response' });

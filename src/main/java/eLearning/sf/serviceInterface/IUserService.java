@@ -1,11 +1,13 @@
 package eLearning.sf.serviceInterface;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import eLearning.sf.dto.UserDto;
+import eLearning.sf.model.Payment;
 import eLearning.sf.model.User;
 
 public interface IUserService {
@@ -23,6 +25,8 @@ public interface IUserService {
 	Page<User> listAllByPage(String searchTerm, Pageable pageable);
 	
 	User editUser(User u, UserDto userDto);
+	
+	public List<User> findAll();
 	
 	boolean isUsernameUnique(String username, String edit, String oldUsername);
 }

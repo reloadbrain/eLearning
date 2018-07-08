@@ -27,6 +27,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import eLearning.sf.converter.UserDtoToUser;
 import eLearning.sf.converter.UserToUserDto;
+import eLearning.sf.dto.PaymentDTO;
 import eLearning.sf.dto.UserDto;
 import eLearning.sf.model.User;
 import eLearning.sf.serviceInterface.IStorageService;
@@ -94,6 +95,11 @@ public class UserController {
 		HttpHeaders headers = new HttpHeaders();
 		headers.add("total-pages", Integer.toString(users.getTotalPages()));
 		return new ResponseEntity<List<UserDto>>(userToUserDto.convert(users.getContent()), headers, HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/users_payments")
+	public ResponseEntity<List<UserDto>> getAllUsersForPaymnt() {
+		return new ResponseEntity<>(userToUserDto.convert(iUserService.findAll()), HttpStatus.OK);
 	}
 
 	@GetMapping(value = "/active")
