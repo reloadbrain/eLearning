@@ -110,4 +110,9 @@ public class UserServiceImpl implements IUserService {
 		}
 		return false;
 	}
+
+	@Override
+	public List<User> findAll() {
+		return userJpaRepo.findAll() ;
+	}
 }

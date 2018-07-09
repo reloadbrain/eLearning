@@ -59,12 +59,12 @@ INSERT INTO payment (active, description, value , student_id ) values (1 , "paym
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
 
-INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-01', 1, 1);
-INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 1, 2);
-INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 1, 3);
-INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-01', 2, 1);
-INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 2, 2);
-INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 2, 3);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-01', 1);
+--INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 1, 2);
+--INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 1, 3);
+--INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-01', 2, 1);
+--INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 2, 2);
+--INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 2, 3);
 
 INSERT INTO professor_course (professor_id, course_id) VALUES (1, 1);
 INSERT INTO professor_course (professor_id, course_id) VALUES (1, 2);

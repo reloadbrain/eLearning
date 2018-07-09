@@ -1,5 +1,7 @@
 package eLearning.sf.dto;
 
+import java.util.List;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -28,6 +30,8 @@ public class StudentDto {
 
 	@NotBlank(message = "Department id cannot be empty!")
 	private Long departmentId;
+	
+	private List<PaymentDTO> payments;
 
 	public StudentDto() {
 	}
@@ -40,5 +44,16 @@ public class StudentDto {
 		this.year = year;
 		this.userId = userId;
 		this.departmentId = departmentId;
+	}
+
+	public StudentDto(Long studentId, String transcriptNumber, Boolean active, Integer year, Long userId,
+			Long departmentId , List<PaymentDTO> payments) {
+		this.studentId = studentId;
+		this.transcriptNumber = transcriptNumber;
+		this.active = active;
+		this.year = year;
+		this.userId = userId;
+		this.departmentId = departmentId;
+		this.payments = payments;
 	}
 }
