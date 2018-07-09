@@ -102,7 +102,9 @@ public class CourseController {
 
 	@DeleteMapping(path = "/{id}")
 	public ResponseEntity<String> deletePayments(@PathVariable long id) {
-		courseService.delete(id);
+		Course course = courseService.getOne(id);
+		course.setActive(false);
+		courseService.save(course);
 		return new ResponseEntity<String>("Success",HttpStatus.OK);
 	}
 
