@@ -78,11 +78,11 @@ public class PreExamObligationRecController {
 				toDTO.convert(peors.findByStudentIdAndCurseId(studentId, curseId)), HttpStatus.OK);
 	}
 
-	@GetMapping(path = "preexamobligation/{preExamObligationId}")
+	@GetMapping(path = "preexamobligation/{preExamObligationId}/sortpar/{sortPar}/sortdir/{sortDir}")
 	public ResponseEntity<List<PreExamObligationsRecordsDTO>> getPreExamObligationRecordsByProfessorId(
-			@PathVariable long preExamObligationId) {
+			@PathVariable long preExamObligationId, @PathVariable String sortPar, @PathVariable String sortDir) {
 		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(
-				toDTO.convert(peors.findByPreExamObligationId(preExamObligationId)), HttpStatus.OK);
+				toDTO.convert(peors.findByPreExamObligationId(preExamObligationId, sortPar, sortDir)), HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")
@@ -94,6 +94,19 @@ public class PreExamObligationRecController {
 		PreExamObligationsRecords p = new PreExamObligationsRecords();
 		p = toPEOR.convert(preExamObligationsRecordsDTO);
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.save(p)), HttpStatus.OK);
+	}
+	
+	@PostMapping(path = "grade" ,consumes = "application/json")
+	public ResponseEntity<?> savePreExamObligationsRecords(
+			@RequestBody List<PreExamObligationsRecordsDTO> preExamObRecsDTO){
+		for (PreExamObligationsRecordsDTO pDto : preExamObRecsDTO) {
+			PreExamObligationsRecords p = toPEOR.convert(pDto);
+			peors.SetTrue(p);
+			System.out.println("aaaS");
+		}
+		
+		return new ResponseEntity<String>("Saved" , HttpStatus.OK);
+		
 	}
 
 	@PostMapping(path = "create-records/{id}/{year}/{month}/{day}")

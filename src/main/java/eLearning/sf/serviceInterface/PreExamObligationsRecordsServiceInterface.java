@@ -19,7 +19,7 @@ public interface PreExamObligationsRecordsServiceInterface {
 
 	public void delete(Long id);
 	
-	public List<PreExamObligationsRecords> findByPreExamObligationId (Long id);
+	public List<PreExamObligationsRecords> findByPreExamObligationId (Long id , String sortPar, String sortDir);
 	
 	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(Long sId, Long cId );
 	

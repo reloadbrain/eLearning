@@ -52,8 +52,39 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 	}
 
 	@Override
-	public List<PreExamObligationsRecords> findByPreExamObligationId(Long id) {
-		return jpa.findAllByPreExamObligationPreExamOId(id);
+	public List<PreExamObligationsRecords> findByPreExamObligationId(Long id, String sortPar, String sortDir) {
+		if (sortDir.equals("asc")) {
+			if (sortPar.equals("lastName")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByStudentUserLastNameAsc(id);
+			}
+			else if (sortPar.equals("transcriptNumber")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByStudentTranscriptNumberAsc(id);
+			}
+			else if(sortPar.endsWith("date")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByDateAsc(id);
+			}
+			else if (sortPar.equals("points")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByPointsAsc(id);
+			}
+			else if (sortPar.equals("passed")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByPassedAsc(id);
+			}
+			
+		}else {
+			if (sortPar.equals("lastName")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByStudentUserLastNameDesc(id);
+			}
+			else if (sortPar.equals("transcriptNumber")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByStudentTranscriptNumberDesc(id);
+			}
+			else if (sortPar.equals("points")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByPointsDesc(id);
+			}
+			else if (sortPar.equals("passed")) {
+				return jpa.findAllByPreExamObligationPreExamOIdOrderByPassedDesc(id);
+			}	
+		}
+		return jpa.findAllByPreExamObligationPreExamOIdOrderByDateDesc(id);
 	}
 
 	@Override
