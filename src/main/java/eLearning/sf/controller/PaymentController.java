@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -72,14 +74,20 @@ public class PaymentController {
 	}
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<PaymentDTO> savePayments(@RequestBody PaymentDTO paymentDTO) {
+	public ResponseEntity<?> savePayments(@Validated @RequestBody PaymentDTO paymentDTO, Errors errors) {
+		if(errors.hasErrors()) {
+			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
+		}
 		Payment payment = paymentDTOtoPayment.convert(paymentDTO);
 		return new ResponseEntity<PaymentDTO>(paymentToPaymentDTO.convert(paymentService.save(payment)),
 				HttpStatus.OK);
 	}
 
 	@PutMapping
-	public ResponseEntity<PaymentDTO> editPayments(@RequestBody PaymentDTO paymentDTO) {
+	public ResponseEntity<?> editPayments(@Validated @RequestBody PaymentDTO paymentDTO, Errors errors) {
+		if(errors.hasErrors()) {
+			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
+		}
 		Payment payment = paymentDTOtoPayment.convert(paymentDTO);
 		return new ResponseEntity<PaymentDTO>(paymentToPaymentDTO.convert(paymentService.save(payment)),
 				HttpStatus.OK);
