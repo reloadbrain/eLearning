@@ -25,7 +25,7 @@ public class Professor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long professorId;
 
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "type_id", nullable = false)
 	private ProfessorType type;
 
@@ -37,6 +37,6 @@ public class Professor {
 			@JoinColumn(name = "courseId") })
 	private Set<Course> courses = new HashSet<>();
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private User user;
 }

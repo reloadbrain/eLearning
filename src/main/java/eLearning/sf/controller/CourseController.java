@@ -71,24 +71,12 @@ public class CourseController {
 	
 	@PostMapping(path = "/{id}" , consumes = "application/json")
 	public ResponseEntity<String> postCourse(@PathVariable long id , @RequestBody List<Long> ids) {
-		Course course = courseService.getOne(id);
-		Set<Student> studentList = course.getStudents();
 		
 		
-//		for (Long long1 : ids) {
-//			Student student = studentService.getOne(long1);
-////			course.getStudents().add(student);
-//			course.setStudents(students
-//			if(student != null) {
-//			studentList.add(student);
-//			course.getStudents().add(studentService.getOne(long1));
-////			}else {
-//				System.out.println("sadasdaaa");
-//			}
-//		}
-		course.setStudents(studentList);
-		System.out.println("snimljeno");
-        courseService.save(course);
+		for (Long long1 : ids) {
+			courseService.addStudentCourse(id, long1);
+		}
+		
 		return new ResponseEntity<String>("OK" , HttpStatus.OK);
 	}
 

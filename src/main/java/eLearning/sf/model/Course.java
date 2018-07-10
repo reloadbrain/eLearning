@@ -27,8 +27,7 @@ public class Course {
 	@ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY)
 	private Set<Professor> professors = new HashSet<>();
 
-//	@Transient
-	@JsonIgnoreProperties("students")
+	
 	@ManyToMany(mappedBy = "courses", fetch = FetchType.LAZY ,  cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE

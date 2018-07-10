@@ -7,6 +7,8 @@ import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
 import eLearning.sf.dto.StudentDto;
+import eLearning.sf.model.Course;
+import eLearning.sf.model.Role;
 import eLearning.sf.model.Student;
 
 @Component
@@ -21,6 +23,14 @@ public class StudentToStudentDto implements Converter<Student, StudentDto> {
 		studentDto.setUserId(student.getUser().getUserId());
 		studentDto.setYear(student.getYear());
 		studentDto.setDepartmentId(student.getDepartment().getDepartmentId());
+		
+if (!student.getCourses().isEmpty()) {
+			
+			for (Course r: student.getCourses()) {
+				studentDto.getCourseId().add(r.getCourseId());
+			}
+		}
+		
 
 		return studentDto;
 	}
