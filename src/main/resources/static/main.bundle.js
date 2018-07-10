@@ -43,13 +43,10 @@ module.exports = "<nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">\r\
 /***/ }),
 
 /***/ "../../../../../src/app/app.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__authorization_authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -59,9 +56,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
 var AppComponent = /** @class */ (function () {
     function AppComponent(auth, route) {
         this.auth = auth;
@@ -79,116 +77,75 @@ var AppComponent = /** @class */ (function () {
         this.route.navigate(['/login']);
     };
     AppComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-root',
             template: __webpack_require__("../../../../../src/app/app.component.html"),
             styles: [__webpack_require__("../../../../../src/app/app.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__authorization_authorization_service__["a" /* AuthorizationService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService,
+            router_1.Router])
     ], AppComponent);
     return AppComponent;
 }());
-
+exports.AppComponent = AppComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/app.module.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__ = __webpack_require__("../../../platform-browser/esm5/animations.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__user_user_component__ = __webpack_require__("../../../../../src/app/user/user.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__user_user_service__ = __webpack_require__("../../../../../src/app/user/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__department_department_component__ = __webpack_require__("../../../../../src/app/department/department.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__department_department_service__ = __webpack_require__("../../../../../src/app/department/department.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__authorization_authorization_component__ = __webpack_require__("../../../../../src/app/authorization/authorization.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__authorization_authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__authorization_token_interceptor_service__ = __webpack_require__("../../../../../src/app/authorization/token-interceptor.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__student_pre_exam_obligation_student_pre_exam_obligation_component__ = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__professor_pre_exam_obligation_professor_pre_exam_obligation_component__ = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__professor_pre_exam_obligation_records_professor_pre_exam_obligation_records_component__ = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__user_profile_user_profile_component__ = __webpack_require__("../../../../../src/app/user-profile/user-profile.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__authorization_jwt_interceptor_service__ = __webpack_require__("../../../../../src/app/authorization/jwt-interceptor.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__pagination_pagination_component__ = __webpack_require__("../../../../../src/app/pagination/pagination.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__ng_bootstrap_ng_bootstrap__ = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__dialog_dialog_component__ = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__shared_role_service__ = __webpack_require__("../../../../../src/app/shared/role.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__user_profile_user_profile_service__ = __webpack_require__("../../../../../src/app/user-profile/user-profile.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__auth_guard_guard__ = __webpack_require__("../../../../../src/app/auth-guard.guard.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__student_pre_exam_obligation_pre_exam_obligation_records_service__ = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__pre_exam_o_type_pre_exam_o_type_component__ = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27__pre_exam_o_type_pre_exam_o_type_service__ = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28__professor_pre_exam_obligation_pre_exam_obligation_service__ = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/pre-exam-obligation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29__edocuments_edocuments_component__ = __webpack_require__("../../../../../src/app/edocuments/edocuments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30__edocuments_edocument_service__ = __webpack_require__("../../../../../src/app/edocuments/edocument.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__student_course_student_course_component__ = __webpack_require__("../../../../../src/app/student-course/student-course.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__professor_course_professor_course_component__ = __webpack_require__("../../../../../src/app/professor-course/professor-course.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__shared_exam_service__ = __webpack_require__("../../../../../src/app/shared/exam.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__professor_type_professor_type_component__ = __webpack_require__("../../../../../src/app/professor-type/professor-type.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__professor_type_professor_type_service__ = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_36__payments_payments_component__ = __webpack_require__("../../../../../src/app/payments/payments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_37__payments_payments_service__ = __webpack_require__("../../../../../src/app/payments/payments.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__student_payments_student_payments_component__ = __webpack_require__("../../../../../src/app/student-payments/student-payments.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_39__student_payments_student_payments_service__ = __webpack_require__("../../../../../src/app/student-payments/student_payments.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_40__course_course_component__ = __webpack_require__("../../../../../src/app/course/course.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_41__course_course_service__ = __webpack_require__("../../../../../src/app/course/course.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var platform_browser_1 = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
+var animations_1 = __webpack_require__("../../../platform-browser/esm5/animations.js");
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var app_component_1 = __webpack_require__("../../../../../src/app/app.component.ts");
+var user_component_1 = __webpack_require__("../../../../../src/app/user/user.component.ts");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var department_component_1 = __webpack_require__("../../../../../src/app/department/department.component.ts");
+var department_service_1 = __webpack_require__("../../../../../src/app/department/department.service.ts");
+var authorization_component_1 = __webpack_require__("../../../../../src/app/authorization/authorization.component.ts");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+var token_interceptor_service_1 = __webpack_require__("../../../../../src/app/authorization/token-interceptor.service.ts");
+var student_pre_exam_obligation_component_1 = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.ts");
+var professor_pre_exam_obligation_component_1 = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.ts");
+var professor_pre_exam_obligation_records_component_1 = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.ts");
+var user_profile_component_1 = __webpack_require__("../../../../../src/app/user-profile/user-profile.component.ts");
+var jwt_interceptor_service_1 = __webpack_require__("../../../../../src/app/authorization/jwt-interceptor.service.ts");
+var pagination_component_1 = __webpack_require__("../../../../../src/app/pagination/pagination.component.ts");
+var ng_bootstrap_1 = __webpack_require__("../../../../@ng-bootstrap/ng-bootstrap/index.js");
+var dialog_component_1 = __webpack_require__("../../../../../src/app/dialog/dialog.component.ts");
+var role_service_1 = __webpack_require__("../../../../../src/app/shared/role.service.ts");
+var user_profile_service_1 = __webpack_require__("../../../../../src/app/user-profile/user-profile.service.ts");
+var auth_guard_guard_1 = __webpack_require__("../../../../../src/app/auth-guard.guard.ts");
+var pre_exam_obligation_records_service_1 = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts");
+var pre_exam_o_type_component_1 = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.component.ts");
+var pre_exam_o_type_service_1 = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.service.ts");
+var pre_exam_obligation_service_1 = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/pre-exam-obligation.service.ts");
+var edocuments_component_1 = __webpack_require__("../../../../../src/app/edocuments/edocuments.component.ts");
+var edocument_service_1 = __webpack_require__("../../../../../src/app/edocuments/edocument.service.ts");
+var student_course_component_1 = __webpack_require__("../../../../../src/app/student-course/student-course.component.ts");
+var professor_course_component_1 = __webpack_require__("../../../../../src/app/professor-course/professor-course.component.ts");
+var exam_service_1 = __webpack_require__("../../../../../src/app/shared/exam.service.ts");
+var professor_type_component_1 = __webpack_require__("../../../../../src/app/professor-type/professor-type.component.ts");
+var professor_type_service_1 = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
+var payments_component_1 = __webpack_require__("../../../../../src/app/payments/payments.component.ts");
+var payments_service_1 = __webpack_require__("../../../../../src/app/payments/payments.service.ts");
+var student_payments_component_1 = __webpack_require__("../../../../../src/app/student-payments/student-payments.component.ts");
+var student_payments_service_1 = __webpack_require__("../../../../../src/app/student-payments/student_payments.service.ts");
+var course_component_1 = __webpack_require__("../../../../../src/app/course/course.component.ts");
+var course_service_1 = __webpack_require__("../../../../../src/app/course/course.service.ts");
 var routes = [
     /* {
       path: '',
@@ -197,110 +154,111 @@ var routes = [
     }, */
     {
         path: 'login',
-        component: __WEBPACK_IMPORTED_MODULE_11__authorization_authorization_component__["a" /* AuthorizationComponent */]
+        component: authorization_component_1.AuthorizationComponent
     },
     {
         path: 'users',
-        component: __WEBPACK_IMPORTED_MODULE_5__user_user_component__["a" /* UserComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_24__auth_guard_guard__["a" /* AuthGuard */]]
+        component: user_component_1.UserComponent,
+        canActivate: [auth_guard_guard_1.AuthGuard]
     },
     {
         path: 'profile/:id',
-        component: __WEBPACK_IMPORTED_MODULE_17__user_profile_user_profile_component__["a" /* UserProfileComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_24__auth_guard_guard__["a" /* AuthGuard */]]
+        component: user_profile_component_1.UserProfileComponent,
+        canActivate: [auth_guard_guard_1.AuthGuard]
     },
     {
         path: 'documents',
-        component: __WEBPACK_IMPORTED_MODULE_29__edocuments_edocuments_component__["a" /* EdocumentsComponent */],
-        canActivate: [__WEBPACK_IMPORTED_MODULE_24__auth_guard_guard__["a" /* AuthGuard */]]
+        component: edocuments_component_1.EdocumentsComponent,
+        canActivate: [auth_guard_guard_1.AuthGuard]
     },
     {
         path: 'preExamOTypes',
-        component: __WEBPACK_IMPORTED_MODULE_26__pre_exam_o_type_pre_exam_o_type_component__["a" /* PreExamOTypeComponent */]
+        component: pre_exam_o_type_component_1.PreExamOTypeComponent
     },
     {
         path: "professorCourses",
-        component: __WEBPACK_IMPORTED_MODULE_32__professor_course_professor_course_component__["a" /* ProfessorCourseComponent */]
+        component: professor_course_component_1.ProfessorCourseComponent
     },
     {
         path: "professor_types",
-        component: __WEBPACK_IMPORTED_MODULE_34__professor_type_professor_type_component__["a" /* ProfessorTypeComponent */]
+        component: professor_type_component_1.ProfessorTypeComponent
     },
     {
         path: "payments",
-        component: __WEBPACK_IMPORTED_MODULE_36__payments_payments_component__["a" /* PaymentsComponent */]
+        component: payments_component_1.PaymentsComponent
     },
     {
         path: "student_payments",
-        component: __WEBPACK_IMPORTED_MODULE_36__payments_payments_component__["a" /* PaymentsComponent */]
+        component: payments_component_1.PaymentsComponent
+    },
+    {
+        path: "department",
+        component: department_component_1.DepartmentComponent
     },
     {
         path: "courses",
-        component: __WEBPACK_IMPORTED_MODULE_40__course_course_component__["a" /* CourseComponent */]
+        component: course_component_1.CourseComponent
     }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["NgModule"])({
+        core_1.NgModule({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_5__user_user_component__["a" /* UserComponent */],
-                __WEBPACK_IMPORTED_MODULE_11__authorization_authorization_component__["a" /* AuthorizationComponent */],
-                __WEBPACK_IMPORTED_MODULE_9__department_department_component__["a" /* DepartmentComponent */],
-                __WEBPACK_IMPORTED_MODULE_14__student_pre_exam_obligation_student_pre_exam_obligation_component__["a" /* StudentPreExamObligationComponent */],
-                __WEBPACK_IMPORTED_MODULE_15__professor_pre_exam_obligation_professor_pre_exam_obligation_component__["a" /* ProfessorPreExamObligationComponent */],
-                __WEBPACK_IMPORTED_MODULE_16__professor_pre_exam_obligation_records_professor_pre_exam_obligation_records_component__["a" /* ProfessorPreExamObligationRecordsComponent */],
-                __WEBPACK_IMPORTED_MODULE_17__user_profile_user_profile_component__["a" /* UserProfileComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__pagination_pagination_component__["a" /* PaginationComponent */],
-                __WEBPACK_IMPORTED_MODULE_21__dialog_dialog_component__["a" /* DialogComponent */],
-                __WEBPACK_IMPORTED_MODULE_26__pre_exam_o_type_pre_exam_o_type_component__["a" /* PreExamOTypeComponent */],
-                __WEBPACK_IMPORTED_MODULE_29__edocuments_edocuments_component__["a" /* EdocumentsComponent */],
-                __WEBPACK_IMPORTED_MODULE_31__student_course_student_course_component__["a" /* StudentCourseComponent */],
-                __WEBPACK_IMPORTED_MODULE_32__professor_course_professor_course_component__["a" /* ProfessorCourseComponent */],
-                __WEBPACK_IMPORTED_MODULE_34__professor_type_professor_type_component__["a" /* ProfessorTypeComponent */],
-                __WEBPACK_IMPORTED_MODULE_36__payments_payments_component__["a" /* PaymentsComponent */],
-                __WEBPACK_IMPORTED_MODULE_38__student_payments_student_payments_component__["a" /* StudentPaymentsComponent */],
-                __WEBPACK_IMPORTED_MODULE_40__course_course_component__["a" /* CourseComponent */]
+                app_component_1.AppComponent,
+                user_component_1.UserComponent,
+                authorization_component_1.AuthorizationComponent,
+                department_component_1.DepartmentComponent,
+                student_pre_exam_obligation_component_1.StudentPreExamObligationComponent,
+                professor_pre_exam_obligation_component_1.ProfessorPreExamObligationComponent,
+                professor_pre_exam_obligation_records_component_1.ProfessorPreExamObligationRecordsComponent,
+                user_profile_component_1.UserProfileComponent,
+                pagination_component_1.PaginationComponent,
+                dialog_component_1.DialogComponent,
+                pre_exam_o_type_component_1.PreExamOTypeComponent,
+                edocuments_component_1.EdocumentsComponent,
+                student_course_component_1.StudentCourseComponent,
+                professor_course_component_1.ProfessorCourseComponent,
+                professor_type_component_1.ProfessorTypeComponent,
+                payments_component_1.PaymentsComponent,
+                student_payments_component_1.StudentPaymentsComponent,
+                course_component_1.CourseComponent
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["c" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_8__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_animations__["a" /* BrowserAnimationsModule */],
-                __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot(routes), __WEBPACK_IMPORTED_MODULE_20__ng_bootstrap_ng_bootstrap__["a" /* NgbModule */].forRoot()
+                platform_browser_1.BrowserModule,
+                http_1.HttpClientModule,
+                forms_1.FormsModule,
+                animations_1.BrowserAnimationsModule,
+                router_1.RouterModule.forRoot(routes), ng_bootstrap_1.NgbModule.forRoot()
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_6__user_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_10__department_department_service__["a" /* DepartmentService */], __WEBPACK_IMPORTED_MODULE_12__authorization_authorization_service__["a" /* AuthorizationService */], __WEBPACK_IMPORTED_MODULE_13__authorization_token_interceptor_service__["a" /* TokenInterceptorService */],
-                __WEBPACK_IMPORTED_MODULE_18__authorization_jwt_interceptor_service__["a" /* JwtInterceptorService */], __WEBPACK_IMPORTED_MODULE_25__student_pre_exam_obligation_pre_exam_obligation_records_service__["a" /* PreExamObligationRecordsService */], __WEBPACK_IMPORTED_MODULE_27__pre_exam_o_type_pre_exam_o_type_service__["a" /* PreExamOTypeService */], __WEBPACK_IMPORTED_MODULE_28__professor_pre_exam_obligation_pre_exam_obligation_service__["a" /* PreExamObligationervice */], __WEBPACK_IMPORTED_MODULE_41__course_course_service__["a" /* CourseService */],
-                __WEBPACK_IMPORTED_MODULE_33__shared_exam_service__["a" /* ExamService */], __WEBPACK_IMPORTED_MODULE_35__professor_type_professor_type_service__["a" /* ProfessorTypeService */], __WEBPACK_IMPORTED_MODULE_37__payments_payments_service__["a" /* PaymentsService */], __WEBPACK_IMPORTED_MODULE_39__student_payments_student_payments_service__["a" /* StudentPaymentsService */], {
-                    provide: __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_13__authorization_token_interceptor_service__["a" /* TokenInterceptorService */],
+            providers: [user_service_1.UserService, department_service_1.DepartmentService, authorization_service_1.AuthorizationService, token_interceptor_service_1.TokenInterceptorService,
+                jwt_interceptor_service_1.JwtInterceptorService, pre_exam_obligation_records_service_1.PreExamObligationRecordsService, pre_exam_o_type_service_1.PreExamOTypeService, pre_exam_obligation_service_1.PreExamObligationervice, course_service_1.CourseService,
+                exam_service_1.ExamService, professor_type_service_1.ProfessorTypeService, payments_service_1.PaymentsService, student_payments_service_1.StudentPaymentsService, {
+                    provide: http_1.HTTP_INTERCEPTORS,
+                    useClass: token_interceptor_service_1.TokenInterceptorService,
                     multi: true
                 }, {
-                    provide: __WEBPACK_IMPORTED_MODULE_7__angular_common_http__["a" /* HTTP_INTERCEPTORS */],
-                    useClass: __WEBPACK_IMPORTED_MODULE_18__authorization_jwt_interceptor_service__["a" /* JwtInterceptorService */],
+                    provide: http_1.HTTP_INTERCEPTORS,
+                    useClass: jwt_interceptor_service_1.JwtInterceptorService,
                     multi: true
-                }, __WEBPACK_IMPORTED_MODULE_22__shared_role_service__["a" /* RoleService */], __WEBPACK_IMPORTED_MODULE_23__user_profile_user_profile_service__["a" /* UserProfileService */], __WEBPACK_IMPORTED_MODULE_24__auth_guard_guard__["a" /* AuthGuard */], __WEBPACK_IMPORTED_MODULE_30__edocuments_edocument_service__["a" /* EdocumentService */]
+                }, role_service_1.RoleService, user_profile_service_1.UserProfileService, auth_guard_guard_1.AuthGuard, edocument_service_1.EdocumentService
             ],
-            bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
+            bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
     return AppModule;
 }());
-
+exports.AppModule = AppModule;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/auth-guard.guard.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__authorization_authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -310,9 +268,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
 var AuthGuard = /** @class */ (function () {
     function AuthGuard(auth, router) {
         this.auth = auth;
@@ -326,13 +285,13 @@ var AuthGuard = /** @class */ (function () {
         return false;
     };
     AuthGuard = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__authorization_authorization_service__["a" /* AuthorizationService */],
-            __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService,
+            router_1.Router])
     ], AuthGuard);
     return AuthGuard;
 }());
-
+exports.AuthGuard = AuthGuard;
 
 
 /***/ }),
@@ -363,14 +322,10 @@ module.exports = "<div class=\"row pt-5\">\r\n    <div class=\"col-md-6 mx-auto\
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/authorization.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthorizationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -380,10 +335,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var Observable_1 = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
 var AuthorizationComponent = /** @class */ (function () {
     function AuthorizationComponent(authService, router) {
         this.authService = authService;
@@ -407,39 +363,31 @@ var AuthorizationComponent = /** @class */ (function () {
                 console.log(error);
             }
             else {
-                __WEBPACK_IMPORTED_MODULE_3_rxjs_Observable__["Observable"].throw(error);
+                Observable_1.Observable.throw(error);
             }
         });
     };
     AuthorizationComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-authorization',
             template: __webpack_require__("../../../../../src/app/authorization/authorization.component.html"),
             styles: [__webpack_require__("../../../../../src/app/authorization/authorization.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__authorization_service__["a" /* AuthorizationService */],
-            __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService,
+            router_1.Router])
     ], AuthorizationComponent);
     return AuthorizationComponent;
 }());
-
+exports.AuthorizationComponent = AuthorizationComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/authorization.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthorizationService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_catch__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_rxjs_add_observable_throw__ = __webpack_require__("../../../../rxjs/_esm5/add/observable/throw.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_jwt__ = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_angular2_jwt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_angular2_jwt__);
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -449,18 +397,19 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var Observable_1 = __webpack_require__("../../../../rxjs/_esm5/Observable.js");
+__webpack_require__("../../../../rxjs/_esm5/add/operator/map.js");
+__webpack_require__("../../../../rxjs/_esm5/add/operator/catch.js");
+__webpack_require__("../../../../rxjs/_esm5/add/observable/throw.js");
+var angular2_jwt_1 = __webpack_require__("../../../../angular2-jwt/angular2-jwt.js");
 var AuthorizationService = /** @class */ (function () {
     function AuthorizationService(http) {
         this.http = http;
-        this.authUrl = "/http://localhost:8080/login";
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["e" /* HttpHeaders */]();
+        this.authUrl = "/login";
+        this.headers = new http_1.HttpHeaders();
     }
     AuthorizationService.prototype.login = function (userName, userPassword) {
         return this.http.post(this.authUrl, JSON.stringify({ username: userName, password: userPassword }), { observe: 'response' })
@@ -477,10 +426,10 @@ var AuthorizationService = /** @class */ (function () {
             }
         }).catch(function (error) {
             if (error.status === 401) {
-                return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw('Ilegal login');
+                return Observable_1.Observable.throw('Ilegal login');
             }
             else {
-                return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(error.json().error || 'Server error');
+                return Observable_1.Observable.throw(error.json().error || 'Server error');
             }
         });
     };
@@ -500,33 +449,28 @@ var AuthorizationService = /** @class */ (function () {
     };
     AuthorizationService.prototype.isAuthenticated = function () {
         var token = this.getToken();
-        return Object(__WEBPACK_IMPORTED_MODULE_6_angular2_jwt__["tokenNotExpired"])(null, token);
+        return angular2_jwt_1.tokenNotExpired(null, token);
     };
     AuthorizationService.prototype.isLoggedIn = function () {
         var token = this.getToken();
         return token && token.length > 0;
     };
     AuthorizationService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], AuthorizationService);
     return AuthorizationService;
 }());
-
+exports.AuthorizationService = AuthorizationService;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/jwt-interceptor.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return JwtInterceptorService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_do__ = __webpack_require__("../../../../rxjs/_esm5/add/operator/do.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -536,11 +480,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+__webpack_require__("../../../../rxjs/_esm5/add/operator/do.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
 var JwtInterceptorService = /** @class */ (function () {
     function JwtInterceptorService(auth, router) {
         this.auth = auth;
@@ -549,11 +494,11 @@ var JwtInterceptorService = /** @class */ (function () {
     JwtInterceptorService.prototype.intercept = function (request, next) {
         var _this = this;
         return next.handle(request).do(function (event) {
-            if (event instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["f" /* HttpResponse */]) {
+            if (event instanceof http_1.HttpResponse) {
                 // do stuff with response if you want
             }
         }, function (err) {
-            if (err instanceof __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["d" /* HttpErrorResponse */]) {
+            if (err instanceof http_1.HttpErrorResponse) {
                 if (err.status === 401) {
                     _this.router.navigate(['/login']);
                 }
@@ -564,24 +509,22 @@ var JwtInterceptorService = /** @class */ (function () {
         });
     };
     JwtInterceptorService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__authorization_service__["a" /* AuthorizationService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService,
+            router_1.Router])
     ], JwtInterceptorService);
     return JwtInterceptorService;
 }());
-
+exports.JwtInterceptorService = JwtInterceptorService;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/authorization/token-interceptor.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TokenInterceptorService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -591,8 +534,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
 var TokenInterceptorService = /** @class */ (function () {
     function TokenInterceptorService(auth) {
         this.auth = auth;
@@ -606,12 +550,12 @@ var TokenInterceptorService = /** @class */ (function () {
         return next.handle(req);
     };
     TokenInterceptorService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__authorization_service__["a" /* AuthorizationService */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [authorization_service_1.AuthorizationService])
     ], TokenInterceptorService);
     return TokenInterceptorService;
 }());
-
+exports.TokenInterceptorService = TokenInterceptorService;
 
 
 /***/ }),
@@ -642,15 +586,10 @@ module.exports = "<div class=\"container-fluid pt-5\">\r\n  <table class=\"table
 /***/ }),
 
 /***/ "../../../../../src/app/course/course.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourseComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__course_service__ = __webpack_require__("../../../../../src/app/course/course.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_user_service__ = __webpack_require__("../../../../../src/app/user/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__department_department_service__ = __webpack_require__("../../../../../src/app/department/department.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -660,11 +599,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var course_service_1 = __webpack_require__("../../../../../src/app/course/course.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
+var department_service_1 = __webpack_require__("../../../../../src/app/department/department.service.ts");
 var CourseComponent = /** @class */ (function () {
     function CourseComponent(courseService, userService, departmentService) {
         this.courseService = courseService;
@@ -718,31 +658,29 @@ var CourseComponent = /** @class */ (function () {
         this.showDialog = !this.showDialog;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
     ], CourseComponent.prototype, "addUserForm", void 0);
     CourseComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-courses',
             template: __webpack_require__("../../../../../src/app/course/course.component.html"),
             styles: [__webpack_require__("../../../../../src/app/course/course.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__course_service__["a" /* CourseService */], __WEBPACK_IMPORTED_MODULE_3__user_user_service__["a" /* UserService */], __WEBPACK_IMPORTED_MODULE_4__department_department_service__["a" /* DepartmentService */]])
+        __metadata("design:paramtypes", [course_service_1.CourseService, user_service_1.UserService, department_service_1.DepartmentService])
     ], CourseComponent);
     return CourseComponent;
 }());
-
+exports.CourseComponent = CourseComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/course/course.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CourseService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -752,8 +690,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var CourseService = /** @class */ (function () {
     function CourseService(http) {
         this.http = http;
@@ -772,12 +711,12 @@ var CourseService = /** @class */ (function () {
         return this.http.post(this.path, newCourse);
     };
     CourseService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], CourseService);
     return CourseService;
 }());
-
+exports.CourseService = CourseService;
 
 
 /***/ }),
@@ -803,16 +742,15 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/department/department.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\r\n  department works!\r\n</p>\r\n"
+module.exports = "<div class=\"container-fluid pt-5\">\r\n  <table class=\"table table-hover\">\r\n    <thead class=\"thead-light\">\r\n      <tr>\r\n        <th>Name</th>\r\n        <th>Edit/Remove</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let d of departments\">\r\n        <td>{{d.name}}</td>\r\n        <td>\r\n          <button class=\"btn btn-success hand\" (click)=\"onEditDep(d.departmentId)\"><i class=\"fa fa-pencil-square-o\" aria-hidden=\"true\"></i></button> ⧸ \r\n          <button class=\"btn btn-danger hand\" (click)=\"onRemove(d.departmentId)\"><i class=\"fa fa-times\" aria-hidden=\"true\"></i>\r\n          </button>\r\n        </td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n  <button class=\"btn btn-primary hand\" (click)=\"onAddDep()\">New Department</button>\r\n</div>\r\n<app-dialog [(visible)]=\"showDialog\">\r\n  <h4>Add Department</h4>\r\n  <hr>\r\n  <form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #f=\"ngForm\">\r\n\r\n    <div class=\"form-group\">\r\n      <label class=\"control-label\" for=\"name\">Name</label>\r\n      <input id=\"name\" name=\"name\" type=\"text\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newDepartment.name\" required\r\n        #name=\"ngModel\" maxlength=\"200\">\r\n      <span class=\"help-block\" *ngIf=\"name.touched && !name.valid\">\r\n        <i>name is required.</i>\r\n      </span>\r\n    </div>\r\n\r\n    <hr>\r\n    <div style=\"text-align: center\">\r\n      <button class=\"btn btn-primary\" type=\"submit\" [disabled]=\"!f.valid\">Add</button>\r\n      <button type=\"button\" (click)=\"showDialog = !showDialog\" class=\"btn\">Close</button>\r\n    </div>\r\n  </form>\r\n\r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showEditDialog\">\r\n<h4>Edit Department</h4>\r\n<hr>\r\n<form (ngSubmit)=\"onSubmit()\" class=\"form-horizontal\" #fe=\"ngForm\">\r\n\r\n  <div class=\"form-group\">\r\n    <label class=\"control-label\" for=\"name\">Name</label>\r\n    <input id=\"editName\" name=\"editName\" type=\"text\" [(value)]=\"newDepartment.name\" placeholder=\"name...\" class=\"form-control input-md\" [(ngModel)]=\"newDepartment.name\"  required\r\n      #editName=\"ngModel\" maxlength=\"200\" >\r\n    <span class=\"help-block\" *ngIf=\"editName.touched && !editName.valid\">\r\n      <i>name is required.</i>\r\n    </span>\r\n  </div>\r\n\r\n  <hr>\r\n  <div style=\"text-align: center\">\r\n    <button class=\"btn btn-success\" type=\"submit\" [disabled]=\"!f.valid\">Edit</button>\r\n    <button type=\"button\" (click)=\"showEditDialog = !showEditDialog\" class=\"btn\">Close</button>\r\n  </div>\r\n</form>\r\n\r\n</app-dialog>\r\n\r\n<app-dialog [(visible)]=\"showRemoveDialog\">\r\n  <h4>Remove Department</h4>\r\n  <hr>\r\n      <label class=\"control-label\" for=\"name\">Are you sure u want to remove this department</label>\r\n    <hr>\r\n    <div style=\"text-align: center\">\r\n      <button class=\"btn btn-danger\" (click)=\"onRemoveConfirmed()\">Remove</button>\r\n      <button type=\"button\" (click)=\"showRemoveDialog = !showRemoveDialog\" class=\"btn\">Close</button>\r\n    </div>\r\n \r\n\r\n</app-dialog>"
 
 /***/ }),
 
 /***/ "../../../../../src/app/department/department.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DepartmentComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -822,34 +760,116 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var department_service_1 = __webpack_require__("../../../../../src/app/department/department.service.ts");
 var DepartmentComponent = /** @class */ (function () {
-    function DepartmentComponent() {
+    function DepartmentComponent(departmentService) {
+        this.departmentService = departmentService;
+        this.departments = [];
+        this.newDepartment = {
+            departmentId: 0,
+            name: "",
+            active: true
+        };
+        this.showDialog = false;
+        this.showEditDialog = false;
+        this.showRemoveDialog = false;
+        this.actionForModal = "";
     }
     DepartmentComponent.prototype.ngOnInit = function () {
+        this.getDepartments();
     };
+    DepartmentComponent.prototype.onPopulateJsonDep = function (name) {
+        this.newDepartment.name = name;
+    };
+    DepartmentComponent.prototype.onGetById = function (id) {
+        var _this = this;
+        this.departmentService.getOne(id)
+            .subscribe(function (response) { return (_this.onPopulateJsonDep(response.body.name)); }, function (error) { return console.log(error); });
+    };
+    DepartmentComponent.prototype.getDepartments = function () {
+        var _this = this;
+        this.departmentService.getAll().subscribe(function (response) { return (_this.departments = response.body); }, function (error) { return console.log(error); });
+    };
+    DepartmentComponent.prototype.onPostNewDep = function () {
+        var _this = this;
+        this.departmentService.postNewDep(this.newDepartment).subscribe(function (response) { return [_this.departments.push(response), _this.resetAddForm()]; }, function (error) { return console.log(error); });
+    };
+    DepartmentComponent.prototype.onEditDep = function (id) {
+        this.resetEditForm();
+        this.newDepartment.departmentId = id;
+        this.actionForModal = "edit";
+        this.onGetById(this.newDepartment.departmentId);
+        this.showEditDialog = !this.showEditDialog;
+    };
+    DepartmentComponent.prototype.onAddDep = function () {
+        this.resetAddForm();
+        this.newDepartment.departmentId = null;
+        this.newDepartment.active = true;
+        this.showDialog = !this.showDialog;
+        this.actionForModal = "add";
+    };
+    DepartmentComponent.prototype.resetAddForm = function () {
+        this.addDepartemntForm.resetForm();
+    };
+    DepartmentComponent.prototype.resetEditForm = function () {
+        this.editDepartemntForm.resetForm();
+    };
+    DepartmentComponent.prototype.onPutDep = function () {
+        var _this = this;
+        this.departmentService.changeDep(this.newDepartment).subscribe(function (response) { return [_this.getDepartments(), _this.resetEditForm()]; }, function (error) { return console.log(error); });
+    };
+    DepartmentComponent.prototype.onRemove = function (id) {
+        this.showRemoveDialog = !this.showRemoveDialog;
+        this.newDepartment.departmentId = id;
+    };
+    DepartmentComponent.prototype.onRemoveConfirmed = function () {
+        var _this = this;
+        this.departmentService.changeActive(this.newDepartment.departmentId).subscribe(function (response) { return [_this.getDepartments()]; }, function (error) { return console.log(error); });
+        this.showRemoveDialog = !this.showRemoveDialog;
+    };
+    DepartmentComponent.prototype.onSubmit = function () {
+        if (this.actionForModal === 'edit') {
+            this.onPutDep();
+            this.resetEditForm();
+            this.showEditDialog = !this.showEditDialog;
+        }
+        if (this.actionForModal === 'add') {
+            this.onPostNewDep();
+            this.resetAddForm();
+            this.showDialog = !this.showDialog;
+        }
+    };
+    __decorate([
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
+    ], DepartmentComponent.prototype, "addDepartemntForm", void 0);
+    __decorate([
+        core_1.ViewChild('fe'),
+        __metadata("design:type", forms_1.NgForm)
+    ], DepartmentComponent.prototype, "editDepartemntForm", void 0);
     DepartmentComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-department',
             template: __webpack_require__("../../../../../src/app/department/department.component.html"),
             styles: [__webpack_require__("../../../../../src/app/department/department.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [department_service_1.DepartmentService])
     ], DepartmentComponent);
     return DepartmentComponent;
 }());
-
+exports.DepartmentComponent = DepartmentComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/department/department.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DepartmentService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -859,8 +879,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var DepartmentService = /** @class */ (function () {
     function DepartmentService(http) {
         this.http = http;
@@ -869,13 +890,25 @@ var DepartmentService = /** @class */ (function () {
     DepartmentService.prototype.getAll = function () {
         return this.http.get(this.path, { observe: 'response' });
     };
+    DepartmentService.prototype.postNewDep = function (newDepartment) {
+        return this.http.post(this.path, newDepartment);
+    };
+    DepartmentService.prototype.getOne = function (id) {
+        return this.http.get(this.path + "/" + id, { observe: 'response' });
+    };
+    DepartmentService.prototype.changeDep = function (newDepartment) {
+        return this.http.put(this.path, newDepartment);
+    };
+    DepartmentService.prototype.changeActive = function (id) {
+        return this.http.put(this.path + "/" + id, null, { responseType: 'text' });
+    };
     DepartmentService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], DepartmentService);
     return DepartmentService;
 }());
-
+exports.DepartmentService = DepartmentService;
 
 
 /***/ }),
@@ -906,12 +939,10 @@ module.exports = "<div [@dialog] *ngIf=\"visible\" class=\"dialog\">\r\n    <ng-
 /***/ }),
 
 /***/ "../../../../../src/app/dialog/dialog.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialogComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_animations__ = __webpack_require__("../../../animations/esm5/animations.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -921,12 +952,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var animations_1 = __webpack_require__("../../../animations/esm5/animations.js");
 var DialogComponent = /** @class */ (function () {
     function DialogComponent() {
         this.closable = true;
-        this.visibleChange = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.visibleChange = new core_1.EventEmitter();
     }
     DialogComponent.prototype.ngOnInit = function () { };
     DialogComponent.prototype.close = function () {
@@ -934,30 +966,30 @@ var DialogComponent = /** @class */ (function () {
         this.visibleChange.emit(this.visible);
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Object)
     ], DialogComponent.prototype, "closable", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Boolean)
     ], DialogComponent.prototype, "visible", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"])
+        core_1.Output(),
+        __metadata("design:type", core_1.EventEmitter)
     ], DialogComponent.prototype, "visibleChange", void 0);
     DialogComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-dialog',
             template: __webpack_require__("../../../../../src/app/dialog/dialog.component.html"),
             styles: [__webpack_require__("../../../../../src/app/dialog/dialog.component.css")],
             animations: [
-                Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["i" /* trigger */])('dialog', [
-                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* transition */])('void => *', [
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* style */])({ transform: 'scale3d(.3, .3, .3)' }),
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])(100)
+                animations_1.trigger('dialog', [
+                    animations_1.transition('void => *', [
+                        animations_1.style({ transform: 'scale3d(.3, .3, .3)' }),
+                        animations_1.animate(100)
                     ]),
-                    Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["h" /* transition */])('* => void', [
-                        Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["e" /* animate */])(100, Object(__WEBPACK_IMPORTED_MODULE_1__angular_animations__["g" /* style */])({ transform: 'scale3d(.0, .0, .0)' }))
+                    animations_1.transition('* => void', [
+                        animations_1.animate(100, animations_1.style({ transform: 'scale3d(.0, .0, .0)' }))
                     ])
                 ])
             ]
@@ -966,17 +998,16 @@ var DialogComponent = /** @class */ (function () {
     ], DialogComponent);
     return DialogComponent;
 }());
-
+exports.DialogComponent = DialogComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/edocuments/edocument.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EdocumentService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -986,17 +1017,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var EdocumentService = /** @class */ (function () {
     function EdocumentService() {
     }
     EdocumentService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+        core_1.Injectable(),
         __metadata("design:paramtypes", [])
     ], EdocumentService);
     return EdocumentService;
 }());
-
+exports.EdocumentService = EdocumentService;
 
 
 /***/ }),
@@ -1027,11 +1059,10 @@ module.exports = "<p>\r\n  edocuments works!\r\n</p>\r\n"
 /***/ }),
 
 /***/ "../../../../../src/app/edocuments/edocuments.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EdocumentsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1041,14 +1072,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var EdocumentsComponent = /** @class */ (function () {
     function EdocumentsComponent() {
     }
     EdocumentsComponent.prototype.ngOnInit = function () {
     };
     EdocumentsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-edocuments',
             template: __webpack_require__("../../../../../src/app/edocuments/edocuments.component.html"),
             styles: [__webpack_require__("../../../../../src/app/edocuments/edocuments.component.css")]
@@ -1057,7 +1089,7 @@ var EdocumentsComponent = /** @class */ (function () {
     ], EdocumentsComponent);
     return EdocumentsComponent;
 }());
-
+exports.EdocumentsComponent = EdocumentsComponent;
 
 
 /***/ }),
@@ -1088,11 +1120,10 @@ module.exports = "<ngb-pagination class=\"\"  (pageChange)=\"onSelect($event)\"\
 /***/ }),
 
 /***/ "../../../../../src/app/pagination/pagination.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaginationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1102,12 +1133,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var PaginationComponent = /** @class */ (function () {
     function PaginationComponent() {
         this.page = 1;
         this.collectionSize = 0;
-        this.emitPageNum = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["EventEmitter"]();
+        this.emitPageNum = new core_1.EventEmitter();
     }
     PaginationComponent.prototype.onSelect = function (event) {
         this.page = event - 1;
@@ -1121,15 +1153,15 @@ var PaginationComponent = /** @class */ (function () {
     PaginationComponent.prototype.ngOnDestroy = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], PaginationComponent.prototype, "totalPages", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Output"])(),
+        core_1.Output(),
         __metadata("design:type", Object)
     ], PaginationComponent.prototype, "emitPageNum", void 0);
     PaginationComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-pagination',
             template: __webpack_require__("../../../../../src/app/pagination/pagination.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pagination/pagination.component.css")]
@@ -1138,7 +1170,7 @@ var PaginationComponent = /** @class */ (function () {
     ], PaginationComponent);
     return PaginationComponent;
 }());
-
+exports.PaginationComponent = PaginationComponent;
 
 
 /***/ }),
@@ -1169,14 +1201,10 @@ module.exports = "<div class=\"container-fluid pt-5\">\r\n  <table class=\"table
 /***/ }),
 
 /***/ "../../../../../src/app/payments/payments.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__payments_service__ = __webpack_require__("../../../../../src/app/payments/payments.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_user_service__ = __webpack_require__("../../../../../src/app/user/user.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1186,10 +1214,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var payments_service_1 = __webpack_require__("../../../../../src/app/payments/payments.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
 var PaymentsComponent = /** @class */ (function () {
     function PaymentsComponent(paymentsService, userService) {
         this.paymentsService = paymentsService;
@@ -1272,35 +1301,33 @@ var PaymentsComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
     ], PaymentsComponent.prototype, "addUserForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fe'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('fe'),
+        __metadata("design:type", forms_1.NgForm)
     ], PaymentsComponent.prototype, "editPaymentForm", void 0);
     PaymentsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-payments',
             template: __webpack_require__("../../../../../src/app/payments/payments.component.html"),
             styles: [__webpack_require__("../../../../../src/app/payments/payments.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__payments_service__["a" /* PaymentsService */], __WEBPACK_IMPORTED_MODULE_3__user_user_service__["a" /* UserService */]])
+        __metadata("design:paramtypes", [payments_service_1.PaymentsService, user_service_1.UserService])
     ], PaymentsComponent);
     return PaymentsComponent;
 }());
-
+exports.PaymentsComponent = PaymentsComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/payments/payments.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PaymentsService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1310,8 +1337,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var PaymentsService = /** @class */ (function () {
     function PaymentsService(http) {
         this.http = http;
@@ -1333,12 +1361,12 @@ var PaymentsService = /** @class */ (function () {
         return this.http.delete(this.path + "/" + id, { responseType: 'text' });
     };
     PaymentsService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], PaymentsService);
     return PaymentsService;
 }());
-
+exports.PaymentsService = PaymentsService;
 
 
 /***/ }),
@@ -1369,13 +1397,10 @@ module.exports = "<div class=\"container-fluid pt-5\">\n    <table class=\"table
 /***/ }),
 
 /***/ "../../../../../src/app/pre-exam-o-type/pre-exam-o-type.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreExamOTypeComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pre_exam_o_type_service__ = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1385,9 +1410,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var pre_exam_o_type_service_1 = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
 var PreExamOTypeComponent = /** @class */ (function () {
     function PreExamOTypeComponent(preExamOTypeService) {
         this.preExamOTypeService = preExamOTypeService;
@@ -1467,35 +1493,33 @@ var PreExamOTypeComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
     ], PreExamOTypeComponent.prototype, "addTypeForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fe'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('fe'),
+        __metadata("design:type", forms_1.NgForm)
     ], PreExamOTypeComponent.prototype, "editTypeForm", void 0);
     PreExamOTypeComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-pre-exam-o-type',
             template: __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.component.html"),
             styles: [__webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__pre_exam_o_type_service__["a" /* PreExamOTypeService */]])
+        __metadata("design:paramtypes", [pre_exam_o_type_service_1.PreExamOTypeService])
     ], PreExamOTypeComponent);
     return PreExamOTypeComponent;
 }());
-
+exports.PreExamOTypeComponent = PreExamOTypeComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/pre-exam-o-type/pre-exam-o-type.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreExamOTypeService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1505,8 +1529,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var PreExamOTypeService = /** @class */ (function () {
     function PreExamOTypeService(http) {
         this.http = http;
@@ -1528,12 +1553,12 @@ var PreExamOTypeService = /** @class */ (function () {
         return this.http.put(this.path + "/" + id, null, { responseType: 'text' });
     };
     PreExamOTypeService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], PreExamOTypeService);
     return PreExamOTypeService;
 }());
-
+exports.PreExamOTypeService = PreExamOTypeService;
 
 
 /***/ }),
@@ -1564,14 +1589,10 @@ module.exports = "<h2>{{course}} - Exams</h2>\r\n<div class=\"container-fluid pt
 /***/ }),
 
 /***/ "../../../../../src/app/professor-course/professor-course.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorCourseComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_exam_service__ = __webpack_require__("../../../../../src/app/shared/exam.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__authorization_authorization_service__ = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1581,10 +1602,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var exam_service_1 = __webpack_require__("../../../../../src/app/shared/exam.service.ts");
+var authorization_service_1 = __webpack_require__("../../../../../src/app/authorization/authorization.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
 var ProfessorCourseComponent = /** @class */ (function () {
     function ProfessorCourseComponent(_examService, _authService) {
         this._examService = _examService;
@@ -1692,24 +1714,24 @@ var ProfessorCourseComponent = /** @class */ (function () {
         this.newDate = date;
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('addForm'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('addForm'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorCourseComponent.prototype, "addForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('editForm'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('editForm'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorCourseComponent.prototype, "editForm", void 0);
     ProfessorCourseComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-professor-course',
             template: __webpack_require__("../../../../../src/app/professor-course/professor-course.component.html"),
             styles: [__webpack_require__("../../../../../src/app/professor-course/professor-course.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__shared_exam_service__["a" /* ExamService */], __WEBPACK_IMPORTED_MODULE_2__authorization_authorization_service__["a" /* AuthorizationService */]])
+        __metadata("design:paramtypes", [exam_service_1.ExamService, authorization_service_1.AuthorizationService])
     ], ProfessorCourseComponent);
     return ProfessorCourseComponent;
 }());
-
+exports.ProfessorCourseComponent = ProfessorCourseComponent;
 
 
 /***/ }),
@@ -1740,11 +1762,10 @@ module.exports = "<p>\n  professor-pre-exam-obligation-records works!\n</p>\n"
 /***/ }),
 
 /***/ "../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorPreExamObligationRecordsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1754,14 +1775,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var ProfessorPreExamObligationRecordsComponent = /** @class */ (function () {
     function ProfessorPreExamObligationRecordsComponent() {
     }
     ProfessorPreExamObligationRecordsComponent.prototype.ngOnInit = function () {
     };
     ProfessorPreExamObligationRecordsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-professor-pre-exam-obligation-records',
             template: __webpack_require__("../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.html"),
             styles: [__webpack_require__("../../../../../src/app/professor-pre-exam-obligation-records/professor-pre-exam-obligation-records.component.css")]
@@ -1770,18 +1792,16 @@ var ProfessorPreExamObligationRecordsComponent = /** @class */ (function () {
     ], ProfessorPreExamObligationRecordsComponent);
     return ProfessorPreExamObligationRecordsComponent;
 }());
-
+exports.ProfessorPreExamObligationRecordsComponent = ProfessorPreExamObligationRecordsComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/professor-pre-exam-obligation/pre-exam-obligation.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreExamObligationervice; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1791,8 +1811,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var PreExamObligationervice = /** @class */ (function () {
     function PreExamObligationervice(http) {
         this.http = http;
@@ -1817,12 +1838,12 @@ var PreExamObligationervice = /** @class */ (function () {
         return this.http.get(this.path + "/" + "course" + "/" + cId, { observe: 'response' });
     };
     PreExamObligationervice = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], PreExamObligationervice);
     return PreExamObligationervice;
 }());
-
+exports.PreExamObligationervice = PreExamObligationervice;
 
 
 /***/ }),
@@ -1853,15 +1874,10 @@ module.exports = "<div class=\"container-fluid pt-5\">\n    <table class=\"table
 /***/ }),
 
 /***/ "../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorPreExamObligationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pre_exam_obligation_service__ = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/pre-exam-obligation.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__pre_exam_o_type_pre_exam_o_type_service__ = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__student_pre_exam_obligation_pre_exam_obligation_records_service__ = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1871,11 +1887,12 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var pre_exam_obligation_service_1 = __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/pre-exam-obligation.service.ts");
+var pre_exam_o_type_service_1 = __webpack_require__("../../../../../src/app/pre-exam-o-type/pre-exam-o-type.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var pre_exam_obligation_records_service_1 = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts");
 var ProfessorPreExamObligationComponent = /** @class */ (function () {
     function ProfessorPreExamObligationComponent(preExamObligationService, typeService, recordsServoce) {
         this.preExamObligationService = preExamObligationService;
@@ -1997,9 +2014,7 @@ var ProfessorPreExamObligationComponent = /** @class */ (function () {
             this.showSetDateDialog = !this.showSetDateDialog;
         }
         if (this.actionForModal === 'grade') {
-            console.log(this.preExamObligationsRecords);
             this.onPostGrade();
-            console.log("1");
             this.showGradeDialog = !this.showGradeDialog;
         }
     };
@@ -2023,42 +2038,42 @@ var ProfessorPreExamObligationComponent = /** @class */ (function () {
         this.gradeObligationForm.resetForm();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], ProfessorPreExamObligationComponent.prototype, "userId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], ProfessorPreExamObligationComponent.prototype, "courseId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorPreExamObligationComponent.prototype, "addObligationForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fe'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('fe'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorPreExamObligationComponent.prototype, "editObligationForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fs'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('fs'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorPreExamObligationComponent.prototype, "setObligationDateForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fg'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_3__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('fg'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorPreExamObligationComponent.prototype, "gradeObligationForm", void 0);
     ProfessorPreExamObligationComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-professor-pre-exam-obligation',
             template: __webpack_require__("../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.html"),
             styles: [__webpack_require__("../../../../../src/app/professor-pre-exam-obligation/professor-pre-exam-obligation.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__pre_exam_obligation_service__["a" /* PreExamObligationervice */],
-            __WEBPACK_IMPORTED_MODULE_2__pre_exam_o_type_pre_exam_o_type_service__["a" /* PreExamOTypeService */],
-            __WEBPACK_IMPORTED_MODULE_4__student_pre_exam_obligation_pre_exam_obligation_records_service__["a" /* PreExamObligationRecordsService */]])
+        __metadata("design:paramtypes", [pre_exam_obligation_service_1.PreExamObligationervice,
+            pre_exam_o_type_service_1.PreExamOTypeService,
+            pre_exam_obligation_records_service_1.PreExamObligationRecordsService])
     ], ProfessorPreExamObligationComponent);
     return ProfessorPreExamObligationComponent;
 }());
-
+exports.ProfessorPreExamObligationComponent = ProfessorPreExamObligationComponent;
 
 
 /***/ }),
@@ -2089,13 +2104,10 @@ module.exports = "<p>\r\n  professor-type works!\r\n</p>\r\n<div class=\"contain
 /***/ }),
 
 /***/ "../../../../../src/app/professor-type/professor-type.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorTypeComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__professor_type_service__ = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2105,9 +2117,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var professor_type_service_1 = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
 var ProfessorTypeComponent = /** @class */ (function () {
     function ProfessorTypeComponent(professorTypeService) {
         this.professorTypeService = professorTypeService;
@@ -2187,35 +2200,33 @@ var ProfessorTypeComponent = /** @class */ (function () {
         }
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorTypeComponent.prototype, "addTypeForm", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('fe'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('fe'),
+        __metadata("design:type", forms_1.NgForm)
     ], ProfessorTypeComponent.prototype, "editTypeForm", void 0);
     ProfessorTypeComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-professor-type',
             template: __webpack_require__("../../../../../src/app/professor-type/professor-type.component.html"),
             styles: [__webpack_require__("../../../../../src/app/professor-type/professor-type.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__professor_type_service__["a" /* ProfessorTypeService */]])
+        __metadata("design:paramtypes", [professor_type_service_1.ProfessorTypeService])
     ], ProfessorTypeComponent);
     return ProfessorTypeComponent;
 }());
-
+exports.ProfessorTypeComponent = ProfessorTypeComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/professor-type/professor_type.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfessorTypeService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2225,8 +2236,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var ProfessorTypeService = /** @class */ (function () {
     function ProfessorTypeService(http) {
         this.http = http;
@@ -2248,23 +2260,21 @@ var ProfessorTypeService = /** @class */ (function () {
         return this.http.delete(this.path + "/" + id, { responseType: 'text' });
     };
     ProfessorTypeService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], ProfessorTypeService);
     return ProfessorTypeService;
 }());
-
+exports.ProfessorTypeService = ProfessorTypeService;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/shared/exam.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ExamService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2274,8 +2284,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var ExamService = /** @class */ (function () {
     function ExamService(http) {
         this.http = http;
@@ -2304,23 +2315,21 @@ var ExamService = /** @class */ (function () {
         return this.http.post(this.path + "/exam-date" + "/" + id + "/" + year + "/" + month + "/" + day, null);
     };
     ExamService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], ExamService);
     return ExamService;
 }());
-
+exports.ExamService = ExamService;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/shared/role.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoleService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2330,8 +2339,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var RoleService = /** @class */ (function () {
     function RoleService(http) {
         this.http = http;
@@ -2341,12 +2351,12 @@ var RoleService = /** @class */ (function () {
         return this.http.get(this.path);
     };
     RoleService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], RoleService);
     return RoleService;
 }());
-
+exports.RoleService = RoleService;
 
 
 /***/ }),
@@ -2377,11 +2387,10 @@ module.exports = "<app-student-pre-exam-obligation [(userId)]=\"userId\" [(cours
 /***/ }),
 
 /***/ "../../../../../src/app/student-course/student-course.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentCourseComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2391,22 +2400,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
 var StudentCourseComponent = /** @class */ (function () {
     function StudentCourseComponent() {
     }
     StudentCourseComponent.prototype.ngOnInit = function () {
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], StudentCourseComponent.prototype, "userId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], StudentCourseComponent.prototype, "courseId", void 0);
     StudentCourseComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-student-course',
             template: __webpack_require__("../../../../../src/app/student-course/student-course.component.html"),
             styles: [__webpack_require__("../../../../../src/app/student-course/student-course.component.css")]
@@ -2415,7 +2425,7 @@ var StudentCourseComponent = /** @class */ (function () {
     ], StudentCourseComponent);
     return StudentCourseComponent;
 }());
-
+exports.StudentCourseComponent = StudentCourseComponent;
 
 
 /***/ }),
@@ -2446,12 +2456,10 @@ module.exports = "\r\n<div class=\"container-fluid pt-5\">\r\n    <table class=\
 /***/ }),
 
 /***/ "../../../../../src/app/student-payments/student-payments.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentPaymentsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__student_payments_service__ = __webpack_require__("../../../../../src/app/student-payments/student_payments.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2461,8 +2469,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var student_payments_service_1 = __webpack_require__("../../../../../src/app/student-payments/student_payments.service.ts");
 var StudentPaymentsComponent = /** @class */ (function () {
     function StudentPaymentsComponent(studentPaymentsService) {
         this.studentPaymentsService = studentPaymentsService;
@@ -2477,31 +2486,29 @@ var StudentPaymentsComponent = /** @class */ (function () {
             function (error) { return console.log(error); };
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], StudentPaymentsComponent.prototype, "userId", void 0);
     StudentPaymentsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-student-payments',
             template: __webpack_require__("../../../../../src/app/student-payments/student-payments.component.html"),
             styles: [__webpack_require__("../../../../../src/app/student-payments/student-payments.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__student_payments_service__["a" /* StudentPaymentsService */]])
+        __metadata("design:paramtypes", [student_payments_service_1.StudentPaymentsService])
     ], StudentPaymentsComponent);
     return StudentPaymentsComponent;
 }());
-
+exports.StudentPaymentsComponent = StudentPaymentsComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/student-payments/student_payments.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentPaymentsService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2511,8 +2518,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var StudentPaymentsService = /** @class */ (function () {
     function StudentPaymentsService(http) {
         this.http = http;
@@ -2537,23 +2545,21 @@ var StudentPaymentsService = /** @class */ (function () {
         return this.http.delete(this.path + "/" + id, { responseType: 'text' });
     };
     StudentPaymentsService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], StudentPaymentsService);
     return StudentPaymentsService;
 }());
-
+exports.StudentPaymentsService = StudentPaymentsService;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PreExamObligationRecordsService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2563,8 +2569,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var PreExamObligationRecordsService = /** @class */ (function () {
     function PreExamObligationRecordsService(http) {
         this.http = http;
@@ -2580,18 +2587,20 @@ var PreExamObligationRecordsService = /** @class */ (function () {
         return this.http.get(this.path + "/preexamobligation/" + id + "/sortpar/" + sortParam + "/sortdir/" + sortDirection, { observe: 'response' });
     };
     PreExamObligationRecordsService.prototype.setObligationDate = function (id, year, month, day) {
-        return this.http.post(this.path + "/create-records" + "/" + id + "/" + year + "/" + month + "/" + day, null);
+        return this.http.post(this.path + "/create-records" + "/" + id + "/" + year + "/" + month + "/" + day, null, { observe: 'response' });
     };
     PreExamObligationRecordsService.prototype.gradeRecords = function (reccords) {
-        return this.http.post(this.path + "/grade", reccords);
+        console.log("test");
+        console.log(reccords);
+        return this.http.post(this.path + "/grade", reccords, { observe: 'response' });
     };
     PreExamObligationRecordsService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], PreExamObligationRecordsService);
     return PreExamObligationRecordsService;
 }());
-
+exports.PreExamObligationRecordsService = PreExamObligationRecordsService;
 
 
 /***/ }),
@@ -2622,12 +2631,10 @@ module.exports = "<div class=\"container-fluid pt-5\">\n    <table class=\"table
 /***/ }),
 
 /***/ "../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StudentPreExamObligationComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__pre_exam_obligation_records_service__ = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2637,8 +2644,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var pre_exam_obligation_records_service_1 = __webpack_require__("../../../../../src/app/student-pre-exam-obligation/pre-exam-obligation-records.service.ts");
 var StudentPreExamObligationComponent = /** @class */ (function () {
     function StudentPreExamObligationComponent(preExamObligationRecordsService) {
         this.preExamObligationRecordsService = preExamObligationRecordsService;
@@ -2661,24 +2669,24 @@ var StudentPreExamObligationComponent = /** @class */ (function () {
         });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], StudentPreExamObligationComponent.prototype, "userId", void 0);
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
+        core_1.Input(),
         __metadata("design:type", Number)
     ], StudentPreExamObligationComponent.prototype, "courseId", void 0);
     StudentPreExamObligationComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-student-pre-exam-obligation',
             template: __webpack_require__("../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.html"),
             styles: [__webpack_require__("../../../../../src/app/student-pre-exam-obligation/student-pre-exam-obligation.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__pre_exam_obligation_records_service__["a" /* PreExamObligationRecordsService */]])
+        __metadata("design:paramtypes", [pre_exam_obligation_records_service_1.PreExamObligationRecordsService])
     ], StudentPreExamObligationComponent);
     return StudentPreExamObligationComponent;
 }());
-
+exports.StudentPreExamObligationComponent = StudentPreExamObligationComponent;
 
 
 /***/ }),
@@ -2709,16 +2717,10 @@ module.exports = "<div class=\"container pt-5\">\r\n    <div class=\"row my-2\">
 /***/ }),
 
 /***/ "../../../../../src/app/user-profile/user-profile.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfileComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__user_user_service__ = __webpack_require__("../../../../../src/app/user/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__user_profile_service__ = __webpack_require__("../../../../../src/app/user-profile/user-profile.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_role_service__ = __webpack_require__("../../../../../src/app/shared/role.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2728,12 +2730,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
+var user_profile_service_1 = __webpack_require__("../../../../../src/app/user-profile/user-profile.service.ts");
+var role_service_1 = __webpack_require__("../../../../../src/app/shared/role.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
 var UserProfileComponent = /** @class */ (function () {
     function UserProfileComponent(route, userService, userProfileService, roleService) {
         this.route = route;
@@ -2817,34 +2820,32 @@ var UserProfileComponent = /** @class */ (function () {
         this.sub.unsubscribe();
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])("fPsw"),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_5__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild("fPsw"),
+        __metadata("design:type", forms_1.NgForm)
     ], UserProfileComponent.prototype, "passEditForm", void 0);
     UserProfileComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-user-profile',
             template: __webpack_require__("../../../../../src/app/user-profile/user-profile.component.html"),
             styles: [__webpack_require__("../../../../../src/app/user-profile/user-profile.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_2__user_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_3__user_profile_service__["a" /* UserProfileService */],
-            __WEBPACK_IMPORTED_MODULE_4__shared_role_service__["a" /* RoleService */]])
+        __metadata("design:paramtypes", [router_1.ActivatedRoute,
+            user_service_1.UserService,
+            user_profile_service_1.UserProfileService,
+            role_service_1.RoleService])
     ], UserProfileComponent);
     return UserProfileComponent;
 }());
-
+exports.UserProfileComponent = UserProfileComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/user-profile/user-profile.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserProfileService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2854,13 +2855,14 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var UserProfileService = /** @class */ (function () {
     function UserProfileService(http) {
         this.http = http;
         this.path = "/api/users";
-        this.headers = new __WEBPACK_IMPORTED_MODULE_1__angular_common_http__["e" /* HttpHeaders */]().set('Content-Type', 'application/json');
+        this.headers = new http_1.HttpHeaders().set('Content-Type', 'application/json');
     }
     UserProfileService.prototype.uploadImage = function (file) {
         var formData = new FormData();
@@ -2874,12 +2876,12 @@ var UserProfileService = /** @class */ (function () {
         return this.http.put(this.path + "/editPassword/" + id, JSON.stringify({ oldPassword: oldPassword, newPassword: newPassword, confirmedPassword: confirmedPassword }), { headers: this.headers, responseType: 'text' });
     };
     UserProfileService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], UserProfileService);
     return UserProfileService;
 }());
-
+exports.UserProfileService = UserProfileService;
 
 
 /***/ }),
@@ -2910,16 +2912,10 @@ module.exports = "<div class=\"container-fluid pt-5\">\r\n  <div style=\"text-al
 /***/ }),
 
 /***/ "../../../../../src/app/user/user.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__user_service__ = __webpack_require__("../../../../../src/app/user/user.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__("../../../forms/esm5/forms.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_role_service__ = __webpack_require__("../../../../../src/app/shared/role.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__professor_type_professor_type_service__ = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2929,12 +2925,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var user_service_1 = __webpack_require__("../../../../../src/app/user/user.service.ts");
+var forms_1 = __webpack_require__("../../../forms/esm5/forms.js");
+var role_service_1 = __webpack_require__("../../../../../src/app/shared/role.service.ts");
+var router_1 = __webpack_require__("../../../router/esm5/router.js");
+var professor_type_service_1 = __webpack_require__("../../../../../src/app/professor-type/professor_type.service.ts");
 var UserComponent = /** @class */ (function () {
     function UserComponent(userService, roleService, professorTypeService, router) {
         this.userService = userService;
@@ -3034,33 +3031,31 @@ var UserComponent = /** @class */ (function () {
         this.professorTypeService.getAll().subscribe(function (response) { return (_this.professorTypes = response.body); }, function (error) { return console.log(error); });
     };
     __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('f'),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_2__angular_forms__["d" /* NgForm */])
+        core_1.ViewChild('f'),
+        __metadata("design:type", forms_1.NgForm)
     ], UserComponent.prototype, "addUserForm", void 0);
     UserComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        core_1.Component({
             selector: 'app-user',
             template: __webpack_require__("../../../../../src/app/user/user.component.html"),
             styles: [__webpack_require__("../../../../../src/app/user/user.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_3__shared_role_service__["a" /* RoleService */], __WEBPACK_IMPORTED_MODULE_5__professor_type_professor_type_service__["a" /* ProfessorTypeService */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["b" /* Router */]])
+        __metadata("design:paramtypes", [user_service_1.UserService,
+            role_service_1.RoleService, professor_type_service_1.ProfessorTypeService,
+            router_1.Router])
     ], UserComponent);
     return UserComponent;
 }());
-
+exports.UserComponent = UserComponent;
 
 
 /***/ }),
 
 /***/ "../../../../../src/app/user/user.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_common_http__ = __webpack_require__("../../../common/esm5/http.js");
+
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3070,8 +3065,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var http_1 = __webpack_require__("../../../common/esm5/http.js");
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
@@ -3102,26 +3098,27 @@ var UserService = /** @class */ (function () {
         return this.http.put(this.path + "/" + id, null, { responseType: 'text' });
     };
     UserService = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        core_1.Injectable(),
+        __metadata("design:paramtypes", [http_1.HttpClient])
     ], UserService);
     return UserService;
 }());
-
+exports.UserService = UserService;
 
 
 /***/ }),
 
 /***/ "../../../../../src/environments/environment.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
+
 // The file contents for the current environment will overwrite these during build.
 // The build system defaults to the dev environment which uses `environment.ts`, but if you do
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
-var environment = {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.environment = {
     production: false
 };
 
@@ -3129,22 +3126,19 @@ var environment = {
 /***/ }),
 
 /***/ "../../../../../src/main.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../src/app/app.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../src/environments/environment.ts");
 
-
-
-
-if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+Object.defineProperty(exports, "__esModule", { value: true });
+var core_1 = __webpack_require__("../../../core/esm5/core.js");
+var platform_browser_dynamic_1 = __webpack_require__("../../../platform-browser-dynamic/esm5/platform-browser-dynamic.js");
+var app_module_1 = __webpack_require__("../../../../../src/app/app.module.ts");
+var environment_1 = __webpack_require__("../../../../../src/environments/environment.ts");
+if (environment_1.environment.production) {
+    core_1.enableProdMode();
 }
-Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
+platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
     .catch(function (err) { return console.log(err); });
 
 
