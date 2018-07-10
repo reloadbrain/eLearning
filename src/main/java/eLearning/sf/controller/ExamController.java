@@ -20,8 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import eLearning.sf.converter.ExamDtoToExam;
 import eLearning.sf.converter.ExamToExamDto;
+import eLearning.sf.converter.StudentRecordsToStudentRecordsDto;
 import eLearning.sf.dto.ExamDto;
+import eLearning.sf.dto.ExamStudentRecordsDto;
 import eLearning.sf.model.Exam;
+import eLearning.sf.model.ExamStudentRecords;
+import eLearning.sf.service.ExamStudentRecordsService;
 import eLearning.sf.serviceInterface.ExamServiceInterface;
 
 @Controller
@@ -32,10 +36,16 @@ public class ExamController {
 	private ExamServiceInterface examService;
 
 	@Autowired
+	private ExamStudentRecordsService recordsService;
+
+	@Autowired
 	private ExamDtoToExam examDtoToExamConverter;
 
 	@Autowired
 	private ExamToExamDto examToExamDtoConverter;
+
+	@Autowired
+	StudentRecordsToStudentRecordsDto recordToRecordDtoConverter;
 
 	// @GetMapping
 	// public ResponseEntity<List<ExamDto>> getExams() {
@@ -60,6 +70,13 @@ public class ExamController {
 		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams), HttpStatus.OK);
 	}
 
+	@GetMapping(path = "/by-course-student")
+	public ResponseEntity<List<ExamDto>> getAllByStudentAndCourse(@RequestParam("courseId") Long courseId,
+			@RequestParam("studentUsername") String studentUsername) {
+		List<Exam> exams = examService.findAllByCourseAndStudent(courseId, studentUsername);
+		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams), HttpStatus.OK);
+	}
+
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<ExamDto> getExam(@PathVariable long id) {
 		return new ResponseEntity<ExamDto>(examToExamDtoConverter.convert(examService.getOne(id)), HttpStatus.OK);
@@ -69,6 +86,13 @@ public class ExamController {
 	public ResponseEntity<ExamDto> saveExam(@RequestBody ExamDto examDto) {
 		Exam exam = examDtoToExamConverter.convert(examDto);
 		return new ResponseEntity<>(examToExamDtoConverter.convert(examService.save(exam)), HttpStatus.OK);
+	}
+
+	@PostMapping(consumes = "application/json")
+	public ResponseEntity<ExamStudentRecordsDto> applyForExam(@RequestParam("studentUsername") String studentUsername,
+			@RequestParam("examId") Long examId) {
+		ExamStudentRecords record = recordsService.createNew(studentUsername, examId);
+		return new ResponseEntity<>(recordToRecordDtoConverter.convert(recordsService.save(record)), HttpStatus.OK);
 	}
 
 	@PutMapping

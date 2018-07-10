@@ -20,4 +20,6 @@ public interface ExamServiceInterface {
 	Page<Exam> listAllByPage(String searchTerm, Pageable pageable);
 
 	public List<Exam> findAllByProfessorAndCourse(String professorUsername, Long courseId);
+	
+	public List<Exam> findAllByCourseAndStudent(Long courseId, String studentUsername);
 }

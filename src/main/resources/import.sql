@@ -25,7 +25,6 @@ INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUE
 INSERT INTO professor_type (name , active) values ('type 1' , 1 )
 INSERT INTO professor_type (name , active) values ('type 2' , 1 )
 
-
 INSERT INTO professor (type_id , active, user_user_id ) values (1 , 1 , 1)
 INSERT INTO professor (type_id , active, user_user_id ) values (2 , 1 , 2)
 INSERT INTO professor (type_id , active, user_user_id ) values (1 , 1 , 3)
@@ -59,12 +58,12 @@ INSERT INTO payment (active, description, value , student_id ) values (1 , "paym
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
 
-INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-01', 1);
---INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 1, 2);
---INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 1, 3);
---INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-01', 2, 1);
---INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-02', 2, 2);
---INSERT INTO exam (active, date, course_id, exam_term_id) VALUES (1, '2019-01-03', 2, 3);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2018-01-01', 1);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-02', 1);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-03', 1);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-01', 2);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-02', 2);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-03', 2);
 
 INSERT INTO professor_course (professor_id, course_id) VALUES (1, 1);
 INSERT INTO professor_course (professor_id, course_id) VALUES (1, 2);
@@ -78,3 +77,9 @@ INSERT INTO students_courses (student_id, course_id) VALUES (1, 1);
 INSERT INTO students_courses (student_id, course_id) VALUES (2, 1);
 INSERT INTO students_courses (student_id, course_id) VALUES (3, 1);
 INSERT INTO students_courses (student_id, course_id) VALUES (2, 2);
+
+INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 1);
+INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 2);
+
+
+

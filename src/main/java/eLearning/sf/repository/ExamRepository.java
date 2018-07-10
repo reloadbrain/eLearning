@@ -20,6 +20,5 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
 	List<Exam> findAllByCourseProfessorsUserUsernameContainingAndCourseCourseIdAndActiveTrue(
 			@Param("professorUsername") String professorUsername, @Param("courseId") Long courseId);
 
-	List<Exam> findAllByCourseStudentsUserUsernameContainingAndCourseCourseIdAndActiveTrue(
-			@Param("studentUsername") String studentUsername, @Param("courseId") Long courseId);
+	List<Exam> findAllByCourseCourseIdAndActiveTrue(Long courseId);
 }

@@ -11,6 +11,12 @@ import lombok.Data;
 @Data
 public class ExamStudentRecordsDto {
 
+	private String studentFirstName;
+	
+	private String studentLastName;
+	
+	private String studentTranscriptNumber;
+	
 	@NotNull(message = "Exam records id can not be null!")
 	private Long examRecordsId;
 
@@ -22,7 +28,7 @@ public class ExamStudentRecordsDto {
 
 	private String grade;
 
-	private Integer totalPoints;
+	private Integer points;
 
 	private boolean passed;
 
@@ -36,13 +42,13 @@ public class ExamStudentRecordsDto {
 	public ExamStudentRecordsDto() {
 	}
 
-	public ExamStudentRecordsDto(Long examRecordsId, Long examId, Long studentId, String grade, Integer totalPoints,
+	public ExamStudentRecordsDto(Long examRecordsId, Long examId, Long studentId, String grade, Integer points,
 			boolean passed, Boolean active, Date examDate) {
 		this.examRecordsId = examRecordsId;
 		this.examId = examId;
 		this.studentId = studentId;
 		this.grade = grade;
-		this.totalPoints = totalPoints;
+		this.points = points;
 		this.passed = passed;
 		this.active = active;
 		this.examDate = examDate;

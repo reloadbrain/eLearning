@@ -9,4 +9,6 @@ import eLearning.sf.model.Student;
 public interface StudentRepository extends JpaRepository<Student, Long> {
 
 	List<Student> findAllByCoursesCourseId(Long courseId);
+	
+	Student findByUserUsername(String username);
 }
