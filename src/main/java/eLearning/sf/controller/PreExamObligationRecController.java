@@ -2,6 +2,7 @@ package eLearning.sf.controller;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -49,6 +50,9 @@ public class PreExamObligationRecController {
 
 	@Autowired
 	PreExamObligationRecordsDTOtoPreExamObligationRecords toPEOR;
+	
+	private final static Logger LOGGER = Logger.getLogger(PreExamObligationController.class.getName());
+
 
 	/*
 	 * @GetMapping public ResponseEntity<List<PreExamObligationsRecordsDTO>>
@@ -78,11 +82,11 @@ public class PreExamObligationRecController {
 				toDTO.convert(peors.findByStudentIdAndCurseId(studentId, curseId)), HttpStatus.OK);
 	}
 
-	@GetMapping(path = "preexamobligation/{preExamObligationId}")
+	@GetMapping(path = "preexamobligation/{preExamObligationId}/sortpar/{sortPar}/sortdir/{sortDir}")
 	public ResponseEntity<List<PreExamObligationsRecordsDTO>> getPreExamObligationRecordsByProfessorId(
-			@PathVariable long preExamObligationId) {
+			@PathVariable long preExamObligationId, @PathVariable String sortPar, @PathVariable String sortDir) {
 		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(
-				toDTO.convert(peors.findByPreExamObligationId(preExamObligationId)), HttpStatus.OK);
+				toDTO.convert(peors.findByPreExamObligationId(preExamObligationId, sortPar, sortDir)), HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")
@@ -94,6 +98,23 @@ public class PreExamObligationRecController {
 		PreExamObligationsRecords p = new PreExamObligationsRecords();
 		p = toPEOR.convert(preExamObligationsRecordsDTO);
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.save(p)), HttpStatus.OK);
+	}
+	
+	@PostMapping(path = "grade" ,consumes = "application/json")
+	public ResponseEntity<?> savePreExamObligationsRecords(
+			@RequestBody List<PreExamObligationsRecordsDTO> preExamObRecsDTO){
+		System.out.println("adsjasljldsjldjklakjlajkljkllkjsaj;asjkajafskafsjskjafsjkl;akjlasjklaskjaafskjafs");
+		LOGGER.info("Kontroler");
+		for (PreExamObligationsRecordsDTO pDto : preExamObRecsDTO) {
+			LOGGER.info("ForPetlja");
+			PreExamObligationsRecords p = toPEOR.convert(pDto);
+			LOGGER.info("Konvertovano");
+			peors.SetTrue(p);
+			LOGGER.info("Snimljeno");
+		}
+		
+		return new ResponseEntity<String>("Saved" , HttpStatus.OK);
+		
 	}
 
 	@PostMapping(path = "create-records/{id}/{year}/{month}/{day}")
