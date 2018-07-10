@@ -103,19 +103,20 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 	}
 
 	public void SetTrue(PreExamObligationsRecords p) {
-		if (findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(),
-				p.getStudent().getStudentId()) != null) {
+		PreExamObligationsRecords currentMax = new PreExamObligationsRecords();
+		currentMax = findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId());
+		
+		if (currentMax == null) {
 			p.setActive(true);
-		} else if (p.getPoints() > findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(),
-				p.getStudent().getStudentId()).getPoints()) {
-			findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId())
-					.setActive(false);
+			
+		} else if (p.getPoints() > currentMax.getPoints()) {
+			currentMax.setActive(false);
+			save(currentMax);
 			p.setActive(true);
 		} else {
 			p.setActive(false);
 		}
 		save(p);
-		save(findByObligationIdAndStudentId(p.getPreExamObligation().getPreExamOId(), p.getStudent().getStudentId()));
 	}
 
 }

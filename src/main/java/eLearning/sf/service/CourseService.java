@@ -2,7 +2,11 @@ package eLearning.sf.service;
 
 import java.util.List;
 
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.Course;
@@ -12,6 +16,7 @@ import eLearning.sf.serviceInterface.CourseServiceInterface;
 @Service
 public class CourseService implements CourseServiceInterface{
 
+	private static SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
 	
 	@Autowired
 	CourseRepository courseRepository;
@@ -39,6 +44,17 @@ public class CourseService implements CourseServiceInterface{
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		courseRepository.deleteById(id);
+	}
+	
+	public void addStudentCourse(Long course_id,Long student_id) {
+		Session session = sessionFactory.openSession();
+		session.beginTransaction();
+		SQLQuery insertSql = session.createSQLQuery("" + "insert into students_courses(course_id , student_id) values(?,?);");
+		insertSql.setParameter(0,  course_id);
+		insertSql.setParameter(1,  student_id);
+		insertSql.executeUpdate();
+		session.getTransaction().commit();
+		
 	}
 	
 }

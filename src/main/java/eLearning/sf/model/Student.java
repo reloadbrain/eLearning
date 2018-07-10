@@ -32,7 +32,7 @@ public class Student {
 	@OneToOne
 	private User user;
 
-	@JsonIgnoreProperties("courses")
+	
 	@ManyToMany(fetch = FetchType.LAZY, cascade = {
             CascadeType.PERSIST,
             CascadeType.MERGE

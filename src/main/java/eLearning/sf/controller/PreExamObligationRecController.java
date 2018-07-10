@@ -2,6 +2,7 @@ package eLearning.sf.controller;
 
 import java.sql.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -49,6 +50,9 @@ public class PreExamObligationRecController {
 
 	@Autowired
 	PreExamObligationRecordsDTOtoPreExamObligationRecords toPEOR;
+	
+	private final static Logger LOGGER = Logger.getLogger(PreExamObligationController.class.getName());
+
 
 	/*
 	 * @GetMapping public ResponseEntity<List<PreExamObligationsRecordsDTO>>
@@ -99,10 +103,14 @@ public class PreExamObligationRecController {
 	@PostMapping(path = "grade" ,consumes = "application/json")
 	public ResponseEntity<?> savePreExamObligationsRecords(
 			@RequestBody List<PreExamObligationsRecordsDTO> preExamObRecsDTO){
+		System.out.println("adsjasljldsjldjklakjlajkljkllkjsaj;asjkajafskafsjskjafsjkl;akjlasjklaskjaafskjafs");
+		LOGGER.info("Kontroler");
 		for (PreExamObligationsRecordsDTO pDto : preExamObRecsDTO) {
+			LOGGER.info("ForPetlja");
 			PreExamObligationsRecords p = toPEOR.convert(pDto);
+			LOGGER.info("Konvertovano");
 			peors.SetTrue(p);
-			System.out.println("aaaS");
+			LOGGER.info("Snimljeno");
 		}
 		
 		return new ResponseEntity<String>("Saved" , HttpStatus.OK);

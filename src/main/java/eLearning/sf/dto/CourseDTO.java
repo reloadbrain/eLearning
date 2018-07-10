@@ -22,17 +22,22 @@ public class CourseDTO {
 	@NotNull(message="departmentId cannot be null")
 	@Min(value=0, message="departmentId must be >= than 0")
 	private Long departmentId;
+
 	
+	@NotNull(message="studentId cannot be null")
+	@Min(value=0, message="studentId must be >= than 0")
+	private Long studentId;
 	
 	public CourseDTO() {}
 
 
-	public CourseDTO(Long courseId, String name, Boolean active, Long departmentId) {
+	public CourseDTO(Long courseId, String name, Boolean active, Long departmentId , Long studentId) {
 		super();
 		this.courseId = courseId;
 		this.name = name;
 		this.active = active;
 		this.departmentId = departmentId;
+		this.studentId = studentId;
 	}
 	
 }

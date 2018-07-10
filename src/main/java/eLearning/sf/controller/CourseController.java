@@ -1,13 +1,7 @@
 package eLearning.sf.controller;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-
-import java.io.Console;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import eLearning.sf.converter.CourseDTOtoCourse;
 import eLearning.sf.converter.CourseToCorseDTO;
 import eLearning.sf.dto.CourseDTO;
-import eLearning.sf.dto.PaymentDTO;
-import eLearning.sf.dto.ProfessorDTO;
 import eLearning.sf.model.Course;
-import eLearning.sf.model.Professor;
-import eLearning.sf.model.Student;
 import eLearning.sf.service.CourseService;
 import eLearning.sf.service.StudentService;
 
@@ -71,24 +61,12 @@ public class CourseController {
 	
 	@PostMapping(path = "/{id}" , consumes = "application/json")
 	public ResponseEntity<String> postCourse(@PathVariable long id , @RequestBody List<Long> ids) {
-		Course course = courseService.getOne(id);
-		Set<Student> studentList = course.getStudents();
 		
 		
-//		for (Long long1 : ids) {
-//			Student student = studentService.getOne(long1);
-////			course.getStudents().add(student);
-//			course.setStudents(students
-//			if(student != null) {
-//			studentList.add(student);
-//			course.getStudents().add(studentService.getOne(long1));
-////			}else {
-//				System.out.println("sadasdaaa");
-//			}
-//		}
-		course.setStudents(studentList);
-		System.out.println("snimljeno");
-        courseService.save(course);
+		for (Long long1 : ids) {
+			courseService.addStudentCourse(id, long1);
+		}
+		
 		return new ResponseEntity<String>("OK" , HttpStatus.OK);
 	}
 
