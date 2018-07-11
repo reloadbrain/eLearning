@@ -1,6 +1,7 @@
 package eLearning.sf.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -37,6 +38,17 @@ public class EDocumentService implements EDocumentServiceInterface {
 	public void delete(Long id) {
 		// TODO Auto-generated method stub
 		jpa.deleteById(id);
+	}
+
+	@Override
+	public Optional<EDocument> findById(Long id) {
+		// TODO Auto-generated method stub
+		return jpa.findById(id);
+	}
+
+	@Override
+	public List<EDocument> getDocsByUserId(Long id) {
+		return jpa.getByStudentStudentId(id);
 	}
 	
 	

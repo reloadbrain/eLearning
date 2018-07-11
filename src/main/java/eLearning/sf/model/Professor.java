@@ -25,11 +25,11 @@ public class Professor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long professorId;
 
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "type_id", nullable = false)
+	@ManyToOne
+	@JoinColumn(name = "type_id")
 	private ProfessorType type;
 
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
 	@ManyToMany(fetch = FetchType.LAZY)

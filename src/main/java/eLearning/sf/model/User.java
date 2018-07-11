@@ -42,7 +42,7 @@ public class User {
 	@Column(columnDefinition="VARCHAR(30)")
 	private String address;
 
-	@Column(columnDefinition="VARCHAR(25)")
+	@Column(columnDefinition="VARCHAR(50)")
 	private String imagePath;
 
 	@Column(columnDefinition="VARCHAR(20)")
