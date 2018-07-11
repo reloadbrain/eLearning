@@ -72,7 +72,7 @@ public class PreExamObligationController {
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 	
-	@GetMapping(path="course/{courseId}")
+	@GetMapping(value="course/{courseId}")
 	public ResponseEntity<List<PreExamObligationDTO>>getPreExamObligationsByCourseId(@PathVariable long courseId){
 		return new ResponseEntity<List<PreExamObligationDTO>>(toDTO.convert(peos.findByCourseId(courseId)),HttpStatus.OK);
 	}

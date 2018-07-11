@@ -30,7 +30,6 @@ import eLearning.sf.converter.UserDtoToUser;
 import eLearning.sf.converter.UserToUserDto;
 import eLearning.sf.dto.UserDto;
 import eLearning.sf.model.User;
-import eLearning.sf.serviceInterface.IStorageService;
 import eLearning.sf.serviceInterface.IUserService;
 import lombok.extern.slf4j.Slf4j;
 
@@ -40,6 +39,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class UserController {
 
+	private static final String DEFAULT_PASS = "default";
+	
 	@Autowired
 	private IUserService iUserService;
 	
@@ -52,10 +53,6 @@ public class UserController {
 	@Autowired
 	private UserToUserDto userToUserDto;
 	
-	@Autowired
-	private IStorageService iStorageService;
-	
-	
 	
 	@PostMapping(value = "/sign-up")
 	public ResponseEntity<?> signUp(@Validated @RequestBody UserDto userDto, Errors errors) {
@@ -64,13 +61,19 @@ public class UserController {
 			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
 		}
 		User u = userDtoToUser.convert(userDto);
-		log.error(userDto.getDateOfBirth().toString());
-		final String defaultPass = "default";
+		
 		log.info("Creating new user...");
-		u.setPassword(bCryptPasswordEncoder.encode(defaultPass));
+		u.setPassword(bCryptPasswordEncoder.encode(DEFAULT_PASS));
 		iUserService.save(u);
-		log.info("New user created, default password is: {}", defaultPass);
+		//creating accounts depending on role
+		iUserService.createUserAccounts(u.getRoles(), u);
+		log.info("New user created, default password is: {}", DEFAULT_PASS);
 		return new ResponseEntity<UserDto>(userToUserDto.convert(u), HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/is-user-logged-by-username/{id}")
+	public ResponseEntity<Boolean> isUserLoggedInByUsername(@PathVariable("id") Long id, Principal principal) {
+		return new ResponseEntity<Boolean>(iUserService.isUserLoggedInById(id, principal.getName()), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/{id}")
@@ -92,7 +95,6 @@ public class UserController {
 	}
 	
 	@GetMapping()
-	//@PreAuthorize("hasRole('ROLE_ADMIN')") - provera uloga 
 	public ResponseEntity<?> getAllUsers(@RequestParam("term") String term, Pageable pageable) {
 		Page<User> users = iUserService.listAllByPage(term, pageable);
 		HttpHeaders headers = new HttpHeaders();
@@ -136,53 +138,17 @@ public class UserController {
 	
 	
 	@PutMapping(value = "/edit/{id}")
-	public ResponseEntity<?> editUser(@Validated @RequestBody UserDto userDto, @PathVariable("id") Long id, Errors errors) {
-		User u = iUserService.getOne(id);
-		if (u == null) {
-			return new ResponseEntity<String> ("There is no user with id: " + id, HttpStatus.BAD_REQUEST);
-		}
+	public ResponseEntity<?> editUser(@Validated @RequestBody UserDto userDto, @PathVariable("id") Long id, Errors errors, Principal principal) {
 		if(errors.hasErrors()) {
 			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
 		}
-		User editedUser = iUserService.editUser(u, userDto);
-		if (editedUser == null) {
-			return new ResponseEntity<String>("Bad request", HttpStatus.BAD_REQUEST);
-		}
-		u = iUserService.save(editedUser);
-		return new ResponseEntity<UserDto> (userToUserDto.convert(u), HttpStatus.OK);
+		return iUserService.editUser(userDto, id, principal.getName());
 	}
 	
-	@PostMapping(value="/upload")
-	public ResponseEntity<?> upload(@RequestParam("file") MultipartFile file, Principal principal) {
-		Optional<User> u = iUserService.findByUsername(principal.getName());
-		log.error(principal.getName());
-		if(u.isPresent()) {
-			u.get().setImagePath(iStorageService.store(file));
-			iUserService.save(u.get());
-		} else {
-			 return new ResponseEntity<> ("Unauthorized", HttpStatus.UNAUTHORIZED);
-		}
-		return new ResponseEntity<String> (iStorageService.store(file), HttpStatus.OK);
-	}
  
 	@PutMapping(value = "/editPassword/{id}")
-	public ResponseEntity<String> editUserPass(@PathVariable("id") Long id, @RequestBody Map<String, Object> rData) {
-
-		User dbUser = iUserService.getOne(id);
-		
-		if (dbUser == null) {
-			log.error("There is no user with given id");
-			return new ResponseEntity<String>("There is no user with given id", HttpStatus.BAD_REQUEST);
-		}
-		if (!bCryptPasswordEncoder.matches(rData.get("oldPassword").toString(), dbUser.getPassword())) {
-			log.error("Incorrect old password");
-			return new ResponseEntity<String>("Incorrect password", HttpStatus.OK);
-		}
-		dbUser.setPassword(bCryptPasswordEncoder.encode(rData.get("newPassword").toString()));
-		log.info("Changing password for user: " + dbUser.getUsername());
-
-		iUserService.save(dbUser);
-		return new ResponseEntity<String>("Password successfully changed", HttpStatus.OK);
+	public ResponseEntity<String> editUserPassword(@PathVariable("id") Long id, @RequestBody Map<String, Object> rData, Principal principal) {
+		return iUserService.editUserPassword(id, rData, principal.getName());
 	}
 	
 }

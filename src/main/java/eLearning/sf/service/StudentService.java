@@ -34,4 +34,9 @@ public class StudentService implements StudentServiceInterface {
 	public void delete(Long id) {
 		studentRepository.deleteById(id);
 	}
+
+	@Override
+	public Student getByUserId(Long id) {
+		return studentRepository.getByUserUserId(id);
+	}
 }

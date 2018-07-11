@@ -1,7 +1,7 @@
-INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 1', '1994-05-14', 'Filip', 'Kuzmanovic', 'zz.jpg', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 060662311, 'fk')
-INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 2', '1995-01-04', 'Name', 'LastName', 'default.jpeg', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 0652321123, 'un')
-INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 3', '1996-02-17', 'Name2', 'LastName2', 'default.jpeg', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 061633311, 'nu')
-INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username, active) VALUES ('Address 41', '1991-05-14', 'Neak', 'Neaktivan', 'default.jpg', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 060662311, 'deac', false)
+INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 1', '1994-05-14', 'Filip', 'Kuzmanovic', '563c04bf-897d-48e5-863e-08cebeeccb06', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 060662311, 'fk')
+INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 2', '1995-01-04', 'Name', 'LastName', '563c04bf-897d-48e5-863e-08cebeeccb06', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 0652321123, 'un')
+INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 3', '1996-02-17', 'Name2', 'LastName2', '563c04bf-897d-48e5-863e-08cebeeccb06', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 061633311, 'nu')
+INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username, active) VALUES ('Address 41', '1991-05-14', 'Neak', 'Neaktivan', '563c04bf-897d-48e5-863e-08cebeeccb06', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 060662311, 'deac', false)
 --sifra = nnn
 
 INSERT INTO role (name) values ('ADMIN')
@@ -60,4 +60,3 @@ INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obl
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
->>>>>>> 12c3132f032c4a5e3a9c008e07b86518ff7e48bf

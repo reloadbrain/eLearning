@@ -25,10 +25,10 @@ public class Professor {
 	private Long professorId;
 
 	@ManyToOne
-	@JoinColumn(name = "type_id", nullable = false)
+	@JoinColumn(name = "type_id")
 	private ProfessorType type;
 
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
 	@ManyToMany

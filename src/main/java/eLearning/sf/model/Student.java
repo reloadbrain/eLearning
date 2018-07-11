@@ -26,10 +26,10 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long studentId;
 
-	@Column(unique = true, nullable = false)
+	@Column(unique = true)
 	private String transcriptNumber;
 
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
 	private Integer year;
@@ -49,7 +49,7 @@ public class Student {
 	private Set<EDocument> documents = new HashSet<>();
 
 	@ManyToOne(fetch = FetchType.EAGER)
-	@JoinColumn(name = "departmentId", nullable = false)
+	@JoinColumn(name = "departmentId")
 	private Department department;
 
 	@OneToMany(mappedBy = "student")
