@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import eLearning.sf.converter.StudentRecordsDtoToStudentRecords;
 import eLearning.sf.converter.StudentRecordsToStudentRecordsDto;
@@ -43,6 +44,15 @@ public class ExamStudentRecordsController {
 	public ResponseEntity<ExamStudentRecordsDto> getExamStudentRecords(@PathVariable long id) {
 		return new ResponseEntity<ExamStudentRecordsDto>(
 				recordsToRecordsDtoConverter.convert(examStudentRecordsService.getOne(id)), HttpStatus.OK);
+	}
+
+	@GetMapping(path = "/by-student-course")
+	public ResponseEntity<List<ExamStudentRecordsDto>> getByStudentAndCourse(
+			@RequestParam("studentUsername") String studentUsername, @RequestParam("courseId") Long courseId) {
+		List<ExamStudentRecords> records = examStudentRecordsService.getByStudentAndCourse(studentUsername, courseId);
+
+		return new ResponseEntity<List<ExamStudentRecordsDto>>(recordsToRecordsDtoConverter.convert(records),
+				HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")

@@ -88,7 +88,7 @@ public class ExamController {
 		return new ResponseEntity<>(examToExamDtoConverter.convert(examService.save(exam)), HttpStatus.OK);
 	}
 
-	@PostMapping(consumes = "application/json", path = "/apply")
+	@PostMapping(path = "/apply")
 	public ResponseEntity<ExamStudentRecordsDto> applyForExam(@RequestParam("studentUsername") String studentUsername,
 			@RequestParam("examId") Long examId) {
 		ExamStudentRecords record = recordsService.createNew(studentUsername, examId);

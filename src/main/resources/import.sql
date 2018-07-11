@@ -80,6 +80,7 @@ INSERT INTO students_courses (student_id, course_id) VALUES (2, 2);
 
 INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 1);
 INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 2);
+INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 1, 2);
 
 
 

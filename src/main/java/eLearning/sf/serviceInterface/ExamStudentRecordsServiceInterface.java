@@ -13,4 +13,6 @@ public interface ExamStudentRecordsServiceInterface {
 	public ExamStudentRecords save(ExamStudentRecords exam);
 
 	public void delete(Long id);
+	
+	public List<ExamStudentRecords> getByStudentAndCourse(String studentUsername, Long courseId);
 }
