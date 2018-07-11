@@ -19,16 +19,9 @@ public class EDocument {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long docId;
 
-	@Column(nullable = false, columnDefinition = "VARCHAR(30)")
-	private String name;
-
-	@ManyToOne
-	@JoinColumn(name = "typeId", nullable = false)
-	private EDocType type;
-
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
-	private Boolean active;
-
+	@Column(nullable = false, columnDefinition = "VARCHAR(50)")
+	private String nuxeoId;
+	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "studentId", nullable = false)
 	private Student student;

@@ -14,6 +14,8 @@ public interface UserJpaRepo extends JpaRepository<User, Long> {
 
 	Optional<User> findByUsername(String username);
 	
+	Optional<User> findByUsernameAndActiveTrue(String username);
+	
 	@Query("select u from User u where u.active = true and "
 			+ "(u.firstName like (CONCAT( '%', LOWER(:searchTerm), '%')) or"
 			+ " u.lastName like (CONCAT( '%', LOWER(:searchTerm), '%')) or"

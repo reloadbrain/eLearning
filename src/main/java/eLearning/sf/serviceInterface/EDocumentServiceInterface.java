@@ -1,17 +1,22 @@
 package eLearning.sf.serviceInterface;
 
 import java.util.List;
+import java.util.Optional;
 
 import eLearning.sf.model.EDocument;
 
 public interface EDocumentServiceInterface {
 	
-	public EDocument getOne(Long id);
+	EDocument getOne(Long id);
 
-	public List<EDocument> findAll();
+	List<EDocument> findAll();
 
-	public EDocument save(EDocument eDocument);
+	EDocument save(EDocument eDocument);
 
-	public void delete(Long id);
+	void delete(Long id);
 
+	Optional<EDocument> findById(Long id);
+	
+	List<EDocument> getDocsByUserId(Long id);
+	
 }

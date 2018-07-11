@@ -16,5 +16,7 @@ public interface StudentServiceInterface {
 
 	public void delete(Long id);
 	
+	Student getByUserId(Long id);
+	
 	public Student findByUsername(String username);
 }

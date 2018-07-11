@@ -36,7 +36,7 @@ public class UserDto {
 	@Length(max=30, message="Address can not contain more than 30 characters")
 	private String address;
 
-	@Length(max=25, message="Image path can not contain more than 25 characters")
+	@Length(max=50, message="Image path can not contain more than 25 characters")
 	private String imagePath;
 
 	@Length(max=20, message="Phone number can not contain more than 20 characters")
