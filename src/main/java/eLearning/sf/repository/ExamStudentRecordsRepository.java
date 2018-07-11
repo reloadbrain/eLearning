@@ -15,4 +15,6 @@ public interface ExamStudentRecordsRepository extends JpaRepository<ExamStudentR
 
 	List<ExamStudentRecords> findAllByStudentUserUsernameContainingAndExamCourseCourseIdAndActiveTrue(String studentUsername,
 			Long courseId);
+	
+	List<ExamStudentRecords> findAllByExamCourseCourseIdAndActiveTrue(Long courseId);
 }

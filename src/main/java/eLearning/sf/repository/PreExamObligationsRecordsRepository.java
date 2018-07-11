@@ -28,6 +28,9 @@ public interface PreExamObligationsRecordsRepository  extends JpaRepository<PreE
 	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByPassedDesc(Long id);
 	
 	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrue(Long sId, Long cId);
+	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrueAndPassedTrue(Long sId, Long cId);
+	
+	
 	PreExamObligationsRecords findByPreExamObligationPreExamOIdAndStudentStudentIdAndActiveTrue(Long oId, Long uId);
 	@Query("select p from PreExamObligationsRecords p where"
 			+ " p.date like (CONCAT( '%', LOWER(:searchTerm), '%')) or"

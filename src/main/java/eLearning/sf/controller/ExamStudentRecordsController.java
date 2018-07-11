@@ -39,6 +39,12 @@ public class ExamStudentRecordsController {
 		return new ResponseEntity<>(recordsToRecordsDtoConverter.convert(examStudentRecordsService.findAll()),
 				HttpStatus.OK);
 	}
+	
+	@GetMapping(value="/course/{id}")
+	public ResponseEntity<List<ExamStudentRecordsDto>> getExamStudentRecordsByCourse(@PathVariable Long id) {
+		return new ResponseEntity<>(recordsToRecordsDtoConverter.convert(examStudentRecordsService.findAllByCourseId(id)),
+				HttpStatus.OK);
+	}
 
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<ExamStudentRecordsDto> getExamStudentRecords(@PathVariable long id) {

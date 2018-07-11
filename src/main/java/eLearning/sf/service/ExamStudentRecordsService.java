@@ -59,4 +59,8 @@ public class ExamStudentRecordsService implements ExamStudentRecordsServiceInter
 		return examStudentRecordsRepository
 				.findAllByStudentUserUsernameContainingAndExamCourseCourseIdAndActiveTrue(studentUsername, courseId);
 	}
+		
+	public List<ExamStudentRecords> findAllByCourseId(Long id) {
+		return examStudentRecordsRepository.findAllByExamCourseCourseIdAndActiveTrue(id);
+	}
 }

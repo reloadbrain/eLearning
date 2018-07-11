@@ -23,6 +23,8 @@ public interface PreExamObligationsRecordsServiceInterface {
 	
 	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(Long sId, Long cId );
 	
+	public List<PreExamObligationsRecords> findByStudentIdAndCurseIdPassed(Long sId, Long cId );
+	
 	Page<PreExamObligationsRecords> listAllByPage(String searchTerm, Pageable pageable);
 	
 	public PreExamObligationsRecords findByObligationIdAndStudentId(Long oId, Long sId);

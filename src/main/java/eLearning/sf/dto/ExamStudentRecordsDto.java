@@ -21,10 +21,13 @@ public class ExamStudentRecordsDto {
 	private Long examRecordsId;
 
 	@NotNull(message = "Exam id can not be null!")
+	
 	private Long examId;
 
 	@NotNull(message = "Student id can not be null!")
 	private Long studentId;
+	
+	private Long courseId;
 
 	private String grade;
 
