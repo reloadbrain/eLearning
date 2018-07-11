@@ -53,4 +53,9 @@ public class ExamStudentRecordsService implements ExamStudentRecordsServiceInter
 
 		return record;
 	}
+
+	@Override
+	public List<ExamStudentRecords> findAllByCourseId(Long id) {
+		return examStudentRecordsRepository.findAllByExamCourseCourseIdAndActiveTrue(id);
+	}
 }
