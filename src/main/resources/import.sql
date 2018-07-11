@@ -22,11 +22,8 @@ INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUE
 INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUES ('11345', 1, 2, 1);
 INSERT INTO student (transcript_number, year, user_user_id, department_id) VALUES ('22345', 2, 3, 1);
 
-
-
 INSERT INTO professor_type (name , active) values ('type 1' , 1 )
 INSERT INTO professor_type (name , active) values ('type 2' , 1 )
-
 
 INSERT INTO professor (type_id , active, user_user_id ) values (1 , 1 , 1)
 INSERT INTO professor (type_id , active, user_user_id ) values (2 , 1 , 2)
@@ -49,14 +46,43 @@ INSERT INTO pre_exam_obligation(pre_examoid, name, active ,course_id,max_points,
 INSERT INTO pre_exam_obligation(pre_examoid, name, active ,course_id,max_points,type_id)values(7,"Domaci 1",1,2,15,2)
 INSERT INTO pre_exam_obligation(pre_examoid, name, active ,course_id,max_points,type_id)values(8,"Kolokvijum 1",1,3,15,1)
 
-INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(1,'2018-02-17',1,1,30,1,1)
+INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(1,'2018-02-17',1,1,28,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(2,'2018-02-17',1,2,22,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(3,'2018-02-17',1,3,20,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(4,'2018-02-17',2,1,15,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(5,'2018-02-17',2,2,14,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(6,'2018-02-17',2,3,10,1,1)
-INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(7,'2018-02-17',2,3,7,1,1)
+
+
+INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
+INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
+INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
+
+INSERT INTO exam (active, date, course_id) VALUES (1, '2018-01-01', 1);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-02', 1);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-03', 1);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-01', 2);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-02', 2);
+INSERT INTO exam (active, date, course_id) VALUES (1, '2019-01-03', 2);
+
+INSERT INTO professor_course (professor_id, course_id) VALUES (1, 1);
+INSERT INTO professor_course (professor_id, course_id) VALUES (1, 2);
+INSERT INTO professor_course (professor_id, course_id) VALUES (2, 1);
 
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
+<<<<<<< HEAD
+=======
+
+INSERT INTO students_courses (student_id, course_id) VALUES (1, 1);
+INSERT INTO students_courses (student_id, course_id) VALUES (2, 1);
+INSERT INTO students_courses (student_id, course_id) VALUES (3, 1);
+INSERT INTO students_courses (student_id, course_id) VALUES (2, 2);
+
+INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 1);
+INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 2);
+
+
+
+>>>>>>> cea7a7465e4f2e9809c7fef7efcec96f1ddf8b3b

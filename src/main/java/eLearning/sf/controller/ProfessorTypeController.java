@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,23 +49,29 @@ public class ProfessorTypeController {
 	}
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<ProfessorTypeDTO> saveProfessorTypes(@RequestBody ProfessorTypeDTO professorTypeDTO) {
+	public ResponseEntity<?> saveProfessorTypes(@Validated @RequestBody ProfessorTypeDTO professorTypeDTO , Errors errors ) {
+		if(errors.hasErrors()) {
+			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
+		}
 		ProfessorType professorType = professorTypeDTOtoProfessorType.convert(professorTypeDTO);
 		return new ResponseEntity<ProfessorTypeDTO>(professorTypeToProfessorTypeDTO.convert(professorTypeService.save(professorType)),
 				HttpStatus.OK);
 	}
 
 	@PutMapping
-	public ResponseEntity<ProfessorTypeDTO> editProfessorTypes(@RequestBody ProfessorTypeDTO professorTypeDTO) {
+	public ResponseEntity<?> editProfessorTypes(@Validated @RequestBody ProfessorTypeDTO professorTypeDTO, Errors errors) {
+		if(errors.hasErrors()) {
+			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
+		}
 		ProfessorType professorType = professorTypeDTOtoProfessorType.convert(professorTypeDTO);
 		return new ResponseEntity<ProfessorTypeDTO>(professorTypeToProfessorTypeDTO.convert(professorTypeService.save(professorType)),
 				HttpStatus.OK);
 	};
 
+	
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<ProfessorTypeDTO> deleteProfessorTypes(@PathVariable long id) {
+	public ResponseEntity<String> deleteProfessorTypes(@PathVariable long id) {
 		professorTypeService.delete(id);
-		return new ResponseEntity<ProfessorTypeDTO>(professorTypeToProfessorTypeDTO.convert(professorTypeService.getOne(id)),
-				HttpStatus.OK);
+		return new ResponseEntity<String>("Success",HttpStatus.OK);
 	}
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -47,24 +49,30 @@ public class ProfessorController {
 	}
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<ProfessorDTO> saveProfessors(@RequestBody ProfessorDTO professorDTO) {
+	public ResponseEntity<?> saveProfessors(@Validated @RequestBody ProfessorDTO professorDTO , Errors errors) {
+		if(errors.hasErrors()) {
+			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
+		}
 		Professor professor = professorDTOtoProfessor.convert(professorDTO);
 		return new ResponseEntity<ProfessorDTO>(professorToProfessorDTO.convert(professorService.save(professor)),
 				HttpStatus.OK);
 	}
 
 	@PutMapping
-	public ResponseEntity<ProfessorDTO> editProfessors(@RequestBody ProfessorDTO professorDTO) {
+	public ResponseEntity<?> editProfessors(@Validated @RequestBody ProfessorDTO professorDTO, Errors errors) {
+		if(errors.hasErrors()) {
+			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
+		}
 		Professor professor = professorDTOtoProfessor.convert(professorDTO);
 		return new ResponseEntity<ProfessorDTO>(professorToProfessorDTO.convert(professorService.save(professor)),
 				HttpStatus.OK);
 	};
 
+
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<ProfessorDTO> deleteProfessors(@PathVariable long id) {
+	public ResponseEntity<String> deleteProfessors(@PathVariable long id) {
 		professorService.delete(id);
-		return new ResponseEntity<ProfessorDTO>(professorToProfessorDTO.convert(professorService.getOne(id)),
-				HttpStatus.OK);
+		return new ResponseEntity<String>("Success",HttpStatus.OK);
 	}
 
 }

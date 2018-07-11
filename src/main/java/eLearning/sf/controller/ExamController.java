@@ -3,6 +3,9 @@ package eLearning.sf.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -13,11 +16,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import eLearning.sf.converter.ExamDtoToExam;
 import eLearning.sf.converter.ExamToExamDto;
+import eLearning.sf.converter.StudentRecordsToStudentRecordsDto;
 import eLearning.sf.dto.ExamDto;
+import eLearning.sf.dto.ExamStudentRecordsDto;
 import eLearning.sf.model.Exam;
+import eLearning.sf.model.ExamStudentRecords;
+import eLearning.sf.service.ExamStudentRecordsService;
 import eLearning.sf.serviceInterface.ExamServiceInterface;
 
 @Controller
@@ -28,14 +36,45 @@ public class ExamController {
 	private ExamServiceInterface examService;
 
 	@Autowired
+	private ExamStudentRecordsService recordsService;
+
+	@Autowired
 	private ExamDtoToExam examDtoToExamConverter;
 
 	@Autowired
 	private ExamToExamDto examToExamDtoConverter;
 
+	@Autowired
+	StudentRecordsToStudentRecordsDto recordToRecordDtoConverter;
+
+	// @GetMapping
+	// public ResponseEntity<List<ExamDto>> getExams() {
+	// return new
+	// ResponseEntity<>(examToExamDtoConverter.convert(examService.findAll()),
+	// HttpStatus.OK);
+	// }
+
 	@GetMapping
-	public ResponseEntity<List<ExamDto>> getExams() {
-		return new ResponseEntity<>(examToExamDtoConverter.convert(examService.findAll()), HttpStatus.OK);
+	public ResponseEntity<List<ExamDto>> getAllExams(@RequestParam("term") String term, Pageable pageable) {
+		Page<Exam> exams = examService.listAllByPage(term, pageable);
+		HttpHeaders headers = new HttpHeaders();
+		headers.add("total-pages", Integer.toString(exams.getTotalPages()));
+		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams.getContent()), headers,
+				HttpStatus.OK);
+	}
+
+	@GetMapping(path = "/by-professor-course")
+	public ResponseEntity<List<ExamDto>> getAllByProfessorAndCourse(
+			@RequestParam("professorUsername") String professorUsername, @RequestParam("courseId") Long courseId) {
+		List<Exam> exams = examService.findAllByProfessorAndCourse(professorUsername, courseId);
+		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams), HttpStatus.OK);
+	}
+
+	@GetMapping(path = "/by-course-student")
+	public ResponseEntity<List<ExamDto>> getAllByStudentAndCourse(@RequestParam("courseId") Long courseId,
+			@RequestParam("studentUsername") String studentUsername) {
+		List<Exam> exams = examService.findAllByCourseAndStudent(courseId, studentUsername);
+		return new ResponseEntity<List<ExamDto>>(examToExamDtoConverter.convert(exams), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
@@ -47,6 +86,13 @@ public class ExamController {
 	public ResponseEntity<ExamDto> saveExam(@RequestBody ExamDto examDto) {
 		Exam exam = examDtoToExamConverter.convert(examDto);
 		return new ResponseEntity<>(examToExamDtoConverter.convert(examService.save(exam)), HttpStatus.OK);
+	}
+
+	@PostMapping(consumes = "application/json", path = "/apply")
+	public ResponseEntity<ExamStudentRecordsDto> applyForExam(@RequestParam("studentUsername") String studentUsername,
+			@RequestParam("examId") Long examId) {
+		ExamStudentRecords record = recordsService.createNew(studentUsername, examId);
+		return new ResponseEntity<>(recordToRecordDtoConverter.convert(recordsService.save(record)), HttpStatus.OK);
 	}
 
 	@PutMapping

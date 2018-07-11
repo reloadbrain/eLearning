@@ -18,9 +18,9 @@ public class CourseToCorseDTO implements Converter<Course , CourseDTO> {
 		CourseDTO courseDTO = new CourseDTO();
 		
 		courseDTO.setCourseId(course.getCourseId());
-		courseDTO.setActive(course.getActive());
-		courseDTO.setDepartnebtId(course.getDepartment().getDepartmentId());
 		courseDTO.setName(course.getName());
+		courseDTO.setActive(course.getActive());
+		courseDTO.setDepartmentId(course.getDepartment().getDepartmentId());
  
 		return courseDTO;
 	}

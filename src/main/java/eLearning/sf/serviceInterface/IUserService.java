@@ -1,6 +1,7 @@
 package eLearning.sf.serviceInterface;
 
 import java.util.Map;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 
 import eLearning.sf.dto.UserDto;
 import eLearning.sf.model.Role;
+import eLearning.sf.model.Payment;
 import eLearning.sf.model.User;
 
 public interface IUserService {
@@ -29,6 +31,8 @@ public interface IUserService {
 	Page<User> listAllByPage(String searchTerm, Pageable pageable);
 	
 	User editUser(User u, UserDto userDto);
+	
+	public List<User> findAll();
 	
 	boolean isUsernameUnique(String username, String edit, String oldUsername);
 	

@@ -24,9 +24,8 @@ public class StudentRecordsDtoToStudentRecords implements Converter<ExamStudentR
 		studentRecords.setExamRecordsId(studentRecordsDto.getExamRecordsId());
 		studentRecords.setGrade(studentRecordsDto.getGrade());
 		studentRecords.setPassed(studentRecordsDto.isPassed());
-		studentRecords.setTotalPoints(studentRecordsDto.getTotalPoints());
+		studentRecords.setPoints(studentRecordsDto.getPoints());
 		studentRecords.setActive(studentRecordsDto.getActive());
-		studentRecords.setExamDate(studentRecordsDto.getExamDate());
 		studentRecords.setStudent(studentService.getOne(studentRecordsDto.getStudentId()));
 		studentRecords.setExam(examService.getOne(studentRecordsDto.getExamId()));
 

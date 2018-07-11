@@ -19,6 +19,7 @@ import eLearning.sf.converter.CourseToCorseDTO;
 import eLearning.sf.dto.CourseDTO;
 import eLearning.sf.model.Course;
 import eLearning.sf.service.CourseService;
+import eLearning.sf.service.StudentService;
 
 
 @Controller
@@ -27,6 +28,10 @@ public class CourseController {
 
 	@Autowired
 	private CourseService courseService;
+	
+
+	@Autowired
+	private StudentService studentService;
 
 	@Autowired
 	private CourseToCorseDTO courseToCorseDTO;
@@ -45,13 +50,26 @@ public class CourseController {
 		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.getOne(id)),
 				HttpStatus.OK);
 	}
+	
 
 	@PostMapping(consumes = "application/json")
-	public ResponseEntity<CourseDTO> savePayments(@RequestBody CourseDTO courseDTO) {
+	public ResponseEntity<CourseDTO> saveProfessors(@RequestBody CourseDTO courseDTO) {
 		Course course = courseDTOtoCourse.convert(courseDTO);
 		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.save(course)),
 				HttpStatus.OK);
 	}
+	
+	@PostMapping(path = "/{id}" , consumes = "application/json")
+	public ResponseEntity<String> postCourse(@PathVariable long id , @RequestBody List<Long> ids) {
+		
+		
+		for (Long long1 : ids) {
+			courseService.addStudentCourse(id, long1);
+		}
+		
+		return new ResponseEntity<String>("OK" , HttpStatus.OK);
+	}
+
 
 	@PutMapping
 	public ResponseEntity<CourseDTO> editPayments(@RequestBody CourseDTO courseDTO) {
@@ -61,10 +79,11 @@ public class CourseController {
 	};
 
 	@DeleteMapping(path = "/{id}")
-	public ResponseEntity<CourseDTO> deletePayments(@PathVariable long id) {
-		courseService.delete(id);
-		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.getOne(id)),
-				HttpStatus.OK);
+	public ResponseEntity<String> deletePayments(@PathVariable long id) {
+		Course course = courseService.getOne(id);
+		course.setActive(false);
+		courseService.save(course);
+		return new ResponseEntity<String>("Success",HttpStatus.OK);
 	}
 
 }

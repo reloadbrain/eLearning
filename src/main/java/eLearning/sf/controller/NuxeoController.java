@@ -73,7 +73,6 @@ public class NuxeoController {
 	@PostMapping(value="/upload-document/{id}")
 	public ResponseEntity<?> uploadDoc(@RequestParam("file") MultipartFile file, @PathVariable("id") Long id) throws Exception {
 		
-		System.out.println("        -----IDD" + id);
 		Student stud = studentServiceI.getByUserId(id);
 		String nuxeoResponse = nuxeo.documentUpload(file);
 		EDocument edoc = new EDocument();

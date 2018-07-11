@@ -1,5 +1,9 @@
 package eLearning.sf.dto;
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -28,17 +32,34 @@ public class StudentDto {
 
 	@NotBlank(message = "Department id cannot be empty!")
 	private Long departmentId;
+	
+	private List<PaymentDTO> payments;
+	
+	private Set<Long> courseId = new HashSet<>();
 
 	public StudentDto() {
 	}
 
 	public StudentDto(Long studentId, String transcriptNumber, Boolean active, Integer year, Long userId,
-			Long departmentId) {
+			Long departmentId , Set<Long> courseId) {
 		this.studentId = studentId;
 		this.transcriptNumber = transcriptNumber;
 		this.active = active;
 		this.year = year;
 		this.userId = userId;
 		this.departmentId = departmentId;
+		this.courseId = courseId;
+	}
+
+	public StudentDto(Long studentId, String transcriptNumber, Boolean active, Integer year, Long userId,
+			Long departmentId , List<PaymentDTO> payments, Set<Long> courseId) {
+		this.studentId = studentId;
+		this.transcriptNumber = transcriptNumber;
+		this.active = active;
+		this.year = year;
+		this.userId = userId;
+		this.departmentId = departmentId;
+		this.payments = payments;
+		this.courseId = courseId;
 	}
 }

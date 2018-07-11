@@ -12,10 +12,9 @@ public class DepartmentDto {
 	private Long departmentId;
 
 	@NotBlank(message="Name cannot be empty!")
-	@Length(max=20, message="Name can not contain more than 20 characters")
+	@Length(max=200, message="Name can not contain more than 20 characters")
 	private String name;
 
-	@Length(max=1, message="Max length is 1")
 	private Boolean active;
 
 	public DepartmentDto() {};

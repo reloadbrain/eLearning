@@ -1,7 +1,6 @@
 package eLearning.sf.repository;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,16 +8,27 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import eLearning.sf.model.Course;
-import eLearning.sf.model.PreExamObligation;
 import eLearning.sf.model.PreExamObligationsRecords;
-import eLearning.sf.model.Student;
-import eLearning.sf.model.User;
 
 public interface PreExamObligationsRecordsRepository  extends JpaRepository<PreExamObligationsRecords, Long>{
-	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOId(Long id);
-	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseId(Long sId, Long cId);
 	
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByDateAsc(Long id);
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByDateDesc(Long id);
+	
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByStudentUserLastNameAsc(Long id);
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByStudentUserLastNameDesc(Long id);
+	
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByStudentTranscriptNumberAsc(Long id);
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByStudentTranscriptNumberDesc(Long id);
+	
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByPointsAsc(Long id);
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByPointsDesc(Long id);
+	
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByPassedAsc(Long id);
+	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByPassedDesc(Long id);
+	
+	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrue(Long sId, Long cId);
+	PreExamObligationsRecords findByPreExamObligationPreExamOIdAndStudentStudentIdAndActiveTrue(Long oId, Long uId);
 	@Query("select p from PreExamObligationsRecords p where"
 			+ " p.date like (CONCAT( '%', LOWER(:searchTerm), '%')) or"
 			+ " p.preExamObligation.name like (CONCAT( '%', LOWER(:searchTerm), '%')) or"
@@ -38,5 +48,8 @@ public interface PreExamObligationsRecordsRepository  extends JpaRepository<PreE
 			+ " u.address like (CONCAT( '%', LOWER(:searchTerm), '%')) or"
 			+ " u.dateOfBirth like (CONCAT( '%', LOWER(:searchTerm), '%'))")
 	Page<User> findAllPageAndSearch(@Param("searchTerm") String searchTerm, Pageable pageable);
+	
+	
+	
 	*/
 }

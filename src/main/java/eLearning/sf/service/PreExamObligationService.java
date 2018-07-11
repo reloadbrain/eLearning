@@ -1,13 +1,11 @@
 package eLearning.sf.service;
 
 import java.util.List;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.PreExamObligation;
-import eLearning.sf.model.PreExamObligationType;
 import eLearning.sf.repository.PreExamObligationRepository;
 import eLearning.sf.serviceInterface.PreExamObligationServiceInterface;
 
@@ -16,14 +14,13 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 
 	@Autowired
 	PreExamObligationRepository jpaPreExamObligationRepository;
-	
+
 	@Autowired
 	PreExamObligationTypeService peots;
-	
+
 	@Override
-	public PreExamObligation getOne(Long Id) {
-		// TODO Auto-generated method stub
-		return jpaPreExamObligationRepository.getOne(Id);
+	public PreExamObligation getOne(Long id) {
+		return jpaPreExamObligationRepository.findByPreExamOId(id);
 	}
 
 	@Override
@@ -54,5 +51,4 @@ public class PreExamObligationService implements PreExamObligationServiceInterfa
 		return jpaPreExamObligationRepository.findAllByCourseCourseIdAndActiveTrue(id);
 	}
 
-	
 }

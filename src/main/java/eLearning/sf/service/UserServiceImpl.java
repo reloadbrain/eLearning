@@ -230,4 +230,9 @@ public class UserServiceImpl implements IUserService {
 		u = iUserService.save(editedUser);
 		return new ResponseEntity<UserDto> (userToUserDto.convert(u), HttpStatus.OK);
 	}
+	
+	@Override
+	public List<User> findAll() {
+		return userJpaRepo.findAll() ;
+	}
 }

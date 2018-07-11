@@ -40,4 +40,9 @@ public class PaymentService implements PaymentServiceInterface{
 		paymentRepository.deleteById(id);
 	}
 
+//	@Override
+//	public List<Payment> findByStudentId(Long studentId) {
+//		return paymentRepository.findAllByStudentId(studentId);
+//	}
+
 }

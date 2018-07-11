@@ -5,6 +5,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,11 +32,11 @@ public class Professor {
 	@Column(columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "professor_course", joinColumns = { @JoinColumn(name = "professorId") }, inverseJoinColumns = {
 			@JoinColumn(name = "courseId") })
 	private Set<Course> courses = new HashSet<>();
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
 	private User user;
 }

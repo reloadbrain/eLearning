@@ -1,6 +1,7 @@
 package eLearning.sf.dto;
 
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -11,6 +12,8 @@ public class ProfessorDTO {
 	
 	private Long professorId;
 	
+	@NotNull(message="professorTypeId cannot be null")
+	@Min(value=0, message="professorTypeId must be >= than 0")
 	private Long professorTypeId;
 	
 	@Length(max=1, message="Max length is 1")

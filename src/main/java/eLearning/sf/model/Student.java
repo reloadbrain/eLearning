@@ -3,21 +3,16 @@ package eLearning.sf.model;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.Data;
+import lombok.ToString;
 
+@ToString(exclude="courses")
 @Data
 @Entity
 public class Student {
@@ -37,7 +32,11 @@ public class Student {
 	@OneToOne
 	private User user;
 
-	@ManyToMany
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = {
+            CascadeType.PERSIST,
+            CascadeType.MERGE
+        })
 	@JoinTable(name = "students_courses", joinColumns = { @JoinColumn(name = "studentId") }, inverseJoinColumns = {
 			@JoinColumn(name = "courseId") })
 	private Set<Course> courses = new HashSet<>();

@@ -16,11 +16,15 @@ public class StudentRecordsToStudentRecordsDto implements Converter<ExamStudentR
 	public ExamStudentRecordsDto convert(ExamStudentRecords studentRecords) {
 		ExamStudentRecordsDto studentRecordsDto = new ExamStudentRecordsDto();
 		studentRecordsDto.setExamId(studentRecords.getExam().getExamId());
+		studentRecordsDto.setStudentFirstName(studentRecords.getStudent().getUser().getFirstName());
+		studentRecordsDto.setStudentLastName(studentRecords.getStudent().getUser().getLastName());
+		studentRecordsDto.setStudentTranscriptNumber(studentRecords.getStudent().getTranscriptNumber());
 		studentRecordsDto.setExamRecordsId(studentRecords.getExamRecordsId());
 		studentRecordsDto.setGrade(studentRecords.getGrade());
+		studentRecordsDto.setExamDate(studentRecords.getExam().getDate());
 		studentRecordsDto.setPassed(studentRecords.isPassed());
 		studentRecordsDto.setStudentId(studentRecords.getStudent().getStudentId());
-		studentRecordsDto.setTotalPoints(studentRecords.getTotalPoints());
+		studentRecordsDto.setPoints(studentRecords.getPoints());
 
 		return studentRecordsDto;
 	}
