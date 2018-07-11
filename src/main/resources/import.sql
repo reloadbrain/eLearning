@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 1', '1994-05-14', 'Filip', 'Kuzmanovic', '563c04bf-897d-48e5-863e-08cebeeccb06', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 060662311, 'fk')
 INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 2', '1995-01-04', 'Name', 'LastName', '563c04bf-897d-48e5-863e-08cebeeccb06', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 0652321123, 'un')
 INSERT INTO user (address, date_of_birth, first_name, last_name, image_path, password, phone_number, username) VALUES ('Address 3', '1996-02-17', 'Name2', 'LastName2', '563c04bf-897d-48e5-863e-08cebeeccb06', '$2a$10$Bx1DUNCVK4MfhUcX7d5D3uMqtkZLNQ.jNwnHvQWHiFU/7JSwv4TJu', 061633311, 'nu')
@@ -76,8 +77,6 @@ INSERT INTO professor_course (professor_id, course_id) VALUES (2, 1);
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 2" , 2000 , 2)
 INSERT INTO payment (active , description, value , student_id ) values (1 , "payment 3" , 3000 , 3)
-<<<<<<< HEAD
-=======
 
 INSERT INTO students_courses (student_id, course_id) VALUES (1, 1);
 INSERT INTO students_courses (student_id, course_id) VALUES (2, 1);
@@ -87,6 +86,3 @@ INSERT INTO students_courses (student_id, course_id) VALUES (2, 2);
 INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 1);
 INSERT INTO exam_student_records (active, passed, exam_id, student_id) VALUES (1, 0, 2, 2);
 
-
-
->>>>>>> cea7a7465e4f2e9809c7fef7efcec96f1ddf8b3b

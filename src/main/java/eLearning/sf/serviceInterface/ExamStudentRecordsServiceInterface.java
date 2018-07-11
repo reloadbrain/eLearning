@@ -16,5 +16,5 @@ public interface ExamStudentRecordsServiceInterface {
 
 	public void delete(Long id);
 	
-	
+	public List<ExamStudentRecords> getByStudentAndCourse(String studentUsername, Long courseId);
 }
