@@ -31,9 +31,11 @@ import eLearning.sf.model.Student;
 import eLearning.sf.service.PreExamObligationService;
 import eLearning.sf.service.PreExamObligationsRecordsService;
 import eLearning.sf.service.StudentService;
+import lombok.extern.slf4j.Slf4j;
 
 @Controller
 @RequestMapping(value = "/api/pre-exam-obligation-records")
+@Slf4j
 public class PreExamObligationRecController {
 
 	@Autowired
@@ -51,7 +53,6 @@ public class PreExamObligationRecController {
 	@Autowired
 	PreExamObligationRecordsDTOtoPreExamObligationRecords toPEOR;
 	
-	private final static Logger LOGGER = Logger.getLogger(PreExamObligationController.class.getName());
 
 
 	/*
@@ -88,6 +89,13 @@ public class PreExamObligationRecController {
 		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(
 				toDTO.convert(peors.findByPreExamObligationId(preExamObligationId, sortPar, sortDir)), HttpStatus.OK);
 	}
+	
+	@GetMapping(value="points/student/{studentId}/course/{courseId}")
+	public ResponseEntity<Integer> getPoints(
+			@PathVariable long studentId, @PathVariable long courseId ){
+		return new ResponseEntity<Integer>(peors.getAllPoints(studentId, courseId), HttpStatus.OK);
+	}
+	
 
 	@PostMapping(consumes = "application/json")
 	public ResponseEntity<?> savePreExamObligationsRecord(
@@ -100,19 +108,11 @@ public class PreExamObligationRecController {
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.save(p)), HttpStatus.OK);
 	}
 	
-	@PostMapping(path = "grade" ,consumes = "application/json")
+	@PostMapping(value = "grade" ,consumes = "application/json")
 	public ResponseEntity<?> savePreExamObligationsRecords(
 			@RequestBody List<PreExamObligationsRecordsDTO> preExamObRecsDTO){
-		System.out.println("adsjasljldsjldjklakjlajkljkllkjsaj;asjkajafskafsjskjafsjkl;akjlasjklaskjaafskjafs");
-		LOGGER.info("Kontroler");
-		for (PreExamObligationsRecordsDTO pDto : preExamObRecsDTO) {
-			LOGGER.info("ForPetlja");
-			PreExamObligationsRecords p = toPEOR.convert(pDto);
-			LOGGER.info("Konvertovano");
-			peors.SetTrue(p);
-			LOGGER.info("Snimljeno");
-		}
-		
+		List<PreExamObligationsRecords> p = toPEOR.convert(preExamObRecsDTO);
+		peors.SetTrue(p);
 		return new ResponseEntity<String>("Saved" , HttpStatus.OK);
 		
 	}
@@ -125,15 +125,7 @@ public class PreExamObligationRecController {
 		PreExamObligation peo = new PreExamObligation();
 		peo = ps.getOne(id);
 		List<Student> students = studentService.findByCourse(peo.getCourse().getCourseId());
-		for (Student student : students) {
-			PreExamObligationsRecords per = new PreExamObligationsRecords();
-			per.setActive(false);
-			per.setDate(date);
-			per.setPreExamObligation(peo);
-			per.setStudent(student);
-			per.setPoints(0);
-			peors.save(per);
-		}
+		peors.createRecordsforStudents(students, id, date, peo);
 		return new ResponseEntity<String>("Created PreExamORecords", HttpStatus.OK);
 	}
 

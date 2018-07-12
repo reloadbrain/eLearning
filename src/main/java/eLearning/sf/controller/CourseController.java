@@ -51,6 +51,16 @@ public class CourseController {
 				HttpStatus.OK);
 	}
 	
+	@GetMapping(value= "student/{studentId}")
+	public ResponseEntity<List<CourseDTO>> getCoureseForStudent(@PathVariable Long studentId){
+		return new ResponseEntity<List<CourseDTO>>(courseToCorseDTO.convert(courseService.findByStudent(studentId)), HttpStatus.OK);
+	}
+	
+	@GetMapping(value= "professor/{professorId}")
+	public ResponseEntity<List<CourseDTO>> getCoureseForProfessor(@PathVariable Long professorId){
+		return new ResponseEntity<List<CourseDTO>>(courseToCorseDTO.convert(courseService.findByProfessor(professorId)), HttpStatus.OK);
+	}
+	
 
 	@PostMapping(consumes = "application/json")
 	public ResponseEntity<CourseDTO> saveProfessors(@RequestBody CourseDTO courseDTO) {

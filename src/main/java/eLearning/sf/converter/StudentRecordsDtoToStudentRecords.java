@@ -1,5 +1,8 @@
 package eLearning.sf.converter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -26,9 +29,17 @@ public class StudentRecordsDtoToStudentRecords implements Converter<ExamStudentR
 		studentRecords.setPassed(studentRecordsDto.isPassed());
 		studentRecords.setPoints(studentRecordsDto.getPoints());
 		studentRecords.setActive(studentRecordsDto.getActive());
-		studentRecords.setStudent(studentService.getOne(studentRecordsDto.getStudentId()));
-		studentRecords.setExam(examService.getOne(studentRecordsDto.getExamId()));
+		studentRecords.setStudent(studentService.findByStudentId(studentRecordsDto.getStudentId()));
+		studentRecords.setExam(examService.findByExamId(studentRecordsDto.getExamId()));
 
 		return studentRecords;
+	}
+
+	public List<ExamStudentRecords> convert(List<ExamStudentRecordsDto> studentRecordsDto) {
+		List<ExamStudentRecords> retVal = new ArrayList<>();
+		for (ExamStudentRecordsDto recordDto : studentRecordsDto) {
+			retVal.add(convert(recordDto));
+		}
+		return retVal;
 	}
 }

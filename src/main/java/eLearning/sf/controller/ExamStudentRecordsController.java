@@ -13,11 +13,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import eLearning.sf.converter.StudentRecordsDtoToStudentRecords;
 import eLearning.sf.converter.StudentRecordsToStudentRecordsDto;
 import eLearning.sf.dto.ExamStudentRecordsDto;
 import eLearning.sf.model.ExamStudentRecords;
+import eLearning.sf.model.PreExamObligationsRecords;
 import eLearning.sf.serviceInterface.ExamStudentRecordsServiceInterface;
 
 @Controller
@@ -39,10 +41,25 @@ public class ExamStudentRecordsController {
 				HttpStatus.OK);
 	}
 
+	@GetMapping(value = "/course/{id}")
+	public ResponseEntity<List<ExamStudentRecordsDto>> getExamStudentRecordsByCourse(@PathVariable Long id) {
+		return new ResponseEntity<>(
+				recordsToRecordsDtoConverter.convert(examStudentRecordsService.findAllByCourseId(id)), HttpStatus.OK);
+	}
+
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<ExamStudentRecordsDto> getExamStudentRecords(@PathVariable long id) {
 		return new ResponseEntity<ExamStudentRecordsDto>(
 				recordsToRecordsDtoConverter.convert(examStudentRecordsService.getOne(id)), HttpStatus.OK);
+	}
+
+	@GetMapping(path = "/by-student-course")
+	public ResponseEntity<List<ExamStudentRecordsDto>> getByStudentAndCourse(
+			@RequestParam("studentUsername") String studentUsername, @RequestParam("courseId") Long courseId) {
+		List<ExamStudentRecords> records = examStudentRecordsService.getByStudentAndCourse(studentUsername, courseId);
+
+		return new ResponseEntity<List<ExamStudentRecordsDto>>(recordsToRecordsDtoConverter.convert(records),
+				HttpStatus.OK);
 	}
 
 	@PostMapping(consumes = "application/json")
@@ -51,6 +68,12 @@ public class ExamStudentRecordsController {
 		ExamStudentRecords records = recordsDtoToRecordsConverter.convert(examStudentRecordsDto);
 		return new ResponseEntity<ExamStudentRecordsDto>(
 				recordsToRecordsDtoConverter.convert(examStudentRecordsService.save(records)), HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/grade", consumes = "application/json")
+	public ResponseEntity<?> saveExamRecords(@RequestBody List<ExamStudentRecordsDto> recordsDto) {
+		examStudentRecordsService.grade(recordsDto);
+		return new ResponseEntity<String>("Saved", HttpStatus.OK);
 	}
 
 	@PutMapping

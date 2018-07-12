@@ -34,9 +34,9 @@ public class PreExamObligationsRecords {
 	@Column(nullable = true)
 	private Integer points;
 
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	@Column(nullable = true, columnDefinition = "tinyint(1) default 1")
 	private boolean passed;
 	
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	@Column(nullable = true, columnDefinition = "tinyint(1) default 1")
 	private boolean active;
 }

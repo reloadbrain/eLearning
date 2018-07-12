@@ -1,10 +1,13 @@
 package eLearning.sf.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import eLearning.sf.converter.StudentRecordsDtoToStudentRecords;
+import eLearning.sf.dto.ExamStudentRecordsDto;
 import eLearning.sf.model.ExamStudentRecords;
 import eLearning.sf.repository.ExamStudentRecordsRepository;
 import eLearning.sf.serviceInterface.ExamServiceInterface;
@@ -22,6 +25,9 @@ public class ExamStudentRecordsService implements ExamStudentRecordsServiceInter
 
 	@Autowired
 	ExamServiceInterface examService;
+
+	@Autowired
+	StudentRecordsDtoToStudentRecords recordDtoToRecordConverter;
 
 	@Override
 	public ExamStudentRecords getOne(Long id) {
@@ -52,5 +58,43 @@ public class ExamStudentRecordsService implements ExamStudentRecordsServiceInter
 		record.setExam(examService.getOne(examId));
 
 		return record;
+	}
+
+	@Override
+	public List<ExamStudentRecords> getByStudentAndCourse(String studentUsername, Long courseId) {
+		return examStudentRecordsRepository
+				.findAllByStudentUserUsernameContainingAndExamCourseCourseIdAndActiveTrue(studentUsername, courseId);
+	}
+
+	public List<ExamStudentRecords> findAllByCourseId(Long id) {
+		return examStudentRecordsRepository.findAllByExamCourseCourseIdAndActiveTrue(id);
+	}
+
+	@Override
+	public void grade(List<ExamStudentRecordsDto> recordsDto) {
+		for (ExamStudentRecordsDto recordDto : recordsDto) {
+			if (recordDto.getPoints() == null) {
+				recordDto.setPassed(false);
+				recordDto.setGrade(5);
+			} else {
+				int totalPoints = recordDto.getPreExamPoints() + recordDto.getPoints();
+				recordDto.setPassed(true);
+				if (totalPoints > 50 && totalPoints < 61) {
+					recordDto.setGrade(6);
+				} else if (totalPoints > 60 && totalPoints < 71) {
+					recordDto.setGrade(7);
+				} else if (totalPoints > 70 && totalPoints < 81) {
+					recordDto.setGrade(8);
+				} else if (totalPoints > 80 && totalPoints < 91) {
+					recordDto.setGrade(9);
+				} else if (totalPoints > 90 && totalPoints <= 100) {
+					recordDto.setGrade(10);
+				} else {
+					recordDto.setPassed(false);
+					recordDto.setGrade(5);
+				}
+			}
+			save(recordDtoToRecordConverter.convert(recordDto));
+		}
 	}
 }

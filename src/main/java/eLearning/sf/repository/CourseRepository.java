@@ -1,5 +1,7 @@
 package eLearning.sf.repository;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -19,5 +21,10 @@ public interface CourseRepository  extends JpaRepository<Course, Long>{
 //			+ " u.address like (CONCAT( '%', LOWER(:searchTerm), '%')) or"
 //			+ " u.dateOfBirth like (CONCAT( '%', LOWER(:searchTerm), '%')))")
 //	Page<User> findAllStudentsByCourseId(@Param("searchTerm") String searchTerm, Pageable pageable);
+	
+	
+	List<Course> findAllByStudentsStudentId (Long id);
+	List<Course> findAllByProfessorsProfessorId (Long id);
+	
 //}
 }

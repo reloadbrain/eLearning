@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class ExamStudentRecords {
 
-	public ExamStudentRecords(Long examRecordsId, Exam exam, Student student, String grade, Integer points,
+	public ExamStudentRecords(Long examRecordsId, Exam exam, Student student, Integer grade, Integer points,
 			boolean passed, boolean active) {
 		this.examRecordsId = examRecordsId;
 		this.exam = exam;
@@ -40,7 +40,7 @@ public class ExamStudentRecords {
 	@JoinColumn(name = "studentId", nullable = false)
 	private Student student;
 
-	private String grade;
+	private Integer grade;
 
 	private Integer points;
 

@@ -6,7 +6,6 @@ import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import eLearning.sf.model.Course;
@@ -55,6 +54,16 @@ public class CourseService implements CourseServiceInterface{
 		insertSql.executeUpdate();
 		session.getTransaction().commit();
 		
+	}
+
+	@Override
+	public List<Course> findByStudent(Long id) {
+		return courseRepository.findAllByStudentsStudentId(id);
+	}
+
+	@Override
+	public List<Course> findByProfessor(Long id) {
+		return courseRepository.findAllByProfessorsProfessorId(id);
 	}
 	
 }

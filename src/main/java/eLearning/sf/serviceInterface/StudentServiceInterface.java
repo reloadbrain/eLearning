@@ -19,4 +19,6 @@ public interface StudentServiceInterface {
 	Student getByUserId(Long id);
 	
 	public Student findByUsername(String username);
+	
+	public Student findByStudentId(Long id);
 }
