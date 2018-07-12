@@ -14,9 +14,9 @@ public interface NuxeoService {
 	
 	String batchFileUpload(MultipartFile file) throws IOException;
 	
-	String fileUpload(MultipartFile file) throws Exception;
+	String fileUpload(MultipartFile file, String username) throws Exception;
 	
-	String documentUpload(MultipartFile file) throws Exception;
+	String documentUpload(MultipartFile file, Long id) throws Exception;
 	
 	
 }

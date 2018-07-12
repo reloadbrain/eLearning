@@ -164,22 +164,7 @@ public class UserController {
 	public ResponseEntity<String> editUserPassword(@PathVariable("id") Long id, @RequestBody Map<String, Object> rData, Principal principal) {
 		return iUserService.editUserPassword(id, rData, principal.getName());
 	}
-	public ResponseEntity<?> editUser(@Validated @RequestBody UserDto userDto, @PathVariable("id") Long id,
-			Errors errors) {
-		User u = iUserService.getOne(id);
-		if (u == null) {
-			return new ResponseEntity<String>("There is no user with id: " + id, HttpStatus.BAD_REQUEST);
-		}
-		if (errors.hasErrors()) {
-			return new ResponseEntity<String>(errors.getAllErrors().toString(), HttpStatus.BAD_REQUEST);
-		}
-		User editedUser = iUserService.editUser(u, userDto);
-		if (editedUser == null) {
-			return new ResponseEntity<String>("Bad request", HttpStatus.BAD_REQUEST);
-		}
-		u = iUserService.save(editedUser);
-		return new ResponseEntity<UserDto>(userToUserDto.convert(u), HttpStatus.OK);
-	}
+	
 
 
 
