@@ -23,6 +23,7 @@ public class StudentRecordsToStudentRecordsDto implements Converter<ExamStudentR
 		studentRecordsDto.setGrade(studentRecords.getGrade());
 		studentRecordsDto.setExamDate(studentRecords.getExam().getDate());
 		studentRecordsDto.setPassed(studentRecords.isPassed());
+		studentRecordsDto.setActive(studentRecords.isActive());
 		studentRecordsDto.setStudentId(studentRecords.getStudent().getStudentId());
 		studentRecordsDto.setPoints(studentRecords.getPoints());
 		studentRecordsDto.setCourseId(studentRecords.getExam().getCourse().getCourseId());

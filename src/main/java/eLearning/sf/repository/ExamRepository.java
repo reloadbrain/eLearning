@@ -21,4 +21,6 @@ public interface ExamRepository extends JpaRepository<Exam, Long> {
 			@Param("professorUsername") String professorUsername, @Param("courseId") Long courseId);
 
 	List<Exam> findAllByCourseCourseIdAndActiveTrue(Long courseId);
+
+	Exam findByExamId(Long id);
 }

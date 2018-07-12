@@ -22,7 +22,7 @@ public class ExamService implements ExamServiceInterface {
 
 	@Autowired
 	ExamRepository examRepository;
-	
+
 	@Autowired
 	ExamStudentRecordsRepository recordsRepository;
 
@@ -46,26 +46,33 @@ public class ExamService implements ExamServiceInterface {
 
 	@Override
 	public List<Exam> findAllByProfessorAndCourse(String professorUsername, Long courseId) {
-		return examRepository.findAllByCourseProfessorsUserUsernameContainingAndCourseCourseIdAndActiveTrue(professorUsername, courseId);
+		return examRepository.findAllByCourseProfessorsUserUsernameContainingAndCourseCourseIdAndActiveTrue(
+				professorUsername, courseId);
 	}
-	
+
 	@Override
 	public List<Exam> findAllByCourseAndStudent(Long courseId, String studentUsername) {
 		List<Exam> exams = examRepository.findAllByCourseCourseIdAndActiveTrue(courseId);
-		Date today = new Date(Calendar.getInstance().getTime().getTime());
-//		added one day
-		exams = exams.stream().filter(e -> (e.getDate().getTime() + 86400000) > today.getTime()).collect(Collectors.toList());
-		
-//		get all records by student and course 
-		List<ExamStudentRecords> records = recordsRepository.findAllByStudentUserUsernameContainingAndExamCourseCourseIdAndActiveTrue(studentUsername, courseId);
-		
-		for (ExamStudentRecords record : records) {
-			Long id = record.getExam().getExamId();
-//			if the exam is applied for you cant apply for it again
-//			izbacivanje svih prijavljenih
-			exams = exams.stream().filter(e -> !e.getExamId().equals(id)).collect(Collectors.toList());
+
+		if (exams.size() > 0) {
+			Date today = new Date(Calendar.getInstance().getTime().getTime());
+			// added one day
+			exams = exams.stream().filter(e -> (e.getDate().getTime() + 86400000) > today.getTime())
+					.collect(Collectors.toList());
+
+			// get all records by student and course
+			List<ExamStudentRecords> records = recordsRepository
+					.findAllByStudentUserUsernameContainingAndExamCourseCourseIdAndActiveTrue(studentUsername,
+							courseId);
+
+			for (ExamStudentRecords record : records) {
+				Long id = record.getExam().getExamId();
+				// if the exam is applied for you can't apply for it again
+				// izbacivanje svih prijavljenih
+				exams = exams.stream().filter(e -> !e.getExamId().equals(id)).collect(Collectors.toList());
+			}
 		}
-		
+
 		return exams;
 	}
 
@@ -77,5 +84,10 @@ public class ExamService implements ExamServiceInterface {
 	@Override
 	public void delete(Long id) {
 		examRepository.deleteById(id);
+	}
+
+	@Override
+	public Exam findByExamId(Long id) {
+		return examRepository.findByExamId(id);
 	}
 }
