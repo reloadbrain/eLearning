@@ -85,6 +85,7 @@ public class ExamController {
 	@PostMapping(consumes = "application/json")
 	public ResponseEntity<ExamDto> saveExam(@RequestBody ExamDto examDto) {
 		Exam exam = examDtoToExamConverter.convert(examDto);
+		exam.setActive(true);
 		return new ResponseEntity<>(examToExamDtoConverter.convert(examService.save(exam)), HttpStatus.OK);
 	}
 

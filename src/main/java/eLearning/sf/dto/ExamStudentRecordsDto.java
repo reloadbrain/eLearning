@@ -14,6 +14,8 @@ public class ExamStudentRecordsDto {
 	private String studentFirstName;
 
 	private String studentLastName;
+	
+	private String username;
 
 	private String studentTranscriptNumber;
 

@@ -21,9 +21,9 @@ public interface PreExamObligationsRecordsServiceInterface {
 	
 	public List<PreExamObligationsRecords> findByPreExamObligationId (Long id , String sortPar, String sortDir);
 	
-	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(Long sId, Long cId );
+	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(String username, Long cId );
 	
-	public List<PreExamObligationsRecords> findByStudentIdAndCurseIdPassed(Long sId, Long cId );
+	public List<PreExamObligationsRecords> findByStudentIdAndCurseIdPassed(String username, Long cId );
 	
 	Page<PreExamObligationsRecords> listAllByPage(String searchTerm, Pageable pageable);
 	

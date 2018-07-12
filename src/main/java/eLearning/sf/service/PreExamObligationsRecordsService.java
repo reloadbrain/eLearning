@@ -91,13 +91,13 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 	}
 
 	@Override
-	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(Long sId, Long cId) {
-		return jpa.findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrue(sId, cId);
+	public List<PreExamObligationsRecords> findByStudentIdAndCurseId(String username, Long cId) {
+		return jpa.findAllByStudentUserUsernameAndPreExamObligationCourseCourseIdAndActiveTrue(username, cId);
 	}
 	
 	@Override
-	public List<PreExamObligationsRecords> findByStudentIdAndCurseIdPassed(Long sId, Long cId) {
-		return jpa.findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrueAndPassedTrue(sId, cId);
+	public List<PreExamObligationsRecords> findByStudentIdAndCurseIdPassed(String username, Long cId) {
+		return jpa.findAllByStudentUserUsernameAndPreExamObligationCourseCourseIdAndActiveTrueAndPassedTrue(username, cId);
 	}
 
 	@Override
@@ -153,9 +153,9 @@ public class PreExamObligationsRecordsService implements PreExamObligationsRecor
 		
 	}
 	
-	public int getAllPoints(Long studentId, Long courseId) {
+	public int getAllPoints(String username, Long courseId) {
 		List<PreExamObligationsRecords> recs = new ArrayList<>();
-		recs = findByStudentIdAndCurseIdPassed(studentId, courseId);
+		recs = findByStudentIdAndCurseIdPassed(username, courseId);
 		int sum = 0;
 		for (PreExamObligationsRecords p : recs) {
 			sum += p.getPoints();

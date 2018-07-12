@@ -26,7 +26,7 @@ public class Exam {
 	@Column(nullable = true)
 	private Date date;
 	
-	@Column(nullable = false, columnDefinition = "tinyint(1) default 1")
+	@Column(columnDefinition = "tinyint(1) default 1")
 	private Boolean active;
 
 	@ManyToOne

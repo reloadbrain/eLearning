@@ -27,8 +27,8 @@ public interface PreExamObligationsRecordsRepository  extends JpaRepository<PreE
 	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByPassedAsc(Long id);
 	List<PreExamObligationsRecords> findAllByPreExamObligationPreExamOIdOrderByPassedDesc(Long id);
 	
-	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrue(Long sId, Long cId);
-	List<PreExamObligationsRecords> findAllByStudentStudentIdAndPreExamObligationCourseCourseIdAndActiveTrueAndPassedTrue(Long sId, Long cId);
+	List<PreExamObligationsRecords> findAllByStudentUserUsernameAndPreExamObligationCourseCourseIdAndActiveTrue(String username, Long cId);
+	List<PreExamObligationsRecords> findAllByStudentUserUsernameAndPreExamObligationCourseCourseIdAndActiveTrueAndPassedTrue(String username, Long cId);
 	
 	
 	PreExamObligationsRecords findByPreExamObligationPreExamOIdAndStudentStudentIdAndActiveTrue(Long oId, Long uId);

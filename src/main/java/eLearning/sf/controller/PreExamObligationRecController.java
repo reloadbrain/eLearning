@@ -76,11 +76,11 @@ public class PreExamObligationRecController {
 		return new ResponseEntity<PreExamObligationsRecordsDTO>(toDTO.convert(peors.getOne(id)), HttpStatus.OK);
 	}
 
-	@GetMapping(path = "student/{studentId}/course/{curseId}")
+	@GetMapping(path = "student/{username}/course/{curseId}")
 	public ResponseEntity<List<PreExamObligationsRecordsDTO>> getPreExamObligationRecordsByStudentIdAndCurseId(
-			@PathVariable long studentId, @PathVariable long curseId) {
+			@PathVariable String username, @PathVariable long curseId) {
 		return new ResponseEntity<List<PreExamObligationsRecordsDTO>>(
-				toDTO.convert(peors.findByStudentIdAndCurseId(studentId, curseId)), HttpStatus.OK);
+				toDTO.convert(peors.findByStudentIdAndCurseId(username, curseId)), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "preexamobligation/{preExamObligationId}/sortpar/{sortPar}/sortdir/{sortDir}")
@@ -90,10 +90,10 @@ public class PreExamObligationRecController {
 				toDTO.convert(peors.findByPreExamObligationId(preExamObligationId, sortPar, sortDir)), HttpStatus.OK);
 	}
 	
-	@GetMapping(value="points/student/{studentId}/course/{courseId}")
+	@GetMapping(value="points/student/{username}/course/{courseId}")
 	public ResponseEntity<Integer> getPoints(
-			@PathVariable long studentId, @PathVariable long courseId ){
-		return new ResponseEntity<Integer>(peors.getAllPoints(studentId, courseId), HttpStatus.OK);
+			@PathVariable String username, @PathVariable long courseId ){
+		return new ResponseEntity<Integer>(peors.getAllPoints(username, courseId), HttpStatus.OK);
 	}
 	
 

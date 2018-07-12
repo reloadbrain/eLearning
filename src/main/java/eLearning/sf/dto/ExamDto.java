@@ -13,14 +13,12 @@ public class ExamDto {
 
 	private Long examId;
 
-	@NotNull(message = "Field 'active' cannot be null!")
-	private Boolean active;
+	private Boolean active = true;
 
 	@NotNull(message = "Date cannot be null")
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date date;
 
-	@NotNull(message = "Course id cannot be null")
 	private Long courseId;
 
 	@NotNull(message = "Exam term id can not be null")
