@@ -30,7 +30,7 @@ public interface IUserService {
 	
 	Page<User> listAllByPage(String searchTerm, Pageable pageable);
 	
-	User editUser(User u, UserDto userDto);
+	User editUser(User u, UserDto userDto, User principal);
 	
 	public List<User> findAll();
 	
@@ -46,4 +46,6 @@ public interface IUserService {
 	ResponseEntity<String> editUserPassword(Long id, Map<String, Object> rData, String principal);
 	
 	boolean isUserAdmin(User u);
+	
+	boolean isUserStudent(User u);
 }

@@ -86,34 +86,6 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
-	public User editUser(User u, UserDto userDto) {
-		u.setUsername(userDto.getUsername());
-		u.setFirstName(userDto.getFirstName());
-		u.setAddress(userDto.getAddress());
-		u.setDateOfBirth(userDto.getDateOfBirth());
-		u.setLastName(userDto.getLastName());
-		u.setPhoneNumber(userDto.getPhoneNumber());
-		Set<Role> beforeRoles = u.getRoles();
-		if (!userDto.getRoleId().isEmpty()) {
-			u.getRoles().clear();
-			for (Long roleid : userDto.getRoleId()) {
-				Optional<Role> role = iRoleService.getOne(roleid);
-				if (role.isPresent()) {
-					u.getRoles().add(role.get());
-				} else if (!role.isPresent()) {
-					log.error("There is no role with id: {}", roleid);
-				}
-			}
-			if (u.getRoles().isEmpty()) {
-				u.setRoles(beforeRoles);
-			}
-		} else if (userDto.getRoleId().isEmpty()) {
-			return null;
-		}
-		return u;
-	}
-
-	@Override
 	public boolean isUsernameUnique(String username, String edit, String oldUsername) {
 		Optional<User> u = iUserService.findByUsername(oldUsername);
 		if (edit.equals("add")) {
@@ -173,10 +145,21 @@ public class UserServiceImpl implements IUserService {
 		return false;
 	}
 	
+	@Override
 	public boolean isUserAdmin(User u) {
 		if(!u.getRoles().isEmpty()) {
 			for(Role r: u.getRoles()) {
 				if (r.getName().equals("ADMIN")) return true;
+			}
+		}
+		return false;
+	}
+	
+	@Override
+	public boolean isUserStudent(User u) {
+		if(!u.getRoles().isEmpty()) {
+			for(Role r: u.getRoles()) {
+				if (r.getName().equals("STUDENT")) return true;
 			}
 		}
 		return false;
@@ -209,21 +192,54 @@ public class UserServiceImpl implements IUserService {
 	}
 
 	@Override
+	public User editUser(User u, UserDto userDto, User principal) {
+		u.setUsername(userDto.getUsername());
+		u.setFirstName(userDto.getFirstName());
+		u.setAddress(userDto.getAddress());
+		u.setDateOfBirth(userDto.getDateOfBirth());
+		u.setLastName(userDto.getLastName());
+		u.setPhoneNumber(userDto.getPhoneNumber());
+		Set<Role> beforeRoles = u.getRoles();
+		if(isUserAdmin(principal)) {
+			if (!userDto.getRoleId().isEmpty()) {
+				u.getRoles().clear();
+				for (Long roleid : userDto.getRoleId()) {
+					Optional<Role> role = iRoleService.getOne(roleid);
+					if (role.isPresent()) {
+						u.getRoles().add(role.get());
+					} else if (!role.isPresent()) {
+						log.error("There is no role with id: {}", roleid);
+					}
+				}
+				if (u.getRoles().isEmpty()) {
+					u.setRoles(beforeRoles);
+				}
+			} else if (userDto.getRoleId().isEmpty()) {
+				return null;
+			}
+		}
+		return u;
+	}
+	
+	@Override
 	public ResponseEntity<?> editUser(UserDto userDto, Long id, String principal) {
 		
 		User u = iUserService.getOne(id);
+		Optional<User> logged = iUserService.findByUsername(principal);
+		User u2;
+		if (!logged.isPresent()) {
+			return new ResponseEntity<String> ("Unauthorized", HttpStatus.UNAUTHORIZED);
+		}
+		u2 = logged.get();
 		if (u == null) {
 			return new ResponseEntity<String> ("There is no user with id: " + id, HttpStatus.BAD_REQUEST);
 		}
-		
-		if (!principal.equals(u.getUsername())) {
-			if(!isUserAdmin(u)) {
+		if (!principal.equals(u.getUsername()) && !isUserAdmin(u2)) {
 				log.error("Unauthorized");
 				return new ResponseEntity<String>("Unauthorized", HttpStatus.UNAUTHORIZED);
-			}
 		}
 		
-		User editedUser = iUserService.editUser(u, userDto);
+		User editedUser = iUserService.editUser(u, userDto, u2);
 		if (editedUser == null) {
 			return new ResponseEntity<String>("Bad request", HttpStatus.BAD_REQUEST);
 		}
@@ -233,6 +249,7 @@ public class UserServiceImpl implements IUserService {
 	
 	@Override
 	public List<User> findAll() {
-		return userJpaRepo.findAll() ;
+		return userJpaRepo.findAll();
 	}
+
 }

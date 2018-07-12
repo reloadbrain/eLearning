@@ -21,24 +21,18 @@ import eLearning.sf.model.Course;
 import eLearning.sf.service.CourseService;
 import eLearning.sf.service.StudentService;
 
-
 @Controller
 @RequestMapping(value = "/api/courses")
 public class CourseController {
 
 	@Autowired
 	private CourseService courseService;
-	
-
-	@Autowired
-	private StudentService studentService;
 
 	@Autowired
 	private CourseToCorseDTO courseToCorseDTO;
 
 	@Autowired
 	private CourseDTOtoCourse courseDTOtoCourse;
-
 
 	@GetMapping
 	public ResponseEntity<List<CourseDTO>> getPayments() {
@@ -47,35 +41,41 @@ public class CourseController {
 
 	@GetMapping(path = "/{id}")
 	public ResponseEntity<CourseDTO> getPaymentsById(@PathVariable long id) {
-		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.getOne(id)),
+		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.getOne(id)), HttpStatus.OK);
+	}
+
+	@GetMapping(value = "/student/{username}")
+	public ResponseEntity<List<CourseDTO>> getCoursesForStudent(@PathVariable String username) {
+		return new ResponseEntity<List<CourseDTO>>(courseToCorseDTO.convert(courseService.findByStudent(username)),
 				HttpStatus.OK);
 	}
-	
+
+	@GetMapping(value = "professor/{username}")
+	public ResponseEntity<List<CourseDTO>> getCoursesForProfessor(@PathVariable String username) {
+		return new ResponseEntity<List<CourseDTO>>(courseToCorseDTO.convert(courseService.findByProfessor(username)),
+				HttpStatus.OK);
+	}
 
 	@PostMapping(consumes = "application/json")
 	public ResponseEntity<CourseDTO> saveProfessors(@RequestBody CourseDTO courseDTO) {
 		Course course = courseDTOtoCourse.convert(courseDTO);
-		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.save(course)),
-				HttpStatus.OK);
+		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.save(course)), HttpStatus.OK);
 	}
-	
-	@PostMapping(path = "/{id}" , consumes = "application/json")
-	public ResponseEntity<String> postCourse(@PathVariable long id , @RequestBody List<Long> ids) {
-		
-		
+
+	@PostMapping(path = "/{id}", consumes = "application/json")
+	public ResponseEntity<String> postCourse(@PathVariable long id, @RequestBody List<Long> ids) {
+
 		for (Long long1 : ids) {
 			courseService.addStudentCourse(id, long1);
 		}
-		
-		return new ResponseEntity<String>("OK" , HttpStatus.OK);
-	}
 
+		return new ResponseEntity<String>("OK", HttpStatus.OK);
+	}
 
 	@PutMapping
 	public ResponseEntity<CourseDTO> editPayments(@RequestBody CourseDTO courseDTO) {
 		Course course = courseDTOtoCourse.convert(courseDTO);
-		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.save(course)),
-				HttpStatus.OK);
+		return new ResponseEntity<CourseDTO>(courseToCorseDTO.convert(courseService.save(course)), HttpStatus.OK);
 	};
 
 	@DeleteMapping(path = "/{id}")
@@ -83,7 +83,7 @@ public class CourseController {
 		Course course = courseService.getOne(id);
 		course.setActive(false);
 		courseService.save(course);
-		return new ResponseEntity<String>("Success",HttpStatus.OK);
+		return new ResponseEntity<String>("Success", HttpStatus.OK);
 	}
 
 }

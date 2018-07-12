@@ -30,8 +30,8 @@ public class PreExamObligationRecordsDTOtoPreExamObligationRecords implements Co
 		if(arg0.getPoints()!= null) {
 			p.setPoints(arg0.getPoints());
 		}
-		p.setStudent(ss.getOne(arg0.getStudentId()));
-		p.setPreExamObligation(peos.getOne(arg0.getPreExamObligationId()));
+		p.setStudent(ss.findByStudentId(arg0.getStudentId()));
+		p.setPreExamObligation(peos.findById(arg0.getPreExamObligationId()));
 		p.setDate(arg0.getDate());
 		p.setPassed(arg0.isPassed());
 		p.setActive(arg0.isActive());

@@ -1,18 +1,13 @@
 package eLearning.sf.nuxeo;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.core.io.ByteArrayResource;
-import org.springframework.core.io.FileSystemResource;
-import org.springframework.core.io.InputStreamResource;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -24,12 +19,18 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 import org.apache.tomcat.util.codec.binary.Base64;
-import org.json.JSONException;
 import org.json.JSONObject;
 import org.nuxeo.client.objects.Document;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import eLearning.sf.model.EDocument;
+import eLearning.sf.model.Student;
+import eLearning.sf.model.User;
+import eLearning.sf.serviceInterface.EDocumentServiceInterface;
+import eLearning.sf.serviceInterface.IUserService;
+import eLearning.sf.serviceInterface.StudentServiceInterface;
 
 @Service
 public class NuxeoServiceImpl implements NuxeoService {
@@ -51,6 +52,15 @@ public class NuxeoServiceImpl implements NuxeoService {
 
 	@Autowired
 	HttpHeaders httpHeaders;
+	
+	@Autowired
+	private EDocumentServiceInterface iDocService;
+	
+	@Autowired
+	private IUserService iUserService;
+	
+	@Autowired
+	private StudentServiceInterface studentServiceI;
 
 	@Autowired
 	RestTemplate restTemplate;
@@ -134,13 +144,16 @@ public class NuxeoServiceImpl implements NuxeoService {
 
 	@Override
 	@SuppressWarnings("rawtypes")
-	public String fileUpload(MultipartFile file) throws Exception {
+	public String fileUpload(MultipartFile file, String username) throws Exception {
 
 		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-
+		Optional<User> u = iUserService.findByUsername(username);
+		
 		HttpEntity<String> httpEntity = new HttpEntity<String>(upload(file), httpHeaders);
 		ResponseEntity<? extends HashMap> response = restTemplate.exchange(imageUploadUrl, HttpMethod.POST, httpEntity,
 				new HashMap().getClass());
+		u.get().setImagePath((String) response.getBody().get("uid"));
+		iUserService.save(u.get());
 		return (String) response.getBody().get("uid");
 	}
 
@@ -162,12 +175,22 @@ public class NuxeoServiceImpl implements NuxeoService {
 
 	@Override
 	@SuppressWarnings("rawtypes")
-	public String documentUpload(MultipartFile file) throws Exception {
+	public String documentUpload(MultipartFile file, Long id) throws Exception {
 		httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-
+		
+		if(!iUserService.isUserStudent(iUserService.getOne(id))) {
+			return null;
+		}
+		
+		Student stud = studentServiceI.getByUserId(id);
+		EDocument edoc = new EDocument();
+		
 		HttpEntity<String> httpEntity = new HttpEntity<String>(upload(file), httpHeaders);
 		ResponseEntity<? extends HashMap> response = restTemplate.exchange(docsUploadUrl, HttpMethod.POST, httpEntity,
 				new HashMap().getClass());
+		edoc.setNuxeoId((String) response.getBody().get("uid"));
+		edoc.setStudent(stud);
+		iDocService.save(edoc);
 		return (String) response.getBody().get("uid");
 	}
 
