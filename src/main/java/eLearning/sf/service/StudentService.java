@@ -39,14 +39,19 @@ public class StudentService implements StudentServiceInterface {
 	public Student getByUserId(Long id) {
 		return studentRepository.getByUserUserId(id);
 	}
-	
+
 	@Override
 	public List<Student> findByCourse(Long courseId) {
 		return studentRepository.findAllByCoursesCourseId(courseId);
 	}
-	
+
 	@Override
 	public Student findByUsername(String username) {
 		return studentRepository.findByUserUsername(username);
+	}
+
+	@Override
+	public Student findByStudentId(Long id) {
+		return studentRepository.findByStudentId(id);
 	}
 }

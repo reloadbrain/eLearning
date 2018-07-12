@@ -19,6 +19,7 @@ import eLearning.sf.converter.StudentRecordsDtoToStudentRecords;
 import eLearning.sf.converter.StudentRecordsToStudentRecordsDto;
 import eLearning.sf.dto.ExamStudentRecordsDto;
 import eLearning.sf.model.ExamStudentRecords;
+import eLearning.sf.model.PreExamObligationsRecords;
 import eLearning.sf.serviceInterface.ExamStudentRecordsServiceInterface;
 
 @Controller
@@ -39,11 +40,11 @@ public class ExamStudentRecordsController {
 		return new ResponseEntity<>(recordsToRecordsDtoConverter.convert(examStudentRecordsService.findAll()),
 				HttpStatus.OK);
 	}
-	
-	@GetMapping(value="/course/{id}")
+
+	@GetMapping(value = "/course/{id}")
 	public ResponseEntity<List<ExamStudentRecordsDto>> getExamStudentRecordsByCourse(@PathVariable Long id) {
-		return new ResponseEntity<>(recordsToRecordsDtoConverter.convert(examStudentRecordsService.findAllByCourseId(id)),
-				HttpStatus.OK);
+		return new ResponseEntity<>(
+				recordsToRecordsDtoConverter.convert(examStudentRecordsService.findAllByCourseId(id)), HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/{id}")
@@ -67,6 +68,12 @@ public class ExamStudentRecordsController {
 		ExamStudentRecords records = recordsDtoToRecordsConverter.convert(examStudentRecordsDto);
 		return new ResponseEntity<ExamStudentRecordsDto>(
 				recordsToRecordsDtoConverter.convert(examStudentRecordsService.save(records)), HttpStatus.OK);
+	}
+
+	@PostMapping(value = "/grade", consumes = "application/json")
+	public ResponseEntity<?> saveExamRecords(@RequestBody List<ExamStudentRecordsDto> recordsDto) {
+		examStudentRecordsService.grade(recordsDto);
+		return new ResponseEntity<String>("Saved", HttpStatus.OK);
 	}
 
 	@PutMapping
