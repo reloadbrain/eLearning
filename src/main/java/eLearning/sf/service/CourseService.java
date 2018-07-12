@@ -13,14 +13,13 @@ import eLearning.sf.repository.CourseRepository;
 import eLearning.sf.serviceInterface.CourseServiceInterface;
 
 @Service
-public class CourseService implements CourseServiceInterface{
+public class CourseService implements CourseServiceInterface {
 
 	private static SessionFactory sessionFactory = HibernateUtility.getSessionFactory();
-	
+
 	@Autowired
 	CourseRepository courseRepository;
-	
-	
+
 	@Override
 	public Course getOne(Long id) {
 		// TODO Auto-generated method stub
@@ -44,26 +43,27 @@ public class CourseService implements CourseServiceInterface{
 		// TODO Auto-generated method stub
 		courseRepository.deleteById(id);
 	}
-	
-	public void addStudentCourse(Long course_id,Long student_id) {
+
+	public void addStudentCourse(Long course_id, Long student_id) {
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		SQLQuery insertSql = session.createSQLQuery("" + "insert into students_courses(course_id , student_id) values(?,?);");
-		insertSql.setParameter(0,  course_id);
-		insertSql.setParameter(1,  student_id);
+		SQLQuery insertSql = session
+				.createSQLQuery("" + "insert into students_courses(course_id , student_id) values(?,?);");
+		insertSql.setParameter(0, course_id);
+		insertSql.setParameter(1, student_id);
 		insertSql.executeUpdate();
 		session.getTransaction().commit();
-		
+
 	}
 
 	@Override
-	public List<Course> findByStudent(Long id) {
-		return courseRepository.findAllByStudentsStudentId(id);
+	public List<Course> findByStudent(String username) {
+		return courseRepository.findAllByStudentsUserUsername(username);
 	}
 
 	@Override
-	public List<Course> findByProfessor(Long id) {
-		return courseRepository.findAllByProfessorsProfessorId(id);
+	public List<Course> findByProfessor(String username) {
+		return courseRepository.findAllByProfessorsUserUsername(username);
 	}
-	
+
 }

@@ -53,11 +53,11 @@ INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obl
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(4,'2018-02-17',2,1,15,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(5,'2018-02-17',2,2,14,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(6,'2018-02-17',2,3,10,1,1)
-
-INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(7,'2018-02-17',4,1,15,1,1)*/
+/*
+INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(7,'2018-02-17',4,1,15,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(8,'2018-02-17',4,2,14,1,1)
 INSERT INTO pre_exam_obligations_records(pre_examorecords_id, date, pre_exam_obligation_id,student_id, points, passed, active)values(9,'2018-02-17',4,3,10,1,1)
-
+*/
 
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 1" , 1000 , 1)
 INSERT INTO payment (active, description, value , student_id ) values (1 , "payment 2" , 2000 , 2)

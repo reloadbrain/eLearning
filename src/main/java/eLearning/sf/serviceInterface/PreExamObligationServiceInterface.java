@@ -18,5 +18,7 @@ public interface PreExamObligationServiceInterface {
 	public List<PreExamObligation> findByTypeId(Long id);
 	
 	public List<PreExamObligation> findByCourseId(Long id);
+	
+	public PreExamObligation findById(Long id);
 
 }
