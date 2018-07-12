@@ -96,7 +96,7 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	
 	@Override
     public void configure(org.springframework.security.config.annotation.web.builders.WebSecurity web) throws Exception {
-        web.ignoring().antMatchers("/assets/**", "/profile-images/**");
+        web.ignoring().antMatchers("/assets/**");
     }
 	
 	/*@Bean
