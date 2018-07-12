@@ -55,5 +55,15 @@ public class CourseService implements CourseServiceInterface{
 		session.getTransaction().commit();
 		
 	}
+
+	@Override
+	public List<Course> findByStudent(Long id) {
+		return courseRepository.findAllByStudentsStudentId(id);
+	}
+
+	@Override
+	public List<Course> findByProfessor(Long id) {
+		return courseRepository.findAllByProfessorsProfessorId(id);
+	}
 	
 }

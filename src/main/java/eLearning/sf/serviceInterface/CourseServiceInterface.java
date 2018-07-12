@@ -14,4 +14,8 @@ public interface CourseServiceInterface {
 	public Course save(Course course);
 
 	public void delete(Long id);
+	
+	public List<Course> findByStudent (Long id);
+	
+	public List<Course> findByProfessor (Long id);
 }
