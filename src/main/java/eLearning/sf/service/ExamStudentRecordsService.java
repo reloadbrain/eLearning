@@ -1,6 +1,5 @@
 package eLearning.sf.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,7 +52,6 @@ public class ExamStudentRecordsService implements ExamStudentRecordsServiceInter
 		ExamStudentRecords record = new ExamStudentRecords();
 		record.setActive(true);
 		record.setPassed(false);
-		record.setPoints(0);
 		record.setStudent(studentService.findByUsername(studentUsername));
 		record.setExam(examService.getOne(examId));
 
