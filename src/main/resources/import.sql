@@ -10,8 +10,8 @@ INSERT INTO role (name) values ('STUDENT')
 
 INSERT INTO user_roles (user_id, role_id) values (1, 1)
 INSERT INTO user_roles (user_id, role_id) values (1, 2)
-INSERT INTO user_roles (user_id, role_id) values (2, 2)
 INSERT INTO user_roles (user_id, role_id) values (2, 3)
+INSERT INTO user_roles (user_id, role_id) values (2, 2)
 INSERT INTO user_roles (user_id, role_id) values (3, 3)
 INSERT INTO user_roles (user_id, role_id) values (4, 3)
 
